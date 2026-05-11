@@ -1,0 +1,50 @@
+{
+  "_note": "Edit this file manually or update it via Zapier. dashboard.html reads it on load.",
+  "_updated": "2026-05-09",
+
+  "summary": {
+    "totalClients": 0,
+    "medicareClients": 0,
+    "lifeClients": 0,
+    "policiesThisMonth": 0,
+    "renewalRevenueAnnual": 0,
+    "cashPosition": 0,
+    "monthlyRevenueTarget": 5000,
+    "monthlyRevenueActual": 0
+  },
+
+  "pipeline": {
+    "newLeads": 0,
+    "contacted": 0,
+    "reviewScheduled": 0,
+    "proposalSent": 0,
+    "enrolled": 0,
+    "lost": 0
+  },
+
+  "social": {
+    "facebook": 0,
+    "instagram": 0,
+    "tiktok": 0,
+    "linkedin": 0,
+    "youtube": 0
+  },
+
+  "upcomingRenewals": [
+    {
+      "clientName": "Sample Client",
+      "policyType": "Medicare Advantage",
+      "carrier": "—",
+      "renewalDate": "2026-12-31",
+      "annualPremium": 0
+    }
+  ],
+
+  "recentActivity": [
+    {
+      "date": "2026-05-09",
+      "type": "setup",
+      "note": "Dashboard initialized — update dashboard-data.json with real data"
+    }
+  ]
+}

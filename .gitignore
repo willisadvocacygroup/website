@@ -1,0 +1,12 @@
+# Server-side code — deployed separately on Railway, not Hostinger
+webhook-server/
+
+# Internal tools and GHL config — not for public_html
+tools/
+ghl-config/
+
+# Misc
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini

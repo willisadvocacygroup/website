@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Willis Advocacy Group — Licensed Medicare &amp; Life Insurance Broker serving MA, CT, NJ, NY, FL, TX, NC. Free Medicare reviews. Coverage for preexisting conditions. People Over Profits.">
+  <meta name="keywords" content="Medicare broker, life insurance preexisting conditions, Medicare Advantage, dual eligible, D-SNP, Webster MA, Willis Advocacy Group">
+  <meta property="og:title" content="Willis Advocacy Group — People Over Profits.">
+  <meta property="og:description" content="Free Medicare reviews. Life insurance for preexisting conditions. Licensed broker Uhia Willis — Webster, MA.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.willisadvocacygroup.com">
+  <title>Willis Advocacy Group — Medicare &amp; Life Insurance | People Over Profits.</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── Reset & Variables ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:   #0C1B2E;
+      --teal:   #0D7377;
+      --teal2:  #14A085;
+      --gold:   #C8972A;
+      --gold2:  #F0C060;
+      --cream:  #FAF7F2;
+      --white:  #FFFFFF;
+      --text:   #1a2e42;
+      --muted:  #5a7080;
+      --border: rgba(12,27,46,0.1);
+      --shadow: 0 4px 24px rgba(12,27,46,0.08);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--teal); text-decoration: none; }
+    a:hover { color: var(--teal2); }
+
+    /* ─── Utility ─── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    .section { padding: 5rem 0; }
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .section-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 600px;
+    }
+    .btn-primary {
+      display: inline-block;
+      padding: 0.9rem 2rem;
+      background: var(--teal);
+      color: var(--white);
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      text-decoration: none;
+    }
+    .btn-primary:hover { background: var(--teal2); color: var(--white); transform: translateY(-1px); }
+    .btn-outline {
+      display: inline-block;
+      padding: 0.9rem 2rem;
+      background: transparent;
+      color: var(--teal);
+      border: 2px solid var(--teal);
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .btn-outline:hover { background: var(--teal); color: var(--white); }
+    .gold-bar {
+      width: 48px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ─── Top Bar ─── */
+    .topbar {
+      background: var(--navy);
+      color: rgba(255,255,255,0.75);
+      font-size: 0.8rem;
+      padding: 0.5rem 0;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .topbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .topbar a { color: var(--gold2); }
+
+    /* ─── Nav ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 12px rgba(12,27,46,0.06);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--navy);
+      font-weight: 700;
+    }
+    .nav-brand span { color: var(--teal); }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta { margin-left: 1rem; }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ─── Hero ─── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #1a3a5c 100%);
+      color: var(--white);
+      padding: 5rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(13,115,119,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(200,151,42,0.15);
+      border: 1px solid rgba(200,151,42,0.4);
+      color: var(--gold2);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.5rem;
+    }
+    .hero-badge::before { content: '●'; font-size: 0.5rem; }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold2);
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 520px;
+      margin-bottom: 2rem;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-hero {
+      display: inline-block;
+      padding: 1rem 2.25rem;
+      background: var(--teal);
+      color: var(--white);
+      border-radius: 6px;
+      font-weight: 800;
+      font-size: 1rem;
+      transition: background 0.2s, transform 0.15s;
+      text-decoration: none;
+    }
+    .btn-hero:hover { background: var(--teal2); color: var(--white); transform: translateY(-2px); }
+    .btn-hero-ghost {
+      display: inline-block;
+      padding: 1rem 2.25rem;
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.35);
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .btn-hero-ghost:hover { border-color: var(--white); background: rgba(255,255,255,0.08); color: var(--white); }
+    .hero-photo {
+      width: 260px;
+      height: 320px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 4px solid rgba(200,151,42,0.4);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+    }
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      flex-wrap: wrap;
+    }
+    .stat-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--gold2);
+      font-weight: 700;
+    }
+    .stat-lbl {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ─── Trust Bar ─── */
+    .trust-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 1.2rem 0;
+    }
+    .trust-bar .container {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .trust-item .icon {
+      width: 20px;
+      height: 20px;
+      background: var(--teal);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.65rem;
+      flex-shrink: 0;
+    }
+
+    /* ─── Services ─── */
+    .services { background: var(--cream); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(12,27,46,0.12);
+    }
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, var(--teal), var(--teal2));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      font-size: 1.4rem;
+    }
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+    .service-card p { font-size: 0.95rem; color: var(--muted); margin-bottom: 1.25rem; }
+    .service-bullets { list-style: none; }
+    .service-bullets li {
+      font-size: 0.9rem;
+      color: var(--text);
+      padding: 0.3rem 0;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .service-bullets li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-weight: 700;
+    }
+
+    /* ─── About ─── */
+    .about { background: var(--white); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .about-photo-wrap {
+      position: relative;
+    }
+    .about-photo {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 16px;
+      object-fit: cover;
+      box-shadow: 0 24px 60px rgba(12,27,46,0.15);
+    }
+    .about-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1rem;
+      background: var(--navy);
+      color: var(--white);
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+    .about-badge .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--gold2);
+      font-weight: 700;
+      line-height: 1;
+    }
+    .about-badge .lbl { font-size: 0.75rem; color: rgba(255,255,255,0.7); margin-top: 0.25rem; }
+    .about-content .section-title { margin-bottom: 1.25rem; }
+    .about-content p { margin-bottom: 1rem; color: var(--muted); }
+    .credentials-list {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+    .credentials-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.5rem 0;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    .credentials-list .check {
+      width: 20px;
+      height: 20px;
+      background: var(--teal);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.6rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .states-licensed {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 1.25rem;
+    }
+    .state-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      background: rgba(13,115,119,0.1);
+      color: var(--teal);
+      border: 1px solid rgba(13,115,119,0.25);
+      padding: 0.3rem 0.65rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    /* ─── Why Willis ─── */
+    .why { background: var(--navy); color: var(--white); }
+    .why .section-title { color: var(--white); }
+    .why .section-label { color: var(--gold); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .why-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 1.75rem;
+      transition: background 0.2s;
+    }
+    .why-card:hover { background: rgba(255,255,255,0.08); }
+    .why-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--gold);
+      opacity: 0.6;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .why-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .why-card p { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+
+    /* ─── Process ─── */
+    .process { background: var(--cream); }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0;
+      margin-top: 3rem;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: linear-gradient(to right, var(--teal), var(--teal2));
+      opacity: 0.2;
+    }
+    .process-step {
+      text-align: center;
+      padding: 0 1rem;
+      position: relative;
+    }
+    .step-num {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 3px solid var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--teal);
+      font-weight: 700;
+      margin: 0 auto 1.25rem;
+      box-shadow: 0 4px 16px rgba(13,115,119,0.15);
+      position: relative;
+      z-index: 1;
+      background: var(--white);
+    }
+    .process-step h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .process-step p { font-size: 0.875rem; color: var(--muted); }
+
+    /* ─── Testimonials ─── */
+    .testimonials { background: var(--white); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .testimonial-card {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 1.75rem;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '\201C';
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      color: var(--teal);
+      opacity: 0.2;
+      position: absolute;
+      top: 0.5rem;
+      left: 1rem;
+      line-height: 1;
+    }
+    .testimonial-text {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      padding-top: 1rem;
+    }
+    .testimonial-author { font-weight: 700; font-size: 0.9rem; color: var(--navy); }
+    .testimonial-detail { font-size: 0.8rem; color: var(--muted); margin-top: 0.15rem; }
+    .stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.75rem; }
+
+    /* ─── Lead Form ─── */
+    .lead-section {
+      background: linear-gradient(135deg, var(--teal) 0%, #0a5c60 100%);
+      color: var(--white);
+      padding: 5rem 0;
+    }
+    .lead-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .lead-copy .section-label { color: var(--gold2); }
+    .lead-copy .section-title { color: var(--white); }
+    .lead-copy p { color: rgba(255,255,255,0.8); margin-bottom: 1rem; }
+    .lead-points { list-style: none; margin-top: 1.5rem; }
+    .lead-points li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.5rem 0;
+      color: rgba(255,255,255,0.9);
+      font-size: 0.95rem;
+    }
+    .lead-points .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--gold2);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+    .lead-form-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2.25rem;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.2);
+    }
+    .lead-form-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+    .lead-form-card .sub {
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid rgba(12,27,46,0.15);
+      border-radius: 6px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      background: var(--white);
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(13,115,119,0.1);
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-submit {
+      width: 100%;
+      padding: 1rem;
+      background: var(--teal);
+      color: var(--white);
+      border: none;
+      border-radius: 6px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .form-submit:hover { background: var(--teal2); transform: translateY(-1px); }
+    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .form-disclaimer {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+      line-height: 1.5;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .form-success .check-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, var(--teal), var(--teal2));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      font-size: 1.75rem;
+      color: white;
+    }
+    .form-success h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .form-success p { font-size: 0.9rem; color: var(--muted); }
+    .form-error {
+      display: none;
+      background: #fff5f5;
+      border: 1px solid #fca5a5;
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      color: #dc2626;
+      margin-top: 0.75rem;
+    }
+
+    /* ─── FAQ ─── */
+    .faq { background: var(--cream); }
+    .faq-list { max-width: 760px; margin: 3rem auto 0; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 1.25rem 0;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .faq-q .arrow {
+      font-size: 1.2rem;
+      color: var(--teal);
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    .faq-item.open .arrow { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .faq-item.open .faq-a { max-height: 400px; }
+    .faq-a p {
+      padding-bottom: 1.25rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ─── Contact ─── */
+    .contact { background: var(--white); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .contact-methods { list-style: none; margin-top: 1.5rem; }
+    .contact-methods li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .contact-methods .icon-box {
+      width: 44px;
+      height: 44px;
+      background: rgba(13,115,119,0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .contact-methods .lbl { font-size: 0.8rem; color: var(--muted); }
+    .contact-methods .val { font-weight: 700; color: var(--navy); font-size: 0.95rem; }
+    .contact-methods a { color: var(--navy); }
+    .contact-methods a:hover { color: var(--teal); }
+
+    /* ─── Compliance Footer ─── */
+    .compliance-bar {
+      background: #f0ede8;
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+    .compliance-bar p {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 900px;
+    }
+
+    /* ─── Footer ─── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.65);
+      padding: 3rem 0 2rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 2.5rem;
+    }
+    .footer-brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+    .footer-brand-name span { color: var(--teal); }
+    .footer-tagline {
+      font-size: 0.8rem;
+      color: var(--gold);
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+    .footer-desc { font-size: 0.875rem; line-height: 1.65; }
+    .footer-col h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.5rem; }
+    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.55); transition: color 0.2s; }
+    .footer-col a:hover { color: var(--teal2); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.8rem;
+    }
+
+    /* ─── Sticky Phone CTA ─── */
+    .sticky-cta {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 200;
+    }
+    .sticky-cta a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--teal);
+      color: var(--white);
+      padding: 0.85rem 1.5rem;
+      border-radius: 100px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      box-shadow: 0 8px 24px rgba(13,115,119,0.4);
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .sticky-cta a:hover { background: var(--teal2); color: var(--white); transform: scale(1.03); }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-photo { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-photo-wrap { display: none; }
+      .lead-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .process-steps::before { display: none; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        padding: 1rem 1.5rem 1.5rem;
+        border-bottom: 1px solid var(--border);
+        gap: 1rem;
+      }
+      .section { padding: 3.5rem 0; }
+      .hero { padding: 3rem 0; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .topbar .container { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── Top Bar ─── -->
+<div class="topbar">
+  <div class="container">
+    <span>📍 Webster, MA — Serving MA, CT, NJ, NY, FL, TX, NC</span>
+    <span><a href="tel:7744460701">(774) 446-0701</a> &nbsp;|&nbsp; <a href="mailto:info@willisadvocacygroup.com">info@willisadvocacygroup.com</a></span>
+  </div>
+</div>
+
+<!-- ─── Nav ─── -->
+<nav id="main-nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">Willis <span>Advocacy</span> Group</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="nav-cta"><a href="#review" class="btn-primary">Free Review</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── Hero ─── -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-badge">Licensed Medicare &amp; Life Insurance Broker</div>
+        <h1>Your Medicare Coverage<br>Should Work <em>For You</em> —<br>Not Against You.</h1>
+        <p>Uhia Willis is an independent licensed broker who reviews every plan available in your state — free, no pressure, no obligation. Specializing in Medicare Advantage, Dual Eligible plans, and life insurance for preexisting conditions.</p>
+        <div class="hero-actions">
+          <a href="#review" class="btn-hero">Get My Free Review</a>
+          <a href="tel:7744460701" class="btn-hero-ghost">📞 (774) 446-0701</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-val">$0</div>
+            <div class="stat-lbl">Many plans start at $0/mo</div>
+          </div>
+          <div>
+            <div class="stat-val">7</div>
+            <div class="stat-lbl">States licensed</div>
+          </div>
+          <div>
+            <div class="stat-val">100%</div>
+            <div class="stat-lbl">Independent broker</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img src="images/uhia-willis.jpg" alt="Uhia Willis — Licensed Medicare &amp; Life Insurance Broker" class="hero-photo" loading="eager">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Trust Bar ─── -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-item"><div class="icon">✓</div> Free Medicare Reviews</div>
+    <div class="trust-item"><div class="icon">✓</div> No Pressure, No Obligation</div>
+    <div class="trust-item"><div class="icon">✓</div> Preexisting Condition Specialist</div>
+    <div class="trust-item"><div class="icon">✓</div> Independent — Not Tied to One Carrier</div>
+    <div class="trust-item"><div class="icon">✓</div> Responds Within 1 Business Hour</div>
+  </div>
+</div>
+
+<!-- ─── Services ─── -->
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-label">What We Do</div>
+    <div class="gold-bar"></div>
+    <h2 class="section-title">Medicare &amp; Life Insurance<br>Done Right</h2>
+    <p class="section-sub">We review your full situation — not just one carrier's plans — because your coverage should match your life, not their sales quota.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🏥</div>
+        <h3>Medicare Advantage</h3>
+        <p>We compare every Medicare Advantage plan available in your area — including D-SNP plans for those who qualify for both Medicare and Medicaid.</p>
+        <ul class="service-bullets">
+          <li>$0 premium plans (for qualifying individuals)</li>
+          <li>Dental, vision &amp; hearing coverage</li>
+          <li>Free transportation to appointments</li>
+          <li>OTC allowance benefits</li>
+          <li>Dual Special Needs Plans (D-SNP)</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📋</div>
+        <h3>Medicare Supplement</h3>
+        <p>Original Medicare plus a Medigap supplement plan for predictable costs and freedom to see any doctor who accepts Medicare — nationwide.</p>
+        <ul class="service-bullets">
+          <li>Plans A, B, D, G, K, L, M, N</li>
+          <li>No network restrictions</li>
+          <li>Predictable out-of-pocket costs</li>
+          <li>Best for frequent travelers</li>
+          <li>Annual enrollment review</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛡️</div>
+        <h3>Life Insurance for Preexisting Conditions</h3>
+        <p>Been declined before? Uhia specializes in finding coverage for clients with complex health histories — including conditions most brokers won't touch.</p>
+        <ul class="service-bullets">
+          <li>Diabetes (Type 1 &amp; 2)</li>
+          <li>Heart disease &amp; cardiac history</li>
+          <li>HIV / AIDS</li>
+          <li>COPD &amp; lung conditions</li>
+          <li>Cancer history &amp; remission</li>
+          <li>Guaranteed issue policies available</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── About ─── -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo-wrap">
+        <img src="images/uhia-willis.jpg" alt="Uhia Willis" class="about-photo" loading="lazy">
+        <div class="about-badge">
+          <div class="num">People</div>
+          <div class="lbl">Over Profits. Always.</div>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="section-label">About Uhia Willis</div>
+        <div class="gold-bar"></div>
+        <h2 class="section-title">An Independent Broker Who Works for You — Not the Carriers.</h2>
+        <p>Uhia Willis founded Willis Advocacy Group on a simple belief: the people who need insurance the most are the ones who keep getting turned away, overcharged, or pushed into the wrong plan.</p>
+        <p>As an independent broker, Uhia is not tied to any single insurance company. That means he reviews every plan available in your area and gives you an honest assessment — even if the honest answer is that your current plan is already your best option.</p>
+        <ul class="credentials-list">
+          <li><div class="check">✓</div> Licensed Medicare &amp; Life Insurance Broker</li>
+          <li><div class="check">✓</div> Independent — Not captive to any carrier</li>
+          <li><div class="check">✓</div> Specializes in complex health situations &amp; preexisting conditions</li>
+          <li><div class="check">✓</div> Based in Webster, MA — serving clients in 7 states</li>
+          <li><div class="check">✓</div> Free consultations — no cost, no obligation</li>
+        </ul>
+        <p style="font-size:0.85rem;color:var(--muted);margin-top:0.5rem;">Licensed in:</p>
+        <div class="states-licensed">
+          <span class="state-tag">MA</span>
+          <span class="state-tag">CT</span>
+          <span class="state-tag">NJ</span>
+          <span class="state-tag">NY</span>
+          <span class="state-tag">FL</span>
+          <span class="state-tag">TX</span>
+          <span class="state-tag">NC</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Why Willis ─── -->
+<section class="section why">
+  <div class="container">
+    <div class="section-label">Why Willis Advocacy Group</div>
+    <div class="gold-bar" style="background:var(--gold);"></div>
+    <h2 class="section-title">What Makes Us Different</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-num">01</div>
+        <h3>We're Independent</h3>
+        <p>Not tied to one company. We shop every carrier in your area and tell you the truth — even if that means your current plan wins.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">02</div>
+        <h3>Preexisting Condition Experts</h3>
+        <p>Most brokers avoid complex cases. Uhia built his practice around them. Diabetes, HIV, cardiac history — we've found coverage for all of it.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">03</div>
+        <h3>Respond Within 1 Hour</h3>
+        <p>No waiting three days for a callback. Uhia personally responds to every inquiry within one business hour during business days.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">04</div>
+        <h3>Zero Pressure</h3>
+        <p>"People Over Profits" isn't a slogan — it's how we operate. You'll never feel pressured or rushed into a decision.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Process ─── -->
+<section class="section process" id="process">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-label">How It Works</div>
+      <div class="gold-bar" style="margin:0 auto 1.5rem;"></div>
+      <h2 class="section-title">Get Covered in 3 Simple Steps</h2>
+      <p class="section-sub" style="margin:0 auto;">From your first call to your new coverage — here's exactly what to expect.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <h3>Free Consultation</h3>
+        <p>Call (774) 446-0701 or fill out the form. Uhia reviews your current situation — current coverage, prescriptions, doctors, budget.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <h3>We Compare Every Option</h3>
+        <p>Uhia pulls every plan available in your state for your specific situation and presents the best options side by side.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <h3>You Choose</h3>
+        <p>No pressure. You pick what works for you. Uhia handles all the enrollment paperwork and you're covered. Done.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Testimonials ─── -->
+<section class="section testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-label">Client Stories</div>
+    <div class="gold-bar"></div>
+    <h2 class="section-title">People Over Profits — In Practice.</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">Uhia found me a $0 plan I had no idea existed. I was paying $140 a month and qualified for a Dual Special Needs Plan. He saved me over $1,600 a year — first year alone.</p>
+        <div class="testimonial-author">Margaret T.</div>
+        <div class="testimonial-detail">Medicare Client — Springfield, MA</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">I have Type 2 diabetes and had been declined by three brokers. Uhia called me back within an hour and found me a guaranteed issue life insurance policy. My family finally has protection.</p>
+        <div class="testimonial-author">James R.</div>
+        <div class="testimonial-detail">Life Insurance Client — Hartford, CT</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">He told me honestly that my current Medicare plan was actually good for my situation — and didn't try to switch me just to earn a commission. That's integrity. I'll never use another broker.</p>
+        <div class="testimonial-author">Dolores M.</div>
+        <div class="testimonial-detail">Medicare Client — Bronx, NY</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Lead Form ─── -->
+<section class="lead-section" id="review">
+  <div class="container">
+    <div class="lead-grid">
+      <div class="lead-copy">
+        <div class="section-label">Free Medicare Review</div>
+        <h2 class="section-title">Get Your Free Review — Takes 20 Minutes.</h2>
+        <p>Fill out the form and Uhia will personally call you within 1 business hour. No sales pitch. Just a real conversation about your options.</p>
+        <ul class="lead-points">
+          <li><div class="dot"></div> We compare every plan in your state — not just the ones with the best commissions</li>
+          <li><div class="dot"></div> If you qualify for a $0 plan, you'll know by the end of the call</li>
+          <li><div class="dot"></div> If you have a preexisting condition, we've likely seen it before</li>
+          <li><div class="dot"></div> Zero cost. Zero obligation. Zero pressure.</li>
+        </ul>
+      </div>
+      <div class="lead-form-card">
+        <div id="form-wrapper">
+          <h3>Request Your Free Review</h3>
+          <p class="sub">Uhia calls back within 1 business hour.</p>
+          <form id="lead-form" novalidate>
+            <input type="hidden" name="source" value="Website Lead Form">
+            <input type="hidden" name="page" value="https://www.willisadvocacygroup.com">
+            <!-- TrustedForm hidden field — populated by TrustedForm JS snippet -->
+            <input type="hidden" name="xxTrustedFormCertUrl" id="xxTrustedFormCertUrl">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input type="text" id="firstName" name="firstName" placeholder="Your first name" required autocomplete="given-name">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required autocomplete="tel">
+              </div>
+              <div class="form-group">
+                <label for="state">Your State *</label>
+                <select id="state" name="state" required>
+                  <option value="">Select state</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="CT">Connecticut</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NY">New York</option>
+                  <option value="FL">Florida</option>
+                  <option value="TX">Texas</option>
+                  <option value="NC">North Carolina</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="interest">I'm interested in *</label>
+              <select id="interest" name="interest" required>
+                <option value="">Select one</option>
+                <option value="medicare">Medicare coverage review</option>
+                <option value="life">Life insurance (including preexisting conditions)</option>
+                <option value="both">Both Medicare and Life Insurance</option>
+                <option value="unsure">Not sure — just want to talk to someone</option>
+              </select>
+            </div>
+            <div id="form-error" class="form-error"></div>
+            <button type="submit" class="form-submit" id="form-submit">Get My Free Review →</button>
+            <p class="form-disclaimer">By submitting this form, you agree to be contacted by Willis Advocacy Group (UKW Consulting Inc.) regarding insurance products. Willis Advocacy Group is not affiliated with or endorsed by Medicare, Medicaid, or any U.S. government agency. We do not offer every plan available in your area. Contact Medicare.gov or 1-800-MEDICARE for information on all options.</p>
+          </form>
+        </div>
+        <div class="form-success" id="form-success">
+          <div class="check-icon">✓</div>
+          <h3 id="success-message">Thank you!</h3>
+          <p>Uhia will call you within 1 business hour. In the meantime, feel free to reach him directly at <strong>(774) 446-0701</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section class="section faq" id="faq">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-label">Common Questions</div>
+      <div class="gold-bar" style="margin:0 auto 1.5rem;"></div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Does it cost anything to work with Willis Advocacy Group? <span class="arrow">+</span></button>
+        <div class="faq-a"><p>No. Our services are completely free to you. As an independent broker, we are compensated by the insurance carriers when you enroll in a plan. This never affects the plans we recommend — we're required by law to recommend the best option for you, not the one with the highest commission.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Am I really eligible for a $0 premium Medicare plan? <span class="arrow">+</span></button>
+        <div class="faq-a"><p>Many people are. If you receive both Medicare and Medicaid benefits, you may qualify for a Dual Special Needs Plan (D-SNP), which often has $0 monthly premium, $0 copays for primary care, and additional benefits like dental, vision, transportation, and OTC allowances. The only way to know for certain is to review your specific situation — which is exactly what our free consultation does.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">I have a serious health condition. Can I still get life insurance? <span class="arrow">+</span></button>
+        <div class="faq-a"><p>Often yes. Uhia specializes in finding life insurance for clients with preexisting conditions — including diabetes, heart disease, HIV, COPD, cancer history, and more. There are guaranteed issue life insurance policies that do not require a medical exam and cannot decline you based on health. The trade-off is typically a graded benefit period during the first 2-3 years. We'll walk you through exactly what's available for your specific situation.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How long does the enrollment process take? <span class="arrow">+</span></button>
+        <div class="faq-a"><p>The initial consultation typically takes 20-30 minutes. If you decide to enroll, the paperwork can usually be completed during that same call. Coverage typically begins on the 1st of the following month, depending on the plan type and enrollment period you're in.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">When can I change my Medicare plan? <span class="arrow">+</span></button>
+        <div class="faq-a"><p>There are several Medicare enrollment and change windows. The Annual Enrollment Period (AEP) runs October 15 – December 7 each year. The Medicare Advantage Open Enrollment Period runs January 1 – March 31. Special Enrollment Periods are available for qualifying life events. Some plans — particularly D-SNPs for dual-eligible beneficiaries — allow monthly enrollment. Uhia will confirm what window applies to your situation.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do you only serve Massachusetts? <span class="arrow">+</span></button>
+        <div class="faq-a"><p>No — Uhia is licensed to sell insurance in Massachusetts, Connecticut, New Jersey, New York, Florida, Texas, and North Carolina. All consultations are conducted by phone, so location within those states doesn't matter.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Contact ─── -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <div class="section-label">Get in Touch</div>
+        <div class="gold-bar"></div>
+        <h2 class="section-title">Ready to Talk?<br>Uhia Is.</h2>
+        <p style="color:var(--muted);max-width:400px;margin-bottom:2rem;">No automated phone trees. No call centers. When you contact Willis Advocacy Group, you reach Uhia directly.</p>
+        <ul class="contact-methods">
+          <li>
+            <div class="icon-box">📞</div>
+            <div>
+              <div class="lbl">Call or Text</div>
+              <div class="val"><a href="tel:7744460701">(774) 446-0701</a></div>
+            </div>
+          </li>
+          <li>
+            <div class="icon-box">✉️</div>
+            <div>
+              <div class="lbl">Email</div>
+              <div class="val"><a href="mailto:info@willisadvocacygroup.com">info@willisadvocacygroup.com</a></div>
+            </div>
+          </li>
+          <li>
+            <div class="icon-box">🌐</div>
+            <div>
+              <div class="lbl">Website</div>
+              <div class="val"><a href="https://www.willisadvocacygroup.com">willisadvocacygroup.com</a></div>
+            </div>
+          </li>
+          <li>
+            <div class="icon-box">📍</div>
+            <div>
+              <div class="lbl">Based In</div>
+              <div class="val">Webster, Massachusetts</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div class="service-card" style="background:var(--navy);border-color:rgba(255,255,255,0.08);">
+          <p style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1rem;">Business Hours</p>
+          <div style="color:rgba(255,255,255,0.85);">
+            <div style="display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:1px solid rgba(255,255,255,0.08);font-size:0.9rem;">
+              <span>Monday – Friday</span><span style="color:var(--teal2);">9 AM – 6 PM ET</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:1px solid rgba(255,255,255,0.08);font-size:0.9rem;">
+              <span>Saturday</span><span style="color:var(--teal2);">10 AM – 3 PM ET</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:0.5rem 0;font-size:0.9rem;">
+              <span>Sunday</span><span style="color:var(--muted);">Closed</span>
+            </div>
+          </div>
+          <p style="margin-top:1.5rem;font-size:0.85rem;color:rgba(255,255,255,0.55);">Calls back within <strong style="color:var(--gold2);">1 business hour</strong> during business hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Compliance Bar ─── -->
+<div class="compliance-bar">
+  <div class="container">
+    <p>Willis Advocacy Group (UKW Consulting Inc.) is an independent licensed insurance broker not affiliated with, endorsed by, or representing Medicare, Medicaid, or any U.S. government agency. We do not offer every plan available in your area. Any information we provide is limited to the plans we do offer in your area. Please contact Medicare.gov or call 1-800-MEDICARE (1-800-633-4227), TTY 1-877-486-2048, 24 hours a day, 7 days a week for information on all options. Willis Advocacy Group (UKW Consulting Inc.) is licensed to sell Medicare Advantage and Medicare Supplement insurance products in MA, CT, NJ, NY, FL, TX, and NC. This is not a government website. UKW Consulting Inc. is an S-Corp registered in Massachusetts. Licensed: MA, CT, NJ, NY, FL, TX, NC.</p>
+  </div>
+</div>
+
+<!-- ─── Footer ─── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Willis <span>Advocacy</span> Group</div>
+        <div class="footer-tagline">People Over Profits.</div>
+        <p class="footer-desc">Independent Medicare &amp; Life Insurance brokerage based in Webster, MA. Licensed in MA, CT, NJ, NY, FL, TX, and NC. A DBA of UKW Consulting Inc.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Medicare Advantage</a></li>
+          <li><a href="#services">Medicare Supplement</a></li>
+          <li><a href="#services">Dual Special Needs Plans</a></li>
+          <li><a href="#services">Life Insurance</a></li>
+          <li><a href="#services">Preexisting Conditions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:7744460701">(774) 446-0701</a></li>
+          <li><a href="mailto:info@willisadvocacygroup.com">info@willisadvocacygroup.com</a></li>
+          <li><a href="#review">Get Free Review</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#about">About Uhia</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Willis Advocacy Group (UKW Consulting Inc.) — All rights reserved.</span>
+      <span>Not affiliated with Medicare or any government agency.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── Sticky CTA ─── -->
+<div class="sticky-cta">
+  <a href="tel:7744460701">📞 Call Now — Free</a>
+</div>
+
+<!-- ─── TrustedForm Snippet (placeholder — replace with real snippet from app.trustedform.com) ─── -->
+<script>
+  (function() {
+    var field = document.getElementById('xxTrustedFormCertUrl');
+    // TrustedForm JS snippet goes here after account creation
+    // It will auto-populate the hidden field above
+  })();
+</script>
+
+<!-- ─── Form Logic ─── -->
+<script>
+  // Nav toggle
+  document.getElementById('nav-toggle').addEventListener('click', function() {
+    document.getElementById('nav-links').classList.toggle('open');
+  });
+
+  // Close nav on link click
+  document.querySelectorAll('#nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('nav-links').classList.remove('open');
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = btn.closest('.faq-item');
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // Lead form submission
+  document.getElementById('lead-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var form = e.target;
+    var submitBtn = document.getElementById('form-submit');
+    var errorBox = document.getElementById('form-error');
+    errorBox.style.display = 'none';
+
+    var data = {
+      firstName: form.firstName.value.trim(),
+      email: form.email.value.trim(),
+      phone: form.phone.value.trim(),
+      state: form.state.value,
+      interest: form.interest.value,
+      source: form.source.value,
+      page: window.location.href,
+      xxTrustedFormCertUrl: document.getElementById('xxTrustedFormCertUrl').value || '',
+    };
+
+    // Basic client-side validation
+    if (!data.firstName || !data.email || !data.phone || !data.state || !data.interest) {
+      errorBox.textContent = 'Please fill in all required fields.';
+      errorBox.style.display = 'block';
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting…';
+
+    try {
+      var response = await fetch('https://api.willisadvocacygroup.com/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      var result = await response.json();
+      if (!result.success) throw new Error(result.message || 'Submission failed');
+
+      // Show success state
+      document.getElementById('form-wrapper').style.display = 'none';
+      var successEl = document.getElementById('form-success');
+      document.getElementById('success-message').textContent = result.message || ('Thank you ' + data.firstName + '!');
+      successEl.style.display = 'block';
+
+    } catch (err) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Get My Free Review →';
+      errorBox.textContent = 'Something went wrong. Please call us directly at (774) 446-0701 or try again.';
+      errorBox.style.display = 'block';
+      console.error('Form error:', err);
+    }
+  });
+
+  // Format phone input
+  document.getElementById('phone').addEventListener('input', function(e) {
+    var val = e.target.value.replace(/\D/g, '').slice(0, 10);
+    if (val.length >= 6) {
+      e.target.value = '(' + val.slice(0,3) + ') ' + val.slice(3,6) + '-' + val.slice(6);
+    } else if (val.length >= 3) {
+      e.target.value = '(' + val.slice(0,3) + ') ' + val.slice(3);
+    } else {
+      e.target.value = val;
+    }
+  });
+</script>
+
+</body>
+</html>

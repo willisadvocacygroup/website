@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /leads.log
+Sitemap: https://www.willisadvocacygroup.com/sitemap.xml
