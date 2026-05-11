@@ -1,0 +1,35 @@
+<!-- Willis Advocacy Group — Shield Icon (standalone, no text) -->
+<!-- Use: favicon base, app icon, embossed stamp -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 115" role="img" aria-label="Willis Advocacy Group">
+  <title>Willis Advocacy Group</title>
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0C1B2E"/>
+      <stop offset="100%" style="stop-color:#14304e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Shield body -->
+  <path d="M 5,12 L 95,12 L 95,62 C 95,90 72,108 50,113 C 28,108 5,90 5,62 Z"
+        fill="url(#shieldGrad)"/>
+
+  <!-- Gold border -->
+  <path d="M 5,12 L 95,12 L 95,62 C 95,90 72,108 50,113 C 28,108 5,90 5,62 Z"
+        fill="none" stroke="#C8972A" stroke-width="2.5"/>
+
+  <!-- Inner thin teal border inset -->
+  <path d="M 10,17 L 90,17 L 90,62 C 90,86 70,103 50,108 C 30,103 10,86 10,62 Z"
+        fill="none" stroke="#0D7377" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- W lettermark in gold -->
+  <polyline points="24,28 33,70 50,46 67,70 76,28"
+            fill="none" stroke="#C8972A" stroke-width="5.5"
+            stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- Gold accent bar -->
+  <line x1="27" y1="80" x2="73" y2="80"
+        stroke="#C8972A" stroke-width="1.2" opacity="0.65"/>
+
+  <!-- Teal dot at shield point -->
+  <circle cx="50" cy="91" r="2.8" fill="#0D7377"/>
+</svg>

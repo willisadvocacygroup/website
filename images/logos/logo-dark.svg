@@ -1,0 +1,58 @@
+<!-- Willis Advocacy Group — Horizontal Logo (Dark Backgrounds) -->
+<!-- Use: navy header, dark hero overlays, dark-mode contexts -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 80" role="img" aria-label="Willis Advocacy Group — People Over Profits.">
+  <title>Willis Advocacy Group</title>
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap');
+      .wag-name { font-family: 'Playfair Display', Georgia, 'Times New Roman', serif; }
+      .wag-tagline { font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; }
+      .wag-sub { font-family: 'JetBrains Mono', 'Courier New', Courier, monospace; }
+    </style>
+  </defs>
+
+  <!-- Shield icon nested SVG — white outline version for dark backgrounds -->
+  <svg x="8" y="9" width="53" height="61" viewBox="0 0 100 115">
+    <!-- Subtle shield fill -->
+    <path d="M 5,12 L 95,12 L 95,62 C 95,90 72,108 50,113 C 28,108 5,90 5,62 Z"
+          fill="white" opacity="0.08"/>
+    <!-- White shield border -->
+    <path d="M 5,12 L 95,12 L 95,62 C 95,90 72,108 50,113 C 28,108 5,90 5,62 Z"
+          fill="none" stroke="white" stroke-width="2.5" opacity="0.9"/>
+    <!-- Gold inner accent border -->
+    <path d="M 10,17 L 90,17 L 90,62 C 90,86 70,103 50,108 C 30,103 10,86 10,62 Z"
+          fill="none" stroke="#F0C060" stroke-width="0.8" opacity="0.5"/>
+    <!-- W in light gold -->
+    <polyline points="24,28 33,70 50,46 67,70 76,28"
+              fill="none" stroke="#F0C060" stroke-width="5.5"
+              stroke-linejoin="round" stroke-linecap="round"/>
+    <line x1="27" y1="80" x2="73" y2="80"
+          stroke="#F0C060" stroke-width="1.2" opacity="0.65"/>
+    <circle cx="50" cy="91" r="2.8" fill="#14A085"/>
+  </svg>
+
+  <!-- Gold separator -->
+  <line x1="73" y1="14" x2="73" y2="66" stroke="#C8972A" stroke-width="1" opacity="0.6"/>
+
+  <!-- Brand name — white text -->
+  <text x="83" y="38"
+        class="wag-name"
+        font-size="22" font-weight="700"
+        fill="white"
+        letter-spacing="0.3">Willis Advocacy Group</text>
+
+  <!-- Tagline — gold -->
+  <text x="83" y="56"
+        class="wag-tagline"
+        font-size="10.5" font-weight="400"
+        fill="#F0C060"
+        letter-spacing="0.12em">People Over Profits.</text>
+
+  <!-- Licensed line — muted white -->
+  <text x="83" y="69"
+        class="wag-sub"
+        font-size="7.5" font-weight="400"
+        fill="rgba(255,255,255,0.5)"
+        letter-spacing="0.08em">Licensed Medicare &amp; Life Insurance Broker · Webster, MA</text>
+
+</svg>

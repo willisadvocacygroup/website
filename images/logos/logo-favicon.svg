@@ -1,0 +1,22 @@
+<!-- Willis Advocacy Group — Favicon -->
+<!-- Use: browser tab, bookmark icon -->
+<!-- Designed to read clearly at 16px, 32px, 64px -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Willis Advocacy Group">
+  <title>WAG</title>
+
+  <!-- Navy background square -->
+  <rect width="32" height="32" fill="#0C1B2E" rx="4"/>
+
+  <!-- Gold border ring -->
+  <rect x="1" y="1" width="30" height="30" fill="none" stroke="#C8972A" stroke-width="1" rx="3.5"/>
+
+  <!-- W letterform — bold, centered, readable at small sizes -->
+  <!-- Scaled to fit 32x32: keep it simple -->
+  <polyline points="5,8 9,22 16,14 23,22 27,8"
+            fill="none" stroke="#C8972A" stroke-width="3"
+            stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- Small teal accent at bottom -->
+  <line x1="9" y1="27" x2="23" y2="27" stroke="#0D7377" stroke-width="1.5" stroke-linecap="round"/>
+
+</svg>

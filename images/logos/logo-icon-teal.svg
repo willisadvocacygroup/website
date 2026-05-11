@@ -1,0 +1,49 @@
+<!-- Willis Advocacy Group — Shield Icon on Teal Background -->
+<!-- Use: social media profile photo, app icon, branded square tile -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Willis Advocacy Group">
+  <title>Willis Advocacy Group</title>
+
+  <!-- Teal background with rounded corners -->
+  <rect width="120" height="120" fill="#0D7377" rx="16"/>
+
+  <!-- Subtle inner gradient overlay -->
+  <rect width="120" height="120" fill="url(#tealOverlay)" rx="16" opacity="0.3"/>
+  <defs>
+    <radialGradient id="tealOverlay" cx="30%" cy="25%" r="70%">
+      <stop offset="0%" style="stop-color:#14A085"/>
+      <stop offset="100%" style="stop-color:#0C1B2E"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Shield group, centered in 120x120 -->
+  <!-- Shield is 100 wide x 115 tall in its own space -->
+  <!-- Scale to fit ~95px wide: scale = 95/100 = 0.95 -->
+  <!-- Centered: translateX = (120 - 95)/2 = 12.5, translateY = (120 - 109.25)/2 = 5.4 -->
+  <g transform="translate(12.5, 3) scale(0.95)">
+
+    <!-- Shield body — semi-transparent navy -->
+    <path d="M 5,12 L 95,12 L 95,62 C 95,90 72,108 50,113 C 28,108 5,90 5,62 Z"
+          fill="#0C1B2E" opacity="0.5"/>
+
+    <!-- White/cream shield border -->
+    <path d="M 5,12 L 95,12 L 95,62 C 95,90 72,108 50,113 C 28,108 5,90 5,62 Z"
+          fill="none" stroke="white" stroke-width="2.5" opacity="0.9"/>
+
+    <!-- Gold inner border -->
+    <path d="M 10,17 L 90,17 L 90,62 C 90,86 70,103 50,108 C 30,103 10,86 10,62 Z"
+          fill="none" stroke="#F0C060" stroke-width="0.8" opacity="0.5"/>
+
+    <!-- W lettermark in light gold -->
+    <polyline points="24,28 33,70 50,46 67,70 76,28"
+              fill="none" stroke="#F0C060" stroke-width="5.5"
+              stroke-linejoin="round" stroke-linecap="round"/>
+
+    <!-- Gold accent bar -->
+    <line x1="27" y1="80" x2="73" y2="80"
+          stroke="#F0C060" stroke-width="1.2" opacity="0.65"/>
+
+    <!-- White dot at shield point -->
+    <circle cx="50" cy="91" r="2.8" fill="white" opacity="0.85"/>
+
+  </g>
+</svg>

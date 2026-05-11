@@ -1,0 +1,48 @@
+<!-- Willis Advocacy Group — Navigation Bar Logo (Compact) -->
+<!-- Use: website nav header — inline SVG recommended for crisp font rendering -->
+<!-- Optimized for 48px height, ~260px width -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 48" role="img" aria-label="Willis Advocacy Group">
+  <title>Willis Advocacy Group</title>
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=JetBrains+Mono:wght@400&amp;display=swap');
+      .wag-name { font-family: 'Playfair Display', Georgia, serif; }
+      .wag-tagline { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+    </style>
+    <linearGradient id="shieldGradN" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0C1B2E"/>
+      <stop offset="100%" style="stop-color:#14304e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Shield: scaled to 34x39 to fit 48px height with padding -->
+  <svg x="4" y="4" width="34" height="39" viewBox="0 0 100 115">
+    <path d="M 5,12 L 95,12 L 95,62 C 95,90 72,108 50,113 C 28,108 5,90 5,62 Z"
+          fill="url(#shieldGradN)"/>
+    <path d="M 5,12 L 95,12 L 95,62 C 95,90 72,108 50,113 C 28,108 5,90 5,62 Z"
+          fill="none" stroke="#C8972A" stroke-width="3"/>
+    <polyline points="24,28 33,70 50,46 67,70 76,28"
+              fill="none" stroke="#C8972A" stroke-width="6"
+              stroke-linejoin="round" stroke-linecap="round"/>
+    <line x1="27" y1="80" x2="73" y2="80"
+          stroke="#C8972A" stroke-width="1.5" opacity="0.65"/>
+    <circle cx="50" cy="91" r="3" fill="#0D7377"/>
+  </svg>
+
+  <!-- Gold separator -->
+  <line x1="45" y1="8" x2="45" y2="40" stroke="#C8972A" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- Brand name — two lines for compact fit -->
+  <text x="53" y="22"
+        class="wag-name"
+        font-size="16" font-weight="700"
+        fill="#0C1B2E"
+        letter-spacing="0.2">Willis Advocacy Group</text>
+
+  <text x="53" y="36"
+        class="wag-tagline"
+        font-size="8" font-weight="400"
+        fill="#0D7377"
+        letter-spacing="0.14em">People Over Profits.</text>
+
+</svg>

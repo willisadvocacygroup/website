@@ -1,0 +1,11 @@
+{
+  "name": "wag-logo-converter",
+  "version": "1.0.0",
+  "description": "Willis Advocacy Group — PNG logo converter",
+  "scripts": {
+    "convert": "node convert-to-png.js"
+  },
+  "dependencies": {
+    "puppeteer": "^21.0.0"
+  }
+}
