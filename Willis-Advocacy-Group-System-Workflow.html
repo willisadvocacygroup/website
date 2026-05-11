@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Willis Advocacy Group — Lead-to-Client Automation Workflow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Brand Variables ── */
+:root {
+  --navy:   #0C1B2E;
+  --teal:   #0D7377;
+  --teal2:  #14A085;
+  --gold:   #C8972A;
+  --gold2:  #F0C060;
+  --cream:  #FAF7F2;
+  --white:  #FFFFFF;
+  --muted:  #5a7080;
+  --red:    #922b21;
+  --phase1: #C8972A;
+  --phase2: #0D7377;
+  --phase3: #14A085;
+  --phase4: #1a6b8a;
+  --phase5: #1a4a7a;
+  --phase6: #7b241c;
+  --phase7: #C8972A;
+  --phase8: #0C1B2E;
+  --phase9: #0D7377;
+  --phase10: #2e7d32;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--cream);
+  color: var(--navy);
+  font-size: 11pt;
+  line-height: 1.5;
+}
+
+/* ── Page Layout ── */
+.page {
+  width: 8.5in;
+  min-height: 11in;
+  margin: 0 auto 0.5in;
+  background: white;
+  padding: 0.6in 0.65in;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.12);
+  position: relative;
+}
+
+.page-break { page-break-before: always; }
+
+/* ── Typography ── */
+h1 { font-family: 'Playfair Display', serif; font-size: 32pt; color: var(--navy); }
+h2 { font-family: 'Playfair Display', serif; font-size: 18pt; color: var(--navy); margin-bottom: 6pt; }
+h3 { font-family: 'Nunito', sans-serif; font-size: 12pt; font-weight: 800; color: var(--navy); margin-bottom: 4pt; }
+h4 { font-family: 'Nunito', sans-serif; font-size: 10pt; font-weight: 700; color: var(--navy); margin-bottom: 3pt; }
+.mono { font-family: 'JetBrains Mono', monospace; font-size: 8.5pt; }
+
+/* ── Cover Page ── */
+.cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 10in;
+}
+.cover-header { text-align: center; padding-top: 0.8in; }
+.cover-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 28pt;
+  color: var(--navy);
+  letter-spacing: 0.02em;
+  margin-bottom: 4pt;
+}
+.cover-brand span { color: var(--teal); }
+.cover-tagline {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10pt;
+  color: var(--gold);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.gold-rule {
+  width: 80px;
+  height: 3px;
+  background: var(--gold);
+  margin: 16pt auto;
+}
+.cover-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 38pt;
+  color: var(--navy);
+  line-height: 1.15;
+  margin-bottom: 12pt;
+}
+.cover-subtitle {
+  font-size: 14pt;
+  color: var(--muted);
+  max-width: 5in;
+  margin: 0 auto;
+}
+.cover-visual {
+  background: var(--navy);
+  border-radius: 12pt;
+  padding: 32pt 24pt;
+  margin: 0.4in 0;
+}
+.mini-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+.mini-node {
+  background: rgba(255,255,255,0.08);
+  border: 1.5px solid rgba(200,151,42,0.5);
+  border-radius: 6pt;
+  padding: 8pt 10pt;
+  text-align: center;
+  min-width: 70pt;
+}
+.mini-node .icon { font-size: 16pt; display: block; margin-bottom: 4pt; }
+.mini-node .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7pt;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.mini-arrow {
+  color: var(--gold);
+  font-size: 18pt;
+  padding: 0 4pt;
+  line-height: 1;
+}
+.cover-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12pt;
+  padding-top: 0.3in;
+  border-top: 1px solid rgba(12,27,46,0.1);
+}
+.meta-item { text-align: center; }
+.meta-label { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 3pt; }
+.meta-value { font-weight: 700; color: var(--navy); font-size: 10.5pt; }
+.cover-footer {
+  text-align: center;
+  font-size: 8pt;
+  color: var(--muted);
+  border-top: 1px solid rgba(12,27,46,0.1);
+  padding-top: 12pt;
+}
+
+/* ── Section Headers ── */
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7.5pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 4pt;
+}
+.section-divider {
+  width: 48px;
+  height: 3px;
+  background: var(--gold);
+  margin-bottom: 16pt;
+}
+
+/* ── Phase Badge ── */
+.phase-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8pt;
+  background: var(--navy);
+  color: white;
+  border-radius: 4pt;
+  padding: 4pt 10pt;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8pt;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8pt;
+}
+.phase-badge .dot {
+  width: 8pt;
+  height: 8pt;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* ── Overview Flow ── */
+.overview-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.flow-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+.flow-node {
+  flex: 1;
+  border-radius: 8pt;
+  padding: 10pt 8pt;
+  text-align: center;
+  position: relative;
+}
+.flow-node .fn-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7pt;
+  opacity: 0.7;
+  margin-bottom: 4pt;
+}
+.flow-node .fn-icon { font-size: 20pt; margin-bottom: 4pt; }
+.flow-node .fn-title { font-weight: 800; font-size: 9pt; line-height: 1.2; }
+.flow-node .fn-time { font-family: 'JetBrains Mono', monospace; font-size: 7pt; opacity: 0.8; margin-top: 3pt; }
+.flow-arrow-down {
+  text-align: center;
+  font-size: 18pt;
+  color: var(--gold);
+  line-height: 1;
+  padding: 3pt 0;
+}
+.flow-arrow-right {
+  display: flex;
+  align-items: center;
+  font-size: 14pt;
+  color: var(--gold);
+  padding: 0 4pt;
+  line-height: 1;
+}
+
+/* ── Traffic Sources Grid ── */
+.traffic-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8pt;
+  margin-top: 10pt;
+}
+.traffic-card {
+  border-radius: 8pt;
+  padding: 10pt 8pt;
+  text-align: center;
+}
+.traffic-card .tc-icon { font-size: 22pt; margin-bottom: 4pt; }
+.traffic-card .tc-name { font-weight: 700; font-size: 9pt; margin-bottom: 2pt; }
+.traffic-card .tc-type { font-family: 'JetBrains Mono', monospace; font-size: 7pt; opacity: 0.75; }
+.traffic-category {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4pt 8pt;
+  border-radius: 4pt;
+  margin-bottom: 6pt;
+  display: inline-block;
+}
+
+/* ── Step Cards ── */
+.steps-container { display: flex; flex-direction: column; gap: 8pt; margin-top: 8pt; }
+.step-card {
+  display: flex;
+  gap: 12pt;
+  align-items: flex-start;
+  padding: 12pt;
+  border-radius: 8pt;
+  border-left: 4pt solid;
+}
+.step-num {
+  min-width: 28pt;
+  height: 28pt;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 13pt;
+  color: white;
+  flex-shrink: 0;
+}
+.step-body { flex: 1; }
+.step-title { font-weight: 800; font-size: 11pt; margin-bottom: 3pt; }
+.step-desc { font-size: 9.5pt; color: #3a4a5a; line-height: 1.5; }
+.step-timing {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7.5pt;
+  padding: 2pt 6pt;
+  border-radius: 3pt;
+  background: rgba(0,0,0,0.07);
+  display: inline-block;
+  margin-top: 4pt;
+}
+.step-tags { display: flex; gap: 4pt; flex-wrap: wrap; margin-top: 5pt; }
+.tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7pt;
+  padding: 2pt 6pt;
+  border-radius: 3pt;
+  background: rgba(12,27,46,0.08);
+  color: var(--navy);
+}
+
+/* ── Decision Box ── */
+.decision-box {
+  background: #fff8e7;
+  border: 2px solid var(--gold);
+  border-radius: 8pt;
+  padding: 10pt 14pt;
+  margin: 8pt 0;
+  position: relative;
+}
+.decision-box::before {
+  content: '◆ DECISION';
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7pt;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  display: block;
+  margin-bottom: 5pt;
+}
+.decision-branches {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8pt;
+  margin-top: 8pt;
+}
+.branch {
+  border-radius: 6pt;
+  padding: 8pt;
+  font-size: 9pt;
+}
+.branch-yes { background: #e8f5e9; border: 1px solid #66bb6a; }
+.branch-no  { background: #fce4ec; border: 1px solid #ef9a9a; }
+.branch-label { font-weight: 700; font-size: 8pt; margin-bottom: 3pt; }
+
+/* ── Sequence Timeline ── */
+.sequence-timeline { margin-top: 10pt; }
+.timeline-item {
+  display: flex;
+  gap: 12pt;
+  align-items: flex-start;
+  padding-bottom: 8pt;
+  position: relative;
+}
+.timeline-item:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 16pt;
+  top: 32pt;
+  bottom: 0;
+  width: 2px;
+  background: rgba(13,115,119,0.2);
+}
+.tl-dot {
+  width: 32pt;
+  height: 32pt;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: 800;
+  font-size: 11pt;
+  color: white;
+  z-index: 1;
+}
+.tl-sms { background: var(--teal); }
+.tl-email { background: var(--navy); }
+.tl-body { flex: 1; padding-top: 4pt; }
+.tl-header { display: flex; align-items: center; gap: 8pt; margin-bottom: 3pt; }
+.tl-type-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7pt;
+  padding: 2pt 6pt;
+  border-radius: 3pt;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.tl-sms-badge { background: rgba(13,115,119,0.12); color: var(--teal); }
+.tl-email-badge { background: rgba(12,27,46,0.1); color: var(--navy); }
+.tl-subject { font-weight: 700; font-size: 10pt; }
+.tl-delay {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7.5pt;
+  color: var(--gold);
+  font-weight: 600;
+}
+.tl-preview { font-size: 9pt; color: var(--muted); font-style: italic; margin-top: 2pt; }
+
+/* ── Info Box ── */
+.info-box {
+  border-radius: 8pt;
+  padding: 10pt 14pt;
+  margin: 8pt 0;
+  display: flex;
+  gap: 10pt;
+  align-items: flex-start;
+}
+.info-box .ib-icon { font-size: 18pt; flex-shrink: 0; }
+.info-box .ib-content h4 { margin-bottom: 3pt; }
+.info-box .ib-content p { font-size: 9.5pt; }
+.info-teal { background: rgba(13,115,119,0.08); border: 1px solid rgba(13,115,119,0.25); }
+.info-gold { background: rgba(200,151,42,0.08); border: 1px solid rgba(200,151,42,0.3); }
+.info-red  { background: rgba(146,43,33,0.06); border: 1px solid rgba(146,43,33,0.2); }
+.info-navy { background: rgba(12,27,46,0.06); border: 1px solid rgba(12,27,46,0.15); }
+
+/* ── Two-Column ── */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14pt; margin-top: 8pt; }
+.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; margin-top: 8pt; }
+
+/* ── System Map ── */
+.system-map {
+  background: var(--navy);
+  border-radius: 10pt;
+  padding: 20pt;
+  margin: 10pt 0;
+}
+.map-row {
+  display: flex;
+  align-items: center;
+  gap: 8pt;
+  margin-bottom: 10pt;
+}
+.map-row:last-child { margin-bottom: 0; }
+.map-lane-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7pt;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  width: 60pt;
+  flex-shrink: 0;
+  text-align: right;
+  padding-right: 8pt;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+.map-nodes {
+  display: flex;
+  align-items: center;
+  gap: 4pt;
+  flex: 1;
+  flex-wrap: wrap;
+}
+.map-node {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(200,151,42,0.3);
+  border-radius: 5pt;
+  padding: 5pt 8pt;
+  font-size: 8pt;
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  min-width: 50pt;
+}
+.map-node.active { background: rgba(13,115,119,0.3); border-color: var(--teal); color: white; }
+.map-node.ai { background: rgba(20,160,133,0.25); border-color: var(--teal2); }
+.map-node.human { background: rgba(200,151,42,0.2); border-color: var(--gold); }
+.map-node.compliance { background: rgba(146,43,33,0.2); border-color: #e74c3c; }
+.map-arrow { color: rgba(200,151,42,0.7); font-size: 12pt; }
+
+/* ── Application Flow ── */
+.app-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 8pt;
+}
+.app-step {
+  display: flex;
+  gap: 0;
+  position: relative;
+}
+.app-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 32pt;
+  flex-shrink: 0;
+}
+.app-connector .conn-dot {
+  width: 14pt;
+  height: 14pt;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7pt;
+  font-weight: 800;
+  color: white;
+  flex-shrink: 0;
+  margin-top: 10pt;
+}
+.app-connector .conn-line {
+  width: 2px;
+  flex: 1;
+  min-height: 12pt;
+}
+.app-content {
+  flex: 1;
+  padding: 8pt 10pt;
+  border-radius: 6pt;
+  margin: 4pt 0;
+  margin-left: 6pt;
+}
+.app-content h4 { font-size: 10pt; margin-bottom: 3pt; }
+.app-content p { font-size: 9pt; color: #3a4a5a; }
+
+/* ── KPI Cards ── */
+.kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8pt; margin-top: 10pt; }
+.kpi-card {
+  border-radius: 8pt;
+  padding: 10pt;
+  text-align: center;
+}
+.kpi-num { font-family: 'Playfair Display', serif; font-size: 22pt; font-weight: 700; }
+.kpi-label { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.8; margin-top: 3pt; }
+
+/* ── Legend ── */
+.legend { display: flex; gap: 12pt; flex-wrap: wrap; margin: 10pt 0; }
+.legend-item { display: flex; align-items: center; gap: 5pt; font-size: 8.5pt; }
+.legend-dot { width: 10pt; height: 10pt; border-radius: 50%; flex-shrink: 0; }
+
+/* ── Page Header ── */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10pt;
+  border-bottom: 2px solid var(--navy);
+  margin-bottom: 16pt;
+}
+.ph-brand { font-family: 'JetBrains Mono', monospace; font-size: 8pt; color: var(--muted); letter-spacing: 0.1em; }
+.ph-title { font-family: 'Playfair Display', serif; font-size: 14pt; color: var(--navy); }
+.ph-page { font-family: 'JetBrains Mono', monospace; font-size: 8pt; color: var(--gold); }
+
+/* ── Compliance Banner ── */
+.compliance-banner {
+  background: #7b241c;
+  color: white;
+  border-radius: 6pt;
+  padding: 8pt 12pt;
+  font-size: 9pt;
+  margin: 8pt 0;
+  display: flex;
+  align-items: center;
+  gap: 8pt;
+}
+.compliance-banner .cb-icon { font-size: 14pt; flex-shrink: 0; }
+
+/* ── Print Styles ── */
+@media print {
+  body { background: white; }
+  .page {
+    width: 100%;
+    margin: 0;
+    padding: 0.5in 0.6in;
+    box-shadow: none;
+    page-break-after: always;
+  }
+  .page:last-child { page-break-after: avoid; }
+  .page-break { page-break-before: always; }
+  @page { size: letter; margin: 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PAGE 1 — COVER -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="cover">
+    <div class="cover-header">
+      <div class="cover-brand">Willis <span>Advocacy</span> Group</div>
+      <div class="cover-tagline">People Over Profits.</div>
+      <div class="gold-rule"></div>
+      <div class="cover-title">Lead-to-Client<br>Automation Workflow</div>
+      <div class="cover-subtitle">Complete system documentation — from first marketing impression to carrier-submitted application and beyond</div>
+    </div>
+
+    <div class="cover-visual">
+      <div class="mini-flow">
+        <div class="mini-node"><span class="icon">📣</span><span class="label">Marketing</span></div>
+        <div class="mini-arrow">→</div>
+        <div class="mini-node"><span class="icon">🌐</span><span class="label">Website</span></div>
+        <div class="mini-arrow">→</div>
+        <div class="mini-node"><span class="icon">⚡</span><span class="label">Automation</span></div>
+        <div class="mini-arrow">→</div>
+        <div class="mini-node"><span class="icon">🤖</span><span class="label">Iris AI</span></div>
+        <div class="mini-arrow">→</div>
+        <div class="mini-node"><span class="icon">📞</span><span class="label">Uhia Call</span></div>
+        <div class="mini-arrow">→</div>
+        <div class="mini-node"><span class="icon">📋</span><span class="label">App</span></div>
+        <div class="mini-arrow">→</div>
+        <div class="mini-node"><span class="icon">✅</span><span class="label">Client</span></div>
+      </div>
+      <div style="text-align:center;margin-top:16pt;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:8pt;color:rgba(240,192,96,0.8);letter-spacing:0.15em;">10 PHASES · FULLY AUTOMATED · 60-SECOND RESPONSE TIME</span>
+      </div>
+    </div>
+
+    <div class="cover-meta">
+      <div class="meta-item">
+        <div class="meta-label">Organization</div>
+        <div class="meta-value">Willis Advocacy Group</div>
+        <div style="font-size:8pt;color:var(--muted);">UKW Consulting Inc.</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Version</div>
+        <div class="meta-value">1.0 — May 2026</div>
+        <div style="font-size:8pt;color:var(--muted);">Confidential — Internal Use</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Coverage States</div>
+        <div class="meta-value">CT · NJ · NY · NC</div>
+        <div style="font-size:8pt;color:var(--muted);">FL · TX · GA · MA</div>
+      </div>
+    </div>
+
+    <div class="cover-footer">
+      Willis Advocacy Group (UKW Consulting Inc.) · Webster, MA · (774) 446-0701 · info@willisadvocacygroup.com · willisadvocacygroup.com<br>
+      Licensed Medicare &amp; Life Insurance Broker · Not affiliated with or endorsed by Medicare or any government agency.
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PAGE 2 — SYSTEM OVERVIEW (THE BIG PICTURE) -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="page-header">
+    <div class="ph-brand">WILLIS ADVOCACY GROUP</div>
+    <div class="ph-title">System Overview</div>
+    <div class="ph-page">Page 2 of 10</div>
+  </div>
+
+  <div class="section-label">The Complete Picture</div>
+  <h2>End-to-End Automation Map</h2>
+  <div class="section-divider"></div>
+
+  <!-- System Map Swimlane -->
+  <div class="system-map">
+    <div class="map-row">
+      <div class="map-lane-label">Marketing</div>
+      <div class="map-nodes">
+        <div class="map-node active">Facebook Ads</div>
+        <div class="map-arrow">→</div>
+        <div class="map-node active">Google Ads</div>
+        <div class="map-arrow">→</div>
+        <div class="map-node active">Organic SEO</div>
+        <div class="map-arrow">→</div>
+        <div class="map-node active">Referrals</div>
+        <div class="map-arrow">→</div>
+        <div class="map-node active">Direct Mail</div>
+        <div class="map-arrow">→</div>
+        <div class="map-node active">Outreach</div>
+      </div>
+    </div>
+    <div style="text-align:center;color:rgba(200,151,42,0.5);font-size:14pt;margin:4pt 0;">↓</div>
+    <div class="map-row">
+      <div class="map-lane-label">Entry Point</div>
+      <div class="map-nodes">
+        <div class="map-node active" style="flex:1;text-align:center;">🌐 willisadvocacygroup.com — Lead Form</div>
+      </div>
+    </div>
+    <div style="text-align:center;color:rgba(200,151,42,0.5);font-size:14pt;margin:4pt 0;">↓</div>
+    <div class="map-row">
+      <div class="map-lane-label">Infrastructure</div>
+      <div class="map-nodes">
+        <div class="map-node">TrustedForm<br>TCPA Cert</div>
+        <div class="map-arrow">→</div>
+        <div class="map-node">Railway<br>Webhook</div>
+        <div class="map-arrow">→</div>
+        <div class="map-node">GHL<br>Contact</div>
+        <div class="map-arrow">→</div>
+        <div class="map-node">GHL<br>Pipeline</div>
+        <div class="map-arrow">→</div>
+        <div class="map-node">Lead<br>Log</div>
+      </div>
+    </div>
+    <div style="text-align:center;color:rgba(200,151,42,0.5);font-size:14pt;margin:4pt 0;">↓</div>
+    <div class="map-row">
+      <div class="map-lane-label">AI Layer</div>
+      <div class="map-nodes">
+        <div class="map-node ai">Synthflow<br>Iris Call<br>&lt;60 sec</div>
+        <div class="map-arrow">→</div>
+        <div class="map-node ai">SMS<br>Confirm<br>Instant</div>
+        <div class="map-arrow">→</div>
+        <div class="map-node ai">Email<br>Confirm<br>1 Hour</div>
+        <div class="map-arrow">→</div>
+        <div class="map-node ai">7-Touch<br>Nurture<br>14 Days</div>
+        <div class="map-arrow">→</div>
+        <div class="map-node ai">Calendar<br>Booking</div>
+      </div>
+    </div>
+    <div style="text-align:center;color:rgba(200,151,42,0.5);font-size:14pt;margin:4pt 0;">↓</div>
+    <div class="map-row">
+      <div class="map-lane-label">Compliance</div>
+      <div class="map-nodes">
+        <div class="map-node compliance">SOA Sent<br>-48 Hours</div>
+        <div class="map-arrow">→</div>
+        <div class="map-node compliance">SOA<br>Signed</div>
+        <div class="map-arrow">→</div>
+        <div class="map-node compliance">Call<br>Recorded</div>
+        <div class="map-arrow">→</div>
+        <div class="map-node compliance">TPMO<br>Disclosure</div>
+      </div>
+    </div>
+    <div style="text-align:center;color:rgba(200,151,42,0.5);font-size:14pt;margin:4pt 0;">↓</div>
+    <div class="map-row">
+      <div class="map-lane-label">Uhia</div>
+      <div class="map-nodes">
+        <div class="map-node human">Pre-Call<br>Brief</div>
+        <div class="map-arrow">→</div>
+        <div class="map-node human">Consultation<br>Call</div>
+        <div class="map-arrow">→</div>
+        <div class="map-node human">Plan<br>Selection</div>
+        <div class="map-arrow">→</div>
+        <div class="map-node human">App<br>Submitted</div>
+        <div class="map-arrow">→</div>
+        <div class="map-node human">Commission<br>Earned</div>
+      </div>
+    </div>
+    <div style="text-align:center;color:rgba(200,151,42,0.5);font-size:14pt;margin:4pt 0;">↓</div>
+    <div class="map-row">
+      <div class="map-lane-label">Post-Close</div>
+      <div class="map-nodes">
+        <div class="map-node">Welcome<br>Sequence</div>
+        <div class="map-arrow">→</div>
+        <div class="map-node">AgencyBloc<br>CRM Entry</div>
+        <div class="map-arrow">→</div>
+        <div class="map-node">Annual<br>Review</div>
+        <div class="map-arrow">→</div>
+        <div class="map-node">Referral<br>Request</div>
+        <div class="map-arrow">→</div>
+        <div class="map-node">AEP<br>Outreach</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:rgba(13,115,119,0.6);"></div> AI Automated</div>
+    <div class="legend-item"><div class="legend-dot" style="background:rgba(200,151,42,0.6);"></div> Uhia — Human Action</div>
+    <div class="legend-item"><div class="legend-dot" style="background:rgba(146,43,33,0.6);"></div> Compliance Required</div>
+    <div class="legend-item"><div class="legend-dot" style="background:rgba(12,27,46,0.4);"></div> Infrastructure / Backend</div>
+  </div>
+
+  <div class="kpi-grid" style="margin-top:12pt;">
+    <div class="kpi-card" style="background:rgba(13,115,119,0.08);border:1px solid rgba(13,115,119,0.2);">
+      <div class="kpi-num" style="color:var(--teal);">&lt;60s</div>
+      <div class="kpi-label" style="color:var(--teal);">First Contact</div>
+    </div>
+    <div class="kpi-card" style="background:rgba(200,151,42,0.08);border:1px solid rgba(200,151,42,0.2);">
+      <div class="kpi-num" style="color:var(--gold);">14</div>
+      <div class="kpi-label" style="color:var(--gold);">Day Nurture</div>
+    </div>
+    <div class="kpi-card" style="background:rgba(12,27,46,0.06);border:1px solid rgba(12,27,46,0.15);">
+      <div class="kpi-num" style="color:var(--navy);">7</div>
+      <div class="kpi-label" style="color:var(--navy);">Touchpoints</div>
+    </div>
+    <div class="kpi-card" style="background:rgba(20,160,133,0.08);border:1px solid rgba(20,160,133,0.2);">
+      <div class="kpi-num" style="color:var(--teal2);">100%</div>
+      <div class="kpi-label" style="color:var(--teal2);">Auto-Logged</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PAGE 3 — TRAFFIC SOURCES (PHASE 1) -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="page-header">
+    <div class="ph-brand">WILLIS ADVOCACY GROUP</div>
+    <div class="ph-title">Phase 1 — Traffic Sources</div>
+    <div class="ph-page">Page 3 of 10</div>
+  </div>
+
+  <div class="phase-badge"><span class="dot" style="background:var(--phase1);"></span>PHASE 01 — LEAD ACQUISITION</div>
+  <h2>Where Leads Come From</h2>
+  <div class="section-divider"></div>
+  <p style="margin-bottom:12pt;font-size:10pt;color:var(--muted);">Every lead that enters the system originates from one of the sources below. All sources converge at a single entry point: the lead form at willisadvocacygroup.com.</p>
+
+  <!-- PAID TRAFFIC -->
+  <div style="margin-bottom:14pt;">
+    <div class="traffic-category" style="background:rgba(200,151,42,0.12);color:var(--gold);">💰 Paid Traffic</div>
+    <div class="traffic-grid">
+      <div class="traffic-card" style="background:rgba(24,119,242,0.07);border:1px solid rgba(24,119,242,0.2);">
+        <div class="tc-icon">📘</div>
+        <div class="tc-name">Facebook Ads</div>
+        <div class="tc-type">Paid Social</div>
+        <div style="font-size:8pt;margin-top:5pt;color:#3a4a5a;">Target: 60-75, dual eligible, Medicare keywords. CT/NJ/NY/FL primary.</div>
+      </div>
+      <div class="traffic-card" style="background:rgba(229,57,53,0.06);border:1px solid rgba(229,57,53,0.2);">
+        <div class="tc-icon">📷</div>
+        <div class="tc-name">Instagram Ads</div>
+        <div class="tc-type">Paid Social</div>
+        <div style="font-size:8pt;margin-top:5pt;color:#3a4a5a;">Reels + story ads. Caregivers of seniors (45-55 age band).</div>
+      </div>
+      <div class="traffic-card" style="background:rgba(66,133,244,0.07);border:1px solid rgba(66,133,244,0.2);">
+        <div class="tc-icon">🔍</div>
+        <div class="tc-name">Google Search Ads</div>
+        <div class="tc-type">Paid Search</div>
+        <div style="font-size:8pt;margin-top:5pt;color:#3a4a5a;">"Medicare broker [city]", "life insurance preexisting conditions".</div>
+      </div>
+      <div class="traffic-card" style="background:rgba(66,133,244,0.07);border:1px solid rgba(66,133,244,0.2);">
+        <div class="tc-icon">📍</div>
+        <div class="tc-name">Google Local Services</div>
+        <div class="tc-type">Paid Local</div>
+        <div style="font-size:8pt;margin-top:5pt;color:#3a4a5a;">Pay-per-lead. Insurance broker category. Highest local intent.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORGANIC TRAFFIC -->
+  <div style="margin-bottom:14pt;">
+    <div class="traffic-category" style="background:rgba(13,115,119,0.1);color:var(--teal);">🌱 Organic Traffic</div>
+    <div class="traffic-grid">
+      <div class="traffic-card" style="background:rgba(13,115,119,0.06);border:1px solid rgba(13,115,119,0.18);">
+        <div class="tc-icon">🌐</div>
+        <div class="tc-name">Google Organic SEO</div>
+        <div class="tc-type">Organic Search</div>
+        <div style="font-size:8pt;margin-top:5pt;color:#3a4a5a;">Long-tail Medicare + D-SNP keywords. Schema.org markup active.</div>
+      </div>
+      <div class="traffic-card" style="background:rgba(13,115,119,0.06);border:1px solid rgba(13,115,119,0.18);">
+        <div class="tc-icon">🗺️</div>
+        <div class="tc-name">Google Business Profile</div>
+        <div class="tc-type">Local SEO</div>
+        <div style="font-size:8pt;margin-top:5pt;color:#3a4a5a;">Map pack results for "Medicare broker near me". Webster, MA anchor.</div>
+      </div>
+      <div class="traffic-card" style="background:rgba(255,0,0,0.05);border:1px solid rgba(255,0,0,0.15);">
+        <div class="tc-icon">▶️</div>
+        <div class="tc-name">YouTube</div>
+        <div class="tc-type">Video Organic</div>
+        <div style="font-size:8pt;margin-top:5pt;color:#3a4a5a;">Medicare education videos. D-SNP explainers. Life insurance myth busters.</div>
+      </div>
+      <div class="traffic-card" style="background:rgba(10,102,194,0.06);border:1px solid rgba(10,102,194,0.18);">
+        <div class="tc-icon">💼</div>
+        <div class="tc-name">LinkedIn</div>
+        <div class="tc-type">Professional Organic</div>
+        <div style="font-size:8pt;margin-top:5pt;color:#3a4a5a;">Articles + posts. Social workers, case managers, healthcare referral partners.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REFERRAL + OUTREACH -->
+  <div style="margin-bottom:8pt;">
+    <div class="traffic-category" style="background:rgba(46,125,50,0.08);color:#2e7d32;">🤝 Referral &amp; Outreach</div>
+    <div class="traffic-grid">
+      <div class="traffic-card" style="background:rgba(46,125,50,0.05);border:1px solid rgba(46,125,50,0.18);">
+        <div class="tc-icon">👥</div>
+        <div class="tc-name">Client Referrals</div>
+        <div class="tc-type">Word of Mouth</div>
+        <div style="font-size:8pt;margin-top:5pt;color:#3a4a5a;">Automated referral request sequence triggered 30 days post-enrollment.</div>
+      </div>
+      <div class="traffic-card" style="background:rgba(46,125,50,0.05);border:1px solid rgba(46,125,50,0.18);">
+        <div class="tc-icon">🏥</div>
+        <div class="tc-name">Healthcare Partners</div>
+        <div class="tc-type">Professional Referral</div>
+        <div style="font-size:8pt;margin-top:5pt;color:#3a4a5a;">Doctors, social workers, case managers, community health workers.</div>
+      </div>
+      <div class="traffic-card" style="background:rgba(46,125,50,0.05);border:1px solid rgba(46,125,50,0.18);">
+        <div class="tc-icon">📬</div>
+        <div class="tc-name">Direct Mail</div>
+        <div class="tc-type">Outbound</div>
+        <div style="font-size:8pt;margin-top:5pt;color:#3a4a5a;">Targeted mailers to T65 (turning 65). QR code → landing page.</div>
+      </div>
+      <div class="traffic-card" style="background:rgba(46,125,50,0.05);border:1px solid rgba(46,125,50,0.18);">
+        <div class="tc-icon">📞</div>
+        <div class="tc-name">Outbound Calling</div>
+        <div class="tc-type">Outreach</div>
+        <div style="font-size:8pt;margin-top:5pt;color:#3a4a5a;">Community events, seminars, cold outreach to T65 list. DNC compliant.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-box info-gold" style="margin-top:10pt;">
+    <div class="ib-icon">🎯</div>
+    <div class="ib-content">
+      <h4>All Roads Lead to One Place</h4>
+      <p>Regardless of source, every lead lands on the same form at willisadvocacygroup.com. This creates a single entry point the entire automation system is built around — clean data, consistent tracking, zero missed leads.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PAGE 4 — LEAD ENTRY & INSTANT AUTOMATION (PHASES 2-3) -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="page-header">
+    <div class="ph-brand">WILLIS ADVOCACY GROUP</div>
+    <div class="ph-title">Phases 2–3 — Lead Entry &amp; Instant Automation</div>
+    <div class="ph-page">Page 4 of 10</div>
+  </div>
+
+  <div class="phase-badge"><span class="dot" style="background:var(--phase2);"></span>PHASE 02 — LEAD ENTRY</div>
+  <h2>The Moment a Lead Submits the Form</h2>
+  <div class="section-divider"></div>
+
+  <div class="steps-container">
+    <div class="step-card" style="background:rgba(13,115,119,0.05);border-left-color:var(--teal);">
+      <div class="step-num" style="background:var(--teal);">1</div>
+      <div class="step-body">
+        <div class="step-title">Lead Fills Out the Form</div>
+        <div class="step-desc">Prospect enters: First Name, Email, Phone, State, Interest (Medicare / Life Insurance / Both / Unsure). All fields validated in real-time. Form will not submit with bad data.</div>
+        <div class="step-tags">
+          <span class="tag">willisadvocacygroup.com/#review</span>
+          <span class="tag">Client-side validation</span>
+        </div>
+      </div>
+    </div>
+    <div class="step-card" style="background:rgba(13,115,119,0.05);border-left-color:var(--teal);">
+      <div class="step-num" style="background:var(--teal);">2</div>
+      <div class="step-body">
+        <div class="step-title">TrustedForm Records the Session</div>
+        <div class="step-desc">The moment the page loaded, TrustedForm began recording the session — keystrokes, mouse movements, the exact consent language displayed on screen. When the form submits, a certificate URL is captured and sent with the lead data. This is your TCPA proof of consent.</div>
+        <div class="step-tags">
+          <span class="tag">TCPA Protection</span>
+          <span class="tag">Certificate stored 5 years</span>
+          <span class="tag">xxTrustedFormCertUrl hidden field</span>
+        </div>
+      </div>
+    </div>
+    <div class="step-card" style="background:rgba(12,27,46,0.04);border-left-color:var(--navy);">
+      <div class="step-num" style="background:var(--navy);">3</div>
+      <div class="step-body">
+        <div class="step-title">Webhook Fires to Railway Server</div>
+        <div class="step-desc">Form data + TrustedForm cert URL posts to https://api.willisadvocacygroup.com/api/lead. Server validates data, logs the lead to a local backup file (redundant safety net), then fires all downstream actions simultaneously.</div>
+        <div class="step-tags">
+          <span class="tag">Railway Node.js server v1.3.0</span>
+          <span class="tag">Local leads.log backup</span>
+          <span class="tag">Response: 200ms</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:16pt;"></div>
+  <div class="phase-badge"><span class="dot" style="background:var(--phase3);"></span>PHASE 03 — INSTANT AUTOMATION (0–60 SECONDS)</div>
+  <h2>What Happens in the First Minute</h2>
+  <div class="section-divider"></div>
+
+  <div class="two-col">
+    <div>
+      <div class="steps-container">
+        <div class="step-card" style="background:rgba(20,160,133,0.06);border-left-color:var(--teal2);">
+          <div class="step-num" style="background:var(--teal2);">A</div>
+          <div class="step-body">
+            <div class="step-title">GHL Contact Created</div>
+            <div class="step-desc">Railway calls GHL Contacts API. A new contact is created with all lead data, tagged by interest and state.</div>
+            <div class="step-timing">⚡ Instant</div>
+          </div>
+        </div>
+        <div class="step-card" style="background:rgba(20,160,133,0.06);border-left-color:var(--teal2);">
+          <div class="step-num" style="background:var(--teal2);">B</div>
+          <div class="step-body">
+            <div class="step-title">Pipeline Opportunity Created</div>
+            <div class="step-desc">Contact is automatically placed in the correct pipeline stage based on interest field. Medicare → "Medicare Lead - New". Life → "Life Insurance Lead - New".</div>
+            <div class="step-timing">⚡ Instant</div>
+          </div>
+        </div>
+        <div class="step-card" style="background:rgba(20,160,133,0.06);border-left-color:var(--teal2);">
+          <div class="step-num" style="background:var(--teal2);">C</div>
+          <div class="step-body">
+            <div class="step-title">TrustedForm Cert Retained</div>
+            <div class="step-desc">Server calls TrustedForm API to permanently retain the consent certificate. Stored indefinitely as TCPA evidence.</div>
+            <div class="step-timing">⚡ Instant</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="steps-container">
+        <div class="step-card" style="background:rgba(200,151,42,0.07);border-left-color:var(--gold);">
+          <div class="step-num" style="background:var(--gold);">D</div>
+          <div class="step-body">
+            <div class="step-title">Synthflow Triggers Iris Call</div>
+            <div class="step-desc">GHL workflow detects new contact → fires Synthflow webhook → Iris AI agent calls the lead's phone number. Target: under 60 seconds from form submission.</div>
+            <div class="step-timing">🤖 &lt;60 seconds</div>
+          </div>
+        </div>
+        <div class="step-card" style="background:rgba(200,151,42,0.07);border-left-color:var(--gold);">
+          <div class="step-num" style="background:var(--gold);">E</div>
+          <div class="step-body">
+            <div class="step-title">Confirmation SMS Sent</div>
+            <div class="step-desc">GHL sends immediate SMS: "Hi [Name]! Willis Advocacy Group — we got your request. Uhia will call you within 1 business hour."</div>
+            <div class="step-timing">📱 Instant</div>
+          </div>
+        </div>
+        <div class="step-card" style="background:rgba(200,151,42,0.07);border-left-color:var(--gold);">
+          <div class="step-num" style="background:var(--gold);">F</div>
+          <div class="step-body">
+            <div class="step-title">Lead Sees Thank You Page</div>
+            <div class="step-desc">Browser redirects to branded confirmation page. "You're all set. Uhia will call you personally within 1 business hour." Includes phone number to call directly.</div>
+            <div class="step-timing">🌐 Instant</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PAGE 5 — IRIS AI AGENT (PHASE 4) -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="page-header">
+    <div class="ph-brand">WILLIS ADVOCACY GROUP</div>
+    <div class="ph-title">Phase 4 — Iris AI Agent</div>
+    <div class="ph-page">Page 5 of 10</div>
+  </div>
+
+  <div class="phase-badge"><span class="dot" style="background:var(--phase4);"></span>PHASE 04 — IRIS AI QUALIFICATION AGENT</div>
+  <h2>The 60-Second Response Call</h2>
+  <div class="section-divider"></div>
+
+  <div class="info-box info-teal" style="margin-bottom:12pt;">
+    <div class="ib-icon">🤖</div>
+    <div class="ib-content">
+      <h4>What Iris Does</h4>
+      <p>Iris is an AI phone agent (Synthflow) that calls every new lead within 60 seconds of form submission — 24 hours a day, 7 days a week. She qualifies the lead, collects intake information, tells Uhia's story, and books the appointment. By the time Uhia gets on the call, the lead already feels like they know him.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-bottom:8pt;">Iris Call Flow</h3>
+  <div class="app-flow">
+    <div class="app-step">
+      <div class="app-connector">
+        <div class="conn-dot" style="background:var(--teal);">1</div>
+        <div class="conn-line" style="background:rgba(13,115,119,0.2);"></div>
+      </div>
+      <div class="app-content" style="background:rgba(13,115,119,0.06);border:1px solid rgba(13,115,119,0.15);">
+        <h4>Introduction (0:00–0:30)</h4>
+        <p>"Hi, is this [First Name]? This is Iris, calling from Willis Advocacy Group on behalf of Uhia Willis. You just requested a free Medicare review on our website — I'm reaching out right away because we don't let time go by when someone needs help. Do you have about 5 minutes?"</p>
+      </div>
+    </div>
+    <div class="app-step">
+      <div class="app-connector">
+        <div class="conn-dot" style="background:var(--teal);">2</div>
+        <div class="conn-line" style="background:rgba(13,115,119,0.2);"></div>
+      </div>
+      <div class="app-content" style="background:rgba(13,115,119,0.06);border:1px solid rgba(13,115,119,0.15);">
+        <h4>Qualification (0:30–2:30)</h4>
+        <p>Collects: Current coverage, state/county, date of birth, Medicaid status (D-SNP qualifier), current plan name, primary doctor. For life insurance: health condition(s), coverage amount desired, previous declines.</p>
+      </div>
+    </div>
+    <div class="app-step">
+      <div class="app-connector">
+        <div class="conn-dot" style="background:var(--gold);">3</div>
+        <div class="conn-line" style="background:rgba(200,151,42,0.2);"></div>
+      </div>
+      <div class="app-content" style="background:rgba(200,151,42,0.06);border:1px solid rgba(200,151,42,0.2);">
+        <h4>Uhia's Story — The Warm Transfer (2:30–4:00)</h4>
+        <p>Iris tells Uhia's story in 45 seconds — why he started this, who he fights for, what "People Over Profits" actually means. The lead goes from "who is this person" to "I need to talk to him." This moment is why leads show up to the call ready.</p>
+      </div>
+    </div>
+    <div class="app-step">
+      <div class="app-connector">
+        <div class="conn-dot" style="background:var(--navy);">4</div>
+        <div class="conn-line" style="background:rgba(12,27,46,0.15);"></div>
+      </div>
+      <div class="app-content" style="background:rgba(12,27,46,0.04);border:1px solid rgba(12,27,46,0.12);">
+        <h4>Appointment Booking (4:00–5:00)</h4>
+        <p>Iris checks Uhia's GHL calendar in real-time and offers 2 time slots. Lead picks one. Iris confirms: "Perfect. Uhia will call you [day] at [time]. You'll also get a confirmation text and email right now." Appointment is created in GHL and SOA clock starts.</p>
+      </div>
+    </div>
+    <div class="app-step">
+      <div class="app-connector">
+        <div class="conn-dot" style="background:var(--teal2);">5</div>
+        <div class="conn-line" style="background:none;"></div>
+      </div>
+      <div class="app-content" style="background:rgba(20,160,133,0.06);border:1px solid rgba(20,160,133,0.2);">
+        <h4>Data Pushed to GHL</h4>
+        <p>All collected data (DOB, county, plan name, conditions, appointment time) is pushed back to the GHL contact record as custom fields. Uhia's pre-call brief auto-generates so he walks into every call fully prepared.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="decision-box" style="margin-top:12pt;">
+    <strong>If Iris Gets No Answer:</strong>
+    <div class="decision-branches">
+      <div class="branch branch-yes">
+        <div class="branch-label">✅ Leaves Voicemail + Sends SMS</div>
+        Branded voicemail + immediate SMS: "Hi [Name], Iris here from Willis Advocacy Group — I just tried calling about your Medicare review request. Call us back at (774) 446-0701 or reply YES and we'll call you right back."
+      </div>
+      <div class="branch branch-no">
+        <div class="branch-label">🔄 Retry Schedule</div>
+        Attempt 2: 2 hours later<br>
+        Attempt 3: Next morning 9am<br>
+        Attempt 4: Next day 2pm<br>
+        After 4 attempts: Lead enters 14-day nurture sequence automatically.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PAGE 6 — 14-DAY NURTURE SEQUENCE (PHASE 5) -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="page-header">
+    <div class="ph-brand">WILLIS ADVOCACY GROUP</div>
+    <div class="ph-title">Phase 5 — 14-Day Nurture Sequence</div>
+    <div class="ph-page">Page 6 of 10</div>
+  </div>
+
+  <div class="phase-badge"><span class="dot" style="background:var(--phase5);"></span>PHASE 05 — AUTOMATED NURTURE (GHL)</div>
+  <h2>14-Day Follow-Up System</h2>
+  <div class="section-divider"></div>
+  <p style="margin-bottom:12pt;font-size:10pt;color:var(--muted);">Two parallel sequences run simultaneously — one for Medicare leads, one for Life Insurance leads. 7 touches over 14 days. Fires automatically for any lead who doesn't immediately book with Iris.</p>
+
+  <div class="two-col">
+    <div>
+      <h3 style="color:var(--teal);margin-bottom:8pt;">📋 Medicare Sequence</h3>
+      <div class="sequence-timeline">
+        <div class="timeline-item">
+          <div class="tl-dot tl-sms">S</div>
+          <div class="tl-body">
+            <div class="tl-header"><span class="tl-type-badge tl-sms-badge">SMS</span><span class="tl-delay">Day 0 — Instant</span></div>
+            <div class="tl-subject">Confirmation text</div>
+            <div class="tl-preview">"Hi [Name]! Willis Advocacy Group confirming we got your Medicare review request. Uhia will call within 1 hour..."</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-dot tl-email">E</div>
+          <div class="tl-body">
+            <div class="tl-header"><span class="tl-type-badge tl-email-badge">EMAIL</span><span class="tl-delay">Day 0 — 1 Hour</span></div>
+            <div class="tl-subject">Your Free Medicare Review</div>
+            <div class="tl-preview">"What happens next: Uhia will call you at [phone]... zero cost, zero pressure, zero obligation."</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-dot tl-sms">S</div>
+          <div class="tl-body">
+            <div class="tl-header"><span class="tl-type-badge tl-sms-badge">SMS</span><span class="tl-delay">Day 2</span></div>
+            <div class="tl-subject">D-SNP education</div>
+            <div class="tl-preview">"Did you know if you have BOTH Medicare AND Medicaid, you may qualify for a $0 plan with free dental, vision &amp; transportation?"</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-dot tl-email">E</div>
+          <div class="tl-body">
+            <div class="tl-header"><span class="tl-type-badge tl-email-badge">EMAIL</span><span class="tl-delay">Day 4</span></div>
+            <div class="tl-subject">What most Medicare beneficiaries don't know</div>
+            <div class="tl-preview">"D-SNP plans: $0 premium, $0 copays, dental, vision, rides to appointments, OTC allowances..."</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-dot tl-sms">S</div>
+          <div class="tl-body">
+            <div class="tl-header"><span class="tl-type-badge tl-sms-badge">SMS</span><span class="tl-delay">Day 7</span></div>
+            <div class="tl-subject">Enrollment urgency</div>
+            <div class="tl-preview">"Medicare enrollment windows don't stay open forever. Missing them could mean 12 months on the wrong plan..."</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-dot tl-email">E</div>
+          <div class="tl-body">
+            <div class="tl-header"><span class="tl-type-badge tl-email-badge">EMAIL</span><span class="tl-delay">Day 10</span></div>
+            <div class="tl-subject">The Medicare question I get asked most often</div>
+            <div class="tl-preview">"Is there really a plan that costs $0 per month? The honest answer: yes, for many people — but it depends..."</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-dot tl-sms">S</div>
+          <div class="tl-body">
+            <div class="tl-header"><span class="tl-type-badge tl-sms-badge">SMS</span><span class="tl-delay">Day 14</span></div>
+            <div class="tl-subject">Final check-in</div>
+            <div class="tl-preview">"Last check in. Is there anything stopping you from getting a free Medicare review? No commitment, no cost, just clarity..."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 style="color:var(--navy);margin-bottom:8pt;">🛡️ Life Insurance Sequence</h3>
+      <div class="sequence-timeline">
+        <div class="timeline-item">
+          <div class="tl-dot tl-sms">S</div>
+          <div class="tl-body">
+            <div class="tl-header"><span class="tl-type-badge tl-sms-badge">SMS</span><span class="tl-delay">Day 0 — Instant</span></div>
+            <div class="tl-subject">Confirmation text</div>
+            <div class="tl-preview">"Willis Advocacy Group — received your life insurance inquiry. Uhia specializes in coverage for clients with health conditions..."</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-dot tl-email">E</div>
+          <div class="tl-body">
+            <div class="tl-header"><span class="tl-type-badge tl-email-badge">EMAIL</span><span class="tl-delay">Day 0 — 1 Hour</span></div>
+            <div class="tl-subject">About your life insurance inquiry</div>
+            <div class="tl-preview">"Uhia specializes in one thing most brokers won't touch: finding life insurance for clients with preexisting health conditions..."</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-dot tl-sms">S</div>
+          <div class="tl-body">
+            <div class="tl-header"><span class="tl-type-badge tl-sms-badge">SMS</span><span class="tl-delay">Day 2</span></div>
+            <div class="tl-subject">Guaranteed issue education</div>
+            <div class="tl-preview">"Did you know there are life insurance policies with NO medical exam and NO health questions?"</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-dot tl-email">E</div>
+          <div class="tl-body">
+            <div class="tl-header"><span class="tl-type-badge tl-email-badge">EMAIL</span><span class="tl-delay">Day 4</span></div>
+            <div class="tl-subject">The life insurance truth most brokers won't tell you</div>
+            <div class="tl-preview">"Guaranteed issue policies exist specifically for people who've been declined for standard coverage. No exam. No questions..."</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-dot tl-sms">S</div>
+          <div class="tl-body">
+            <div class="tl-header"><span class="tl-type-badge tl-sms-badge">SMS</span><span class="tl-delay">Day 7</span></div>
+            <div class="tl-subject">Final expense reality check</div>
+            <div class="tl-preview">"If your family had to pay your funeral expenses next year, could they do it without financial hardship?"</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-dot tl-email">E</div>
+          <div class="tl-body">
+            <div class="tl-header"><span class="tl-type-badge tl-email-badge">EMAIL</span><span class="tl-delay">Day 10</span></div>
+            <div class="tl-subject">For clients who've been told no</div>
+            <div class="tl-preview">"I built Willis Advocacy Group around one belief: the people who need coverage the most are the ones who keep getting turned away..."</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-dot tl-sms">S</div>
+          <div class="tl-body">
+            <div class="tl-header"><span class="tl-type-badge tl-sms-badge">SMS</span><span class="tl-delay">Day 14</span></div>
+            <div class="tl-subject">Final check-in</div>
+            <div class="tl-preview">"Your family's protection matters. Free, no-pressure review of your life insurance options — including if you have a health condition..."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PAGE 7 — COMPLIANCE + CONSULTATION (PHASES 6-7) -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="page-header">
+    <div class="ph-brand">WILLIS ADVOCACY GROUP</div>
+    <div class="ph-title">Phases 6–7 — Compliance &amp; Consultation</div>
+    <div class="ph-page">Page 7 of 10</div>
+  </div>
+
+  <div class="phase-badge"><span class="dot" style="background:var(--phase6);"></span>PHASE 06 — SCOPE OF APPOINTMENT (MANDATORY CMS COMPLIANCE)</div>
+  <h2>Before the Medicare Consultation</h2>
+  <div class="section-divider"></div>
+
+  <div class="compliance-banner">
+    <div class="cb-icon">⚖️</div>
+    <strong>CMS REQUIREMENT:</strong>&nbsp; A Scope of Appointment must be completed by the beneficiary a minimum of 48 hours before any discussion of specific Medicare Advantage or Part D plans. No exceptions. Violations can result in carrier contract termination and CMS penalties.
+  </div>
+
+  <div class="steps-container" style="margin-top:10pt;">
+    <div class="step-card" style="background:rgba(146,43,33,0.05);border-left-color:var(--red);">
+      <div class="step-num" style="background:var(--red);">1</div>
+      <div class="step-body">
+        <div class="step-title">SOA Triggered Automatically at Booking</div>
+        <div class="step-desc">When Iris books the appointment or the lead confirms a time slot, GHL automatically sends the digital SOA form via email and SMS. The form includes the beneficiary's name, date, and the scope options (Medicare Advantage, Supplement, Part D, Life Insurance).</div>
+        <div class="step-timing">📋 Sent immediately upon booking — 48-hour clock starts</div>
+      </div>
+    </div>
+    <div class="step-card" style="background:rgba(146,43,33,0.05);border-left-color:var(--red);">
+      <div class="step-num" style="background:var(--red);">2</div>
+      <div class="step-body">
+        <div class="step-title">Lead Signs SOA Electronically</div>
+        <div class="step-desc">Branded SOA form hosted at willisadvocacygroup.com/soa. Lead signs with name + date. Timestamp recorded. PDF confirmation sent to lead's email. Copy stored in GHL contact record as custom field.</div>
+        <div class="step-timing">✅ Stored with timestamp — CMS audit-ready</div>
+      </div>
+    </div>
+    <div class="step-card" style="background:rgba(146,43,33,0.05);border-left-color:var(--red);">
+      <div class="step-num" style="background:var(--red);">3</div>
+      <div class="step-body">
+        <div class="step-title">Uhia Notified — SOA Received</div>
+        <div class="step-desc">GHL sends Uhia a notification when SOA is signed. If SOA is NOT signed 24 hours before the appointment, GHL sends an automated reminder to the lead. If unsigned 2 hours before: Uhia is alerted to call manually.</div>
+        <div class="step-timing">🔔 Uhia notification + automated follow-up if pending</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:14pt;"></div>
+  <div class="phase-badge"><span class="dot" style="background:var(--phase7);"></span>PHASE 07 — THE CONSULTATION CALL</div>
+  <h2>Uhia's Call — The Close</h2>
+  <div class="section-divider"></div>
+
+  <div class="two-col">
+    <div>
+      <h3 style="margin-bottom:8pt;">Before the Call — Pre-Call Brief</h3>
+      <div class="info-box info-gold">
+        <div class="ib-icon">📊</div>
+        <div class="ib-content">
+          <h4>GHL Auto-Generates a Brief</h4>
+          <p>Uhia sees the lead's name, interest, state, DOB, current coverage, Medicaid status, health conditions (if life), and any notes from Iris's call — all in one view before he dials.</p>
+        </div>
+      </div>
+      <div style="margin-top:8pt;">
+        <div class="step-card" style="background:rgba(200,151,42,0.07);border-left-color:var(--gold);padding:8pt 10pt;">
+          <div class="step-num" style="background:var(--gold);width:24pt;height:24pt;font-size:10pt;">📞</div>
+          <div class="step-body">
+            <div class="step-title" style="font-size:10pt;">Call is Recorded</div>
+            <div class="step-desc" style="font-size:9pt;">GHL call recording active. Opening disclosure: "This call may be recorded for quality and compliance purposes." Required for Medicare sales calls.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 style="margin-bottom:8pt;">Call Structure</h3>
+      <div class="app-flow">
+        <div class="app-step">
+          <div class="app-connector"><div class="conn-dot" style="background:var(--gold);">1</div><div class="conn-line" style="background:rgba(200,151,42,0.2);"></div></div>
+          <div class="app-content" style="background:rgba(200,151,42,0.05);border:1px solid rgba(200,151,42,0.2);">
+            <h4 style="font-size:9pt;">Rapport (2 min)</h4>
+            <p style="font-size:8.5pt;">Lead already knows Uhia's story from Iris. Confirm what they shared, acknowledge their situation.</p>
+          </div>
+        </div>
+        <div class="app-step">
+          <div class="app-connector"><div class="conn-dot" style="background:var(--gold);">2</div><div class="conn-line" style="background:rgba(200,151,42,0.2);"></div></div>
+          <div class="app-content" style="background:rgba(200,151,42,0.05);border:1px solid rgba(200,151,42,0.2);">
+            <h4 style="font-size:9pt;">Needs Assessment (5 min)</h4>
+            <p style="font-size:8.5pt;">Current coverage gaps, doctors they need to keep, budget, priorities. Listen more than talk.</p>
+          </div>
+        </div>
+        <div class="app-step">
+          <div class="app-connector"><div class="conn-dot" style="background:var(--gold);">3</div><div class="conn-line" style="background:rgba(200,151,42,0.2);"></div></div>
+          <div class="app-content" style="background:rgba(200,151,42,0.05);border:1px solid rgba(200,151,42,0.2);">
+            <h4 style="font-size:9pt;">Plan Presentation (10 min)</h4>
+            <p style="font-size:8.5pt;">Sunfire Matrix / Connecture: pull real-time plan options. Present 2-3 recommendations max. Explain trade-offs honestly.</p>
+          </div>
+        </div>
+        <div class="app-step">
+          <div class="app-connector"><div class="conn-dot" style="background:var(--gold);">4</div><div class="conn-line" style="background:none;"></div></div>
+          <div class="app-content" style="background:rgba(200,151,42,0.05);border:1px solid rgba(200,151,42,0.2);">
+            <h4 style="font-size:9pt;">Decision + Next Step</h4>
+            <p style="font-size:8.5pt;">Lead chooses plan OR schedules follow-up. Either way, pipeline stage updated in GHL immediately.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PAGE 8 — APPLICATION PROCESSING (PHASE 8) -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="page-header">
+    <div class="ph-brand">WILLIS ADVOCACY GROUP</div>
+    <div class="ph-title">Phase 8 — Application Processing</div>
+    <div class="ph-page">Page 8 of 10</div>
+  </div>
+
+  <div class="phase-badge"><span class="dot" style="background:var(--phase8);"></span>PHASE 08 — APPLICATION SUBMISSION TO CARRIER</div>
+  <h2>From "Yes" to Submitted Application</h2>
+  <div class="section-divider"></div>
+
+  <div class="two-col">
+    <!-- Medicare Application -->
+    <div>
+      <h3 style="color:var(--teal);margin-bottom:10pt;">📋 Medicare Application Flow</h3>
+      <div class="app-flow">
+        <div class="app-step">
+          <div class="app-connector"><div class="conn-dot" style="background:var(--teal);">1</div><div class="conn-line" style="background:rgba(13,115,119,0.2);"></div></div>
+          <div class="app-content" style="background:rgba(13,115,119,0.05);border:1px solid rgba(13,115,119,0.15);">
+            <h4>Open Sunfire Matrix or Connecture</h4>
+            <p>Pull up the beneficiary's county, DOB, and effective date. Run real-time plan comparison. Confirm selected plan is still available and doctor is in-network.</p>
+          </div>
+        </div>
+        <div class="app-step">
+          <div class="app-connector"><div class="conn-dot" style="background:var(--teal);">2</div><div class="conn-line" style="background:rgba(13,115,119,0.2);"></div></div>
+          <div class="app-content" style="background:rgba(13,115,119,0.05);border:1px solid rgba(13,115,119,0.15);">
+            <h4>Verify Enrollment Eligibility</h4>
+            <p>Confirm: SEP reason (if applicable), IEP/AEP/OEP window, no other active enrollment, dual eligible status confirmed (for D-SNP), Medicare Part A + B effective dates.</p>
+          </div>
+        </div>
+        <div class="app-step">
+          <div class="app-connector"><div class="conn-dot" style="background:var(--teal);">3</div><div class="conn-line" style="background:rgba(13,115,119,0.2);"></div></div>
+          <div class="app-content" style="background:rgba(13,115,119,0.05);border:1px solid rgba(13,115,119,0.15);">
+            <h4>Submit Application</h4>
+            <p>Online enrollment via Sunfire, Connecture, or carrier's agent portal. Fields: Medicare ID, name as on Medicare card, address, plan selection, effective date, PCP selection (if required).</p>
+          </div>
+        </div>
+        <div class="app-step">
+          <div class="app-connector"><div class="conn-dot" style="background:var(--teal);">4</div><div class="conn-line" style="background:rgba(13,115,119,0.2);"></div></div>
+          <div class="app-content" style="background:rgba(13,115,119,0.05);border:1px solid rgba(13,115,119,0.15);">
+            <h4>Confirmation Number Received</h4>
+            <p>Carrier returns confirmation number. Record in GHL contact. Read confirmation number to client verbally. Client will receive welcome kit from carrier within 7-10 days.</p>
+          </div>
+        </div>
+        <div class="app-step">
+          <div class="app-connector"><div class="conn-dot" style="background:var(--teal);">5</div><div class="conn-line" style="background:none;"></div></div>
+          <div class="app-content" style="background:rgba(13,115,119,0.05);border:1px solid rgba(13,115,119,0.15);">
+            <h4>Post-Enrollment Verification Call</h4>
+            <p>Some carriers require a post-enrollment call from their compliance team within 48 hours. Inform client to expect this call and not to be alarmed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Life Insurance Application -->
+    <div>
+      <h3 style="color:var(--navy);margin-bottom:10pt;">🛡️ Life Insurance Application Flow</h3>
+      <div class="app-flow">
+        <div class="app-step">
+          <div class="app-connector"><div class="conn-dot" style="background:var(--navy);">1</div><div class="conn-line" style="background:rgba(12,27,46,0.15);"></div></div>
+          <div class="app-content" style="background:rgba(12,27,46,0.04);border:1px solid rgba(12,27,46,0.12);">
+            <h4>Select Carrier Based on Condition</h4>
+            <p>Match health condition(s) to carrier sweet spots. Guaranteed Issue: Gerber Life, AIG, Mutual of Omaha. Simplified Issue: varies by condition. Graded Benefit: case-by-case. Use carrier underwriting guides.</p>
+          </div>
+        </div>
+        <div class="app-step">
+          <div class="app-connector"><div class="conn-dot" style="background:var(--navy);">2</div><div class="conn-line" style="background:rgba(12,27,46,0.15);"></div></div>
+          <div class="app-content" style="background:rgba(12,27,46,0.04);border:1px solid rgba(12,27,46,0.12);">
+            <h4>Run Quote</h4>
+            <p>Age, gender, state, coverage amount, health classification. Present 2-3 options with monthly premium, benefit amount, graded period (if any), and carrier rating.</p>
+          </div>
+        </div>
+        <div class="app-step">
+          <div class="app-connector"><div class="conn-dot" style="background:var(--navy);">3</div><div class="conn-line" style="background:rgba(12,27,46,0.15);"></div></div>
+          <div class="app-content" style="background:rgba(12,27,46,0.04);border:1px solid rgba(12,27,46,0.12);">
+            <h4>Complete e-App or Paper App</h4>
+            <p>Most carriers have e-App via agent portal. Collect: full legal name, DOB, SSN, beneficiary name + relationship + DOB, health questions (if simplified issue), payment method (EFT or credit card).</p>
+          </div>
+        </div>
+        <div class="app-step">
+          <div class="app-connector"><div class="conn-dot" style="background:var(--navy);">4</div><div class="conn-line" style="background:rgba(12,27,46,0.15);"></div></div>
+          <div class="app-content" style="background:rgba(12,27,46,0.04);border:1px solid rgba(12,27,46,0.12);">
+            <h4>Client Signs Electronically</h4>
+            <p>e-Signature via carrier portal. Applicant receives email with policy summary and signed application copy. Policy number assigned upon approval (same day for GI, 1-5 days for simplified).</p>
+          </div>
+        </div>
+        <div class="app-step">
+          <div class="app-connector"><div class="conn-dot" style="background:var(--navy);">5</div><div class="conn-line" style="background:none;"></div></div>
+          <div class="app-content" style="background:rgba(12,27,46,0.04);border:1px solid rgba(12,27,46,0.12);">
+            <h4>Policy Issued — Record in AgencyBloc</h4>
+            <p>Policy number, carrier, face amount, premium, effective date, and commission rate recorded in AgencyBloc book of business management system.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PAGE 9 — POST-APPLICATION & CLIENT ONBOARDING (PHASE 9) -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="page-header">
+    <div class="ph-brand">WILLIS ADVOCACY GROUP</div>
+    <div class="ph-title">Phase 9 — Client Onboarding &amp; Post-Application</div>
+    <div class="ph-page">Page 9 of 10</div>
+  </div>
+
+  <div class="phase-badge"><span class="dot" style="background:var(--phase9);"></span>PHASE 09 — THE MOMENT THEY BECOME A CLIENT</div>
+  <h2>Application Submitted → Client For Life</h2>
+  <div class="section-divider"></div>
+
+  <div class="steps-container">
+    <div class="step-card" style="background:rgba(13,115,119,0.06);border-left-color:var(--teal);">
+      <div class="step-num" style="background:var(--teal);">1</div>
+      <div class="step-body">
+        <div class="step-title">GHL Pipeline Stage Updated</div>
+        <div class="step-desc">Uhia manually moves the opportunity from "In Consultation" to "Application Submitted" in GHL. This triggers the post-application automation sequence automatically.</div>
+        <div class="step-timing">⚡ Manual trigger by Uhia — 30 seconds</div>
+      </div>
+    </div>
+    <div class="step-card" style="background:rgba(13,115,119,0.06);border-left-color:var(--teal);">
+      <div class="step-num" style="background:var(--teal);">2</div>
+      <div class="step-body">
+        <div class="step-title">Automated Thank-You Sequence Fires</div>
+        <div class="step-desc">SMS: "Welcome to Willis Advocacy Group, [Name]. Your application has been submitted to [Carrier]. You'll receive confirmation from them within [X days]. I'm here if you have any questions — (774) 446-0701. — Uhia."<br><br>Email: Full confirmation with: plan name, carrier, effective date, confirmation number, what to expect next, Uhia's direct contact.</div>
+        <div class="step-timing">📱 SMS instant · 📧 Email within 1 hour</div>
+      </div>
+    </div>
+    <div class="step-card" style="background:rgba(13,115,119,0.06);border-left-color:var(--teal);">
+      <div class="step-num" style="background:var(--teal);">3</div>
+      <div class="step-body">
+        <div class="step-title">AgencyBloc — Book of Business Entry</div>
+        <div class="step-desc">New client added to AgencyBloc: policy number, carrier, product type, effective date, premium, face amount, commission rate, renewal commission. This is the system of record for your book of business — tracks commission, renewals, and lapse risk.</div>
+        <div class="step-timing">📋 Manual entry — same day as application</div>
+      </div>
+    </div>
+    <div class="step-card" style="background:rgba(13,115,119,0.06);border-left-color:var(--teal);">
+      <div class="step-num" style="background:var(--teal);">4</div>
+      <div class="step-body">
+        <div class="step-title">30-Day Check-In Call</div>
+        <div class="step-desc">GHL automation sends Uhia a task reminder 30 days after enrollment: call the client, confirm they received their card, confirm PCP assignment (Medicare), answer any questions. This call = referral catalyst. Most referrals come from the 30-day check-in.</div>
+        <div class="step-timing">🔔 GHL task auto-created — Day 30</div>
+      </div>
+    </div>
+    <div class="step-card" style="background:rgba(13,115,119,0.06);border-left-color:var(--teal);">
+      <div class="step-num" style="background:var(--teal);">5</div>
+      <div class="step-body">
+        <div class="step-title">Referral Request Sequence</div>
+        <div class="step-desc">At Day 30 and Day 60: automated SMS + email asking for referrals. "If you know someone who could benefit from a free Medicare review — or someone who's been struggling to get life insurance because of a health condition — I'd love the chance to help them too."</div>
+        <div class="step-timing">🤝 Automated — Day 30 and Day 60</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PAGE 10 — CLIENT LIFECYCLE (PHASE 10) -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="page page-break">
+  <div class="page-header">
+    <div class="ph-brand">WILLIS ADVOCACY GROUP</div>
+    <div class="ph-title">Phase 10 — Client Lifecycle &amp; System Summary</div>
+    <div class="ph-page">Page 10 of 10</div>
+  </div>
+
+  <div class="phase-badge"><span class="dot" style="background:var(--phase10);"></span>PHASE 10 — LONG-TERM CLIENT LIFECYCLE</div>
+  <h2>Keeping Clients for Life</h2>
+  <div class="section-divider"></div>
+
+  <div class="three-col">
+    <div>
+      <div style="background:rgba(13,115,119,0.08);border:1px solid rgba(13,115,119,0.2);border-radius:8pt;padding:12pt;">
+        <div style="font-size:20pt;text-align:center;margin-bottom:6pt;">📅</div>
+        <h3 style="text-align:center;color:var(--teal);margin-bottom:8pt;">Medicare Annual Review</h3>
+        <div style="font-size:9pt;color:#3a4a5a;">
+          <p style="margin-bottom:5pt;"><strong>AEP: Oct 15 – Dec 7 (every year)</strong></p>
+          <p style="margin-bottom:5pt;">GHL auto-sends outreach in September to all Medicare clients: "It's review season. Plans change every year. Let me make sure you're still on the best plan for you."</p>
+          <p>OEP: Jan 1 – Mar 31 — additional review window for Medicare Advantage clients.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div style="background:rgba(200,151,42,0.08);border:1px solid rgba(200,151,42,0.2);border-radius:8pt;padding:12pt;">
+        <div style="font-size:20pt;text-align:center;margin-bottom:6pt;">🔄</div>
+        <h3 style="text-align:center;color:var(--gold);margin-bottom:8pt;">Life Insurance Anniversary</h3>
+        <div style="font-size:9pt;color:#3a4a5a;">
+          <p style="margin-bottom:5pt;"><strong>Policy anniversary (every year)</strong></p>
+          <p style="margin-bottom:5pt;">GHL sends automated anniversary message: "It's been [X] year(s) since we set up your coverage. I want to make sure it still fits your needs."</p>
+          <p>Review for upsell opportunities: higher coverage, additional beneficiaries, changed health status.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div style="background:rgba(12,27,46,0.06);border:1px solid rgba(12,27,46,0.15);border-radius:8pt;padding:12pt;">
+        <div style="font-size:20pt;text-align:center;margin-bottom:6pt;">⭐</div>
+        <h3 style="text-align:center;color:var(--navy);margin-bottom:8pt;">Retention + Referral Loop</h3>
+        <div style="font-size:9pt;color:#3a4a5a;">
+          <p style="margin-bottom:5pt;"><strong>Ongoing — automated</strong></p>
+          <p style="margin-bottom:5pt;">Birthday messages, holiday check-ins (Thanksgiving, New Year). Non-salesy. Relationship-building at scale.</p>
+          <p>Every touchpoint ends with a soft referral ask. One referral per client per year = exponential book of business growth.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:14pt;"></div>
+  <h2>Complete System Summary</h2>
+  <div class="section-divider"></div>
+
+  <div style="background:var(--navy);border-radius:10pt;padding:20pt;color:white;">
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12pt;text-align:center;margin-bottom:16pt;">
+      <div style="background:rgba(255,255,255,0.06);border-radius:6pt;padding:10pt;">
+        <div style="font-size:9pt;color:rgba(240,192,96,0.9);font-family:'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4pt;">Phase 1</div>
+        <div style="font-size:9pt;font-weight:700;">Traffic Sources</div>
+        <div style="font-size:8pt;color:rgba(255,255,255,0.55);margin-top:3pt;">12 channels</div>
+      </div>
+      <div style="background:rgba(13,115,119,0.3);border-radius:6pt;padding:10pt;">
+        <div style="font-size:9pt;color:rgba(240,192,96,0.9);font-family:'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4pt;">Phase 2-3</div>
+        <div style="font-size:9pt;font-weight:700;">Entry + Instant Auto</div>
+        <div style="font-size:8pt;color:rgba(255,255,255,0.55);margin-top:3pt;">6 simultaneous actions</div>
+      </div>
+      <div style="background:rgba(13,115,119,0.3);border-radius:6pt;padding:10pt;">
+        <div style="font-size:9pt;color:rgba(240,192,96,0.9);font-family:'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4pt;">Phase 4-5</div>
+        <div style="font-size:9pt;font-weight:700;">Iris + Nurture</div>
+        <div style="font-size:8pt;color:rgba(255,255,255,0.55);margin-top:3pt;">7 touches · 14 days</div>
+      </div>
+      <div style="background:rgba(200,151,42,0.25);border-radius:6pt;padding:10pt;">
+        <div style="font-size:9pt;color:rgba(240,192,96,0.9);font-family:'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4pt;">Phase 6-7</div>
+        <div style="font-size:9pt;font-weight:700;">SOA + Consult</div>
+        <div style="font-size:8pt;color:rgba(255,255,255,0.55);margin-top:3pt;">CMS compliant</div>
+      </div>
+      <div style="background:rgba(200,151,42,0.25);border-radius:6pt;padding:10pt;">
+        <div style="font-size:9pt;color:rgba(240,192,96,0.9);font-family:'JetBrains Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4pt;">Phase 8-10</div>
+        <div style="font-size:9pt;font-weight:700;">App → Client Life</div>
+        <div style="font-size:8pt;color:rgba(255,255,255,0.55);margin-top:3pt;">Carrier + retention</div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:14pt;display:grid;grid-template-columns:1fr 1fr;gap:16pt;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:8pt;color:rgba(240,192,96,0.8);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6pt;">What Uhia Does</div>
+        <ul style="font-size:9pt;color:rgba(255,255,255,0.8);list-style:none;padding:0;">
+          <li style="margin-bottom:4pt;">✅ Answers Iris-qualified, pre-briefed calls</li>
+          <li style="margin-bottom:4pt;">✅ Presents 2-3 plan options on consultation</li>
+          <li style="margin-bottom:4pt;">✅ Submits applications in carrier portal</li>
+          <li style="margin-bottom:4pt;">✅ Updates GHL pipeline stage after each call</li>
+          <li>✅ 30-day check-in calls for referrals</li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:8pt;color:rgba(240,192,96,0.8);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6pt;">What the System Does Automatically</div>
+        <ul style="font-size:9pt;color:rgba(255,255,255,0.8);list-style:none;padding:0;">
+          <li style="margin-bottom:4pt;">🤖 Calls every lead within 60 seconds</li>
+          <li style="margin-bottom:4pt;">🤖 Qualifies, collects data, books appointment</li>
+          <li style="margin-bottom:4pt;">🤖 Sends 7-touch nurture over 14 days</li>
+          <li style="margin-bottom:4pt;">🤖 Sends, tracks, and stores SOA</li>
+          <li>🤖 Post-close onboarding + referral requests</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:14pt;padding-top:10pt;border-top:1px solid rgba(12,27,46,0.1);text-align:center;">
+    <div style="font-family:'Playfair Display',serif;font-size:14pt;color:var(--navy);margin-bottom:4pt;">Willis Advocacy Group — UKW Consulting Inc.</div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:8.5pt;color:var(--gold);letter-spacing:0.15em;">"PEOPLE OVER PROFITS."</div>
+    <div style="font-size:8pt;color:var(--muted);margin-top:6pt;">(774) 446-0701 · info@willisadvocacygroup.com · willisadvocacygroup.com · Webster, MA</div>
+    <div style="font-size:7.5pt;color:var(--muted);margin-top:3pt;">Licensed in CT, NJ, NY, NC, FL, TX, GA, MA · Not affiliated with or endorsed by Medicare or any government agency.</div>
+  </div>
+</div>
+
+</body>
+</html>
