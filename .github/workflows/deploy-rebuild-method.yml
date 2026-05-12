@@ -1,10 +1,14 @@
 # The R.E.B.U.I.L.D. Method — Auto-Deploy to Hostinger
 # Deploys therebuildmethod-site/ to therebuildmethod.com public_html via FTP
 #
-# Uses the same FTP_PASSWORD secret as the main Willis Advocacy Group deploy.
+# Uses the SAME main FTP credentials as Willis Advocacy Group (FTP_USERNAME, FTP_PASSWORD).
+# The main Hostinger FTP user (u144249280) can access all addon domains.
 # FTP Server:   157.173.214.130
-# FTP Username: u144249280.therebuildmethod.com
-# FTP Path:     /public_html/
+# FTP Path:     /domains/therebuildmethod.com/public_html/
+#
+# NOTE: If this fails with "Login incorrect", go to:
+#   Hostinger → therebuildmethod.com → FTP Accounts → set password for u144249280.therebuildmethod.com
+#   Then add GitHub Secret FTP_PASSWORD_REBUILD and update this workflow to use that secret.
 
 name: Deploy Rebuild Method Site
 
@@ -28,13 +32,13 @@ jobs:
       - name: Deploy via FTP to Hostinger
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: 157.173.214.130
-          username: u144249280.therebuildmethod.com
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp
           port: 21
           local-dir: ./therebuildmethod-site/
-          server-dir: /public_html/
+          server-dir: /domains/therebuildmethod.com/public_html/
           timeout: 60000
           log-level: standard
           security: loose
