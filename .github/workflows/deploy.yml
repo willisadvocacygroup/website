@@ -49,3 +49,7 @@ jobs:
             **/images/logos/node_modules/**
             **/images/logos/png/**
             **/Willis-Advocacy-Group-System-Workflow.html
+            **/Willis-Advocacy-Group-System-Guide.html
+            **/Willis-Advocacy-Group-System-Guide.pdf
+            **/uhiawillis-site/**
+            **/kaydem-escalation-email.txt
