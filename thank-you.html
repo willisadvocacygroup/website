@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You — Willis Advocacy Group</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-03QLEMVLW4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-03QLEMVLW4');
+    // Track thank-you page as conversion event
+    gtag('event', 'conversion', { 'send_to': 'G-03QLEMVLW4', 'event_category': 'lead', 'event_label': 'form_submit' });
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="/images/logos/logo-favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:  #0C1B2E;
+      --teal:  #0D7377;
+      --teal2: #14A085;
+      --gold:  #C8972A;
+      --cream: #FAF7F2;
+      --white: #FFFFFF;
+    }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--cream);
+      color: var(--navy);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    /* Nav */
+    nav {
+      background: var(--navy);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .nav-logo span { color: var(--gold); }
+
+    /* Hero */
+    .hero {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+    .card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 3rem 2.5rem;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 8px 40px rgba(12,27,46,0.12);
+      border-top: 5px solid var(--teal);
+    }
+    .checkmark {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, var(--teal), var(--teal2));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+    .checkmark svg { width: 36px; height: 36px; }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      color: var(--navy);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    h1 span { color: var(--teal); }
+    .subtitle {
+      font-size: 1.05rem;
+      color: #4a6070;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    .what-next {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+    .what-next h3 {
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+    .step {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      margin-bottom: 0.75rem;
+    }
+    .step:last-child { margin-bottom: 0; }
+    .step-num {
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      background: var(--teal);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: 0.75rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-text { font-size: 0.9rem; color: var(--navy); line-height: 1.5; }
+    .step-text strong { color: var(--teal); }
+    .cta-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--teal);
+      color: var(--white);
+      font-size: 1.05rem;
+      font-weight: 800;
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s;
+      margin-bottom: 1rem;
+    }
+    .cta-phone:hover { background: var(--teal2); }
+    .cta-back {
+      display: block;
+      font-size: 0.875rem;
+      color: var(--teal);
+      text-decoration: none;
+      margin-top: 0.5rem;
+    }
+    .cta-back:hover { text-decoration: underline; }
+    .disclaimer {
+      font-size: 0.75rem;
+      color: #8a9aaa;
+      margin-top: 2rem;
+      line-height: 1.5;
+    }
+    /* Footer */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">Willis <span>Advocacy</span> Group</a>
+  </nav>
+
+  <div class="hero">
+    <div class="card">
+
+      <div class="checkmark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+
+      <h1>You're All Set,<br><span>We'll Be in Touch Soon.</span></h1>
+      <p class="subtitle">Your request has been received. Uhia Willis will personally review your information and reach out within <strong>1 business day</strong> to schedule your free consultation.</p>
+
+      <div class="what-next">
+        <h3>What Happens Next</h3>
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-text">We review your coverage needs and confirm you're in a licensed state.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-text"><strong>Within 1 business day</strong> — Uhia calls or texts you to schedule your free consultation.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-text">Your consultation is 100% free — no pressure, no obligation, <strong>People Over Profits.</strong></div>
+        </div>
+      </div>
+
+      <a href="tel:+17744460701" class="cta-phone">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l.81-.81a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        (774) 446-0701
+      </a>
+      <a href="/" class="cta-back">← Back to Willis Advocacy Group</a>
+
+      <p class="disclaimer">Willis Advocacy Group (UKW Consulting Inc.) — Not affiliated with Medicare or any government agency. Licensed in MA, CT, NJ, NY, FL, TX, NC, GA.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Willis Advocacy Group | UKW Consulting Inc. — "People Over Profits."</p>
+  </footer>
+
+</body>
+</html>
