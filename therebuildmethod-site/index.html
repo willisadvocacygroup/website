@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uhia Willis | The R.E.B.U.I.L.D. Method — Keynote Speaker & Founder</title>
+  <meta name="description" content="Uhia Willis is the founder of The R.E.B.U.I.L.D. Method — a proven 7-step framework helping men reclaim identity, discipline, and purpose after life collapse. Keynote speaker and author." />
+  <meta name="keywords" content="Uhia Willis, REBUILD Method, keynote speaker, men personal development, identity rebuild, life collapse recovery, motivational speaker Massachusetts" />
+  <meta name="author" content="Uhia Willis" />
+  <meta property="og:title" content="Uhia Willis | The R.E.B.U.I.L.D. Method" />
+  <meta property="og:description" content="Founder of The R.E.B.U.I.L.D. Method. Keynote speaker helping men rebuild identity, discipline, and purpose after life collapse." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.therebuildmethod.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Uhia Willis | The R.E.B.U.I.L.D. Method" />
+  <meta name="twitter:description" content="Founder of The R.E.B.U.I.L.D. Method. Keynote speaker for men rebuilding after life collapse." />
+  <link rel="canonical" href="https://www.therebuildmethod.com" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Uhia Willis",
+    "jobTitle": "Keynote Speaker & Founder",
+    "description": "Founder of The R.E.B.U.I.L.D. Method. Keynote speaker helping men rebuild identity and purpose after life collapse.",
+    "url": "https://www.therebuildmethod.com",
+    "email": "uhia@therebuildmethod.com",
+    "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" },
+    "sameAs": ["https://www.instagram.com/uhiawillis", "https://www.youtube.com/@UhiaWillis"]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Mono:wght@300;400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #070707;
+      --bg2: #0B0B0B;
+      --bg3: #0F0F0F;
+      --text: #DDD7CE;
+      --text-dim: #888179;
+      --gold: #C8972A;
+      --gold-light: #E8B84B;
+      --white: #F4EEE6;
+      --border: #161616;
+      --border2: #1E1E1E;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: var(--gold); color: var(--bg); }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 60px;
+      background: rgba(7,7,7,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--gold);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: #444;
+      text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px; letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--bg) !important;
+      background: var(--gold);
+      padding: 8px 18px; border-radius: 2px;
+      text-decoration: none; transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.85; color: var(--bg) !important; }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      justify-content: flex-end;
+      padding: 160px 60px 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 40%, rgba(200,151,42,0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 20% 80%, rgba(200,151,42,0.04) 0%, transparent 60%);
+    }
+    .hero-line {
+      position: absolute; top: 0; left: 60px; bottom: 0;
+      width: 1px; background: linear-gradient(to bottom, transparent, var(--border2) 20%, var(--border2) 80%, transparent);
+    }
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 24px; position: relative;
+    }
+    h1.hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(52px, 9vw, 110px);
+      line-height: 0.95;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      position: relative;
+    }
+    h1.hero-name em {
+      font-style: italic; color: var(--gold);
+    }
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(18px, 2.5vw, 26px);
+      font-weight: 300; font-style: italic;
+      color: var(--text-dim); margin-bottom: 48px;
+      position: relative;
+    }
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(14px, 1.8vw, 18px);
+      color: #555; max-width: 540px;
+      line-height: 1.7; margin-bottom: 52px;
+      position: relative;
+    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; position: relative; }
+    .btn-primary {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px; letter-spacing: 0.18em;
+      text-transform: uppercase;
+      background: var(--gold); color: var(--bg);
+      padding: 14px 32px; border-radius: 2px;
+      text-decoration: none; transition: opacity 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-secondary {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px; letter-spacing: 0.18em;
+      text-transform: uppercase;
+      background: transparent;
+      border: 1px solid var(--border2);
+      color: #555; padding: 14px 32px; border-radius: 2px;
+      text-decoration: none; transition: all 0.2s;
+      display: inline-block;
+    }
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-scroll {
+      position: absolute; bottom: 40px; right: 60px;
+      font-family: 'DM Mono', monospace;
+      font-size: 8px; letter-spacing: 0.25em;
+      text-transform: uppercase; color: #2A2A2A;
+      writing-mode: vertical-rl;
+    }
+
+    /* ─── SECTIONS ─── */
+    section { padding: 100px 60px; border-top: 1px solid var(--border); }
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px; letter-spacing: 0.28em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 48px; display: block;
+    }
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(36px, 5vw, 60px);
+      line-height: 1.05; color: var(--white);
+      letter-spacing: -0.01em;
+      margin-bottom: 40px;
+    }
+    h2 em { font-style: italic; color: var(--gold); }
+    h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600; font-size: 24px;
+      color: var(--white); margin-bottom: 12px;
+    }
+    p { color: var(--text-dim); max-width: 680px; margin-bottom: 20px; }
+    p.large {
+      font-size: 19px; line-height: 1.8;
+      color: #9A9189;
+    }
+
+    /* ─── STORY SECTION ─── */
+    #story .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: start;
+    }
+    .story-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 300; font-style: italic;
+      line-height: 1.2; color: var(--white);
+      border-left: 2px solid var(--gold);
+      padding-left: 32px;
+      margin-bottom: 40px;
+    }
+    .story-text p { font-size: 17px; line-height: 1.85; }
+
+    /* ─── FRAMEWORK ─── */
+    #framework { background: var(--bg2); }
+    .framework-intro { max-width: 600px; margin-bottom: 72px; }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1px; background: var(--border);
+    }
+    .step {
+      background: var(--bg2);
+      padding: 36px 32px;
+      transition: background 0.2s;
+    }
+    .step:hover { background: #0E0E0E; }
+    .step-letter {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 64px; font-weight: 300;
+      color: var(--gold); line-height: 1;
+      opacity: 0.4; margin-bottom: 8px;
+      display: block;
+    }
+    .step-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600; font-size: 20px;
+      color: var(--white); margin-bottom: 10px;
+    }
+    .step-desc {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 14px; line-height: 1.75;
+      color: #666;
+    }
+
+    /* ─── SPEAKING ─── */
+    #speaking .speaking-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: start;
+    }
+    .talk-card {
+      border: 1px solid var(--border2);
+      padding: 40px; border-radius: 3px;
+      margin-bottom: 24px;
+    }
+    .talk-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px; font-weight: 600;
+      font-style: italic; color: var(--white);
+      margin-bottom: 12px;
+    }
+    .talk-meta {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px; letter-spacing: 0.15em;
+      text-transform: uppercase; color: #333;
+      margin-bottom: 16px;
+    }
+    .talk-desc { font-size: 15px; color: #666; max-width: 100%; }
+    .audience-list {
+      list-style: none; margin-top: 32px;
+    }
+    .audience-list li {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px; letter-spacing: 0.1em;
+      color: #444; padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 12px;
+    }
+    .audience-list li::before {
+      content: ''; width: 4px; height: 4px;
+      border-radius: 50%; background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ─── MEMOIR ─── */
+    #memoir {
+      background: linear-gradient(135deg, #0A0A0A 0%, #080808 50%, #0C0905 100%);
+    }
+    .memoir-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    .memoir-cover {
+      aspect-ratio: 2/3;
+      background: linear-gradient(145deg, #1A1208, #0C0C0C);
+      border: 1px solid #2A2010;
+      border-radius: 4px;
+      display: flex; flex-direction: column;
+      justify-content: space-between;
+      padding: 40px 32px;
+      position: relative; overflow: hidden;
+    }
+    .memoir-cover::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(200,151,42,0.08) 0%, transparent 60%);
+    }
+    .memoir-cover-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px; font-weight: 300;
+      font-style: italic; color: var(--white);
+      line-height: 1.2; position: relative;
+    }
+    .memoir-cover-sub {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px; letter-spacing: 0.2em;
+      color: var(--gold); position: relative;
+    }
+    .memoir-coming {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 24px;
+    }
+
+    /* ─── CONTACT ─── */
+    #contact { text-align: center; }
+    #contact h2 { margin: 0 auto 16px; max-width: 700px; }
+    #contact p { margin: 0 auto 48px; max-width: 500px; }
+    .contact-email {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(20px, 3vw, 32px);
+      font-style: italic; color: var(--gold);
+      text-decoration: none;
+      display: block; margin-bottom: 48px;
+      transition: opacity 0.2s;
+    }
+    .contact-email:hover { opacity: 0.7; }
+    .social-links {
+      display: flex; gap: 24px;
+      justify-content: center; flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    .social-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: #333;
+      text-decoration: none; transition: color 0.2s;
+      padding: 8px 0;
+      border-bottom: 1px solid transparent;
+    }
+    .social-link:hover { color: var(--gold); border-color: var(--gold); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 60px;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-name {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: #1E1E1E;
+    }
+    .footer-copy {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px; color: #1E1E1E;
+    }
+
+    /* ─── DIVIDER ─── */
+    .gold-rule {
+      width: 48px; height: 1px;
+      background: var(--gold); margin: 32px 0;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.8s ease forwards; }
+    .fade-up-2 { animation: fadeUp 0.8s 0.15s ease forwards; opacity: 0; }
+    .fade-up-3 { animation: fadeUp 0.8s 0.3s ease forwards; opacity: 0; }
+    .fade-up-4 { animation: fadeUp 0.8s 0.45s ease forwards; opacity: 0; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      nav { padding: 18px 28px; }
+      .nav-links { display: none; }
+      #hero { padding: 120px 28px 60px; }
+      section { padding: 72px 28px; }
+      footer { padding: 28px; }
+      #story .story-grid,
+      #speaking .speaking-grid,
+      .memoir-inner { grid-template-columns: 1fr; gap: 48px; }
+      .hero-scroll { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-logo">Uhia Willis</a>
+    <ul class="nav-links">
+      <li><a href="#story">Story</a></li>
+      <li><a href="#framework">The Method</a></li>
+      <li><a href="#speaking">Speaking</a></li>
+      <li><a href="#memoir">Memoir</a></li>
+      <li><a href="#contact" class="nav-cta">Book Uhia</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-line"></div>
+    <div class="hero-eyebrow fade-up">Founder · Keynote Speaker · Author</div>
+    <h1 class="hero-name fade-up-2">Uhia<br /><em>Willis</em></h1>
+    <p class="hero-sub fade-up-3">Founder of The R.E.B.U.I.L.D. Method</p>
+    <p class="hero-tagline fade-up-3">
+      Your collapse isn't the end.<br />It's the foundation.
+    </p>
+    <div class="hero-actions fade-up-4">
+      <a href="#contact" class="btn-primary">Book Uhia to Speak</a>
+      <a href="#framework" class="btn-secondary">The Method</a>
+    </div>
+    <span class="hero-scroll">Scroll to explore</span>
+  </section>
+
+  <!-- STORY -->
+  <section id="story">
+    <span class="section-label">The Story Behind the Method</span>
+    <div class="story-grid">
+      <div>
+        <div class="story-quote">
+          "The man I almost wasn't became the man I was always supposed to be."
+        </div>
+        <p class="large">
+          Uhia Willis didn't build The R.E.B.U.I.L.D. Method from theory. He built it from wreckage.
+        </p>
+      </div>
+      <div class="story-text">
+        <p>
+          In a single season, Uhia navigated divorce, false criminal accusations, a legal system weaponized against him, and financial devastation. Most men don't survive one of those intact. He went through all of them at once — and came out the other side not just standing, but with a framework that other men could follow.
+        </p>
+        <p>
+          That framework became The R.E.B.U.I.L.D. Method. A 7-step system built on the belief that collapse isn't a verdict — it's a foundation. That identity isn't something you find after the storm. It's something you construct, deliberately, in the aftermath.
+        </p>
+        <p>
+          Today, Uhia Willis speaks to the man in the room nobody talks to — the one who looks fine on the outside and is silently falling apart. His message isn't motivation. It's a map.
+        </p>
+        <div class="gold-rule"></div>
+        <p style="font-family: 'DM Mono', monospace; font-size: 11px; color: #444; letter-spacing: 0.08em;">
+          Licensed Insurance Broker · UKW Consulting Inc. · Massachusetts
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRAMEWORK -->
+  <section id="framework">
+    <span class="section-label">The Framework</span>
+    <h2>The R.E.B.U.I.L.D.<br /><em>Method</em></h2>
+    <div class="framework-intro">
+      <p class="large">Seven steps. Built for the man who has nothing left to lose and everything left to become.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step">
+        <span class="step-letter">R</span>
+        <div class="step-name">Reckon</div>
+        <div class="step-desc">Face the full truth of what happened — without minimizing, justifying, or deflecting. This is where the rebuild actually begins.</div>
+      </div>
+      <div class="step">
+        <span class="step-letter">E</span>
+        <div class="step-name">Excavate</div>
+        <div class="step-desc">Go beneath the collapse to uncover the identity fractures, belief systems, and patterns that made you vulnerable to losing yourself.</div>
+      </div>
+      <div class="step">
+        <span class="step-letter">B</span>
+        <div class="step-name">Boundaries</div>
+        <div class="step-desc">Rebuild the internal and external lines that protect who you are — in relationships, business, family, and the stories others tell about you.</div>
+      </div>
+      <div class="step">
+        <span class="step-letter">U</span>
+        <div class="step-name">Unshackle</div>
+        <div class="step-desc">Release the shame, false narratives, and other people's definitions of your failure that are keeping you anchored to the wreckage.</div>
+      </div>
+      <div class="step">
+        <span class="step-letter">I</span>
+        <div class="step-name">Integrate</div>
+        <div class="step-desc">Reconcile the man you were, the man you became in the fire, and the man you are choosing to be — forging a unified, unbreakable identity.</div>
+      </div>
+      <div class="step">
+        <span class="step-letter">L</span>
+        <div class="step-name">Lead</div>
+        <div class="step-desc">Step back into leadership — of yourself first, then your household, your business, your mission, and your community.</div>
+      </div>
+      <div class="step">
+        <span class="step-letter">D</span>
+        <div class="step-name">Declare</div>
+        <div class="step-desc">Commit publicly and permanently to the rebuilt version of yourself, your standards, and your vision for the next chapter of your life.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEAKING -->
+  <section id="speaking">
+    <span class="section-label">Keynote Speaking</span>
+    <div class="speaking-grid">
+      <div>
+        <h2>A Talk That<br /><em>Changes Men</em></h2>
+        <p class="large">Every audience has a man sitting in it who looks like he's got it together — and is quietly coming apart. Uhia Willis speaks directly to him.</p>
+        <div class="gold-rule"></div>
+        <ul class="audience-list">
+          <li>Men's conferences &amp; leadership events</li>
+          <li>Faith-based organizations</li>
+          <li>Employee wellness &amp; resilience programs</li>
+          <li>Veterans' groups &amp; transition programs</li>
+          <li>Divorce recovery &amp; life transition summits</li>
+          <li>Podcast appearances &amp; panel discussions</li>
+        </ul>
+      </div>
+      <div>
+        <div class="talk-card">
+          <div class="talk-meta">Signature Keynote</div>
+          <div class="talk-title">"How to Rebuild Your Life When Everything Falls Apart"</div>
+          <p class="talk-desc">Drawing from his own documented collapse and rebuild, Uhia delivers a talk that is equal parts testimony and tactical framework. Audiences don't just feel something — they leave knowing what to do next.</p>
+        </div>
+        <div class="talk-card">
+          <div class="talk-meta">Duration &amp; Format</div>
+          <div class="talk-title">45–90 Min · Workshop Available</div>
+          <p class="talk-desc">Available as a keynote, breakout session, half-day workshop, or multi-session engagement. Q&amp;A and meet-and-greet available upon request.</p>
+        </div>
+        <a href="#contact" class="btn-primary" style="display:inline-block; margin-top: 8px;">
+          Book Uhia for Your Event
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMOIR -->
+  <section id="memoir">
+    <span class="section-label">The Book</span>
+    <div class="memoir-inner">
+      <div class="memoir-cover">
+        <div class="memoir-cover-title">From Marriage Bliss<br />to This...</div>
+        <div class="memoir-cover-sub">Uhia Willis · Forthcoming</div>
+      </div>
+      <div>
+        <h2><em>From Marriage Bliss</em><br />to This...</h2>
+        <div class="memoir-coming">Coming Soon</div>
+        <p class="large">The memoir and transformation guide that documents Uhia Willis's personal collapse and rebuild — in full.</p>
+        <p>Divorce. False accusations. Legal battles. Financial devastation. Identity collapse. And the painstaking, deliberate, documented process of rebuilding from all of it.</p>
+        <p>This is not a self-help book dressed in a story. This is the story — with the method built inside it.</p>
+        <div class="gold-rule"></div>
+        <a href="#contact" class="btn-secondary">Get Notified on Release</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <span class="section-label" style="display:block; text-align:center;">Book · Connect · Inquire</span>
+    <h2 style="text-align:center;">
+      Ready to Bring<br /><em>Uhia Willis</em> to Your Stage?
+    </h2>
+    <p style="text-align:center; margin-left:auto; margin-right:auto;">
+      Speaking inquiries, coaching interest, media requests, and podcast bookings — reach out directly.
+    </p>
+    <a href="mailto:uhia@therebuildmethod.com" class="contact-email">
+      uhia@therebuildmethod.com
+    </a>
+    <a href="mailto:uhia@therebuildmethod.com" class="btn-primary">
+      Send a Booking Inquiry
+    </a>
+    <div class="social-links">
+      <a href="https://instagram.com/uhiawillis" class="social-link" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://youtube.com/@UhiaWillis" class="social-link" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://facebook.com/UhiaWillis" class="social-link" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://linkedin.com/in/uhia-willis-901b502b" class="social-link" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-name">Uhia Willis · The R.E.B.U.I.L.D. Method · UKW Consulting Inc.</span>
+    <span class="footer-copy">&copy; 2025 Uhia Willis. All rights reserved.</span>
+  </footer>
+
+</body>
+</html>
