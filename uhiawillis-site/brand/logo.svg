@@ -3,40 +3,41 @@
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&amp;family=DM+Mono:wght@400;500&amp;display=swap');
     </style>
+    <linearGradient id="fire" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#C8820A"/>
+      <stop offset="100%" stop-color="#E8500A"/>
+    </linearGradient>
   </defs>
 
-  <!-- ═══ MARK — Three ascending strokes (rise / phoenix abstracted) ═══ -->
-  <!-- Stroke 1 — shortest, leftmost -->
-  <rect x="0" y="52" width="8" height="64" rx="1" fill="#C8972A"/>
-  <!-- Stroke 2 — mid height -->
-  <rect x="16" y="28" width="8" height="88" rx="1" fill="#C8972A"/>
-  <!-- Stroke 3 — tallest, rightmost — slight outward angle at cap (wing tip) -->
-  <rect x="32" y="0" width="8" height="116" rx="1" fill="#C8972A"/>
-  <!-- Wing cap on stroke 3 — horizontal extension suggesting wingspan -->
-  <rect x="28" y="0" width="20" height="6" rx="1" fill="#C8972A"/>
-  <!-- Connecting base line — ground they rise from -->
-  <rect x="0" y="112" width="48" height="3" rx="1" fill="rgba(200,151,42,0.35)"/>
+  <!-- ═══ MARK — Three ascending strokes (rise / ember fire) ═══ -->
+  <rect x="0" y="52" width="10" height="64" rx="1" fill="url(#fire)"/>
+  <rect x="19" y="28" width="10" height="88" rx="1" fill="url(#fire)"/>
+  <rect x="38" y="0" width="10" height="116" rx="1" fill="url(#fire)"/>
+  <!-- Wing cap — wingspan -->
+  <rect x="33" y="0" width="22" height="7" rx="1" fill="#E8500A"/>
+  <!-- Base line -->
+  <rect x="0" y="112" width="56" height="2" rx="1" fill="rgba(232,80,10,0.3)"/>
 
   <!-- ═══ WORDMARK — UHIA WILLIS ═══ -->
   <text
-    x="72"
-    y="72"
+    x="80"
+    y="70"
     font-family="'Cormorant Garamond', Georgia, serif"
-    font-size="44"
-    font-weight="400"
-    letter-spacing="6"
-    fill="#F0EBE0"
+    font-size="48"
+    font-weight="500"
+    letter-spacing="7"
+    fill="#FFFFFF"
     dominant-baseline="middle"
   >UHIA WILLIS</text>
 
   <!-- ═══ SECONDARY — THE R.E.B.U.I.L.D. METHOD ═══ -->
   <text
-    x="73"
-    y="108"
+    x="81"
+    y="112"
     font-family="'DM Mono', 'Courier New', monospace"
     font-size="10"
-    font-weight="400"
-    letter-spacing="3.5"
+    font-weight="500"
+    letter-spacing="4"
     fill="#C8972A"
     dominant-baseline="middle"
   >THE R.E.B.U.I.L.D. METHOD</text>
