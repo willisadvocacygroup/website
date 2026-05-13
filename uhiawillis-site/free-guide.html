@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The 7 Signs Your Identity Has Collapsed — Uhia Willis</title>
+  <meta name="description" content="A free diagnostic guide for the man who knows something has broken but can't name it yet. Seven clear signs — and the first step for each.">
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #080808; --b2: #0F0F0F; --b3: #161616; --b4: #1E1E1E;
+      --gold: #C8972A; --gold2: #D4A843;
+      --cream: #F0EBE0; --muted: #B0A898; --dim: rgba(176,168,152,.4);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans:  'DM Sans', system-ui, sans-serif;
+      --mono:  'DM Mono', 'Courier New', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black); color: var(--cream);
+      font-family: var(--sans); font-weight: 300;
+      line-height: 1.7; -webkit-font-smoothing: antialiased;
+      max-width: 840px; margin: 0 auto; padding: clamp(40px, 8vw, 100px) clamp(24px, 5vw, 60px);
+    }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { color: var(--gold2); }
+
+    /* HEADER */
+    .doc-header { margin-bottom: 64px; padding-bottom: 40px; border-bottom: 1px solid rgba(200,151,42,.15); }
+    .doc-brand { font-family: var(--mono); font-size: .65rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; display: block; }
+    .doc-title {
+      font-family: var(--serif); font-weight: 300;
+      font-size: clamp(36px, 6vw, 72px); line-height: 1.0; letter-spacing: -.03em;
+      margin-bottom: 24px; color: var(--cream);
+    }
+    .doc-title em { font-style: italic; color: var(--gold); }
+    .doc-subtitle { font-size: 1.05rem; color: var(--muted); line-height: 1.7; max-width: 580px; margin-bottom: 28px; }
+    .doc-meta { font-family: var(--mono); font-size: .62rem; letter-spacing: .15em; text-transform: uppercase; color: var(--dim); }
+
+    /* INTRO */
+    .intro { margin-bottom: 64px; }
+    .intro p { font-size: 1.04rem; color: var(--muted); margin-bottom: 20px; line-height: 1.78; }
+    .intro strong { color: var(--cream); font-weight: 400; }
+    .intro-note {
+      margin-top: 32px; padding: 24px 28px;
+      border-left: 2px solid var(--gold);
+      background: rgba(200,151,42,.04);
+      font-size: .96rem; color: var(--muted); line-height: 1.7; font-style: italic;
+    }
+    .intro-note strong { color: var(--cream); font-style: normal; font-weight: 400; }
+
+    /* SIGNS */
+    .signs { display: flex; flex-direction: column; gap: 0; margin-bottom: 72px; }
+    .sign { padding: 44px 0; border-bottom: 1px solid rgba(200,151,42,.1); }
+    .sign:first-child { border-top: 1px solid rgba(200,151,42,.1); }
+    .sign-header { display: grid; grid-template-columns: 56px 1fr; gap: 24px; align-items: start; margin-bottom: 20px; }
+    .sign-num { font-family: var(--serif); font-size: 3.4rem; font-weight: 300; color: rgba(200,151,42,.25); line-height: 1; letter-spacing: -.04em; }
+    .sign-title { font-family: var(--serif); font-weight: 400; font-size: clamp(20px, 2.4vw, 28px); letter-spacing: -.01em; line-height: 1.15; padding-top: 6px; }
+    .sign-body { padding-left: 80px; }
+    .sign-body p { font-size: .98rem; color: var(--muted); line-height: 1.78; margin-bottom: 16px; }
+    .sign-body p:last-child { margin-bottom: 0; }
+    .sign-body strong { color: var(--cream); font-weight: 400; }
+    .sign-step {
+      margin-top: 20px; padding: 18px 20px;
+      border-left: 2px solid rgba(200,151,42,.3);
+      background: rgba(200,151,42,.03);
+    }
+    .sign-step-label { font-family: var(--mono); font-size: .58rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 8px; }
+    .sign-step p { font-size: .9rem; color: var(--muted); line-height: 1.68; }
+
+    /* WHAT NEXT */
+    .what-next { margin-bottom: 64px; }
+    .what-next h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(28px, 4vw, 48px); letter-spacing: -.02em; line-height: 1.1; margin-bottom: 28px; }
+    .what-next h2 em { font-style: italic; color: var(--gold); }
+    .what-next p { font-size: .98rem; color: var(--muted); margin-bottom: 18px; line-height: 1.78; }
+    .what-next strong { color: var(--cream); font-weight: 400; }
+
+    /* FRAMEWORK PREVIEW */
+    .fw-preview { margin: 40px 0; background: var(--b2); padding: 36px; }
+    .fw-preview-title { font-family: var(--mono); font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: block; }
+    .fw-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .fw-item { }
+    .fw-letter { font-family: var(--serif); font-size: 1.8rem; font-weight: 300; color: rgba(200,151,42,.35); line-height: 1; display: block; margin-bottom: 4px; }
+    .fw-phase { font-family: var(--serif); font-size: .96rem; font-weight: 400; color: var(--cream); line-height: 1.3; }
+
+    /* CTA */
+    .cta-block { margin-top: 56px; padding: 48px 40px; background: var(--b2); text-align: center; }
+    .cta-label { font-family: var(--mono); font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 16px; }
+    .cta-title { font-family: var(--serif); font-weight: 300; font-size: clamp(24px, 3.5vw, 42px); letter-spacing: -.02em; line-height: 1.1; margin-bottom: 16px; }
+    .cta-title em { font-style: italic; color: var(--gold); }
+    .cta-desc { font-size: .96rem; color: var(--muted); max-width: 480px; margin: 0 auto 32px; line-height: 1.68; }
+    .btn-gold { display: inline-block; font-family: var(--mono); font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; padding: 16px 34px; background: var(--gold); color: var(--black); font-weight: 500; transition: background .22s; }
+    .btn-gold:hover { background: var(--gold2); color: var(--black); }
+    .cta-alt { margin-top: 16px; font-size: .86rem; color: var(--muted); }
+    .cta-alt a { color: var(--gold); }
+
+    /* FOOTER */
+    .doc-footer { margin-top: 72px; padding-top: 32px; border-top: 1px solid rgba(200,151,42,.1); display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; }
+    .doc-footer-brand { font-family: var(--serif); font-size: .96rem; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; }
+    .doc-footer-brand span { display: block; font-family: var(--mono); font-size: .58rem; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-top: 4px; }
+    .doc-footer-links { font-family: var(--mono); font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); line-height: 2; text-align: right; }
+    .doc-footer-links a { color: var(--gold); }
+
+    @media (max-width: 600px) {
+      .sign-header { grid-template-columns: 40px 1fr; gap: 16px; }
+      .sign-num { font-size: 2.4rem; }
+      .sign-body { padding-left: 56px; }
+      .cta-block { padding: 36px 24px; }
+      .doc-footer { flex-direction: column; }
+      .doc-footer-links { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="doc-brand">Uhia Willis &nbsp;·&nbsp; The R.E.B.U.I.L.D. Method &nbsp;·&nbsp; uhiawillis.com</span>
+    <h1 class="doc-title">The 7 Signs Your Identity Has <em>Collapsed</em></h1>
+    <p class="doc-subtitle">A diagnostic guide for the man who knows something has broken but can't name it yet. Seven clear signs — and the first step for each.</p>
+    <span class="doc-meta">Free Resource &nbsp;·&nbsp; Uhia Willis &nbsp;·&nbsp; 2026</span>
+  </header>
+
+  <!-- INTRO -->
+  <div class="intro">
+    <p>
+      Identity collapse doesn't announce itself. It doesn't arrive on a single morning with a clear diagnosis. It accumulates. One thing gives way, then another, then another — until the man looking back at you from the mirror feels like someone you used to know.
+    </p>
+    <p>
+      Most men reach this guide because they've been searching for language. They know something fundamental has shifted. They can feel the gap between who they were and who they are. But without a framework for what's happening, the experience stays formless — and formless pain is the hardest kind to move through.
+    </p>
+    <p>
+      <strong>This guide names what's happening.</strong> Seven specific signs that indicate identity collapse — not failure, not weakness, not permanent damage — but a structural event that requires a structural response.
+    </p>
+    <div class="intro-note">
+      <strong>Important:</strong> These signs are not diagnoses. They are indicators. The presence of one or two does not mean collapse. The presence of five, six, or all seven — especially in combination — means you are in the middle of something real. And something that can be rebuilt.
+    </div>
+  </div>
+
+  <!-- THE 7 SIGNS -->
+  <div class="signs">
+
+    <div class="sign">
+      <div class="sign-header">
+        <div class="sign-num">1</div>
+        <h2 class="sign-title">You've lost your narrative</h2>
+      </div>
+      <div class="sign-body">
+        <p>
+          Every man carries a story about who he is. Father. Provider. Leader. Man of faith. The kind of man who doesn't quit. That narrative is not vanity — it's structural. It organizes your decisions, your relationships, your sense of what's worth doing.
+        </p>
+        <p>
+          When identity collapses, the narrative breaks. You no longer know how to answer the question "Who are you?" without it sounding hollow, complicated, or like a lie. The story that used to come easily now requires effort — and even then, doesn't land right.
+        </p>
+        <p>
+          <strong>This is not confusion. This is the absence of the structure that used to hold your identity in place.</strong> It can be rebuilt — but not by returning to the old narrative. By constructing a new one.
+        </p>
+        <div class="sign-step">
+          <span class="sign-step-label">First Step</span>
+          <p>Write down the last version of your narrative that felt true. Then write down what in that narrative no longer holds. The gap between the two is where the rebuild begins.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sign">
+      <div class="sign-header">
+        <div class="sign-num">2</div>
+        <h2 class="sign-title">Your anchor roles are gone</h2>
+      </div>
+      <div class="sign-body">
+        <p>
+          Most men define themselves by their roles: husband, father, business owner, leader, provider. These aren't just job descriptions — they're identity containers. They tell you who you are by telling you what you do and who you're responsible for.
+        </p>
+        <p>
+          When collapse strips those roles — through divorce, job loss, betrayal, legal crisis, community rejection — men often describe the experience as not just loss, but <em>disappearance</em>. "I don't know who I am without the role" is not dramatic language. It's accurate.
+        </p>
+        <p>
+          <strong>If your primary roles have been removed, undermined, or made unrecognizable, your identity is operating without its scaffolding.</strong> This is survivable. But you cannot simply wait for new roles to fill the space. You have to build the identity first, and let the roles attach to it.
+        </p>
+        <div class="sign-step">
+          <span class="sign-step-label">First Step</span>
+          <p>List the three roles that most defined you before the collapse. Then ask: what remains of who I am when those roles are removed? That residual — however thin it feels — is your foundation.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sign">
+      <div class="sign-header">
+        <div class="sign-num">3</div>
+        <h2 class="sign-title">You're living defensively</h2>
+      </div>
+      <div class="sign-body">
+        <p>
+          When identity collapses — especially when that collapse involves public narrative, false allegations, community rejection, or coordinated attack — men frequently shift from living by their values to living in defense of their reputation.
+        </p>
+        <p>
+          Every decision gets filtered through: "How does this look? What will this prove? How do I counter the version of me that's in circulation?" Life becomes a court case where you are both defendant and attorney, spending energy on a trial that has no scheduled verdict date.
+        </p>
+        <p>
+          <strong>Defensive living is identity collapse in operational form.</strong> You are no longer building from your values — you are managing against someone else's story about you. This drains exactly the energy you need to rebuild.
+        </p>
+        <div class="sign-step">
+          <span class="sign-step-label">First Step</span>
+          <p>For one day, track how many decisions you make based on "what this proves" versus "what I actually value." The ratio tells you how much of your life is running in defensive mode.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sign">
+      <div class="sign-header">
+        <div class="sign-num">4</div>
+        <h2 class="sign-title">You've stopped making decisions from values</h2>
+      </div>
+      <div class="sign-body">
+        <p>
+          Identity is, at its core, a decision-making system. Who you are determines what you choose — how you treat people, what you prioritize, what you won't do regardless of pressure.
+        </p>
+        <p>
+          One of the most reliable signs of identity collapse is that decision-making becomes reactive, inconsistent, or purely situational. You find yourself doing things you wouldn't have done before — not because you've changed your values consciously, but because the values have lost their grip. They feel abstract where they used to feel automatic.
+        </p>
+        <p>
+          <strong>This is not a moral failure. It's a structural symptom.</strong> When the identity framework collapses, the values it housed become unmoored. They don't disappear — but they stop organizing behavior the way they once did.
+        </p>
+        <div class="sign-step">
+          <span class="sign-step-label">First Step</span>
+          <p>Write down five decisions you've made in the last 30 days that you're not proud of. Then write the value you would have operated from if you'd been at your best. That list of values is still yours — they just need reconnection.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sign">
+      <div class="sign-header">
+        <div class="sign-num">5</div>
+        <h2 class="sign-title">The future feels blank</h2>
+      </div>
+      <div class="sign-body">
+        <p>
+          Men with intact identities have futures they're building toward. Not rigid plans — but a direction. A sense of becoming. Something beyond survival.
+        </p>
+        <p>
+          In identity collapse, that future disappears. Not in a dramatic way — more like a fog. You can handle today. You might be able to see next week. But anything beyond that feels genuinely blank. Not scary blank — just absent. Like trying to picture a room with no walls.
+        </p>
+        <p>
+          <strong>The blank future is not depression, though it can look like it.</strong> It is the structural result of not knowing who will be living that future. Until the identity is rebuilt, the future has no occupant — and the mind refuses to build a house with no one in it.
+        </p>
+        <div class="sign-step">
+          <span class="sign-step-label">First Step</span>
+          <p>Ask: what is the one thing I would want to be true about my life in five years — about the kind of man I am, not what I own or achieve? That answer, however small, is a compass bearing. Start there.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sign">
+      <div class="sign-header">
+        <div class="sign-num">6</div>
+        <h2 class="sign-title">You don't recognize yourself in the mirror</h2>
+      </div>
+      <div class="sign-body">
+        <p>
+          This one is rarely metaphorical. Men in identity collapse frequently describe literal moments of disconnection — looking in the mirror, seeing the face, and feeling a gap between that face and the sense of self. "That's me. But I don't know who that is anymore."
+        </p>
+        <p>
+          It can also manifest in social situations: feeling like you're performing a version of yourself rather than being yourself. Watching yourself talk and noticing it doesn't match anything internal. Going through the motions of personality without the person behind them.
+        </p>
+        <p>
+          <strong>Psychologists call this depersonalization. In plain language, it's the lived experience of an identity that no longer has a coherent structure to hold it.</strong> It passes — but not passively. It passes when the structure is rebuilt.
+        </p>
+        <div class="sign-step">
+          <span class="sign-step-label">First Step</span>
+          <p>Identify the last moment you felt genuinely like yourself — not performing, not managing, not defending. What were you doing? Who were you with? What about that moment connected you to something real in you? That connection point is still available.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sign">
+      <div class="sign-header">
+        <div class="sign-num">7</div>
+        <h2 class="sign-title">You've lost your sense of mission</h2>
+      </div>
+      <div class="sign-body">
+        <p>
+          Men are built around mission. Not every man can articulate his mission clearly — but every man who is functioning at his best is organized around something beyond his own comfort. A family he's building. A business he's creating. A community he's serving. A standard he's holding.
+        </p>
+        <p>
+          Identity collapse strips mission. Not always immediately — sometimes mission is the last thing to go, held up by momentum alone. But eventually, when the identity that was organized around the mission collapses, the mission loses its engine.
+        </p>
+        <p>
+          You're going through the motions. Doing the things you used to do with purpose but now doing them from habit or obligation. <strong>The work feels disconnected from meaning. And meaning is what makes the work worth doing.</strong>
+        </p>
+        <p>
+          This is not permanent. Purpose is not lost in collapse — it is forged by it. But you have to go looking for it. It does not return on its own.
+        </p>
+        <div class="sign-step">
+          <span class="sign-step-label">First Step</span>
+          <p>Write the answer to this question: what problem in the world — or in the people around me — makes me angry enough to do something about it? That anger is directional. It is pointing at your purpose.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- WHAT NEXT -->
+  <div class="what-next">
+    <h2>So. <em>What comes next?</em></h2>
+    <p>
+      If you recognized yourself in five, six, or all seven of these signs — good. Not because the situation is good, but because recognition is the beginning of reconstruction. You now have language for what's happening. Language is leverage.
+    </p>
+    <p>
+      The next question is not "how do I get back to who I was?" The man you were before the collapse is not the destination. The collapse happened for a reason — structural reasons that don't go away if you simply return to the old configuration.
+    </p>
+    <p>
+      <strong>The question is: who am I building next?</strong>
+    </p>
+    <p>
+      That construction is exactly what The R.E.B.U.I.L.D. Method was designed for. Seven phases — not suggestions, not inspiration — a construction sequence for men who are ready to rebuild deliberately.
+    </p>
+
+    <div class="fw-preview">
+      <span class="fw-preview-title">The R.E.B.U.I.L.D. Method — Phase Overview</span>
+      <div class="fw-grid">
+        <div class="fw-item"><span class="fw-letter">R</span><span class="fw-phase">Recognize the Collapse</span></div>
+        <div class="fw-item"><span class="fw-letter">E</span><span class="fw-phase">Evaluate What Remains</span></div>
+        <div class="fw-item"><span class="fw-letter">B</span><span class="fw-phase">Believe</span></div>
+        <div class="fw-item"><span class="fw-letter">U</span><span class="fw-phase">Upgrade Your Identity</span></div>
+        <div class="fw-item"><span class="fw-letter">I</span><span class="fw-phase">Ignite Your Purpose</span></div>
+        <div class="fw-item"><span class="fw-letter">L</span><span class="fw-phase">Lead Yourself First</span></div>
+        <div class="fw-item"><span class="fw-letter">D</span><span class="fw-phase">Design Your Legacy</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <span class="cta-label">Ready to Start</span>
+    <h2 class="cta-title">The 7-Day Rebuild <em>Challenge</em></h2>
+    <p class="cta-desc">Seven days. One R.E.B.U.I.L.D. phase per day. Daily lessons delivered by email — fully automated, work it on your schedule. The fastest way to move from knowing the framework to living inside it.</p>
+    <!-- REPLACE href with Stripe payment link once created -->
+    <a href="mailto:info@willisadvocacygroup.com?subject=7-Day%20Challenge" class="btn-gold">Start the Challenge — $47</a>
+    <p class="cta-alt">Or go deeper: <a href="mailto:info@willisadvocacygroup.com?subject=Rebuild%20Blueprint">The Rebuild Blueprint — $197</a></p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="doc-footer-brand">
+      Uhia Willis
+      <span>The R.E.B.U.I.L.D. Method</span>
+    </div>
+    <div class="doc-footer-links">
+      <a href="https://uhiawillis.com">uhiawillis.com</a><br>
+      <a href="mailto:info@willisadvocacygroup.com">info@willisadvocacygroup.com</a><br>
+      © 2026 Uhia Willis / UKW Consulting Inc.
+    </div>
+  </footer>
+
+</body>
+</html>
