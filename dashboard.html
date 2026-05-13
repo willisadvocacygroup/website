@@ -38,10 +38,7 @@
       gap: 1rem;
       flex-wrap: wrap;
     }
-    .dash-brand {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-    }
+    .dash-brand { font-family: 'Playfair Display', serif; font-size: 1.2rem; }
     .dash-brand span { color: var(--teal2); }
     .dash-meta {
       font-family: 'JetBrains Mono', monospace;
@@ -50,6 +47,7 @@
       text-align: right;
     }
     .dash-meta strong { color: var(--gold2); }
+    .dash-header-btns { display: flex; gap: 0.5rem; align-items: center; }
     .refresh-btn {
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.15);
@@ -62,6 +60,23 @@
       transition: background 0.2s;
     }
     .refresh-btn:hover { background: rgba(255,255,255,0.15); }
+    .live-dot {
+      width: 8px; height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 4px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .auto-refresh-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.45);
+    }
 
     /* Layout */
     .dash-body { padding: 1.5rem; max-width: 1200px; margin: 0 auto; }
@@ -72,6 +87,109 @@
       text-transform: uppercase;
       color: var(--muted);
       margin-bottom: 0.75rem;
+    }
+
+    /* Config hint */
+    .config-hint {
+      background: rgba(13,115,119,0.06);
+      border: 1px solid rgba(13,115,119,0.2);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.78rem;
+      color: #0a4a4d;
+      margin-bottom: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      display: none;
+    }
+    .config-hint.visible { display: block; }
+
+    /* Live Leads Panel */
+    .live-panel {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1.25rem;
+      box-shadow: 0 2px 8px rgba(12,27,46,0.06);
+      margin-bottom: 1.5rem;
+      border-left: 3px solid var(--teal);
+    }
+    .live-panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .live-panel-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .live-stats-row {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    .live-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .live-stat .val {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--teal);
+      line-height: 1;
+    }
+    .live-stat .lbl {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .live-leads-table { width: 100%; border-collapse: collapse; }
+    .live-leads-table th {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.4rem 0.5rem;
+      text-align: left;
+      border-bottom: 2px solid #eef1f5;
+    }
+    .live-leads-table td {
+      font-size: 0.82rem;
+      padding: 0.5rem 0.5rem;
+      border-bottom: 1px solid #eef1f5;
+      color: var(--navy);
+    }
+    .live-leads-table tr:last-child td { border-bottom: none; }
+    .live-leads-table tr.new-lead { animation: fadeInRow 1s ease; }
+    @keyframes fadeInRow {
+      from { background: rgba(13,115,119,0.08); }
+      to   { background: transparent; }
+    }
+    .interest-tag {
+      display: inline-block;
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .interest-tag.medicare  { background: rgba(13,115,119,0.1); color: var(--teal); }
+    .interest-tag.life      { background: rgba(200,151,42,0.1);  color: var(--gold); }
+    .interest-tag.both      { background: rgba(12,27,46,0.08);   color: var(--navy); }
+    .interest-tag.unsure    { background: rgba(90,112,128,0.1);  color: var(--muted); }
+    .no-api-msg {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-family: 'JetBrains Mono', monospace;
     }
 
     /* Stat cards */
@@ -105,11 +223,7 @@
       color: var(--navy);
       line-height: 1;
     }
-    .stat-card .sub {
-      font-size: 0.7rem;
-      color: var(--muted);
-      margin-top: 0.3rem;
-    }
+    .stat-card .sub { font-size: 0.7rem; color: var(--muted); margin-top: 0.3rem; }
 
     /* Revenue gauge */
     .gauge-row {
@@ -150,12 +264,7 @@
     }
     .gauge-nums .actual { color: var(--teal); font-weight: 600; }
     .gauge-nums .target { color: var(--muted); }
-    .gauge-pct {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      color: var(--navy);
-      margin-top: 0.75rem;
-    }
+    .gauge-pct { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--navy); margin-top: 0.75rem; }
 
     /* Pipeline */
     .pipeline-card {
@@ -178,18 +287,8 @@
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
       gap: 0.75rem;
     }
-    .stage {
-      text-align: center;
-      padding: 0.75rem 0.5rem;
-      background: #f5f7f9;
-      border-radius: 8px;
-    }
-    .stage .s-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      color: var(--teal);
-      font-weight: 700;
-    }
+    .stage { text-align: center; padding: 0.75rem 0.5rem; background: #f5f7f9; border-radius: 8px; }
+    .stage .s-num { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--teal); font-weight: 700; }
     .stage .s-lbl { font-size: 0.7rem; color: var(--muted); margin-top: 0.25rem; }
 
     /* Social */
@@ -210,12 +309,7 @@
       gap: 0.4rem;
     }
     .social-icon { font-size: 1.4rem; }
-    .social-val {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      color: var(--navy);
-      font-weight: 700;
-    }
+    .social-val { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--navy); font-weight: 700; }
     .social-lbl { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
 
     /* Renewals table */
@@ -253,13 +347,7 @@
       color: var(--navy);
     }
     tr:last-child td { border-bottom: none; }
-    .badge {
-      display: inline-block;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      font-size: 0.7rem;
-      font-weight: 700;
-    }
+    .badge { display: inline-block; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700; }
     .badge-teal  { background: rgba(13,115,119,0.1); color: var(--teal); }
     .badge-gold  { background: rgba(200,151,42,0.1); color: var(--gold); }
     .badge-navy  { background: rgba(12,27,46,0.08);  color: var(--navy); }
@@ -276,40 +364,13 @@
       font-size: 0.85rem;
     }
     .activity-list li:last-child { border-bottom: none; }
-    .act-date {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--muted);
-      flex-shrink: 0;
-      min-width: 80px;
-      margin-top: 2px;
-    }
-    .act-type {
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--teal);
-      flex-shrink: 0;
-      min-width: 70px;
-      margin-top: 2px;
-    }
+    .act-date { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--muted); flex-shrink: 0; min-width: 80px; margin-top: 2px; }
+    .act-type { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--teal); flex-shrink: 0; min-width: 70px; margin-top: 2px; }
 
-    /* Edit hint */
-    .edit-hint {
-      background: rgba(200,151,42,0.08);
-      border: 1px solid rgba(200,151,42,0.25);
-      border-radius: 8px;
-      padding: 0.75rem 1rem;
-      font-size: 0.8rem;
-      color: #7a5a10;
-      margin-bottom: 1.5rem;
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    /* Responsive */
     @media (max-width: 640px) {
       .gauge-row { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
+      .live-stats-row { gap: 1rem; }
     }
   </style>
 </head>
@@ -321,14 +382,37 @@
     Last updated: <strong id="last-updated">—</strong><br>
     Today: <strong id="today-date">—</strong>
   </div>
-  <button class="refresh-btn" onclick="loadData()">↻ Refresh</button>
+  <div class="dash-header-btns">
+    <span class="auto-refresh-label"><span class="live-dot"></span>auto 60s</span>
+    <button class="refresh-btn" onclick="loadAll()">↻ Refresh</button>
+  </div>
 </div>
 
 <div class="dash-body">
 
-  <div class="edit-hint">
-    ⚙ To update this dashboard: edit <strong>dashboard-data.json</strong> in the same folder, then click Refresh.
-    Zapier can auto-update that file via a scheduled webhook write.
+  <!-- Config hint shown if API not set -->
+  <div class="config-hint" id="config-hint">
+    ⚙ To see live leads: set API_BASE and ADMIN_KEY at the top of the &lt;script&gt; block in this file.
+    Values are in webhook-server/.env (API_BASE = https://api.willisadvocacygroup.com, ADMIN_KEY = the ADMIN_KEY value).
+  </div>
+
+  <!-- Live Leads -->
+  <div class="section-label">Live Lead Feed</div>
+  <div class="live-panel">
+    <div class="live-panel-header">
+      <div class="live-panel-title">Incoming Leads — Real Time</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--muted);" id="live-updated">—</div>
+    </div>
+    <div class="live-stats-row">
+      <div class="live-stat"><div class="val" id="ls-today">—</div><div class="lbl">Today</div></div>
+      <div class="live-stat"><div class="val" id="ls-week">—</div><div class="lbl">This Week</div></div>
+      <div class="live-stat"><div class="val" id="ls-total">—</div><div class="lbl">All Time</div></div>
+      <div class="live-stat"><div class="val" id="ls-medicare" style="color:var(--teal);">—</div><div class="lbl">Medicare</div></div>
+      <div class="live-stat"><div class="val" id="ls-life" style="color:var(--gold);">—</div><div class="lbl">Life</div></div>
+    </div>
+    <div id="live-leads-wrap">
+      <div class="no-api-msg">Connecting to live feed…</div>
+    </div>
   </div>
 
   <!-- Clients & Policies -->
@@ -459,6 +543,18 @@
 </div>
 
 <script>
+  // ─── CONFIG — set these to enable live lead feed ───────────────────────────
+  const API_BASE  = 'https://api.willisadvocacygroup.com';
+  const ADMIN_KEY = 'df1930623ff3e6506f069d6b5cb42fa93a9044bdf349b4f2160795cac32757cd';
+  // ──────────────────────────────────────────────────────────────────────────
+
+  const INTEREST_LABELS = {
+    medicare: 'Medicare',
+    life:     'Life Ins.',
+    both:     'Both',
+    unsure:   'Unsure',
+  };
+
   function fmt(n) {
     if (n == null || n === '') return '—';
     return Number(n).toLocaleString();
@@ -475,72 +571,142 @@
   function todayStr() {
     return new Date().toLocaleDateString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
   }
+  function timeAgo(isoStr) {
+    const diff = Math.floor((Date.now() - new Date(isoStr)) / 1000);
+    if (diff < 60)  return diff + 's ago';
+    if (diff < 3600) return Math.floor(diff / 60) + 'm ago';
+    if (diff < 86400) return Math.floor(diff / 3600) + 'h ago';
+    return new Date(isoStr).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  }
 
+  // ─── Live Leads (from Railway API) ───────────────────────────────────────
+  async function loadLiveLeads() {
+    const wrap = document.getElementById('live-leads-wrap');
+
+    if (!API_BASE || !ADMIN_KEY) {
+      document.getElementById('config-hint').classList.add('visible');
+      wrap.innerHTML = '<div class="no-api-msg">API not configured — see hint above.</div>';
+      return;
+    }
+
+    try {
+      // Stats (public endpoint — no key needed)
+      const statsRes = await fetch(`${API_BASE}/api/stats`);
+      if (statsRes.ok) {
+        const s = await statsRes.json();
+        document.getElementById('ls-today').textContent   = s.leadsToday   ?? '—';
+        document.getElementById('ls-week').textContent    = s.leadsWeek    ?? '—';
+        document.getElementById('ls-total').textContent   = s.leadsTotal   ?? '—';
+        document.getElementById('ls-medicare').textContent = s.byInterest?.medicare ?? 0;
+        document.getElementById('ls-life').textContent     = s.byInterest?.life     ?? 0;
+      }
+
+      // Recent leads (protected)
+      const leadsRes = await fetch(`${API_BASE}/api/leads/recent`, {
+        headers: { 'x-admin-key': ADMIN_KEY },
+      });
+
+      if (!leadsRes.ok) {
+        wrap.innerHTML = `<div class="no-api-msg">Could not load leads (HTTP ${leadsRes.status}). Check ADMIN_KEY.</div>`;
+        return;
+      }
+
+      const data  = await leadsRes.json();
+      const leads = (data.leads || []).slice(0, 10);
+
+      document.getElementById('live-updated').textContent = 'Updated ' + new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+
+      if (leads.length === 0) {
+        wrap.innerHTML = '<div class="no-api-msg">No leads yet — submit a test from the website form.</div>';
+        return;
+      }
+
+      wrap.innerHTML = `
+        <table class="live-leads-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>State</th>
+              <th>Interest</th>
+              <th>Source</th>
+              <th>When</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${leads.map((l, i) => `
+              <tr class="${i === 0 ? 'new-lead' : ''}">
+                <td><strong>${l.firstName || '—'}</strong></td>
+                <td>${l.phone || '—'}</td>
+                <td style="font-size:0.75rem;">${l.email || '—'}</td>
+                <td>${l.state || '—'}</td>
+                <td><span class="interest-tag ${l.interest || 'unsure'}">${INTEREST_LABELS[l.interest] || l.interest || '?'}</span></td>
+                <td style="font-size:0.75rem;color:var(--muted);">${l.source || 'Web'}</td>
+                <td style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--muted);">${l.timestamp ? timeAgo(l.timestamp) : '—'}</td>
+              </tr>`).join('')}
+          </tbody>
+        </table>`;
+
+    } catch (err) {
+      wrap.innerHTML = `<div class="no-api-msg">Connection error: ${err.message}</div>`;
+    }
+  }
+
+  // ─── Dashboard data (from local JSON) ────────────────────────────────────
   async function loadData() {
     document.getElementById('today-date').textContent = todayStr();
 
     let data;
     try {
-      // Cache-bust with timestamp so browser always reads fresh file
       const res = await fetch('dashboard-data.json?t=' + Date.now());
       if (!res.ok) throw new Error('HTTP ' + res.status);
       data = await res.json();
-    } catch (err) {
-      // Fallback: try localStorage for manual edits
+    } catch {
       const stored = localStorage.getItem('wagDashboardData');
-      if (stored) {
-        data = JSON.parse(stored);
-      } else {
-        document.querySelector('.edit-hint').textContent =
-          '⚠ Could not load dashboard-data.json. Open this file via a local server (e.g. npx serve .) or edit dashboard-data.json and refresh.';
-        return;
-      }
+      if (stored) { data = JSON.parse(stored); }
+      else { return; }
     }
 
-    const s = data.summary || {};
-    const p = data.pipeline || {};
-    const soc = data.social || {};
+    const s   = data.summary  || {};
+    const p   = data.pipeline || {};
+    const soc = data.social   || {};
 
     document.getElementById('last-updated').textContent = data._updated || 'unknown';
 
-    // Clients
-    document.getElementById('totalClients').textContent     = fmt(s.totalClients);
-    document.getElementById('medicareClients').textContent  = fmt(s.medicareClients);
-    document.getElementById('lifeClients').textContent      = fmt(s.lifeClients);
+    document.getElementById('totalClients').textContent      = fmt(s.totalClients);
+    document.getElementById('medicareClients').textContent   = fmt(s.medicareClients);
+    document.getElementById('lifeClients').textContent       = fmt(s.lifeClients);
     document.getElementById('policiesThisMonth').textContent = fmt(s.policiesThisMonth);
     document.getElementById('clientSplit').textContent =
       fmt(s.medicareClients) + ' Medicare | ' + fmt(s.lifeClients) + ' Life';
 
-    // Revenue
     const actual = s.monthlyRevenueActual || 0;
     const target = s.monthlyRevenueTarget || 5000;
-    const pct = Math.min(100, Math.round((actual / target) * 100));
-    const bar = document.getElementById('rev-bar');
+    const pct    = Math.min(100, Math.round((actual / target) * 100));
+    const bar    = document.getElementById('rev-bar');
     bar.style.width = pct + '%';
-    bar.className = 'gauge-bar' + (pct < 40 ? ' danger' : pct < 75 ? ' warn' : '');
-    document.getElementById('rev-actual').textContent  = fmtMoney(actual);
-    document.getElementById('rev-target').textContent  = fmtMoney(target);
-    document.getElementById('rev-pct').textContent     = pct + '%';
-    document.getElementById('cashPosition').textContent   = fmtMoney(s.cashPosition);
-    document.getElementById('renewalRevenue').textContent = fmtMoney(s.renewalRevenueAnnual);
+    bar.className   = 'gauge-bar' + (pct < 40 ? ' danger' : pct < 75 ? ' warn' : '');
+    document.getElementById('rev-actual').textContent   = fmtMoney(actual);
+    document.getElementById('rev-target').textContent   = fmtMoney(target);
+    document.getElementById('rev-pct').textContent      = pct + '%';
+    document.getElementById('cashPosition').textContent    = fmtMoney(s.cashPosition);
+    document.getElementById('renewalRevenue').textContent  = fmtMoney(s.renewalRevenueAnnual);
 
-    // Pipeline
-    document.getElementById('p-new').textContent      = fmt(p.newLeads);
-    document.getElementById('p-contacted').textContent = fmt(p.contacted);
-    document.getElementById('p-review').textContent    = fmt(p.reviewScheduled);
-    document.getElementById('p-proposal').textContent  = fmt(p.proposalSent);
-    document.getElementById('p-enrolled').textContent  = fmt(p.enrolled);
-    document.getElementById('p-lost').textContent      = fmt(p.lost);
+    document.getElementById('p-new').textContent       = fmt(p.newLeads);
+    document.getElementById('p-contacted').textContent  = fmt(p.contacted);
+    document.getElementById('p-review').textContent     = fmt(p.reviewScheduled);
+    document.getElementById('p-proposal').textContent   = fmt(p.proposalSent);
+    document.getElementById('p-enrolled').textContent   = fmt(p.enrolled);
+    document.getElementById('p-lost').textContent       = fmt(p.lost);
 
-    // Social
-    document.getElementById('s-facebook').textContent  = fmt(soc.facebook);
-    document.getElementById('s-instagram').textContent = fmt(soc.instagram);
-    document.getElementById('s-tiktok').textContent    = fmt(soc.tiktok);
-    document.getElementById('s-linkedin').textContent  = fmt(soc.linkedin);
-    document.getElementById('s-youtube').textContent   = fmt(soc.youtube);
+    document.getElementById('s-facebook').textContent   = fmt(soc.facebook);
+    document.getElementById('s-instagram').textContent  = fmt(soc.instagram);
+    document.getElementById('s-tiktok').textContent     = fmt(soc.tiktok);
+    document.getElementById('s-linkedin').textContent   = fmt(soc.linkedin);
+    document.getElementById('s-youtube').textContent    = fmt(soc.youtube);
 
-    // Renewals
-    const tbody = document.getElementById('renewals-body');
+    const tbody    = document.getElementById('renewals-body');
     const renewals = (data.upcomingRenewals || []).filter(r => {
       const d = daysUntil(r.renewalDate);
       return d >= 0 && d <= 30;
@@ -551,7 +717,7 @@
     } else {
       tbody.innerHTML = renewals.map(r => {
         const days = daysUntil(r.renewalDate);
-        const cls = r.policyType.toLowerCase().includes('life') ? 'badge-gold' : 'badge-teal';
+        const cls  = r.policyType.toLowerCase().includes('life') ? 'badge-gold' : 'badge-teal';
         return `<tr>
           <td>${r.clientName}</td>
           <td><span class="badge ${cls}">${r.policyType}</span></td>
@@ -563,8 +729,7 @@
       }).join('');
     }
 
-    // Activity
-    const actList = document.getElementById('activity-list');
+    const actList  = document.getElementById('activity-list');
     const activity = (data.recentActivity || []).slice(-15).reverse();
     if (activity.length === 0) {
       actList.innerHTML = '<li><div class="act-date">—</div><div>No activity logged.</div></li>';
@@ -579,8 +744,15 @@
     }
   }
 
-  // Load on page open
-  loadData();
+  async function loadAll() {
+    await Promise.all([loadData(), loadLiveLeads()]);
+  }
+
+  // Initial load
+  loadAll();
+
+  // Auto-refresh every 60 seconds
+  setInterval(loadAll, 60000);
 </script>
 </body>
 </html>
