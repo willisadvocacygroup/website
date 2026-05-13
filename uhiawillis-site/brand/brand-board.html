@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand Board — Uhia Willis</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #080808; --b2: #0F0F0F; --b3: #161616; --b4: #1E1E1E;
+      --gold: #C8972A; --gold2: #D4A843; --gold-pale: rgba(200,151,42,.12);
+      --cream: #F0EBE0; --muted: #B0A898; --dim: rgba(176,168,152,.35);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans:  'DM Sans', system-ui, sans-serif;
+      --mono:  'DM Mono', 'Courier New', monospace;
+    }
+    body {
+      background: #111; color: var(--cream);
+      font-family: var(--sans); font-weight: 300;
+      line-height: 1.6; -webkit-font-smoothing: antialiased;
+      padding: 60px 48px;
+    }
+    h1 { font-family: var(--mono); font-size: .7rem; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); margin-bottom: 56px; }
+    section { margin-bottom: 80px; }
+    .section-label { font-family: var(--mono); font-size: .6rem; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; display: block; padding-bottom: 12px; border-bottom: 1px solid rgba(200,151,42,.15); }
+
+    /* ── LOGO LOCKUPS ───────────────────────────────────────── */
+    .logo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+    .logo-panel { padding: 56px 48px; display: flex; align-items: center; justify-content: flex-start; }
+    .logo-panel.dark  { background: var(--black); }
+    .logo-panel.mid   { background: var(--b3); }
+    .logo-panel.light { background: var(--cream); }
+    .logo-panel.gold  { background: var(--gold); }
+    .logo-panel img   { width: 340px; max-width: 100%; height: auto; }
+
+    /* inverted (dark bg + light mark) version — SVG inline color swap */
+    .logo-panel.light img { filter: invert(1) sepia(1) saturate(0) brightness(0.15); }
+
+    /* Mark only */
+    .mark-row { display: flex; gap: 40px; align-items: flex-end; margin-top: 32px; }
+    .mark-item { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    .mark-item img { height: auto; }
+    .mark-item span { font-family: var(--mono); font-size: .55rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+    .mark-sm { width: 32px; }
+    .mark-md { width: 56px; }
+    .mark-lg { width: 80px; }
+    .mark-xl { width: 120px; }
+
+    /* ── COLOR PALETTE ──────────────────────────────────────── */
+    .palette { display: flex; gap: 2px; }
+    .swatch { flex: 1; }
+    .swatch-block { height: 120px; }
+    .swatch-info { padding: 16px 0 0; }
+    .swatch-name { font-family: var(--sans); font-size: .88rem; font-weight: 400; color: var(--cream); margin-bottom: 4px; }
+    .swatch-hex  { font-family: var(--mono); font-size: .64rem; letter-spacing: .1em; color: var(--muted); }
+    .swatch-use  { font-family: var(--mono); font-size: .56rem; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); margin-top: 4px; }
+
+    /* ── TYPE SPECIMENS ─────────────────────────────────────── */
+    .type-stack { display: flex; flex-direction: column; gap: 40px; }
+    .type-item { padding: 32px 36px; background: var(--black); }
+    .type-label { font-family: var(--mono); font-size: .56rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; display: block; }
+    .specimen-display { font-family: var(--serif); font-size: clamp(40px, 6vw, 72px); font-weight: 300; letter-spacing: -.03em; line-height: 1.0; color: var(--cream); }
+    .specimen-display em { font-style: italic; color: var(--gold); }
+    .specimen-h2 { font-family: var(--serif); font-size: clamp(24px, 3vw, 40px); font-weight: 300; letter-spacing: -.02em; line-height: 1.1; color: var(--cream); }
+    .specimen-body { font-family: var(--sans); font-size: 1.02rem; font-weight: 300; line-height: 1.72; color: var(--muted); max-width: 560px; }
+    .specimen-body strong { color: var(--cream); font-weight: 400; }
+    .specimen-mono { font-family: var(--mono); font-size: .7rem; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); }
+    .specimen-mono-lg { font-family: var(--mono); font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+
+    /* ── USAGE RULES ────────────────────────────────────────── */
+    .rules { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+    .rule-block { padding: 32px 36px; background: var(--black); }
+    .rule-block.do   { border-top: 2px solid var(--gold); }
+    .rule-block.dont { border-top: 2px solid rgba(200,151,42,.2); }
+    .rule-head { font-family: var(--mono); font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 20px; }
+    .rule-block.do .rule-head   { color: var(--gold); }
+    .rule-block.dont .rule-head { color: var(--muted); }
+    .rule-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .rule-list li { font-size: .88rem; color: var(--muted); line-height: 1.6; padding-left: 16px; position: relative; }
+    .rule-list li::before { position: absolute; left: 0; }
+    .rule-block.do   .rule-list li::before { content: '✓'; color: var(--gold); }
+    .rule-block.dont .rule-list li::before { content: '✗'; color: rgba(200,151,42,.3); }
+
+    /* ── MOTION / HIERARCHY DEMO ────────────────────────────── */
+    .hier-demo { background: var(--black); padding: 56px 48px; }
+    .hier-inner { max-width: 600px; }
+    .hier-tag { font-family: var(--mono); font-size: .62rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; display: block; }
+    .hier-h1 { font-family: var(--serif); font-size: clamp(36px, 5vw, 64px); font-weight: 300; letter-spacing: -.03em; line-height: 1.0; margin-bottom: 20px; }
+    .hier-h1 em { font-style: italic; color: var(--gold); }
+    .hier-body { font-size: .96rem; color: var(--muted); line-height: 1.76; max-width: 480px; margin-bottom: 32px; }
+    .hier-body strong { color: var(--cream); font-weight: 400; }
+    .hier-btn { display: inline-block; font-family: var(--mono); font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; padding: 16px 36px; background: var(--gold); color: var(--black); font-weight: 500; }
+    .hier-divider { width: 40px; height: 2px; background: var(--gold); margin: 32px 0; opacity: .4; }
+
+    @media (max-width: 860px) {
+      body { padding: 40px 24px; }
+      .logo-grid { grid-template-columns: 1fr; }
+      .logo-panel img { width: 260px; }
+      .palette { flex-wrap: wrap; }
+      .swatch { flex: 0 0 calc(50% - 1px); }
+      .rules { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Uhia Willis — Brand Identity System / 2026</h1>
+
+<!-- ═══ LOGO LOCKUPS ══════════════════════════════════════════ -->
+<section>
+  <span class="section-label">01 — Logo Lockup</span>
+  <div class="logo-grid">
+    <div class="logo-panel dark">
+      <img src="logo.svg" alt="Uhia Willis wordmark — primary on dark">
+    </div>
+    <div class="logo-panel mid">
+      <img src="logo.svg" alt="Uhia Willis wordmark — on dark variant">
+    </div>
+    <div class="logo-panel light">
+      <!-- On light backgrounds, use dark version — place dark SVG here once created -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 160" fill="none" width="340">
+        <rect x="0" y="52" width="8" height="64" rx="1" fill="#8A6318"/>
+        <rect x="16" y="28" width="8" height="88" rx="1" fill="#8A6318"/>
+        <rect x="32" y="0" width="8" height="116" rx="1" fill="#8A6318"/>
+        <rect x="28" y="0" width="20" height="6" rx="1" fill="#8A6318"/>
+        <rect x="0" y="112" width="48" height="3" rx="1" fill="rgba(138,99,24,0.25)"/>
+        <text x="72" y="72" font-family="'Cormorant Garamond', Georgia, serif" font-size="44" font-weight="400" letter-spacing="6" fill="#1A1208" dominant-baseline="middle">UHIA WILLIS</text>
+        <text x="73" y="108" font-family="'DM Mono', 'Courier New', monospace" font-size="10" font-weight="400" letter-spacing="3.5" fill="#8A6318" dominant-baseline="middle">THE R.E.B.U.I.L.D. METHOD</text>
+      </svg>
+    </div>
+    <div class="logo-panel gold">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 160" fill="none" width="340">
+        <rect x="0" y="52" width="8" height="64" rx="1" fill="#080808"/>
+        <rect x="16" y="28" width="8" height="88" rx="1" fill="#080808"/>
+        <rect x="32" y="0" width="8" height="116" rx="1" fill="#080808"/>
+        <rect x="28" y="0" width="20" height="6" rx="1" fill="#080808"/>
+        <rect x="0" y="112" width="48" height="3" rx="1" fill="rgba(8,8,8,0.25)"/>
+        <text x="72" y="72" font-family="'Cormorant Garamond', Georgia, serif" font-size="44" font-weight="400" letter-spacing="6" fill="#080808" dominant-baseline="middle">UHIA WILLIS</text>
+        <text x="73" y="108" font-family="'DM Mono', 'Courier New', monospace" font-size="10" font-weight="400" letter-spacing="3.5" fill="#080808" dominant-baseline="middle">THE R.E.B.U.I.L.D. METHOD</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- MARK ONLY — scaled -->
+  <div class="mark-row" style="margin-top:40px; padding: 40px 48px; background: var(--black);">
+    <div class="mark-item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 116" fill="none" class="mark-sm" style="width:24px">
+        <rect x="0" y="52" width="8" height="64" rx="1" fill="#C8972A"/>
+        <rect x="16" y="28" width="8" height="88" rx="1" fill="#C8972A"/>
+        <rect x="32" y="0" width="8" height="116" rx="1" fill="#C8972A"/>
+        <rect x="28" y="0" width="20" height="6" rx="1" fill="#C8972A"/>
+      </svg>
+      <span>16px</span>
+    </div>
+    <div class="mark-item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 116" fill="none" style="width:36px">
+        <rect x="0" y="52" width="8" height="64" rx="1" fill="#C8972A"/>
+        <rect x="16" y="28" width="8" height="88" rx="1" fill="#C8972A"/>
+        <rect x="32" y="0" width="8" height="116" rx="1" fill="#C8972A"/>
+        <rect x="28" y="0" width="20" height="6" rx="1" fill="#C8972A"/>
+      </svg>
+      <span>24px</span>
+    </div>
+    <div class="mark-item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 116" fill="none" style="width:60px">
+        <rect x="0" y="52" width="8" height="64" rx="1" fill="#C8972A"/>
+        <rect x="16" y="28" width="8" height="88" rx="1" fill="#C8972A"/>
+        <rect x="32" y="0" width="8" height="116" rx="1" fill="#C8972A"/>
+        <rect x="28" y="0" width="20" height="6" rx="1" fill="#C8972A"/>
+      </svg>
+      <span>40px</span>
+    </div>
+    <div class="mark-item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 116" fill="none" style="width:100px">
+        <rect x="0" y="52" width="8" height="64" rx="1" fill="#C8972A"/>
+        <rect x="16" y="28" width="8" height="88" rx="1" fill="#C8972A"/>
+        <rect x="32" y="0" width="8" height="116" rx="1" fill="#C8972A"/>
+        <rect x="28" y="0" width="20" height="6" rx="1" fill="#C8972A"/>
+      </svg>
+      <span>Icon / Avatar</span>
+    </div>
+    <div class="mark-item" style="margin-left:auto">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 116" fill="none" style="width:100px">
+        <rect x="0" y="52" width="8" height="64" rx="1" fill="#C8972A"/>
+        <rect x="16" y="28" width="8" height="88" rx="1" fill="#C8972A"/>
+        <rect x="32" y="0" width="8" height="116" rx="1" fill="#C8972A"/>
+        <rect x="28" y="0" width="20" height="6" rx="1" fill="#C8972A"/>
+        <rect x="0" y="112" width="48" height="3" rx="1" fill="rgba(200,151,42,0.35)"/>
+      </svg>
+      <span>With base</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COLOR PALETTE ════════════════════════════════════════ -->
+<section>
+  <span class="section-label">02 — Color Palette</span>
+  <div class="palette">
+    <div class="swatch">
+      <div class="swatch-block" style="background:#080808;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Near Black</div>
+        <div class="swatch-hex">#080808</div>
+        <div class="swatch-use">Primary background</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#0F0F0F;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Dark 2</div>
+        <div class="swatch-hex">#0F0F0F</div>
+        <div class="swatch-use">Section alternate</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#161616;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Dark 3</div>
+        <div class="swatch-hex">#161616</div>
+        <div class="swatch-use">Cards / panels</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#C8972A;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Authority Gold</div>
+        <div class="swatch-hex">#C8972A</div>
+        <div class="swatch-use">Primary accent / CTAs</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#D4A843;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Gold Hover</div>
+        <div class="swatch-hex">#D4A843</div>
+        <div class="swatch-use">Interactive states</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#F0EBE0;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Warm Cream</div>
+        <div class="swatch-hex">#F0EBE0</div>
+        <div class="swatch-use">Primary text</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#B0A898;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Muted</div>
+        <div class="swatch-hex">#B0A898</div>
+        <div class="swatch-use">Body / secondary text</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TYPOGRAPHY ═══════════════════════════════════════════ -->
+<section>
+  <span class="section-label">03 — Typography</span>
+  <div class="type-stack">
+
+    <div class="type-item">
+      <span class="type-label">Display — Cormorant Garamond 300 · Used for H1, hero headlines</span>
+      <div class="specimen-display">The collapse is not<br>the <em>end of you.</em></div>
+      <div style="margin-top:20px; font-family: var(--mono); font-size:.58rem; letter-spacing:.14em; text-transform:uppercase; color:var(--dim);">
+        Cormorant Garamond · Weight 300 · Italic emphasis in Gold · Letter-spacing −.03em
+      </div>
+    </div>
+
+    <div class="type-item">
+      <span class="type-label">Heading — Cormorant Garamond 300 · Used for H2, section titles</span>
+      <div class="specimen-h2">Seven phases.<br>One complete arc.</div>
+      <div style="margin-top:16px; font-family: var(--mono); font-size:.58rem; letter-spacing:.14em; text-transform:uppercase; color:var(--dim);">
+        Cormorant Garamond · Weight 300 · Letter-spacing −.02em
+      </div>
+    </div>
+
+    <div class="type-item">
+      <span class="type-label">Body — DM Sans 300 · Used for all paragraph text</span>
+      <div class="specimen-body">
+        Identity collapse doesn't announce itself. It accumulates. One thing gives way, then another — until the man looking back at you from the mirror feels like someone you <strong>used to know.</strong> This guide names what's happening.
+      </div>
+      <div style="margin-top:16px; font-family: var(--mono); font-size:.58rem; letter-spacing:.14em; text-transform:uppercase; color:var(--dim);">
+        DM Sans · Weight 300 · Line-height 1.72 · Muted #B0A898 · Strong in Cream
+      </div>
+    </div>
+
+    <div class="type-item">
+      <span class="type-label">Label / Mono — DM Mono · Used for labels, tags, captions, CTAs</span>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div class="specimen-mono">The R.E.B.U.I.L.D. Method &nbsp;·&nbsp; Phase 01</div>
+        <div class="specimen-mono-lg">Free Resource &nbsp;·&nbsp; Uhia Willis &nbsp;·&nbsp; 2026</div>
+        <div style="display:inline-block; font-family: var(--mono); font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; padding:14px 28px; background:var(--gold); color:var(--black); font-weight:500;">Start the Challenge — $47</div>
+      </div>
+      <div style="margin-top:16px; font-family: var(--mono); font-size:.58rem; letter-spacing:.14em; text-transform:uppercase; color:var(--dim);">
+        DM Mono · Weights 400/500 · All-caps · Letter-spacing .18–.28em
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ TYPOGRAPHIC HIERARCHY IN CONTEXT ════════════════════ -->
+<section>
+  <span class="section-label">04 — Hierarchy in Context</span>
+  <div class="hier-demo">
+    <div class="hier-inner">
+      <span class="hier-tag">The R.E.B.U.I.L.D. Method &nbsp;·&nbsp; Identity Reconstruction</span>
+      <h1 class="hier-h1">You don't bounce back.<br>You <em>build forward.</em></h1>
+      <div class="hier-divider"></div>
+      <p class="hier-body">
+        The R.E.B.U.I.L.D. Method is a seven-phase construction sequence for men who've experienced identity collapse. <strong>Not a recovery program — a rebuild.</strong> There's a difference, and it's the one that matters.
+      </p>
+      <a href="#" class="hier-btn">Start the 7-Day Challenge — $47</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ USAGE RULES ═══════════════════════════════════════════ -->
+<section>
+  <span class="section-label">05 — Usage Rules</span>
+  <div class="rules">
+    <div class="rule-block do">
+      <div class="rule-head">Do</div>
+      <ul class="rule-list">
+        <li>Use the wordmark on dark backgrounds (#080808, #0F0F0F, #161616) as primary placement</li>
+        <li>Use gold (#C8972A) exclusively for accent — never as a primary background at scale</li>
+        <li>Let Cormorant Garamond carry emotional weight — it earns the space it takes</li>
+        <li>Use DM Mono for all labels, tags, buttons, and metadata — never for body copy</li>
+        <li>Give the mark room — clear space equal to the height of the tallest stroke on all sides</li>
+        <li>Use the mark alone for profile photos, favicons, and watermarks</li>
+        <li>Pair italic Cormorant with the gold color for headline emphasis only</li>
+      </ul>
+    </div>
+    <div class="rule-block dont">
+      <div class="rule-head">Don't</div>
+      <ul class="rule-list">
+        <li>Don't place the logo on busy photographic backgrounds without a dark overlay</li>
+        <li>Don't use gold text on white or light backgrounds — it lacks contrast</li>
+        <li>Don't stretch, distort, rotate, or rearrange the lockup elements</li>
+        <li>Don't use DM Sans for display headlines — it is a body and UI font only</li>
+        <li>Don't introduce additional typefaces — the system is complete at three</li>
+        <li>Don't use bright colors, gradients, or drop shadows on any brand element</li>
+        <li>Don't use the full wordmark at sizes below 120px wide — use the mark only</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BRAND VOICE REFERENCE ════════════════════════════════ -->
+<section>
+  <span class="section-label">06 — Voice & Tone Reference</span>
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:2px;">
+    <div style="background:var(--black); padding:32px 28px;">
+      <div style="font-family:var(--serif); font-size:1.4rem; font-weight:300; color:var(--gold); margin-bottom:12px;">Direct</div>
+      <p style="font-size:.88rem; color:var(--muted); line-height:1.68;">No hedging. No corporate softening. The audience has been through real things — they can handle real language. Say the hard thing plainly.</p>
+    </div>
+    <div style="background:var(--black); padding:32px 28px;">
+      <div style="font-family:var(--serif); font-size:1.4rem; font-weight:300; color:var(--gold); margin-bottom:12px;">Earned</div>
+      <p style="font-size:.88rem; color:var(--muted); line-height:1.68;">Authority comes from experience, not credentials. The framework exists because it was lived. Every claim is backed by the story behind it.</p>
+    </div>
+    <div style="background:var(--black); padding:32px 28px;">
+      <div style="font-family:var(--serif); font-size:1.4rem; font-weight:300; color:var(--gold); margin-bottom:12px;">Constructive</div>
+      <p style="font-size:.88rem; color:var(--muted); line-height:1.68;">The orientation is always forward. Not recovery, not therapy — architecture. The language of building, not healing. Structure, sequence, foundation.</p>
+    </div>
+  </div>
+</section>
+
+<div style="margin-top:80px; font-family:var(--mono); font-size:.58rem; letter-spacing:.16em; text-transform:uppercase; color:var(--dim); text-align:center; padding-top:28px; border-top:1px solid rgba(200,151,42,.08);">
+  Uhia Willis Brand System &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; 2026
+</div>
+
+</body>
+</html>
