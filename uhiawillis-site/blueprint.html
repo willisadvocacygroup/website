@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Rebuild Blueprint — Uhia Willis | $197</title>
+  <meta name="description" content="Seven modules. Seven workbooks. Lifetime access. The complete R.E.B.U.I.L.D. Method, self-guided. Every phase. Every framework. At your pace. $197.">
+  <link rel="canonical" href="https://uhiawillis.com/blueprint">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #050505; --b2: #0A0A0A; --b3: #111111; --b4: #1A1A1A;
+      --gold: #E8500A; --gold2: #F06828; --gold-mark: #C8972A;
+      --cream: #FFFFFF; --muted: #9A9A9A; --dim: rgba(154,154,154,.4);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans:  'DM Sans', system-ui, sans-serif;
+      --mono:  'DM Mono', 'Courier New', monospace;
+      --pad: clamp(72px, 9vw, 120px); --max: 1060px; --g: clamp(24px, 5vw, 72px);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--cream); font-family: var(--sans); font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    img  { display: block; max-width: 100%; }
+    a    { color: inherit; text-decoration: none; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--g); }
+    .label { font-family: var(--mono); font-size: .66rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); }
+
+    /* NAV */
+    nav { padding: 22px var(--g); display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(232,80,10,.08); }
+    .nav-logo { font-family: var(--serif); font-size: 1rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; }
+    .nav-logo em { font-style: normal; color: var(--gold); }
+    .nav-back { font-family: var(--mono); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
+    .nav-back:hover { color: var(--gold); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { font-family: var(--mono); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    @media (max-width: 700px) { .nav-links { display: none; } }
+
+    /* HERO */
+    #hero { padding: var(--pad) 0; text-align: center; border-bottom: 1px solid rgba(232,80,10,.08); }
+    .hero-tag { display: block; margin-bottom: 20px; }
+    .hero-h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(36px, 6.5vw, 84px); line-height: 1.0; letter-spacing: -.03em; margin-bottom: 24px; }
+    .hero-h1 em { font-style: italic; color: var(--gold); }
+    .hero-sub { font-size: 1.08rem; color: var(--muted); max-width: 580px; margin: 0 auto 44px; line-height: 1.72; }
+    .price-display { margin-bottom: 36px; }
+    .price-num { font-family: var(--serif); font-size: clamp(48px, 7vw, 80px); font-weight: 300; color: var(--gold); line-height: 1; }
+    .price-note { font-family: var(--mono); font-size: .64rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
+    .btn-gold { display: inline-block; font-family: var(--mono); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; padding: 18px 40px; background: var(--gold); color: var(--black); font-weight: 500; transition: background .22s; }
+    .btn-gold:hover { background: var(--gold2); }
+    .hero-fine { font-family: var(--mono); font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); margin-top: 16px; }
+
+    /* WHO IT'S FOR */
+    #who { padding: var(--pad) 0; background: var(--b2); }
+    .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .who-h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(30px, 4vw, 52px); letter-spacing: -.02em; line-height: 1.1; margin: 18px 0 28px; }
+    .who-h2 em { font-style: italic; color: var(--gold); }
+    .who-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .who-list li { padding: 16px 0; border-bottom: 1px solid rgba(232,80,10,.1); font-size: .96rem; color: var(--muted); line-height: 1.6; display: flex; gap: 16px; align-items: baseline; }
+    .who-list li:first-child { border-top: 1px solid rgba(232,80,10,.1); }
+    .who-list li::before { content: '—'; color: var(--gold); flex-shrink: 0; font-family: var(--serif); }
+    .who-body p { font-size: .98rem; color: var(--muted); margin-bottom: 18px; line-height: 1.78; }
+    .who-body p:last-child { margin-bottom: 0; }
+    .who-body strong { color: var(--cream); font-weight: 400; }
+
+    /* WHAT'S INSIDE — MODULE CARDS */
+    #modules { padding: var(--pad) 0; }
+    .modules-h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(30px, 4vw, 52px); letter-spacing: -.02em; margin: 18px 0 12px; }
+    .modules-sub { font-size: .96rem; color: var(--muted); max-width: 560px; margin-bottom: 56px; line-height: 1.72; }
+    .module-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2px; }
+    .module-card { background: var(--b3); padding: 36px 30px; display: flex; flex-direction: column; gap: 14px; }
+    .module-letter { font-family: var(--serif); font-size: 4.5rem; font-weight: 300; color: var(--gold); line-height: 1; opacity: .85; }
+    .module-name { font-family: var(--serif); font-weight: 400; font-size: 1.18rem; letter-spacing: -.01em; line-height: 1.2; }
+    .module-desc { font-size: .86rem; color: var(--muted); line-height: 1.7; flex: 1; }
+    .module-workbook { font-family: var(--mono); font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(232,80,10,.55); padding-top: 8px; border-top: 1px solid rgba(232,80,10,.12); margin-top: auto; }
+
+    /* WHAT YOU GET */
+    #deliverables { padding: var(--pad) 0; background: var(--b2); }
+    .deliverables-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .deliverables-h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(30px, 4vw, 52px); letter-spacing: -.02em; line-height: 1.1; margin: 18px 0 32px; }
+    .deliverables-h2 em { font-style: italic; color: var(--gold); }
+    .deliverables-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .deliverables-list li { padding: 16px 0; border-bottom: 1px solid rgba(232,80,10,.1); font-size: .96rem; color: var(--muted); line-height: 1.6; display: flex; gap: 16px; align-items: baseline; }
+    .deliverables-list li:first-child { border-top: 1px solid rgba(232,80,10,.1); }
+    .deliverables-list li::before { content: '—'; color: var(--gold); flex-shrink: 0; font-family: var(--serif); }
+    .deliverables-list strong { color: var(--cream); font-weight: 400; }
+    .deliverables-aside { padding: 36px 32px; background: var(--b4); border-left: 2px solid var(--gold); align-self: start; }
+    .deliverables-aside p { font-size: .94rem; color: var(--muted); line-height: 1.78; margin-bottom: 14px; }
+    .deliverables-aside p:last-child { margin-bottom: 0; }
+    .deliverables-aside strong { color: var(--cream); font-weight: 400; }
+
+    /* ABOUT */
+    #about { padding: var(--pad) 0; }
+    .about-inner { display: grid; grid-template-columns: 200px 1fr; gap: 56px; align-items: start; }
+    .about-img img { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: top center; filter: grayscale(15%) contrast(1.06); }
+    .about-h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(24px, 3vw, 40px); letter-spacing: -.02em; line-height: 1.1; margin: 16px 0 22px; }
+    .about-h2 em { font-style: italic; color: var(--gold); }
+    .about-body p { font-size: .96rem; color: var(--muted); margin-bottom: 16px; line-height: 1.78; }
+    .about-body p:last-child { margin-bottom: 0; }
+    .about-body strong { color: var(--cream); font-weight: 400; }
+
+    /* CTA BOTTOM */
+    #cta { padding: var(--pad) 0; background: var(--b2); text-align: center; }
+    .cta-h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(28px, 4.5vw, 60px); letter-spacing: -.025em; line-height: 1.05; margin-bottom: 20px; }
+    .cta-h2 em { font-style: italic; color: var(--gold); }
+    .cta-sub { font-size: 1rem; color: var(--muted); max-width: 480px; margin: 0 auto 36px; line-height: 1.68; }
+    .cta-price { font-family: var(--serif); font-size: clamp(36px, 5vw, 64px); font-weight: 300; color: var(--gold); margin-bottom: 28px; line-height: 1; }
+    .cta-fine { font-family: var(--mono); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); margin-top: 16px; }
+    .cta-upsell { margin-top: 22px; font-size: .88rem; color: var(--muted); }
+    .cta-upsell a { color: var(--gold); border-bottom: 1px solid rgba(232,80,10,.3); padding-bottom: 1px; transition: border-color .2s; }
+    .cta-upsell a:hover { border-color: var(--gold); }
+    .cta-divider { margin: 14px 0; color: rgba(154,154,154,.2); font-family: var(--mono); font-size: .6rem; }
+
+    /* FOOTER */
+    footer { padding: 44px var(--g); border-top: 1px solid rgba(232,80,10,.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; max-width: 100%; }
+    .ft-copy { font-family: var(--mono); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
+    .ft-links { display: flex; gap: 24px; flex-wrap: wrap; align-items: center; }
+    .ft-link { font-family: var(--mono); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+    .ft-link-muted { font-family: var(--mono); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
+
+    @media (max-width: 800px) {
+      .who-grid { grid-template-columns: 1fr; gap: 40px; }
+      .deliverables-inner { grid-template-columns: 1fr; gap: 40px; }
+      .about-inner { grid-template-columns: 1fr; gap: 32px; }
+      .about-img { max-width: 160px; }
+    }
+    @media (max-width: 620px) {
+      .module-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <!-- MailerLite Universal -->
+  <script>(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);
+  })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '2346940');
+  </script>
+  <!-- End MailerLite Universal -->
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">Uhia <em>Willis</em></a>
+  <ul class="nav-links">
+    <li><a href="free-guide.html">Free Guide</a></li>
+    <li><a href="challenge.html">7-Day Challenge</a></li>
+    <li><a href="blueprint.html" class="active">Rebuild Blueprint</a></li>
+    <li><a href="cohort.html">Cohort</a></li>
+  </ul>
+  <a href="/" class="nav-back">← Back to site</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="wrap">
+    <span class="label hero-tag">The R.E.B.U.I.L.D. Method &nbsp;·&nbsp; Complete Self-Guided Course</span>
+    <h1 class="hero-h1">The complete system.<br><em>Every phase.</em><br>At your pace.</h1>
+    <p class="hero-sub">
+      Seven modules. Seven workbooks. Lifetime access. The full R.E.B.U.I.L.D. Method, self-guided — so you can work the entire arc on your own schedule, in your own time, as many times as you need.
+    </p>
+    <div class="price-display">
+      <div class="price-num">$197</div>
+      <div class="price-note">One-time · Lifetime access · Instant delivery</div>
+    </div>
+    <a href="https://buy.stripe.com/cNi9ALbxlcCS81zbChcQU01" class="btn-gold">Get the Blueprint — $197</a>
+    <p class="hero-fine">Secure checkout · Instant access · 100% private</p>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section id="who">
+  <div class="wrap">
+    <div class="who-grid">
+      <div>
+        <span class="label">This is for you if</span>
+        <h2 class="who-h2">You want the <em>whole framework,</em><br>not just day one.</h2>
+        <ul class="who-list">
+          <li>You want the complete R.E.B.U.I.L.D. framework — all seven phases, not a seven-day introduction to it</li>
+          <li>You work on your own schedule and you don't need a cohort or a live call to hold your hand through it</li>
+          <li>You want reference material — a system you can return to, re-work, and apply as your situation evolves</li>
+          <li>You're ready for the whole arc, not just the recognition phase — you want to go all the way through to legacy</li>
+        </ul>
+      </div>
+      <div class="who-body">
+        <span class="label" style="display:block;margin-bottom:18px;">What makes this different</span>
+        <p>Most courses give you content. The Rebuild Blueprint gives you a <strong>system with sequence.</strong> Every module is designed to build on the one before it — because that's how an actual rebuild works. You can't design your legacy on a foundation that hasn't been examined.</p>
+        <p>There are no live calls, no cohort, no group accountability structure. <strong>That is a feature, not a gap.</strong> Some men don't need an audience to do their work. They need the right framework and the space to move through it without performance.</p>
+        <p><strong>If that's you — this was built for you.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE — MODULE CARDS -->
+<section id="modules">
+  <div class="wrap">
+    <span class="label">What's Inside</span>
+    <h2 class="modules-h2">Seven modules.<br>One complete system.</h2>
+    <p class="modules-sub">Each module covers one phase of the R.E.B.U.I.L.D. Method — teaching, framework, and a full workbook so you can do the actual phase work, not just watch someone describe it.</p>
+    <div class="module-grid">
+
+      <div class="module-card">
+        <div class="module-letter">R</div>
+        <h3 class="module-name">Recognize the Collapse</h3>
+        <p class="module-desc">This module builds the diagnostic capacity most men never develop — the ability to name what actually happened, without minimizing it, without embellishing it, without the story you've been telling everyone else. You will sit with the truth of it. That is the first and most critical step in rebuilding anything that holds.</p>
+        <div class="module-workbook">Phase Workbook included</div>
+      </div>
+
+      <div class="module-card">
+        <div class="module-letter">E</div>
+        <h3 class="module-name">Evaluate What Remains</h3>
+        <p class="module-desc">After collapse, the default move is to catalog losses. This module teaches the construction alternative — an honest accounting of what survived, what you still carry, and what you have to actually build with. Most men discover they have far more material than they thought. This module makes that inventory concrete.</p>
+        <div class="module-workbook">Phase Workbook included</div>
+      </div>
+
+      <div class="module-card">
+        <div class="module-letter">B</div>
+        <h3 class="module-name">Believe</h3>
+        <p class="module-desc">Not a pep talk. Not affirmations. This module builds evidence-based belief — a structured case, drawn from your own history, that what's ahead of you is possible. The man who has survived what you've survived has already demonstrated something. This module makes that proof explicit and puts it somewhere you can read it when the doubt comes back.</p>
+        <div class="module-workbook">Phase Workbook included</div>
+      </div>
+
+      <div class="module-card">
+        <div class="module-letter">U</div>
+        <h3 class="module-name">Upgrade Your Identity</h3>
+        <p class="module-desc">The collapse didn't happen randomly. Parts of your old identity made you vulnerable to it. This module identifies those parts — specific beliefs, behaviors, and defaults — and walks you through the work of dismantling them and installing what actually holds. The workbook produces a written Old Identity → New Identity document you'll return to for years.</p>
+        <div class="module-workbook">Phase Workbook included</div>
+      </div>
+
+      <div class="module-card">
+        <div class="module-letter">I</div>
+        <h3 class="module-name">Ignite Your Purpose</h3>
+        <p class="module-desc">Purpose is not discovered after collapse — it is forged by it. This module excavates the specific pain, anger, and conviction that your collapse produced, and turns it into a direction. Not a vision board. Not a mission statement that could belong to anyone. A specific, personal purpose that emerges from what you actually went through.</p>
+        <div class="module-workbook">Phase Workbook included</div>
+      </div>
+
+      <div class="module-card">
+        <div class="module-letter">L</div>
+        <h3 class="module-name">Lead Yourself First</h3>
+        <p class="module-desc">You cannot lead anyone else — a household, a team, a community — until you lead yourself. This module builds the private disciplines of the man you're becoming: the non-negotiables, the protocol, the daily evidence that you keep your word to yourself before you keep it to anyone else. This is where the rebuild becomes a practice.</p>
+        <div class="module-workbook">Phase Workbook included</div>
+      </div>
+
+      <div class="module-card">
+        <div class="module-letter">D</div>
+        <h3 class="module-name">Design Your Legacy</h3>
+        <p class="module-desc">The final phase turns everything forward. Your rebuild is not just for you — it never was. This module produces a written legacy architecture: who you're serving, what you're building, and how the pain you survived becomes the most credible credential you'll ever carry. You'll leave this module with a direction that outlasts the crisis that started it.</p>
+        <div class="module-workbook">Phase Workbook included</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section id="deliverables">
+  <div class="wrap">
+    <div class="deliverables-inner">
+      <div>
+        <span class="label">What's included</span>
+        <h2 class="deliverables-h2">Everything you need.<br><em>Nothing you don't.</em></h2>
+        <ul class="deliverables-list">
+          <li><strong>7 video modules</strong> — one per R.E.B.U.I.L.D. phase, full teaching and framework</li>
+          <li><strong>7 phase workbooks (PDF)</strong> — the actual phase work, structured and sequenced</li>
+          <li><strong>Lifetime access</strong> — return to any module at any time, as many times as you need</li>
+          <li><strong>Private</strong> — no cohort, no live calls, no group you have to perform for</li>
+          <li><strong>Work it on your schedule</strong> — one module per week, one per month, or straight through</li>
+          <li><strong>Access within minutes of purchase</strong> — no waiting list, no onboarding call, no delay</li>
+        </ul>
+      </div>
+      <div class="deliverables-aside">
+        <p>The workbooks are where the real work happens. Each one is designed as a standalone document — structured questions, framework exercises, and exit criteria so you know when you've actually completed the phase rather than just consumed it.</p>
+        <p><strong>You don't have to do this on a timeline someone else set.</strong> The Blueprint is designed to work at whatever pace your life actually allows. Some men move through it in seven weeks. Others take six months. The system doesn't expire. The work doesn't go stale.</p>
+        <p>This is a reference you'll return to. Not a course you finish and forget.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-inner">
+      <div class="about-img">
+        <img src="images/uhia-willis.jpg" alt="Uhia Willis">
+      </div>
+      <div>
+        <span class="label">Built by Uhia Willis</span>
+        <h2 class="about-h2">I built the system<br>I <em>needed and couldn't find.</em></h2>
+        <div class="about-body">
+          <p>The Rebuild Blueprint is the complete R.E.B.U.I.L.D. Method in written and video form. I built it because the framework I needed didn't exist — so I had to live through the collapse, systematize what actually worked, and turn it into something other men could use without having to figure it out alone. This is that system.</p>
+          <p>It didn't come from a research project or a certification course. It came from necessity — from the kind of collapse that strips away everything you thought defined you and forces you to find out what, if anything, remains. <strong>The seven phases are sequenced in the order they actually work.</strong> Not the order that sounds logical. The order I walked through, and the order I've watched other men need to walk through to get somewhere real.</p>
+          <p>Uhia Willis is an entrepreneur, speaker, and licensed insurance professional based in the United States. He is the founder of UKW Consulting and the APEX agency, and the creator of the R.E.B.U.I.L.D. Method — a structured framework for men navigating personal collapse and reconstruction. His work is built on a single premise: <strong>you don't need a perfect past to build a powerful future.</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section id="cta">
+  <div class="wrap">
+    <h2 class="cta-h2">The complete system.<br><em>One time.</em></h2>
+    <p class="cta-sub">Seven modules. Seven workbooks. The full arc — from recognizing the collapse to designing the legacy. Everything in one place, at your pace, for life.</p>
+    <div class="cta-price">$197</div>
+    <a href="https://buy.stripe.com/cNi9ALbxlcCS81zbChcQU01" class="btn-gold">Get the Blueprint — $197</a>
+    <p class="cta-fine">One-time &nbsp;·&nbsp; Lifetime access &nbsp;·&nbsp; Instant delivery &nbsp;·&nbsp; 100% private</p>
+    <div class="cta-divider">—</div>
+    <p class="cta-upsell">Want the group experience instead? <a href="cohort.html">The Rebuild Cohort →</a></p>
+    <p class="cta-upsell" style="margin-top:10px;">Not ready for the full system? Start with the 7-Day Challenge — <a href="challenge.html">$47 →</a></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="ft-copy">© 2026 UKW Consulting Inc.</span>
+  <div class="ft-links">
+    <a href="/" class="ft-link">← uhiawillis.com</a>
+    <a href="mailto:info@willisadvocacygroup.com" class="ft-link-muted">info@willisadvocacygroup.com</a>
+  </div>
+</footer>
+
+</body>
+</html>

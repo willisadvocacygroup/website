@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Rebuild Cohort — Uhia Willis | Group Program</title>
+  <meta name="description" content="15–30 men. One cohort. Eight weeks working the R.E.B.U.I.L.D. Method together — with Uhia in the room every week. Limited enrollment. Join the waitlist.">
+  <link rel="canonical" href="https://uhiawillis.com/cohort">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #050505; --b2: #0A0A0A; --b3: #111111; --b4: #1A1A1A;
+      --gold: #E8500A; --gold2: #F06828; --gold-mark: #C8972A;
+      --cream: #FFFFFF; --muted: #9A9A9A; --dim: rgba(154,154,154,.4);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans:  'DM Sans', system-ui, sans-serif;
+      --mono:  'DM Mono', 'Courier New', monospace;
+      --pad: clamp(72px, 9vw, 120px); --max: 1060px; --g: clamp(24px, 5vw, 72px);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--cream); font-family: var(--sans); font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    img  { display: block; max-width: 100%; }
+    a    { color: inherit; text-decoration: none; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--g); }
+    .label { font-family: var(--mono); font-size: .66rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); }
+
+    /* NAV */
+    nav { padding: 22px var(--g); display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(232,80,10,.08); }
+    .nav-logo { font-family: var(--serif); font-size: 1rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; }
+    .nav-logo em { font-style: normal; color: var(--gold); }
+    .nav-back { font-family: var(--mono); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
+    .nav-back:hover { color: var(--gold); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { font-family: var(--mono); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    @media (max-width: 700px) { .nav-links { display: none; } }
+
+    /* HERO */
+    #hero { padding: var(--pad) 0; text-align: center; border-bottom: 1px solid rgba(232,80,10,.08); }
+    .hero-tag { display: block; margin-bottom: 20px; }
+    .hero-h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(40px, 7vw, 88px); line-height: 1.0; letter-spacing: -.03em; margin-bottom: 24px; }
+    .hero-h1 em { font-style: italic; color: var(--gold); }
+    .hero-sub { font-size: 1.08rem; color: var(--muted); max-width: 580px; margin: 0 auto 44px; line-height: 1.72; }
+    .hero-form-wrap { max-width: 480px; margin: 0 auto 20px; }
+    .hero-fine { font-family: var(--mono); font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); margin-top: 16px; }
+    .hero-announce { font-family: var(--mono); font-size: .64rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-top: 14px; }
+
+    /* WHY COHORT */
+    #why { padding: var(--pad) 0; background: var(--b2); }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .why-h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(30px, 4vw, 52px); letter-spacing: -.02em; line-height: 1.1; margin: 18px 0 28px; }
+    .why-h2 em { font-style: italic; color: var(--gold); }
+    .why-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .why-list li { padding: 16px 0; border-bottom: 1px solid rgba(232,80,10,.1); font-size: .96rem; color: var(--muted); line-height: 1.6; display: flex; gap: 16px; align-items: baseline; }
+    .why-list li:first-child { border-top: 1px solid rgba(232,80,10,.1); }
+    .why-list li::before { content: '—'; color: var(--gold); flex-shrink: 0; font-family: var(--serif); }
+    .why-body p { font-size: .98rem; color: var(--muted); margin-bottom: 18px; line-height: 1.78; }
+    .why-body p:last-child { margin-bottom: 0; }
+    .why-body strong { color: var(--cream); font-weight: 400; }
+
+    /* WHAT'S INCLUDED */
+    #included { padding: var(--pad) 0; }
+    .included-h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(30px, 4vw, 52px); letter-spacing: -.02em; margin: 18px 0 48px; }
+    .included-list { display: flex; flex-direction: column; gap: 0; }
+    .included-item { display: grid; grid-template-columns: 80px 1fr; gap: 32px; padding: 32px 0; border-bottom: 1px solid rgba(232,80,10,.1); align-items: start; }
+    .included-item:first-child { border-top: 1px solid rgba(232,80,10,.1); }
+    .item-num { font-family: var(--mono); font-size: .6rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); padding-top: 4px; }
+    .item-title { font-family: var(--serif); font-weight: 400; font-size: clamp(17px, 2vw, 24px); letter-spacing: -.01em; margin-bottom: 8px; line-height: 1.2; }
+    .item-desc { font-size: .9rem; color: var(--muted); line-height: 1.7; }
+    .item-desc strong { color: var(--cream); font-weight: 400; }
+
+    /* WHO THIS IS FOR */
+    #who { padding: var(--pad) 0; background: var(--b2); }
+    .who-h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(30px, 4vw, 52px); letter-spacing: -.02em; margin: 18px 0 48px; }
+    .who-h2 em { font-style: italic; color: var(--gold); }
+    .who-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .who-card { background: var(--b3); padding: 36px 30px; }
+    .who-card-n { font-family: var(--serif); font-size: 2.8rem; font-weight: 300; color: rgba(232,80,10,.25); line-height: 1; margin-bottom: 16px; }
+    .who-card-title { font-family: var(--serif); font-weight: 400; font-size: 1.2rem; margin-bottom: 10px; line-height: 1.2; }
+    .who-card-desc { font-size: .88rem; color: var(--muted); line-height: 1.68; }
+
+    /* ABOUT */
+    #about { padding: var(--pad) 0; }
+    .about-inner { display: grid; grid-template-columns: 200px 1fr; gap: 56px; align-items: start; }
+    .about-img img { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: top center; filter: grayscale(15%) contrast(1.06); }
+    .about-h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(24px, 3vw, 40px); letter-spacing: -.02em; line-height: 1.1; margin: 16px 0 22px; }
+    .about-h2 em { font-style: italic; color: var(--gold); }
+    .about-body p { font-size: .96rem; color: var(--muted); margin-bottom: 16px; line-height: 1.78; }
+    .about-body p:last-child { margin-bottom: 0; }
+    .about-body strong { color: var(--cream); font-weight: 400; }
+
+    /* WAITLIST CTA */
+    #waitlist { padding: var(--pad) 0; background: var(--b2); text-align: center; }
+    .waitlist-h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(28px, 4.5vw, 60px); letter-spacing: -.025em; line-height: 1.05; margin-bottom: 20px; }
+    .waitlist-h2 em { font-style: italic; color: var(--gold); }
+    .waitlist-sub { font-size: 1rem; color: var(--muted); max-width: 480px; margin: 0 auto 44px; line-height: 1.68; }
+    .waitlist-form-wrap { max-width: 520px; margin: 0 auto 20px; }
+    .waitlist-fine { font-family: var(--mono); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); margin-top: 16px; }
+
+    /* MailerLite form override — keep consistent with site palette */
+    .ml-embedded .ml-form-embedWrapper { background: transparent !important; }
+
+    /* FOOTER */
+    footer { padding: 44px var(--g); border-top: 1px solid rgba(232,80,10,.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; max-width: 100%; }
+    .ft-copy { font-family: var(--mono); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
+    .ft-link { font-family: var(--mono); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+
+    @media (max-width: 800px) {
+      .why-grid { grid-template-columns: 1fr; gap: 40px; }
+      .who-cards { grid-template-columns: 1fr; }
+      .about-inner { grid-template-columns: 1fr; gap: 32px; }
+      .about-img { max-width: 160px; }
+    }
+    @media (max-width: 540px) {
+      .included-item { grid-template-columns: 60px 1fr; gap: 20px; }
+    }
+  </style>
+  <!-- MailerLite Universal -->
+  <script>(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);
+  })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '2346940');
+  </script>
+  <!-- End MailerLite Universal -->
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">Uhia <em>Willis</em></a>
+  <ul class="nav-links">
+    <li><a href="free-guide.html">Free Guide</a></li>
+    <li><a href="challenge.html">7-Day Challenge</a></li>
+    <li><a href="blueprint.html">Rebuild Blueprint</a></li>
+    <li><a href="cohort.html" class="active">Cohort</a></li>
+  </ul>
+  <a href="/" class="nav-back">← Back to site</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="wrap">
+    <span class="label hero-tag">R.E.B.U.I.L.D. Cohort &nbsp;·&nbsp; Limited Enrollment</span>
+    <h1 class="hero-h1">The group that<br><em>builds together.</em></h1>
+    <p class="hero-sub">
+      15–30 men. One cohort. Eight weeks working the R.E.B.U.I.L.D. Method together — with Uhia in the room every week.
+    </p>
+    <div class="hero-form-wrap">
+      <div class="ml-embedded" data-form="17lh5v"></div>
+    </div>
+    <p class="hero-announce">Next cohort dates to be announced. Join the waitlist to be first.</p>
+    <p class="hero-fine">No payment now · Waitlist only · You'll be contacted when enrollment opens</p>
+  </div>
+</section>
+
+<!-- WHY COHORT -->
+<section id="why">
+  <div class="wrap">
+    <div class="why-grid">
+      <div>
+        <span class="label">What makes this different</span>
+        <h2 class="why-h2">The framework works.<br><em>It works faster in a room.</em></h2>
+        <ul class="why-list">
+          <li>Men who've been through collapse know how isolating it is — doing the work alone compounds that isolation</li>
+          <li>Accountability isn't about pressure. It's about knowing someone else is watching you show up</li>
+          <li>Proximity to men who are actually rebuilding changes the pace — your timeline compresses when everyone around you is moving</li>
+          <li>You get Uhia live, not pre-recorded — the same man who built this framework from necessity, not theory</li>
+          <li>Cohort size is capped. You're not one of a thousand. You're one of thirty</li>
+        </ul>
+      </div>
+      <div class="why-body">
+        <span class="label" style="display:block;margin-bottom:18px;">This is not the Blueprint</span>
+        <p>The Rebuild Blueprint is the full self-paced system — seven modules, all eight phases, workbooks you work alone on your schedule. <strong>It's built for the man who moves best with autonomy.</strong></p>
+        <p>The cohort is built for the man who is done going it alone. The curriculum is the same. The difference is what happens between the modules: live calls, a room full of men in the same fight, and Uhia with eyes on where you are in the process.</p>
+        <p><strong>The framework works alone. It works faster when you're not.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section id="included">
+  <div class="wrap">
+    <span class="label">What You Get</span>
+    <h2 class="included-h2">Everything in the cohort</h2>
+
+    <div class="included-list">
+      <div class="included-item">
+        <div class="item-num">01</div>
+        <div>
+          <h3 class="item-title">8 Weekly Group Calls — Live, with Uhia</h3>
+          <p class="item-desc">Every week for eight weeks, you're on a live call with Uhia and the cohort. <strong>Not a webinar. Not a recording to catch up on later.</strong> A working session — phase review, live Q&A, real-time accountability, and the kind of direct feedback that doesn't happen in a self-paced course.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="item-num">02</div>
+        <div>
+          <h3 class="item-title">The Full Rebuild Blueprint — All 7 Modules + Workbooks</h3>
+          <p class="item-desc">The complete R.E.B.U.I.L.D. curriculum is yours for the duration — every module, every workbook, all eight phases in sequence. <strong>This is the same system in the standalone Blueprint.</strong> In the cohort, you work it alongside the group with structured pacing rather than alone on your own timeline.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="item-num">03</div>
+        <div>
+          <h3 class="item-title">Private Group Community — Duration of the Program</h3>
+          <p class="item-desc">A closed group with the other men in your cohort. <strong>This is not a public forum.</strong> You're not performing for strangers — you're working with a small group of men who are in the same eight weeks, doing the same phases, facing the same resistance. The difference between knowing that and being in the room with it is significant.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="item-num">04</div>
+        <div>
+          <h3 class="item-title">Direct Access to Uhia Between Sessions</h3>
+          <p class="item-desc">Questions between calls don't have to wait. <strong>You have a channel to Uhia directly</strong> — for the moments when the work surfaces something that doesn't wait for next week's call. Not unlimited consulting. Focused access for men who are doing the work and hit a wall.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="item-num">05</div>
+        <div>
+          <h3 class="item-title">Phase Accountability Check-ins</h3>
+          <p class="item-desc">Each phase of the R.E.B.U.I.L.D. Method has exit criteria — specific evidence that you've done the work, not just read about it. <strong>In the cohort, those check-ins are structured and tracked.</strong> You know where you are. Uhia knows where you are. The group knows where you are. That's not pressure — that's precision.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="item-num">06</div>
+        <div>
+          <h3 class="item-title">Cohort Size Capped at 30 Men</h3>
+          <p class="item-desc"><strong>This is not a scalable product. It is a room.</strong> Thirty men maximum — small enough that Uhia knows your name and where you are in the process, large enough to generate real collective momentum. When enrollment opens, the cap is the cap. There is no waitlist override.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO THIS IS FOR -->
+<section id="who">
+  <div class="wrap">
+    <span class="label">Who This Is For</span>
+    <h2 class="who-h2">Three types of men<br><em>belong in this room.</em></h2>
+    <div class="who-cards">
+      <div class="who-card">
+        <div class="who-card-n">01</div>
+        <h3 class="who-card-title">Men who've already tried going it alone</h3>
+        <p class="who-card-desc">You've read the books. Done the journaling. Maybe started therapy. You understand what happened. What you haven't done is move. The cohort is for men who have reached the limit of solo work and need a different structure around them.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-card-n">02</div>
+        <h3 class="who-card-title">Men who want Uhia in the room</h3>
+        <p class="who-card-desc">Not a pre-recorded lecture. Not an automated email sequence. The live version — Uhia on a call with you each week, watching where you are, asking the questions that the workbook can't ask. If that's the difference-maker for you, this is the only place you get it.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-card-n">03</div>
+        <h3 class="who-card-title">Men who are serious about moving fast</h3>
+        <p class="who-card-desc">Eight weeks is a compressed timeline for real reconstruction work. The men who get the most from this cohort are the ones who treat each week as a contract with themselves — not a class to attend, but a phase to complete. If you're ready to move, this is built for your pace.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-inner">
+      <div class="about-img">
+        <img src="images/uhia-willis.jpg" alt="Uhia Willis">
+      </div>
+      <div>
+        <span class="label">Built by Uhia Willis</span>
+        <h2 class="about-h2">He didn't study collapse.<br><em>He survived it.</em></h2>
+        <div class="about-body">
+          <p>Uhia Willis is an insurance broker, speaker, and the founder of the R.E.B.U.I.L.D. Method — a framework he built from necessity after living through the kind of collapse that dismantles a man's identity from the foundation up. <strong>The method didn't come from a curriculum. It came from a requirement to live.</strong></p>
+          <p>He has worked with men in transition — after divorce, career destruction, faith collapse, public failure, and isolation — and the cohort is the closest thing to standing in a room with him while you do the work. Eight weeks, thirty men, one framework. No filler, no performance, no life-coach language. Just the work, with Uhia in the room every step of the way.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAITLIST CTA -->
+<section id="waitlist">
+  <div class="wrap">
+    <h2 class="waitlist-h2">Spots are limited.<br><em>Add your name.</em></h2>
+    <p class="waitlist-sub">When enrollment opens, waitlist members are notified first — before any public announcement. The cohort fills from this list.</p>
+    <div class="waitlist-form-wrap">
+      <div class="ml-embedded" data-form="17lh5v"></div>
+    </div>
+    <p class="waitlist-fine">No payment now · Joining the waitlist is free · You'll be notified when enrollment opens</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="ft-copy">© 2026 UKW Consulting Inc. &nbsp;·&nbsp; uhiawillis.com</span>
+  <a href="/" class="ft-link">← uhiawillis.com</a>
+</footer>
+
+</body>
+</html>

@@ -103,7 +103,22 @@
       background: radial-gradient(ellipse at 72% 18%, rgba(232,80,10,.05) 0%, transparent 55%),
                   radial-gradient(ellipse at 18% 82%, rgba(232,80,10,.03) 0%, transparent 50%);
     }
-    .hero-inner { max-width: var(--max); margin: 0 auto; width: 100%; }
+    .hero-inner { max-width: var(--max); margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: flex-end; }
+    .hero-text { min-width: 0; }
+    .hero-photo { position: relative; flex-shrink: 0; align-self: flex-end; }
+    .hero-photo img {
+      display: block; width: clamp(240px, 26vw, 400px); aspect-ratio: 3/4; object-fit: cover; object-position: top center;
+      border-radius: 2px; filter: grayscale(12%) contrast(1.04);
+    }
+    .hero-photo::after {
+      content: ''; position: absolute; inset: 0; border-radius: 2px;
+      background: linear-gradient(to top, rgba(5,5,5,.55) 0%, transparent 40%);
+      pointer-events: none;
+    }
+    @media (max-width: 860px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-photo { display: none; }
+    }
     .hero-tag { display: block; margin-bottom: 28px; }
     .hero-h1 {
       font-family: var(--serif); font-weight: 300; color: var(--cream);
@@ -274,6 +289,8 @@
     <li><a href="#framework">The Method</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#offers">Work With Me</a></li>
+    <li><a href="challenge.html">Challenge</a></li>
+    <li><a href="blueprint.html">Blueprint</a></li>
     <li><a href="#speaking">Speaking</a></li>
   </ul>
   <a href="#optin" class="nav-cta">Free Guide</a>
@@ -283,16 +300,21 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-inner">
-    <span class="label hero-tag">The R.E.B.U.I.L.D. Method &nbsp;·&nbsp; Structured Human Reconstruction</span>
-    <h1 class="hero-h1">
-      You don't need a <em>perfect past</em> to build a powerful future.
-    </h1>
-    <p class="hero-sub">
-      A 7-phase framework for men rebuilding identity, purpose, and leadership after collapse — built by a man who had to use it himself.
-    </p>
-    <div class="hero-btns">
-      <a href="#optin"    class="btn-gold">Download the Free Guide</a>
-      <a href="#speaking" class="btn-wire">Book Uhia to Speak</a>
+    <div class="hero-text">
+      <span class="label hero-tag">The R.E.B.U.I.L.D. Method &nbsp;·&nbsp; Structured Human Reconstruction</span>
+      <h1 class="hero-h1">
+        You don't need a <em>perfect past</em> to build a powerful future.
+      </h1>
+      <p class="hero-sub">
+        A 7-phase framework for men rebuilding identity, purpose, and leadership after collapse — built by a man who had to use it himself.
+      </p>
+      <div class="hero-btns">
+        <a href="#optin"    class="btn-gold">Download the Free Guide</a>
+        <a href="#speaking" class="btn-wire">Book Uhia to Speak</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="images/uhia-headshot.jpg" alt="Uhia Willis — Founder, The R.E.B.U.I.L.D. Method" loading="eager">
     </div>
   </div>
   <div class="scroll-hint">
@@ -546,6 +568,8 @@
         <li><a href="#framework">The Method</a></li>
         <li><a href="#about">About Uhia</a></li>
         <li><a href="#offers">Work With Me</a></li>
+    <li><a href="challenge.html">Challenge</a></li>
+    <li><a href="blueprint.html">Blueprint</a></li>
         <li><a href="#speaking">Speaking</a></li>
         <li><a href="#optin">Free Guide</a></li>
       </ul>
@@ -571,4 +595,7 @@
 
 </body>
 </html>
+
+
+
 

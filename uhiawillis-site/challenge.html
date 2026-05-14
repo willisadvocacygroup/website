@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -35,6 +35,10 @@
     .nav-logo em { font-style: normal; color: var(--gold); }
     .nav-back { font-family: var(--mono); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
     .nav-back:hover { color: var(--gold); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { font-family: var(--mono); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    @media (max-width: 700px) { .nav-links { display: none; } }
 
     /* HERO */
     #hero { padding: var(--pad) 0; text-align: center; border-bottom: 1px solid rgba(232,80,10,.08); }
@@ -131,6 +135,12 @@
 <!-- NAV -->
 <nav>
   <a href="/" class="nav-logo">Uhia <em>Willis</em></a>
+  <ul class="nav-links">
+    <li><a href="free-guide.html">Free Guide</a></li>
+    <li><a href="challenge.html" class="active">7-Day Challenge</a></li>
+    <li><a href="blueprint.html">Rebuild Blueprint</a></li>
+    <li><a href="cohort.html">Cohort</a></li>
+  </ul>
   <a href="/" class="nav-back">← Back to site</a>
 </nav>
 
@@ -303,3 +313,4 @@
 
 </body>
 </html>
+

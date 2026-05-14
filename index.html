@@ -164,9 +164,9 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 2px 12px rgba(12,27,46,0.06);
+      background: var(--navy);
+      border-bottom: 2px solid var(--gold);
+      box-shadow: 0 2px 16px rgba(12,27,46,0.18);
     }
     .nav-inner {
       display: flex;
@@ -177,10 +177,14 @@
     .nav-brand {
       font-family: 'Playfair Display', serif;
       font-size: 1.3rem;
-      color: var(--navy);
+      color: var(--cream);
       font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
     }
-    .nav-brand span { color: var(--teal); }
+    .nav-brand img { height: 44px; width: auto; }
+    .nav-brand span { color: var(--gold); }
     .nav-links {
       display: flex;
       gap: 2rem;
@@ -190,10 +194,10 @@
     .nav-links a {
       font-weight: 600;
       font-size: 0.9rem;
-      color: var(--text);
+      color: var(--cream);
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--teal); }
+    .nav-links a:hover { color: var(--gold); }
     .nav-cta { margin-left: 1rem; }
     .nav-toggle {
       display: none;
@@ -208,7 +212,7 @@
       display: block;
       width: 24px;
       height: 2px;
-      background: var(--navy);
+      background: var(--cream);
       border-radius: 2px;
       transition: all 0.3s;
     }
@@ -928,9 +932,9 @@
         top: 68px;
         left: 0;
         right: 0;
-        background: var(--white);
+        background: var(--navy);
         padding: 1rem 1.5rem 1.5rem;
-        border-bottom: 1px solid var(--border);
+        border-bottom: 2px solid var(--gold);
         gap: 1rem;
       }
       .section { padding: 3.5rem 0; }
@@ -1005,13 +1009,13 @@
   <div class="container">
     <div class="nav-inner">
       <a href="/" class="nav-brand" aria-label="Willis Advocacy Group — Home">
-        <img src="/images/logos/logo-nav.svg"
+        <img src="/images/logos/logo-nav.jpg"
              alt="Willis Advocacy Group"
-             height="40"
-             width="217"
+             height="44"
+             width="auto"
              loading="eager"
              onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
-        <span style="display:none">Willis <span style="color:var(--teal)">Advocacy</span> Group</span>
+        <span style="display:none">Willis <span style="color:var(--gold)">Advocacy</span> Group</span>
       </a>
       <ul class="nav-links" id="nav-links">
         <li><a href="#services">Services</a></li>
