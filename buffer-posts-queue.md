@@ -3,102 +3,168 @@
 
 ---
 
-## POST 1 — MONDAY (Educational)
-**Platform:** Facebook + LinkedIn
-**Theme:** Medicare myth-busting / education
+## ✅ QUEUED — WEEK 1 (queued previous session)
+
+### POST 1 — MONDAY (Educational: Medicare enrollment window)
+**Platform:** Facebook ✅ + LinkedIn ✅
+Most people think Medicare is automatic when they turn 65...
+[Full content in original session]
+
+### POST 2 — WEDNESDAY (Brand: People Over Profits story)
+**Platform:** Facebook ✅ `6a0634121b14bc61a1063c92` + LinkedIn ✅ `6a063412327b198a2b02e5d3`
+
+### POST 3 — FRIDAY (CTA: Free Medicare Review)
+**Platform:** Facebook ✅ `6a06342f90adc7fc2e022e2a` + LinkedIn ✅ `6a06342f06bfe2c7bb01a531`
 
 ---
 
-Most people think Medicare is automatic when they turn 65.
+## ✅ QUEUED — WEEK 2
 
-It's not.
+### POST 4 — MONDAY (Educational: Part B premiums / IRMAA)
+**Platform:** Facebook ✅ `6a0636c3e8f8f041210fbc1b` + LinkedIn ✅ `6a0636c4501c9ce73d019270`
 
-Miss your enrollment window and you could face a **permanent penalty** on your monthly premium — for life.
+Most people are shocked when they get their Medicare Part B bill...
 
-Here's what you actually need to know:
+### POST 5 — WEDNESDAY (Brand: Call center brokers vs. Uhia)
+**Platform:** Facebook ✅ `6a0636c3854899d67a0f5b9c` + LinkedIn ✅ `6a0636c3fe27d6c4c6003134`
 
-✅ You have a 7-month window around your 65th birthday
-✅ If you're still working with employer coverage, the rules are different
-✅ Part D (prescription drug) penalties kick in even if you don't take medications now
-
-One 15-minute conversation could save you thousands.
-
-If you or someone you love is turning 65 in the next 12 months — reach out before the window closes.
-
-📞 (774) 446-0701
-🌐 willisadvocacygroup.com
-Free review. No obligation. People Over Profits.
-
-#Medicare #MedicareHelp #MedicareEnrollment #SeniorBenefits #HealthInsurance #MedicareAdvisory
+### POST 6 — FRIDAY (CTA: Annual plan review)
+**Platform:** Facebook ✅ `6a0636c3e596696a4a06ca02` + LinkedIn ✅ `6a0636c372f69e389a0ba8d5`
 
 ---
 
-## POST 2 — WEDNESDAY (Brand/Values)
-**Platform:** Facebook + LinkedIn
-**Theme:** "People Over Profits" personal story / trust building
+## ✅ QUEUED — WEEK 3
+
+### POST 7 — MONDAY (Educational: MA vs Original Medicare)
+**Platform:** Facebook ✅ `6a0636ff854899d67a0f5ba1` + LinkedIn ✅ `6a0636ff74fe49c72b007dc2`
+
+### POST 8 — WEDNESDAY (Brand: Client success story — saved $2,400)
+**Platform:** Facebook ✅ `6a0636ff80711fbb0204ab69` + LinkedIn ✅ `6a0636ffc1a5c57b5403f42f`
+
+### POST 9 — FRIDAY (CTA: Life insurance / final expense)
+**Platform:** Facebook ❌ OVERFLOW (queue full) + LinkedIn ✅ `6a0636ff84eb8b9beb06ae6b`
 
 ---
 
-I didn't get into insurance to sell policies.
+## ✅ QUEUED — WEEK 4
 
-I got in because my own family got burned by one.
+### POST 10 — MONDAY (Educational: Extra Help / LIS)
+**Platform:** Facebook ✅ `6a0636ffc2f0d73b940b9986` + LinkedIn ✅ `6a0636ff36b8eadfc505e39a`
 
-When my mother needed coverage the most, the broker who sold her plan was nowhere to be found. She paid premiums for years — and when it mattered, she was on her own.
+### POST 11 — WEDNESDAY (Brand: Licensed in 7 states)
+**Platform:** Facebook ❌ OVERFLOW + LinkedIn ❌ OVERFLOW
 
-That's why I built Willis Advocacy Group on one principle:
+### POST 12 — FRIDAY (CTA: D-SNP education)
+**Platform:** Facebook ✅ `6a0636ffb356c6ca5a01a2e1` + LinkedIn ❌ OVERFLOW
 
-**People Over Profits.**
+---
 
-That means:
-→ I tell you what plan is right for you — even if it's not the most expensive one
-→ I'm available after enrollment — not just during it
-→ I don't work for the insurance company. I work for you.
+## ⏳ OVERFLOW — Queue after Week 1 posts publish (frees 3 slots per channel)
 
-If you've ever felt like a number in the system — I want to be different.
+**Buffer free plan = 10 posts per channel max. Hit limit at posts 9 FB, 11 FB+LI, 12 LI.**
+**Queue these once Mon/Wed/Fri of Week 1 publish and free up slots:**
 
-Licensed in MA, CT, NJ, NY, FL, TX, NC.
+---
+
+### OVERFLOW POST A — Facebook only (Post 9 FB)
+**Theme:** Final Expense / Life Insurance CTA
+
+Nobody wants to talk about this — but everybody needs to.
+
+Final expense insurance.
+
+The average funeral in the U.S. now costs $9,000–$12,000. And that doesn't count outstanding medical bills, credit card debt, or legal fees.
+
+If something happened to you tomorrow — who would be left holding that?
+
+A final expense policy can:
+✔️ Cover funeral costs completely
+✔️ Leave a small legacy for a loved one
+✔️ Be approved even with health challenges
+✔️ Cost as little as $30–$60/month depending on your age
+
+I help people 50–85 find coverage with no medical exam required.
+
+This is the call you keep putting off. Make it this Friday.
+
+Reply "LIFE" and I'll reach out to you personally.
+
+📞 (774) 446-0701 | willisadvocacygroup.com
+Willis Advocacy Group — People Over Profits.
+
+#FinalExpenseInsurance #LifeInsurance #SeniorLife #BurialInsurance #FinalExpense #InsuranceBroker #MedicareAndLife
+
+---
+
+### OVERFLOW POST B — Facebook + LinkedIn (Post 11 both channels)
+**Theme:** Licensed in 7 States / Who Uhia Serves
+
+People ask me: "Do you only work in Massachusetts?"
+
+Not even close.
+
+I'm licensed in:
+📍 Massachusetts
+📍 Connecticut
+📍 New Jersey
+📍 New York
+📍 Florida
+📍 Texas
+📍 North Carolina
+
+If you or someone you love lives in any of those states — I can help.
+
+Whether you're:
+→ Approaching 65 and trying to understand your options
+→ Already on Medicare and wondering if you're on the right plan
+→ A caregiver trying to navigate coverage for an aging parent
+→ Newly retired and losing employer coverage
+
+I do free Medicare and life insurance reviews. No cost. No pressure.
+
+Every person I help is a person who deserves a real advocate — not a sales pitch.
+
+That's the promise. People Over Profits.
 
 📞 (774) 446-0701 | willisadvocacygroup.com
 
-#PeopleOverProfits #Medicare #LifeInsurance #InsuranceBroker #UhiaWillis #WillisAdvocacyGroup
+#Medicare #MedicareAdvisor #UhiaWillis #WillisAdvocacyGroup #PeopleOverProfits #InsuranceBroker #MA #FL #TX #NY #NJ #CT #NC
 
 ---
 
-## POST 3 — FRIDAY (CTA / Lead Generation)
-**Platform:** Facebook + LinkedIn
-**Theme:** Free Medicare review offer + urgency
+### OVERFLOW POST C — LinkedIn only (Post 12 LI)
+**Theme:** D-SNP Education + CTA
 
----
+If you have BOTH Medicare and Medicaid — stop scrolling.
 
-It's Friday — the perfect day to cross one thing off your list.
+There's a plan called a D-SNP (Dual-Eligible Special Needs Plan) that most people in your situation have never been told about.
 
-**Your free Medicare review.**
+A D-SNP can give you:
+🦷 Free dental coverage
+👁️ Free vision care
+👂 Free hearing aids
+🚗 Free transportation to appointments
+💊 $0 drug costs
+🏥 $0 or very low copays
+🍎 Food and utility assistance (in some plans)
+💰 $0 monthly premium
 
-If you're 64 or older, already on Medicare, or helping an aging parent navigate their options — this 15-minute call could save you hundreds of dollars per year.
+If you're on both Medicare and Medicaid and you're NOT on a D-SNP — you may be leaving thousands of dollars in benefits on the table every year.
 
-Here's what we cover:
-🔍 Review your current plan vs. what's actually available
-💊 Check if your prescriptions are fully covered
-🦷 Find out if you qualify for free dental, vision, or hearing benefits
-💰 See if you qualify for Extra Help / Low Income Subsidy
+I can find out in 10 minutes if you qualify.
 
-No sales pitch. No pressure. Just clarity.
+Reply "DSNP" and I'll reach out today.
 
-I'm Uhia Willis — licensed Medicare & Life Insurance broker, Webster, MA. I've helped clients save money they didn't know they were leaving on the table.
-
-Reply "REVIEW" and I'll reach out to schedule your free session.
-
-📞 (774) 446-0701 | 🌐 willisadvocacygroup.com
-
+📞 (774) 446-0701 | willisadvocacygroup.com
 Willis Advocacy Group is not affiliated with or endorsed by Medicare or any government agency.
 
-#FreeMedicareReview #Medicare #MedicareAdvantage #SeniorBenefits #MedicareHelp #InsuranceBroker
+#DSNP #DualEligible #Medicare #Medicaid #MedicareAdvantage #SeniorBenefits #MedicareHelp #FreeBenefits
 
 ---
 
-## NOTES FOR QUEUING
-- Post 1 → next Monday 11:00 AM ET
-- Post 2 → next Wednesday 11:00 AM ET
-- Post 3 → next Friday 11:00 AM ET
-- Queue to: Facebook (Willis Advocacy Group Page) + LinkedIn (Uhia Willis)
-- After queuing these, build 9 more posts to fill the next 3 weeks
+## NOTES
+- Buffer free plan = 10 posts per channel queue limit
+- Consider upgrading to Buffer Essentials ($6/mo) for 2,000-post queue
+- When Week 1 posts publish (Mon/Wed/Fri), 3 slots free per channel — queue overflow posts A, B, C then
+- All posts target: Facebook (Willis Advocacy Group Page) + LinkedIn (Uhia Willis)
+- Scheduling: Mon/Wed/Fri at 11:00 AM ET (set in Buffer queue schedule)
