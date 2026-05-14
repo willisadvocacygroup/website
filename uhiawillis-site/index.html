@@ -86,6 +86,11 @@
     .nav-cta:hover { background: var(--gold); color: var(--black); }
     .ham { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
     .ham span { display: block; width: 22px; height: 1px; background: var(--cream); }
+    .mobile-nav { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 99; background: rgba(5,5,5,.97); flex-direction: column; justify-content: center; align-items: center; gap: 32px; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-family: var(--mono); font-size: .9rem; letter-spacing: .18em; text-transform: uppercase; color: var(--cream); transition: color .2s; }
+    .mobile-nav a:hover { color: var(--gold); }
+    .mobile-nav-close { position: absolute; top: 24px; right: var(--g); font-family: var(--mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); background: none; border: none; cursor: pointer; }
 
     /* -- BUTTONS -- */
     .btn-gold { display: inline-block; font-family: var(--mono); font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; padding: 16px 34px; background: var(--gold); color: var(--black); font-weight: 500; transition: background .22s; }
@@ -294,8 +299,20 @@
     <li><a href="#speaking">Speaking</a></li>
   </ul>
   <a href="#optin" class="nav-cta">Free Guide</a>
-  <button class="ham" aria-label="Open menu"><span></span><span></span><span></span></button>
+  <button class="ham" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.add('open')"><span></span><span></span><span></span></button>
 </nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu">✕ Close</button>
+  <a href="#framework" onclick="document.getElementById('mobileNav').classList.remove('open')">The Method</a>
+  <a href="#about"     onclick="document.getElementById('mobileNav').classList.remove('open')">About</a>
+  <a href="#offers"    onclick="document.getElementById('mobileNav').classList.remove('open')">Work With Me</a>
+  <a href="challenge.html">Challenge</a>
+  <a href="blueprint.html">Blueprint</a>
+  <a href="#speaking"  onclick="document.getElementById('mobileNav').classList.remove('open')">Speaking</a>
+  <a href="#optin"     onclick="document.getElementById('mobileNav').classList.remove('open')" style="color:var(--gold);">Free Guide</a>
+</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -588,7 +605,7 @@
   <div class="footer-btm">
     <p class="ft-copy">© 2026 Uhia Willis / UKW Consulting Inc. All rights reserved.</p>
     <div class="ft-legal">
-      <a href="/privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms">Terms of Use</a>
+      <a href="mailto:uhia@uhiawillis.com?subject=Privacy%20Policy">Privacy Policy</a> &nbsp;·&nbsp; <a href="mailto:uhia@uhiawillis.com?subject=Terms%20of%20Use">Terms of Use</a>
     </div>
   </div>
 </footer>
