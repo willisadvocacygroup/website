@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The R.E.B.U.I.L.D. Blueprint: A Complete Field Manual — Uhia Willis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black: #050505;
+      --b2: #0A0A0A;
+      --b3: #111111;
+      --b4: #1A1A1A;
+      --gold: #E8500A;
+      --gold2: #F06828;
+      --cream: #FFFFFF;
+      --muted: #9A9A9A;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+      --mono: 'DM Mono', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--black);
+      color: var(--cream);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.78;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--b2);
+      border-bottom: 1px solid var(--b4);
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 22px;
+    }
+
+    .logo-bars span {
+      display: block;
+      width: 5px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    .logo-bars span:nth-child(1) { height: 10px; }
+    .logo-bars span:nth-child(2) { height: 16px; }
+    .logo-bars span:nth-child(3) { height: 22px; }
+
+    .nav-name {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+
+    .nav-back {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--gold); }
+
+    /* HERO */
+    .hero {
+      padding: 100px 40px 80px;
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .label {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(36px, 5.5vw, 64px);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+
+    .price-tag {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 8px 20px;
+      border-radius: 2px;
+      margin-bottom: 48px;
+    }
+
+    .divider-line {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 0 auto 72px;
+    }
+
+    /* TABLE OF CONTENTS */
+    .toc-wrapper {
+      max-width: 760px;
+      margin: 0 auto 100px;
+      padding: 0 40px;
+    }
+
+    .toc-inner {
+      background: var(--b3);
+      border: 1px solid var(--b4);
+      padding: 48px;
+      border-radius: 4px;
+    }
+
+    .toc-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 32px;
+      display: block;
+    }
+
+    .toc-inner h2 {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 32px;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: grid;
+      gap: 4px;
+    }
+
+    .toc-list li a {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      text-decoration: none;
+      color: #B0B0B0;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--b4);
+      transition: color 0.2s;
+    }
+
+    .toc-list li:last-child a { border-bottom: none; }
+    .toc-list li a:hover { color: var(--gold); }
+
+    .toc-num {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      min-width: 52px;
+      flex-shrink: 0;
+    }
+
+    .toc-title {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    /* CONTENT SECTIONS */
+    .content {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* CHAPTER HEADERS */
+    .chapter {
+      margin-bottom: 120px;
+      padding-bottom: 100px;
+      border-bottom: 1px solid var(--b4);
+      scroll-margin-top: 80px;
+    }
+
+    .chapter:last-of-type { border-bottom: none; }
+
+    .chapter-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .chapter-num {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .chapter-phase {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(232, 80, 10, 0.1);
+      border: 1px solid rgba(232, 80, 10, 0.3);
+      padding: 4px 12px;
+      border-radius: 2px;
+    }
+
+    .chapter h2 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 4.5vw, 54px);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 48px;
+    }
+
+    /* SECTION BLOCKS */
+    .section-block {
+      margin-bottom: 56px;
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .section-block h3 {
+      font-family: var(--serif);
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .section-block p {
+      font-size: 17px;
+      line-height: 1.82;
+      color: #C8C8C8;
+      margin-bottom: 18px;
+    }
+
+    .section-block p:last-child { margin-bottom: 0; }
+
+    /* TOOLS */
+    .tools-grid {
+      display: grid;
+      gap: 24px;
+      margin-top: 8px;
+    }
+
+    .tool-card {
+      background: var(--b3);
+      border: 1px solid var(--b4);
+      border-left: 3px solid var(--gold);
+      padding: 28px 32px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .tool-number {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .tool-card h4 {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .tool-card p {
+      font-size: 16px;
+      line-height: 1.78;
+      color: #B8B8B8;
+      margin-bottom: 12px;
+    }
+
+    .tool-card p:last-child { margin-bottom: 0; }
+
+    .tool-card ul {
+      list-style: none;
+      margin-top: 12px;
+    }
+
+    .tool-card ul li {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #B0B0B0;
+      padding: 8px 0 8px 20px;
+      border-bottom: 1px solid var(--b4);
+      position: relative;
+    }
+
+    .tool-card ul li:last-child { border-bottom: none; }
+
+    .tool-card ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 17px;
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    /* FIELD NOTE */
+    .field-note {
+      background: rgba(232, 80, 10, 0.06);
+      border: 1px solid rgba(232, 80, 10, 0.2);
+      padding: 36px 40px;
+      border-radius: 4px;
+      margin-bottom: 40px;
+    }
+
+    .field-note-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .field-note p {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-style: italic;
+      line-height: 1.65;
+      color: var(--cream);
+      margin-bottom: 16px;
+    }
+
+    .field-note p:last-of-type { margin-bottom: 0; }
+
+    .field-note-sig {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(232, 80, 10, 0.2);
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      display: block;
+    }
+
+    /* MISTAKES */
+    .mistakes-block {
+      background: var(--b3);
+      border: 1px solid var(--b4);
+      padding: 32px 36px;
+      border-radius: 4px;
+    }
+
+    .mistakes-block h4 {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .mistakes-block ul {
+      list-style: none;
+    }
+
+    .mistakes-block ul li {
+      font-size: 16px;
+      line-height: 1.75;
+      color: #B8B8B8;
+      padding: 12px 0 12px 28px;
+      border-bottom: 1px solid var(--b4);
+      position: relative;
+    }
+
+    .mistakes-block ul li:last-child { border-bottom: none; }
+
+    .mistakes-block ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      top: 12px;
+      color: var(--gold);
+      font-family: var(--mono);
+      font-size: 13px;
+    }
+
+    /* INTRO SECTION */
+    .intro-chapter {
+      margin-bottom: 120px;
+      padding-bottom: 100px;
+      border-bottom: 1px solid var(--b4);
+      scroll-margin-top: 80px;
+    }
+
+    .intro-chapter h2 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 4.5vw, 52px);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 48px;
+    }
+
+    .intro-chapter p {
+      font-size: 18px;
+      line-height: 1.85;
+      color: #C8C8C8;
+      margin-bottom: 24px;
+    }
+
+    .intro-chapter p:last-child { margin-bottom: 0; }
+
+    .intro-chapter p em {
+      font-style: italic;
+      color: var(--cream);
+    }
+
+    /* CLOSING */
+    .closing-chapter {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+      scroll-margin-top: 80px;
+    }
+
+    .closing-chapter h2 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 4.5vw, 52px);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 48px;
+    }
+
+    .closing-chapter p {
+      font-size: 18px;
+      line-height: 1.85;
+      color: #C8C8C8;
+      margin-bottom: 24px;
+    }
+
+    .closing-chapter p:last-of-type { margin-bottom: 0; }
+
+    .closing-chapter p em {
+      font-style: italic;
+      color: var(--cream);
+    }
+
+    .closing-sig {
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid var(--b4);
+    }
+
+    .closing-sig p {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-style: italic;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+
+    .closing-sig span {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: block;
+    }
+
+    /* CTA */
+    .cta-section {
+      max-width: 760px;
+      margin: 100px auto 0;
+      padding: 80px 40px;
+      text-align: center;
+      border-top: 1px solid var(--b4);
+    }
+
+    .cta-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .cta-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .cta-section p {
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 520px;
+      margin: 0 auto 40px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--cream);
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 18px 44px;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--gold2); }
+
+    .btn-secondary {
+      display: inline-block;
+      background: transparent;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 14px 32px;
+      border: 1px solid var(--b4);
+      border-radius: 2px;
+      margin-left: 16px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .btn-secondary:hover { color: var(--cream); border-color: var(--muted); }
+
+    footer {
+      border-top: 1px solid var(--b4);
+      padding: 40px;
+      text-align: center;
+    }
+
+    footer p {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    footer a { color: var(--gold); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      .hero { padding: 60px 20px 48px; }
+      .toc-wrapper { padding: 0 20px; }
+      .toc-inner { padding: 28px 20px; }
+      .content { padding: 0 20px; }
+      .field-note { padding: 28px 20px; }
+      .tool-card { padding: 24px 20px; }
+      .mistakes-block { padding: 24px 20px; }
+      .cta-section { padding: 60px 20px; }
+      .btn-secondary { margin-left: 0; margin-top: 12px; display: block; }
+      footer { padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/index.html" class="nav-logo">
+      <div class="logo-bars">
+        <span></span><span></span><span></span>
+      </div>
+      <span class="nav-name">Uhia Willis</span>
+    </a>
+    <a href="/index.html" class="nav-back">← Back to Site</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <span class="label">$197 — Complete Field Manual</span>
+    <h1>The <em>R.E.B.U.I.L.D.</em> Blueprint</h1>
+    <p class="hero-sub">A Complete Field Manual for Men Who've Been Through Collapse. Seven phases. Every tool. The full framework. Written for the man who is serious about going all the way through.</p>
+    <div class="price-tag">7 Phases · 21 Tools &amp; Exercises · Complete Framework</div>
+    <div class="divider-line"></div>
+  </section>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc-wrapper">
+    <div class="toc-inner">
+      <span class="toc-label">Table of Contents</span>
+      <h2>What's Inside This Manual</h2>
+      <ul class="toc-list">
+        <li><a href="#intro"><span class="toc-num">Intro</span><span class="toc-title">What This Is and Who It's For</span></a></li>
+        <li><a href="#chapter-r"><span class="toc-num">Chapter 1</span><span class="toc-title">R — Reckon: Face What Actually Happened</span></a></li>
+        <li><a href="#chapter-e"><span class="toc-num">Chapter 2</span><span class="toc-title">E — Extract: Pull the Lesson from the Rubble</span></a></li>
+        <li><a href="#chapter-b"><span class="toc-num">Chapter 3</span><span class="toc-title">B — Blueprint: Design Who You Are Becoming</span></a></li>
+        <li><a href="#chapter-u"><span class="toc-num">Chapter 4</span><span class="toc-title">U — Undertake: Take the First Real Action</span></a></li>
+        <li><a href="#chapter-i"><span class="toc-num">Chapter 5</span><span class="toc-title">I — Integrate: Wire the New Identity into Daily Life</span></a></li>
+        <li><a href="#chapter-l"><span class="toc-num">Chapter 6</span><span class="toc-title">L — Launch: Step into the World as the Rebuilt Man</span></a></li>
+        <li><a href="#chapter-d"><span class="toc-num">Chapter 7</span><span class="toc-title">D — Defend: Protect What You've Built</span></a></li>
+        <li><a href="#closing"><span class="toc-num">Closing</span><span class="toc-title">You Didn't Come This Far to Stay Broken</span></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- INTRODUCTION -->
+    <div class="intro-chapter" id="intro">
+      <span class="label">Introduction</span>
+      <h2>What This Is and Who It's For</h2>
+
+      <p>I want to tell you what happened to me before I tell you anything else. Not because my story is the point — it isn't. But because I need you to know that what follows didn't come from a conference room or a certification program. It came from a floor. Specifically, from sitting on the floor of an apartment I'd rented in a hurry after my marriage ended, my business had contracted around the edges of my life until there was almost nothing left, and the person I had believed I was — the competent one, the steady one, the one who holds things together — had dissolved so completely that I genuinely did not know what to do next. Not in a dramatic way. In a very quiet, very still, very frightening way.</p>
+
+      <p>I had built my identity the way most men do: from the outside in. I was who I was because of what I did, who I was to other people, and what I was supposed to be next. The husband. The provider. The man with the plan. I was not a bad man. I worked hard. I showed up. I cared about the people in my life. But underneath all of that — underneath the performance of a successful, together, capable man — I had never actually asked the question: <em>who are you when none of this is there?</em> I didn't know the answer. And then, one by one, the external structures that had been holding the question at bay fell away. And I was left in a room with myself, and the question, and no good answer.</p>
+
+      <p>What I did next — imperfectly, slowly, sometimes retreating for weeks before advancing again — became the R.E.B.U.I.L.D. Method. I am not going to tell you I had it figured out. I didn't. I went through the work in roughly this order, sometimes skipping phases, sometimes circling back, sometimes doing the right thing for the wrong reason and still having it work. I am telling you what I actually did and what actually changed, assembled into a framework that can give you the structure I didn't have. Because the hardest part of what I went through wasn't the collapse itself. It was not knowing what to do with it. It was not having a map. This manual is the map I wish I'd had.</p>
+
+      <p>This is not a self-help book. I want to be clear about that. Self-help, as a genre, tends to operate from the premise that you need to be fixed — that there is something wrong with you that the right information or the right mindset will correct. I don't believe that. You are not broken. You have been through something that most men are completely unprepared for, in a culture that gives men almost no language or permission to process it. What you need is not fixing. What you need is a structure — a framework that honors the weight of what you've been through while giving you a real, usable path forward. That is what this manual is. Use it like a field manual. Write in it. Argue with it. Skip chapters if you have to and come back. But read it. Do the work. Don't let it sit on a shelf inside your browser window while you wait to feel ready. Feeling ready is the reward for starting. It is not the prerequisite.</p>
+
+      <p>This manual is for the man who has been through collapse — divorce, financial ruin, identity loss, the slow disintegration of a version of his life he thought was permanent, or the sudden violent end of something he built his world around. It is not for every man at every moment. If you picked this up, I suspect you know whether it's for you. If you're in the dark, if you feel like a stranger in your own life, if you're exhausted in a way that sleep doesn't touch — this is for you. Let's begin.</p>
+    </div>
+
+    <!-- CHAPTER 1: RECKON -->
+    <div class="chapter" id="chapter-r">
+      <div class="chapter-meta">
+        <span class="chapter-num">Chapter One</span>
+        <span class="chapter-phase">R — Reckon</span>
+      </div>
+      <h2>Face What Actually Happened</h2>
+
+      <div class="section-block">
+        <span class="section-label">What This Phase Means</span>
+        <h3>The Ground Under Everything</h3>
+        <p>Reckon means to count. To take stock. To look at what is actually in front of you without flinching, without editing, and without the protective layer of narrative you've built around the truth. Most men, when they go through collapse, do one of two things: they bury it entirely — keep moving, keep working, don't look back — or they tell a story about it that is partially true and strategically incomplete. The story casts them as a victim, or as entirely responsible, or as someone who has already processed and moved on. The story is not the truth. The story is the truth with the most painful parts removed.</p>
+        <p>The Reckon phase asks you to remove the story and look at the raw material underneath it. Not to punish yourself. Not to wallow. To see clearly what happened, what your role in it was, what was done to you that you didn't choose, and what you lost. That clarity is the foundation on which everything else gets built. You cannot build a new identity on a story that isn't fully true. The structure will crack. It will fail under pressure. The Reckon is the foundation work — the excavation and clearing that has to happen before anything can be built.</p>
+        <p>This phase is not a destination. It is not a one-time event where you sit down, face everything, and close the book. It is a practice of returning to honesty whenever the narrative starts to drift. Men who have done the Reckon deeply report a specific kind of relief — not happiness, not resolution, but relief. The relief of no longer having to maintain the story. Of no longer spending energy on the performance of a version of events that protects something that doesn't need protecting anymore.</p>
+      </div>
+
+      <div class="section-block">
+        <span class="section-label">Why Men Get Stuck Here</span>
+        <h3>The Story Is Easier Than the Truth</h3>
+        <p>Men get stuck in the Reckon phase for one primary reason: shame. Not always conscious, not always named, but present. The honest account of most collapses contains things that a man is ashamed of — choices he made, behavior he's not proud of, times he ignored warnings, relationships he neglected, patterns he repeated even when he knew better. The honest account also often contains genuine injustices — things done to him, systems that failed him, people who let him down. Both kinds of truth require courage to face.</p>
+        <p>Shame drives men to one of two positions. Either they take all the responsibility — "this is entirely my fault, I deserve this" — which sounds like accountability but is actually a way of keeping control of the narrative and avoiding the vulnerability of having been genuinely wronged. Or they take none — "this was done to me, I had no agency" — which protects the ego but leaves them powerless and unable to learn anything from the experience. The truth is almost always somewhere in the middle. A man whose marriage ended was probably both genuinely wronged and genuinely at fault. A man whose business collapsed probably both made real mistakes and was subject to forces outside his control. The Reckon holds both without collapsing into either.</p>
+        <p>The other reason men get stuck here is that the culture around them does not create space for this kind of honesty. The men in most men's lives are not equipped to receive a real, honest account of what happened. They offer advice too quickly. They minimize. They don't know how to sit with another man's pain without trying to fix it. So the real account never gets spoken out loud, and it calcifies in the silence.</p>
+      </div>
+
+      <div class="section-block">
+        <span class="section-label">The Truth Nobody Says Out Loud</span>
+        <h3>You Have Been Lying to Yourself</h3>
+        <p>Not maliciously. Not all the time. But there is something — one specific thing, sometimes several — that you have been not-quite-saying, not-quite-facing, keeping just out of the direct light of your own attention. You know what it is. You've known for a while. This is where the Reckon actually lives. Not in the general account of what happened, but in that specific thing you keep circling around without landing on.</p>
+        <p>For most men it sounds like one of these: "I knew it was over long before it ended." "I knew I was in the wrong business." "I knew that relationship was costing me something I couldn't afford to lose." "I knew I was drinking too much." "I knew I had stopped showing up." Knowing and doing nothing is its own kind of lie — not to others, to yourself. The Reckon is the moment you stop lying. Not because the truth will set everything right immediately. Because the lie is expensive and you've been paying it for too long.</p>
+      </div>
+
+      <div class="section-block">
+        <span class="section-label">Three Tools for the Reckon Phase</span>
+        <div class="tools-grid">
+
+          <div class="tool-card">
+            <span class="tool-number">Tool 01</span>
+            <h4>The Unedited Account</h4>
+            <p>Set aside 90 minutes in a private space. Write the full, true account of what happened — the collapse, the period that broke you open, the chain of events that led here. Use the following structure to move through it without getting stuck:</p>
+            <ul>
+              <li>The timeline: what happened, in order, without spin</li>
+              <li>Your role: what you chose, what you avoided, what you built and didn't tend</li>
+              <li>What was done to you: genuine injuries, genuine injustices, without exaggeration</li>
+              <li>What you lost: name each thing specifically — roles, relationships, possessions, versions of yourself</li>
+              <li>What you knew and didn't act on: the thing you've been circling</li>
+            </ul>
+            <p>Read it once. Do not edit it. This document is not for anyone else. It is the raw material of the rebuild.</p>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-number">Tool 02</span>
+            <h4>The Grief Inventory</h4>
+            <p>Men who have been through collapse often skip grief entirely, or grieve one visible loss while leaving the less visible ones unprocessed. This tool asks you to take a complete inventory of what you've lost — not just the obvious things, but all of it.</p>
+            <ul>
+              <li>The concrete losses: relationship, home, income, daily structure, plans</li>
+              <li>The identity losses: the roles you held, the version of yourself you inhabited</li>
+              <li>The relational losses: people who left, people who stayed but changed, people you had to leave</li>
+              <li>The future losses: the version of your life you'd been building toward that no longer exists</li>
+              <li>The private losses: the ones nobody knows about, the ones that embarrass you to name</li>
+            </ul>
+            <p>For each loss, write one sentence that names what it meant to you. Not what it was — what it meant. This is not a wallowing exercise. It is an accounting. Grief that is inventoried can be processed. Grief that is unnamed keeps operating underground, driving decisions you don't understand.</p>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-number">Tool 03</span>
+            <h4>The Two-Column Truth</h4>
+            <p>This tool addresses the shame dynamic directly. Draw a line down the center of a page. On the left: "What I am responsible for." On the right: "What I am not responsible for." Fill both columns completely and honestly.</p>
+            <p>The left column requires accountability without self-flagellation — own what is yours, specifically and clearly, without using it as an excuse to be cruel to yourself. The right column requires receiving genuine victimhood without using it as an excuse to avoid the left column entirely. Both things are true. A man can be genuinely wronged and genuinely at fault in the same event. Holding both without collapsing into either is one of the most mature and difficult things a man can do. This tool creates the structure for it.</p>
+            <p>Read both columns. Notice where you feel resistance. The resistance usually marks where your honest account has been the weakest.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="field-note">
+        <span class="field-note-label">Field Note from Uhia</span>
+        <p>The first time I did the Unedited Account, I stopped halfway through and convinced myself I'd done enough. I hadn't. I had written the version of the story I could bear to look at and stopped before the part that required me to really examine my own choices. It took me another three weeks to go back and finish it. Those three weeks were harder than the ninety minutes would have been. The thing you're avoiding in your Reckon is never as bad, once you're standing in front of it, as the shadow of it has been. The shadow lies. The truth, at least, stays the same size.</p>
+        <span class="field-note-sig">— Uhia Willis</span>
+      </div>
+
+      <div class="mistakes-block">
+        <h4>Common Mistakes in the Reckon Phase</h4>
+        <ul>
+          <li>Doing the account in your head instead of on paper — the mind edits in real time, the page doesn't</li>
+          <li>Confusing recounting with reckoning — telling the story again is not the same as facing it honestly</li>
+          <li>Stopping when it gets uncomfortable — the discomfort is the location of the real account</li>
+          <li>Making it only about fault — the Reckon is not about assigning blame, it's about seeing clearly</li>
+          <li>Sharing the account too early with someone who isn't equipped to receive it — protect the raw material until it's ready</li>
+          <li>Treating the Reckon as one event — it is an ongoing practice of returning to honesty</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CHAPTER 2: EXTRACT -->
+    <div class="chapter" id="chapter-e">
+      <div class="chapter-meta">
+        <span class="chapter-num">Chapter Two</span>
+        <span class="chapter-phase">E — Extract</span>
+      </div>
+      <h2>Pull the Lesson from the Rubble</h2>
+
+      <div class="section-block">
+        <span class="section-label">What This Phase Means</span>
+        <h3>The Intelligence Hidden in the Collapse</h3>
+        <p>The Extract phase is where the shift in posture happens. In the Reckon, you were the subject of the account — the man to whom things happened. In the Extract, you become the student. You step back from the experience, just far enough to be able to examine it, and you ask: what does this actually teach me? Not the sanitized lesson — "I learned to appreciate what I have." The real lesson. The hard, specific, personally costly lesson that this particular collapse, in your particular life, embedded in the rubble.</p>
+        <p>Every collapse contains intelligence that cannot be accessed any other way. You cannot learn what you can actually handle without being tested. You cannot learn which of your relationships were real until the ones that were performing reality have exited. You cannot learn which of your values you actually hold — as opposed to performing — until holding them costs you something. The collapse is brutal tuition. The Extract is where you collect what you paid for.</p>
+        <p>This phase requires a specific kind of discipline: the discipline of not performing growth. The performative lesson — "I'm grateful for the struggle, it made me stronger" — is everywhere in the culture of men who've been through hard things. Sometimes it's genuine. More often it's a shortcut. It allows a man to skip the specific, uncomfortable, personal excavation in favor of a general statement of uplift. The Extract doesn't let you do that. It asks you to go into the specific, name the specific, and hold the specific without converting it into something more palatable.</p>
+      </div>
+
+      <div class="section-block">
+        <span class="section-label">Why Men Get Stuck Here</span>
+        <h3>When the Lesson Requires You to Be Wrong</h3>
+        <p>The Extract phase stalls for most men when the real lesson is a lesson about themselves — specifically, a lesson that requires them to conclude that they were wrong about something they were certain of. Wrong about a relationship they believed in. Wrong about their own reliability. Wrong about a belief system that organized their life. Wrong about what they were capable of, in either direction.</p>
+        <p>Being wrong at that level — not about a fact, about an identity — is one of the most threatening experiences a man can have. It doesn't feel like learning. It feels like erasure. The Extract requires you to hold that without letting it become either self-destruction or denial. The lesson is not that you are bad. The lesson is that you were operating on incomplete or incorrect information about yourself or the world, and now you have better information. That better information is worth more than the comfort of having been right.</p>
+        <p>Men also get stuck here when they are still in the Reckon — when the honest account hasn't been fully done. The Extract only works if the Reckon was real. If you are still operating from the edited version of events, the lessons you pull will be surface-level. Perform the Reckon fully first. Then come back to this chapter.</p>
+      </div>
+
+      <div class="section-block">
+        <span class="section-label">The Truth Nobody Says Out Loud</span>
+        <h3>The Collapse Was Also an Exposure</h3>
+        <p>Here is the thing about collapse that most men don't say, and I need to say it plainly: the collapse was not only a destruction. It was also a revelation. It exposed the parts of your life — your identity, your relationships, your habits, your beliefs — that were not built to last. That exposure is painful. But it is also honest in a way that ordinary life, with all its maintenance and performance, never is.</p>
+        <p>The version of yourself that existed before the collapse was carrying things it shouldn't have been carrying. It was built on some assumptions that weren't true. It was performing some values it didn't actually hold and avoiding some truths it couldn't afford to face. The collapse stripped all of that away. What was exposed is more honest than what was performing. The Extract is where you acknowledge that, receive it, and use it. The collapse was expensive. Don't waste what it bought.</p>
+      </div>
+
+      <div class="section-block">
+        <span class="section-label">Three Tools for the Extract Phase</span>
+        <div class="tools-grid">
+
+          <div class="tool-card">
+            <span class="tool-number">Tool 04</span>
+            <h4>The Five Extractions</h4>
+            <p>Using your Unedited Account as source material, complete these five extraction prompts. Write in full sentences. Do not use bullet points for this exercise — the full-sentence format prevents you from summarizing at the expense of the real thing.</p>
+            <ul>
+              <li>What this experience revealed about what I was actually building my identity on: (not what I thought I was building it on)</li>
+              <li>The pattern I can now see running through my choices that I couldn't see while I was in it:</li>
+              <li>The belief I held about myself that this experience proved false, and the truer version of that belief:</li>
+              <li>What I now know about what I am capable of — in both the difficult and the redemptive sense:</li>
+              <li>The one thing I know now that I could not have known any other way:</li>
+            </ul>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-number">Tool 05</span>
+            <h4>The Pattern Map</h4>
+            <p>This tool asks you to look backward — past this collapse, into your history — and identify the pattern this event is part of. Most collapses are not isolated events. They are the culmination of a pattern that has been operating, often invisibly, for years.</p>
+            <ul>
+              <li>List the last three times in your life something ended badly, fell apart, or cost you more than it should have</li>
+              <li>Look for the common thread — in your behavior, your choices, your avoidances, your blind spots</li>
+              <li>Name the pattern in one sentence — be specific and be honest</li>
+              <li>Write what it would cost you to continue this pattern for another five years</li>
+              <li>Write what becomes possible when this pattern ends</li>
+            </ul>
+            <p>The Pattern Map is not an exercise in self-blame. Patterns form for reasons. They often form as adaptations to earlier, harder circumstances. The question is not "why am I like this" but "is this still serving me, and if not, what replaces it?"</p>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-number">Tool 06</span>
+            <h4>The Letter You Won't Send</h4>
+            <p>Write a letter to the person, institution, or version of yourself most connected to your collapse. You will not send this letter. It is for you, not for them. In the letter:</p>
+            <ul>
+              <li>Say everything you haven't been able to say — the anger, the grief, the gratitude if it exists, the confusion, the things you needed that you didn't get</li>
+              <li>Say what you understand now that you didn't then</li>
+              <li>Say what you are taking with you and what you are leaving behind</li>
+              <li>End with a sentence that closes the chapter — not forgiving if you're not there, not pretending resolution you don't have, but acknowledging that you are moving forward regardless of how this is resolved</li>
+            </ul>
+            <p>After you write it, read it once. Then decide whether to keep it, burn it, or bury it. The ritual of disposal matters. Choose something intentional.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="field-note">
+        <span class="field-note-label">Field Note from Uhia</span>
+        <p>When I did the Pattern Map, I found the same thing running through three different collapses in my life — starting with something small in my early twenties all the way through to the big one. I had been overextending into relationships and situations where I was needed, because being needed felt like having value, and when the situation stabilized or changed, I felt disposable. That wasn't the other people's fault. That was a pattern I carried into every room. Seeing it didn't fix it immediately. But seeing it meant I could no longer pretend it wasn't there. That is the whole value of the Extract. You cannot change what you cannot see.</p>
+        <span class="field-note-sig">— Uhia Willis</span>
+      </div>
+
+      <div class="mistakes-block">
+        <h4>Common Mistakes in the Extract Phase</h4>
+        <ul>
+          <li>Converting the lesson into a cliché before you've actually held it — "everything happens for a reason" is not an extraction, it's a bypass</li>
+          <li>Doing the extraction without first completing the Reckon — you cannot extract from an incomplete account</li>
+          <li>Only extracting lessons about other people — the most useful extractions are always about yourself</li>
+          <li>Stopping at the surface lesson instead of the deeper pattern — ask "and what does that reveal?" one more time than is comfortable</li>
+          <li>Using the extraction as punishment — this is intelligence gathering, not sentencing</li>
+          <li>Skipping the Pattern Map because it feels like self-criticism — it is the most important tool in this chapter</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CHAPTER 3: BLUEPRINT -->
+    <div class="chapter" id="chapter-b">
+      <div class="chapter-meta">
+        <span class="chapter-num">Chapter Three</span>
+        <span class="chapter-phase">B — Blueprint</span>
+      </div>
+      <h2>Design Who You Are Becoming</h2>
+
+      <div class="section-block">
+        <span class="section-label">What This Phase Means</span>
+        <h3>From Wreckage to Architecture</h3>
+        <p>The Blueprint is the turn. Every phase before this has been oriented toward the past — toward what happened, what it cost, what it revealed. The Blueprint is the first phase oriented toward what comes next. Not what you want to do. Not what you want to have. Who you are becoming. The distinction matters enormously. Most men, when they emerge from collapse, focus their forward vision on outcomes — a new relationship, a new income level, a new status. The Blueprint does not start there. It starts with the man. The things come from the man. The man does not come from the things.</p>
+        <p>A blueprint is a document of intended structure. It says: this is what I am building, this is how it is designed, these are the materials it is made from, this is what it is built to do. Your Blueprint is a document of intended identity. It says: this is the man I am becoming, these are his values, this is how he moves through the world, this is what he is built for. Everything you do after this — every action, every choice, every relationship you pursue or release — should be able to trace back to the Blueprint as its source.</p>
+        <p>The Blueprint is not a vision board. It is not a collection of aspirational images. It is a serious, written, specific document. It should be hard to write because it requires you to make real choices — not about what you want, but about who you are. Choosing an identity requires releasing other identities. Some of what you release will have felt safe. Some of it will grieve you. Do it anyway. The Blueprint is not the most comfortable document. It is the most honest one.</p>
+      </div>
+
+      <div class="section-block">
+        <span class="section-label">Why Men Get Stuck Here</span>
+        <h3>The Permission Problem</h3>
+        <p>Men get stuck in the Blueprint for one reason above all others: they don't believe they deserve to want what they actually want. Collapse carries a residual tax, and that tax often looks like this: a quiet internal voice that says "you had your chance, you blew it, you should be grateful for anything you can get from here." That voice is not wisdom. That voice is shame wearing the costume of humility.</p>
+        <p>The rebuilt man does not settle. He does not shrink his vision to fit the size of his mistakes. He lets the size of the rebuild be proportionate to the size of what he's willing to do, not proportionate to the size of what he lost. But that requires permission — the specific, internal, chosen permission to want a good life, a full life, a life built to last. That permission does not come from the outside. No one grants it to you. You have to claim it, and the claiming can feel unearned when you're still close to the collapse.</p>
+        <p>Claim it anyway. The Blueprint is permission made concrete. Writing it is the act of claiming it.</p>
+      </div>
+
+      <div class="section-block">
+        <span class="section-label">The Truth Nobody Says Out Loud</span>
+        <h3>The Old Version Is Not Coming Back</h3>
+        <p>A significant portion of men who go through collapse spend years trying to rebuild the exact thing that fell — the same kind of relationship, the same business model, the same status markers, the same version of themselves. This is understandable. That version was familiar. It had already been built once. It felt known.</p>
+        <p>But the old version was built before the collapse. It was built without the knowledge you now have. And in many cases, it was built on the exact foundations that made the collapse possible. Rebuilding it is rebuilding the conditions for the same failure. The Blueprint asks you to build something different — not better in the abstract, but different in the specific. Something informed by the Reckon and the Extract. Something that holds your real values instead of your performed ones. Something designed for the man you've become, not the man you were trying to be.</p>
+      </div>
+
+      <div class="section-block">
+        <span class="section-label">Three Tools for the Blueprint Phase</span>
+        <div class="tools-grid">
+
+          <div class="tool-card">
+            <span class="tool-number">Tool 07</span>
+            <h4>The Core Identity Statement</h4>
+            <p>Write a full-page document in present tense that describes the man you are becoming. Begin each paragraph with "I am a man who..." and complete it honestly and specifically. Cover the following territories:</p>
+            <ul>
+              <li>How you carry yourself and what your presence communicates to the world</li>
+              <li>Your non-negotiable values — the ones you will hold even when they cost you</li>
+              <li>How you show up in relationships — what you give, what you require, what you will not accept</li>
+              <li>Your relationship to work, purpose, and contribution — what you are building and why</li>
+              <li>What you protect — your peace, your integrity, your people — and how</li>
+              <li>What you have released from the old version of yourself that no longer belongs in this one</li>
+            </ul>
+            <p>Read this statement aloud when you finish. Notice what lands and what feels hollow. The hollow parts need more honesty, not more aspiration.</p>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-number">Tool 08</span>
+            <h4>The Values Architecture</h4>
+            <p>Identify your five core values — not the values you admire, not the values your parents taught you, not the values that look good on paper. The values that, when you have violated them, have cost you the most internally. These are your actual values. They are revealed by your regrets more reliably than by your intentions.</p>
+            <ul>
+              <li>List five moments of deep regret from your life — what did violating each one reveal about what you actually value?</li>
+              <li>Name the five values these regrets point toward</li>
+              <li>For each value, write one behavior that embodies it daily — not a goal, a behavior</li>
+              <li>For each value, write one pattern or habit that has historically worked against it</li>
+              <li>Write what it costs you, annually, to violate each of these five values — in relationships, in self-respect, in forward momentum</li>
+            </ul>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-number">Tool 09</span>
+            <h4>The One-Year Picture</h4>
+            <p>Write a detailed, specific description of what your life looks like twelve months from today, assuming you do this work fully and consistently. This is not a goal list. It is a living picture — a day in the life of the rebuilt man one year from now.</p>
+            <ul>
+              <li>Walk through a specific day — morning to night — in the rebuilt life: what are you doing, where are you, who is with you?</li>
+              <li>What does the rebuilt man feel like from the inside on an ordinary Wednesday?</li>
+              <li>What relationship has changed most — either deepened or ended — in the rebuilt life?</li>
+              <li>What work or contribution is the rebuilt man engaged in that the collapsed man wasn't capable of?</li>
+              <li>What has the rebuilt man released that the collapsed man was still holding?</li>
+            </ul>
+            <p>Keep this picture somewhere visible. Read it weekly. It is not a fantasy — it is a destination. Treat it like one.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="field-note">
+        <span class="field-note-label">Field Note from Uhia</span>
+        <p>My first Blueprint was too small. I wrote it from the inside of my collapse and my collapse set the ceiling. I couldn't see past what I had lost, so I designed a life that was essentially a scaled-down, more cautious version of the one that had fallen apart. It took someone looking at it from the outside — a man who had done this work before me — to say: "That's not a blueprint for a rebuilt man. That's a survival plan. What would you build if you weren't afraid?" That question changed the document entirely. I'm asking you now: what would you build if you weren't afraid? Write that version.</p>
+        <span class="field-note-sig">— Uhia Willis</span>
+      </div>
+
+      <div class="mistakes-block">
+        <h4>Common Mistakes in the Blueprint Phase</h4>
+        <ul>
+          <li>Writing the Blueprint in aspirational language that doesn't commit to anything specific</li>
+          <li>Designing a rebuilt version of the old life instead of a genuinely new structure</li>
+          <li>Setting the ceiling at the level of the collapse instead of the level of the possibility</li>
+          <li>Skipping the Values Architecture and going straight to outcomes — the values are the foundation, the outcomes are the roof</li>
+          <li>Writing the Blueprint once and never returning to it — it should be read weekly and refined as the work deepens</li>
+          <li>Including what you think you should want instead of what you actually want — the Blueprint has to be honest or it doesn't function</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CHAPTER 4: UNDERTAKE -->
+    <div class="chapter" id="chapter-u">
+      <div class="chapter-meta">
+        <span class="chapter-num">Chapter Four</span>
+        <span class="chapter-phase">U — Undertake</span>
+      </div>
+      <h2>Take the First Real Action</h2>
+
+      <div class="section-block">
+        <span class="section-label">What This Phase Means</span>
+        <h3>When Theory Meets Ground</h3>
+        <p>The first three phases of R.E.B.U.I.L.D. are interior work. Deep, necessary, foundational — but interior. The Undertake is where the rebuild crosses the threshold from inside the man to inside the world. It is the moment theory becomes action, intention becomes movement, and the rebuilt identity stops being a document and starts being a life.</p>
+        <p>The Undertake is not about taking many actions. It is about taking one specific, real, chosen action that is rooted in the Blueprint and represents a genuine break with the inertia of the collapse. Men who have been through collapse often exist in a state of paralysis that they do not always recognize as paralysis — they are very busy, they are moving constantly, but they are not moving toward anything. They are moving laterally, or in circles, or toward the same destinations they've already visited. The Undertake is movement in a new direction, chosen deliberately, taken even in the presence of fear.</p>
+        <p>The action does not have to be large. It has to be real. A real action has a specific outcome, takes place in actual time and space, and cannot be undone by a change of mind later in the day. Deciding to be more intentional is not an Undertake. Calling the lawyer, enrolling in the course, ending the lease, starting the draft, having the conversation — those are Undertakes. Something happens in the world. Something changes. The direction of your life has physically shifted, even if only by a degree.</p>
+      </div>
+
+      <div class="section-block">
+        <span class="section-label">Why Men Get Stuck Here</span>
+        <h3>The Readiness Trap</h3>
+        <p>The readiness trap is one of the most sophisticated and invisible ways that fear operates. It sounds like wisdom. It sounds like care. It says: "I'll take that action when I'm more prepared. When I've done more research. When the timing is better. When I'm in a better place emotionally. When the kids are older. When the market stabilizes." The readiness trap always has another condition. It will never run out of reasons why now is not the time.</p>
+        <p>Readiness is not a state that precedes action. It is a state that follows action. You do not feel ready and then move. You move and then, inside the movement, readiness develops. The man who takes the action while he is afraid is not reckless — he is learning something about himself that the man who waits will never learn. Every time you take an action in the presence of fear, you update your model of what you're capable of. Every time you wait for readiness, you confirm the fear's premise: that you are not yet enough, not yet ready, not yet the man who can do this.</p>
+        <p>You are the man who can do this. You have been the man who can do this for longer than you've been willing to act on it. The Undertake is the proof.</p>
+      </div>
+
+      <div class="section-block">
+        <span class="section-label">The Truth Nobody Says Out Loud</span>
+        <h3>You Know What the Action Is</h3>
+        <p>You know. There is something specific — one thing — that you've been not-doing. Not because you've been procrastinating in a general way, but because this specific thing represents a real threshold. Crossing it means something. It means the old chapter is over. It means the rebuild is real. It means you have committed in a way that can be seen, by yourself or by others, and that commitment cannot be quietly retracted.</p>
+        <p>That threshold is exactly where you need to stand. The action on the other side of it is not guaranteed to succeed. It is not guaranteed to go the way you want it to go. It is guaranteed to move you forward. And forward, in any direction, is the only way out of the paralysis that has been keeping you in place. Take the action. Whatever happens next is better than whatever happens if you stay where you are.</p>
+      </div>
+
+      <div class="section-block">
+        <span class="section-label">Three Tools for the Undertake Phase</span>
+        <div class="tools-grid">
+
+          <div class="tool-card">
+            <span class="tool-number">Tool 10</span>
+            <h4>The One Action Inventory</h4>
+            <p>This tool cuts through the noise of all the things you "should" do and identifies the one action that is the actual threshold. Complete the following prompts:</p>
+            <ul>
+              <li>List every action you've been avoiding for more than 30 days — write them all down without filtering</li>
+              <li>Circle the one that, if you took it, would feel like a real before-and-after moment in your rebuild</li>
+              <li>Write the specific fear attached to that action — what exactly are you afraid will happen?</li>
+              <li>Write the cost of not taking this action for another 90 days — be specific and unflinching</li>
+              <li>Write the next version of yourself that becomes possible only after this action is taken</li>
+            </ul>
+            <p>That is your Undertake. Schedule it within 48 hours of completing this inventory.</p>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-number">Tool 11</span>
+            <h4>The Fear Audit</h4>
+            <p>Most avoidance is rooted in a specific fear that has never been examined directly. The Fear Audit brings it into the open, where it can be assessed honestly rather than felt diffusely.</p>
+            <ul>
+              <li>Name the fear behind your avoidance in one sentence — not vague ("I'm afraid of failure") but specific ("I'm afraid that if I try this and it doesn't work, I'll have proved I'm not capable of rebuilding")</li>
+              <li>Examine the evidence: what actual evidence supports this fear? What evidence contradicts it?</li>
+              <li>Name the worst realistic outcome if the fear comes true — not catastrophized, realistic</li>
+              <li>Ask: can I survive the worst realistic outcome? Have I survived things this hard before?</li>
+              <li>Write the cost of allowing this fear to continue making your decisions indefinitely</li>
+            </ul>
+            <p>Fear audited is fear reduced. It rarely disappears. But the man who understands his fear is not controlled by it in the same way as the man who simply feels it without examining it.</p>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-number">Tool 12</span>
+            <h4>The 48-Hour Commitment</h4>
+            <p>This tool creates the structure for the actual action. It is simple and it is non-negotiable.</p>
+            <ul>
+              <li>Write the action in one specific sentence — what you will do, when, and how</li>
+              <li>Write the name of one person you will tell about this commitment before you take the action</li>
+              <li>Tell them — before the 48-hour window closes</li>
+              <li>Take the action — before the 48-hour window closes</li>
+              <li>After: write one paragraph about what happened, what you felt, and what this action opens up</li>
+            </ul>
+            <p>The telling is not about accountability in a punitive sense. It is about making the commitment real in a social space, which makes backing out carry a different weight than backing out of a private promise. Use that structure. It works.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="field-note">
+        <span class="field-note-label">Field Note from Uhia</span>
+        <p>I had a conversation I needed to have for eight months. Eight months I carried it around, turned it over, rehearsed it, decided not to do it, decided to do it, found reasons to wait. When I finally had it — finally picked up the phone and had the actual conversation — the whole thing lasted less than twenty minutes and the outcome was not what I feared. But even if the outcome had been exactly what I feared, I would have been better off. Because the eight months of carrying it had already cost me more than the worst version of the conversation would have. The action is never as expensive as the avoidance. Take the action.</p>
+        <span class="field-note-sig">— Uhia Willis</span>
+      </div>
+
+      <div class="mistakes-block">
+        <h4>Common Mistakes in the Undertake Phase</h4>
+        <ul>
+          <li>Substituting planning for action — planning is legitimate preparation, but it can also be indefinitely extended avoidance</li>
+          <li>Taking actions that feel busy but don't cross the actual threshold — activity is not the same as movement</li>
+          <li>Waiting for the fear to go away before acting — the fear doesn't go before the action, it releases during and after it</li>
+          <li>Choosing an action that is comfortable instead of the action that is necessary — the Undertake is supposed to require something</li>
+          <li>Taking the action and then immediately minimizing it — a real action deserves acknowledgment, even private acknowledgment</li>
+          <li>Not identifying the next action after the first one — momentum needs direction</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CHAPTER 5: INTEGRATE -->
+    <div class="chapter" id="chapter-i">
+      <div class="chapter-meta">
+        <span class="chapter-num">Chapter Five</span>
+        <span class="chapter-phase">I — Integrate</span>
+      </div>
+      <h2>Wire the New Identity into Daily Life</h2>
+
+      <div class="section-block">
+        <span class="section-label">What This Phase Means</span>
+        <h3>Where the Rebuild Becomes a Life</h3>
+        <p>Integration is the phase where most rebuilds succeed or fail. Not in the dramatic sense — men who make it to the Undertake rarely collapse back entirely. But the difference between a man who does the inner work and changes his life and a man who does the inner work and returns to his old patterns within sixty days is almost always Integration. He did the Reckon. He drew the Blueprint. He took the action. And then he went back to his old environment, his old daily rhythms, his old relationships — unchanged — and the new identity had nothing to take root in.</p>
+        <p>Identity is not just what you believe about yourself in a quiet room. Identity is what you do on a Tuesday when you're tired and nobody is watching. It is your first response to stress. It is how you treat your body in the morning. It is what you reach for when you're bored and what you say when you're hurt. Identity is behavioral before it is philosophical, and the behavioral dimension of identity is shaped by daily structure. You cannot think your way into a new identity. You have to live your way into it, one repeated choice at a time, until the new way of being is more habitual than the old one.</p>
+        <p>Integration is the work of building the daily structure that makes the rebuilt man's behavior the path of least resistance instead of the path of most resistance. It is not glamorous. It is not dramatic. It is the work that happens after the initial burst of transformation — the long, consistent, unsexy work of showing up as the new man every day until it isn't an effort anymore. It is the most important phase in the method.</p>
+      </div>
+
+      <div class="section-block">
+        <span class="section-label">Why Men Get Stuck Here</span>
+        <h3>The Environment Doesn't Know About the Rebuild</h3>
+        <p>Your environment — the people in it, the physical spaces, the cultural norms, the unspoken agreements — was calibrated to the old version of you. It will resist the new version. Not always consciously. Not always maliciously. But your old environment knows how to interact with the man you were. The man you're becoming is a stranger to it, and it will pull toward familiarity with subtle, constant force.</p>
+        <p>This is why men who do genuine inner work in isolation from their environment often feel the rebuild fading within weeks of returning to ordinary life. The environment is not passive. It is active. It has expectations of you, habits around you, roles for you that fit the old version and not the new one. Integration requires either changing the environment, changing how you move within it, or both.</p>
+        <p>The second reason men get stuck in Integration is the expectation of linearity. The rebuild is not linear. There will be days when the collapsed version of you shows up fully, behaves exactly as he always did, and you feel like you've lost everything you worked for. You haven't. Regression is part of integration. The measure is not whether you regress. It is whether you return. The rebuilt man knows how to come back. He has a structure to come back to.</p>
+      </div>
+
+      <div class="section-block">
+        <span class="section-label">The Truth Nobody Says Out Loud</span>
+        <h3>Some People in Your Life Cannot Come with You</h3>
+        <p>There are people in your current life — people you care about, people you've known for years — who were in relationship with the old version of you. Not the rebuilt man. And some of those relationships cannot hold the new version. Not because those people are bad. Because relationships are systems, and systems reach equilibrium. If you change substantially, the system has to adjust. Some relationships can adjust. Some cannot.</p>
+        <p>The relationships that cannot adjust will pull hardest against the rebuild. They will do it through comfort — "you're not yourself lately" — and through familiarity — "you used to be easier to be around" — and sometimes through pressure — "who do you think you are." None of these are signals to retreat. They are signals that the rebuild is real enough to be felt. Hold the line. Not with hostility. With consistency. The relationships that can survive the new version of you are worth more than the ones that required the old version to stay stable.</p>
+      </div>
+
+      <div class="section-block">
+        <span class="section-label">Three Tools for the Integrate Phase</span>
+        <div class="tools-grid">
+
+          <div class="tool-card">
+            <span class="tool-number">Tool 13</span>
+            <h4>The Daily Architecture</h4>
+            <p>Using your Blueprint as the source, design the daily behavioral architecture of the rebuilt man. This is not a to-do list. It is a structural description of how the rebuilt man's day is organized — what he does, when, and why it supports the identity he's building.</p>
+            <ul>
+              <li>The morning protocol: how does the rebuilt man start his day, and what does that first hour protect or build?</li>
+              <li>The non-negotiables: five daily behaviors that are not optional, regardless of schedule, energy, or mood</li>
+              <li>The exits you close: three behaviors or patterns that the rebuilt man does not engage in, with clear replacements</li>
+              <li>The transitions: how does the rebuilt man move between major parts of his day — work, family, solitude — without losing himself in the transitions?</li>
+              <li>The evening practice: how does the day close, and what does the rebuilt man review or release before sleep?</li>
+            </ul>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-number">Tool 14</span>
+            <h4>The Environment Audit</h4>
+            <p>Examine your current physical, social, and digital environments and assess honestly which elements support the rebuild and which undermine it.</p>
+            <ul>
+              <li>Physical environment: what in your physical space belongs to the old version and needs to change? What needs to be added that supports the new one?</li>
+              <li>Social environment: name every significant relationship in your life and note whether it supports, is neutral to, or undermines the rebuild — without judgment, with honesty</li>
+              <li>Digital environment: what are you consuming regularly — content, accounts, feeds, communities — and what does that consumption build in you?</li>
+              <li>For each element that undermines the rebuild: write one specific change you will make in the next 30 days</li>
+            </ul>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-number">Tool 15</span>
+            <h4>The Weekly Review</h4>
+            <p>Set a recurring weekly appointment with yourself — the same time, the same space, every week. This is the Integration review. In 30 minutes or less, ask yourself the following:</p>
+            <ul>
+              <li>Where did I show up this week as the rebuilt man? Acknowledge this specifically.</li>
+              <li>Where did the old patterns resurface? Name them without shame — regression is data, not defeat.</li>
+              <li>What was the trigger for the regression — a person, a situation, a stress, a particular time of day?</li>
+              <li>What is one adjustment I make to next week based on what I learned this week?</li>
+              <li>Am I living the Blueprint, or am I drifting from it? If drifting, what pulls me back?</li>
+            </ul>
+            <p>The Weekly Review is the most important habit in the Integration phase. It creates accountability to yourself without punishment, and correction without crisis. Do not skip it. The weeks you most want to skip it are the weeks you most need it.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="field-note">
+        <span class="field-note-label">Field Note from Uhia</span>
+        <p>About six weeks into my Integration, I had the worst week of the entire rebuild. Old habits everywhere. Old patterns running like they'd never been interrupted. I almost convinced myself the whole thing had been a performance — that the "rebuilt man" was just a story I'd been telling myself in journaling sessions that had nothing to do with real life. I almost gave up. Instead, I did the Weekly Review. I sat down and went through it honestly and found something I hadn't expected: the regression was concentrated in two specific situations, with two specific triggers. Everything else that week, I had been the rebuilt man. The story my shame was telling me — "you're the same as you always were" — was a lie. The data told a different story. Track the data. Don't trust the shame narrative without evidence.</p>
+        <span class="field-note-sig">— Uhia Willis</span>
+      </div>
+
+      <div class="mistakes-block">
+        <h4>Common Mistakes in the Integrate Phase</h4>
+        <ul>
+          <li>Expecting the new identity to feel natural immediately — it takes time for new behaviors to become default, sometimes 60 to 90 days</li>
+          <li>Treating regression as failure instead of data — regression is part of the process, not evidence that the process doesn't work</li>
+          <li>Failing to audit the environment — doing the internal work without changing the external conditions is like rebuilding a house while leaving the mold in the walls</li>
+          <li>Skipping the Weekly Review when things are going well — consistency is more important than urgency</li>
+          <li>Trying to integrate in isolation — the rebuild needs at least one witness who can reflect what they're seeing</li>
+          <li>Letting the perfect be the enemy of the consistent — showing up at 70% every day is worth more than showing up at 100% twice a week</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CHAPTER 6: LAUNCH -->
+    <div class="chapter" id="chapter-l">
+      <div class="chapter-meta">
+        <span class="chapter-num">Chapter Six</span>
+        <span class="chapter-phase">L — Launch</span>
+      </div>
+      <h2>Step into the World as the Rebuilt Man</h2>
+
+      <div class="section-block">
+        <span class="section-label">What This Phase Means</span>
+        <h3>The Declaration of Forward</h3>
+        <p>The Launch is a declaration. Not a press release, not a performance, not a social media announcement. A private, internal, chosen declaration that the next chapter is open and you are the one opening it. It is the moment when you stop identifying as a man in recovery from collapse and start identifying as a man in motion toward something. The distinction is not semantic. It changes what you see when you look forward. It changes the questions you ask. It changes who you believe yourself to be.</p>
+        <p>The Launch is possible only because of the work that precedes it. A man who tries to launch without doing the Reckon is building on sand — his foundation is still made of the unexamined story. A man who launches without the Blueprint doesn't know where he's going. A man who launches without the Undertake hasn't proven to himself that he can move. The Launch is not the beginning. It is the culmination of everything that came before it, formalized into a commitment to go forward.</p>
+        <p>The Launch is also not the end. It is the beginning of a new chapter, and that chapter will contain its own difficulties, its own setbacks, its own moments where the collapsed version of you wants to resurface. The Launch doesn't prevent those things. It gives you a clear orientation to return to when they happen. You know who you are now. You know what you're building. You know what direction you're facing. That knowledge is durable in a way that mood and motivation are not. When the hard days come — and they will — you come back to the Launch declaration and you remember: this is the man I have chosen to be. This is the direction I have chosen to face. Let's go.</p>
+      </div>
+
+      <div class="section-block">
+        <span class="section-label">Why Men Get Stuck Here</span>
+        <h3>Waiting for the World to Acknowledge the Rebuild</h3>
+        <p>Men get stuck in the Launch for a specific and painful reason: they have done the work, they have changed, they are genuinely different — and the world around them hasn't caught up. Their old relationships still treat them as the old version. Their professional environment still knows them by their past. The people who watched them collapse are still waiting for the next collapse. The world is slow to update its picture of you. This can feel like the rebuild isn't real. It is not evidence of that. It is evidence that the world needs time to see what has changed.</p>
+        <p>The Launch does not wait for external acknowledgment. The man does not need the world's permission to step forward. He needs his own. The Launch is the act of stepping forward before the applause, before the acknowledgment, before the world has caught up to who you now are. The world will catch up. It always does. But it catches up to the man who has already moved, not the man who is waiting for permission to move.</p>
+      </div>
+
+      <div class="section-block">
+        <span class="section-label">The Truth Nobody Says Out Loud</span>
+        <h3>You Are Already the Rebuilt Man</h3>
+        <p>Here is the truth you need to hear at this phase: the work you have done — the reckoning, the extraction, the blueprinting, the action, the integration — has already made you the rebuilt man. Not completely. Not finally. The work is ongoing. But the man reading these words is not the same man who started this process. You have changed already. The Launch is not the transformation — the transformation has already been happening. The Launch is the acknowledgment of it. The formalization of it. The decision to live from it, fully and without apology, going forward.</p>
+        <p>You don't have to earn the Launch. You've already earned it. You just have to claim it.</p>
+      </div>
+
+      <div class="section-block">
+        <span class="section-label">Three Tools for the Launch Phase</span>
+        <div class="tools-grid">
+
+          <div class="tool-card">
+            <span class="tool-number">Tool 16</span>
+            <h4>The Launch Declaration</h4>
+            <p>Write your Launch Declaration — a full-page direct address from you to you, formalizing the transition from the man defined by collapse to the man defined by the rebuild. This document has three sections:</p>
+            <ul>
+              <li>What I am leaving behind: name specifically what belongs to the previous chapter and will not be brought forward — not with anger, with finality</li>
+              <li>Who I am: a condensed version of your Core Identity Statement — who the rebuilt man is, in the present tense, without hedging</li>
+              <li>What I am building: the specific direction you are moving in — not vague aspiration but concrete commitment to the Blueprint's vision</li>
+            </ul>
+            <p>Sign it. Date it. Keep it in a place where you will see it regularly. Read it at minimum once per week. On the hard days, read it twice.</p>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-number">Tool 17</span>
+            <h4>The Threshold Ritual</h4>
+            <p>The Launch should be marked in some way that is personal and real. Not performative. Not for an audience. A private ritual that you create to mark the threshold between the old chapter and the new one. This looks different for every man.</p>
+            <ul>
+              <li>Some men do something physical: a hike to a specific place, a swim in cold water, a run that marks the distance between who they were and who they're becoming</li>
+              <li>Some men do something symbolic: burning the old journal, giving away something that belonged to the collapsed life, changing something in their physical space</li>
+              <li>Some men do something relational: telling one trusted person that the new chapter has begun</li>
+              <li>Some men do something creative: building something with their hands, writing something they've been holding back, beginning the project that has lived only in the Blueprint until now</li>
+            </ul>
+            <p>Choose your ritual. Make it yours. Do it on the day you read your Launch Declaration for the first time. The ritual matters because it makes the Launch physical — it puts it in the body and in time, not just in words on a page.</p>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-number">Tool 18</span>
+            <h4>The First Chapter Plan</h4>
+            <p>The Launch opens a new chapter. A new chapter needs a structure. Using your Blueprint as the foundation, write a 90-day plan for the first chapter of the rebuilt life.</p>
+            <ul>
+              <li>Three primary commitments for the next 90 days — not goals, commitments. What you will do, consistently, that builds the life in the Blueprint.</li>
+              <li>One significant action per month that represents measurable forward movement in the most important domain of your rebuild</li>
+              <li>The Weekly Review practice from the Integration phase — scheduled, non-negotiable</li>
+              <li>One relationship to invest in more deeply and one to invest in less deeply, based on the Environment Audit</li>
+              <li>One thing you will stop doing entirely in the next 90 days that belongs to the old chapter</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="field-note">
+        <span class="field-note-label">Field Note from Uhia</span>
+        <p>My Launch happened on a Tuesday morning in February. Nobody knew. I hadn't told anyone. I read the declaration I'd written, I drove to a spot by the water near where I live, I sat there for about an hour in my car watching the water move. I didn't pray and I didn't cry. I just sat there and let it settle — that the old chapter was done, that it had cost what it had cost, that I was grateful for what it had given me even in the wreckage, and that today was the first day of the next thing. Then I drove home and went to work. It was a Tuesday. Nobody could see that anything had changed. But it had. Everything that has happened since — everything good that has come since — traces back to that Tuesday morning. Your Tuesday is waiting.</p>
+        <span class="field-note-sig">— Uhia Willis</span>
+      </div>
+
+      <div class="mistakes-block">
+        <h4>Common Mistakes in the Launch Phase</h4>
+        <ul>
+          <li>Waiting for external permission or acknowledgment before launching — the Launch is self-authorized</li>
+          <li>Making the Launch a performance for others instead of a declaration for yourself</li>
+          <li>Launching without the First Chapter Plan — the Launch without direction becomes a moment instead of a movement</li>
+          <li>Treating the Launch as the end of the work instead of the beginning of a new chapter</li>
+          <li>Skipping the Threshold Ritual — the physical marking of the transition matters to the body and the psyche in ways that the written declaration alone cannot fulfill</li>
+          <li>Relaunching the old life under a new name — the Launch has to be oriented toward the Blueprint, not toward recovering what the collapse took</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CHAPTER 7: DEFEND -->
+    <div class="chapter" id="chapter-d">
+      <div class="chapter-meta">
+        <span class="chapter-num">Chapter Seven</span>
+        <span class="chapter-phase">D — Defend</span>
+      </div>
+      <h2>Protect What You've Built</h2>
+
+      <div class="section-block">
+        <span class="section-label">What This Phase Means</span>
+        <h3>The Work That Never Ends</h3>
+        <p>The Defend phase is the only phase of R.E.B.U.I.L.D. that has no finish line. Every other phase completes and hands off to the next. The Defend continues for the rest of your life. Not as a burden. As a practice. The practice of protecting what you have built — your peace, your purpose, your identity, your relationships, your integrity — from the forces, internal and external, that will test them.</p>
+        <p>Defending what you've built is not the same as being defensive. A defensive man is reactive — he protects by contracting, by shutting down, by avoiding the things that threaten him. A man who defends is proactive — he has thought carefully about what he is protecting and why, he has structures in place to protect it, and he engages with threats from a position of preparation rather than surprise. The Defend is not fear-based. It is love-based. You defend what you love. You defend what you've worked for. You defend what you know the cost of losing.</p>
+        <p>The work of the Defend also carries something that no other phase carries: it carries forward the entire memory of the rebuild. When a man is defending his peace, he knows what it cost to lose it. When he is defending his integrity, he knows what it cost to violate it. When he is defending the relationships that belong to the rebuilt life, he knows what it cost to lose the ones that didn't survive the collapse. That knowledge is not a wound. It is a compass. The Defend phase is where the full weight of the R.E.B.U.I.L.D. journey converts into the permanent orientation of the rebuilt man.</p>
+      </div>
+
+      <div class="section-block">
+        <span class="section-label">Why Men Get Stuck Here</span>
+        <h3>Success Breeds Complacency</h3>
+        <p>Men get stuck in the Defend phase not through failure but through success. The rebuild begins to work. Life improves. Stability returns. The pain that drove the work fades as the wounds heal. And gradually, almost imperceptibly, the disciplines that built the new life begin to feel less urgent. The Weekly Review gets skipped. The morning protocol gets compressed. The boundaries get softened. The accountability relationship gets neglected. None of these feel catastrophic individually. Together, over time, they create the conditions for the next collapse.</p>
+        <p>The Defend phase requires the counter-intuitive discipline of maintaining urgency in the absence of crisis. It requires a man to care for the structure of his rebuilt life not because it's currently falling apart but because it matters too much to let fall apart again. This is adult discipline at its highest level. It is also the least glamorous discipline — there is no breakthrough, no dramatic turn, no moment of revelation. Just the quiet, daily, unsexy work of maintaining what was hard to build.</p>
+      </div>
+
+      <div class="section-block">
+        <span class="section-label">The Truth Nobody Says Out Loud</span>
+        <h3>The Next Collapse Is Already Taking Shape</h3>
+        <p>This is not pessimism. This is pattern recognition. Life does not stop testing men because they have rebuilt once. The rebuilt man is not exempt from loss, from failure, from the hard things that come to everyone. What has changed is not the presence of hard things — it is the man they arrive at. The man who has done this work is not immune to the next collapse. He is equipped for it. He has a framework. He has a practice. He has a relationship with his own truth that makes the next hard thing navigable in a way the first one wasn't.</p>
+        <p>The Defend phase also asks you to look around you — at the men in your life — and do for them what the R.E.B.U.I.L.D. work did for you. Reach back. Not with a program. Not with an agenda. With presence, with honesty, with the willingness to say to another man: I've been where you are, and there is a way forward. That is the final dimension of the Defend — defending not just your own rebuild, but the possibility of rebuilding for the men who come after you.</p>
+      </div>
+
+      <div class="section-block">
+        <span class="section-label">Three Tools for the Defend Phase</span>
+        <div class="tools-grid">
+
+          <div class="tool-card">
+            <span class="tool-number">Tool 19</span>
+            <h4>The Threat Assessment and Defense Plan</h4>
+            <p>Build a personal threat assessment — an honest inventory of the forces, internal and external, most likely to erode what you've built.</p>
+            <ul>
+              <li>Internal threats: old thought patterns, stress responses, escape behaviors, the specific emotional states that most reliably trigger the old version of you</li>
+              <li>External threats: relationships, environments, circumstances, financial pressures that could destabilize the rebuilt life</li>
+              <li>For each threat: name it specifically, rate its likelihood, and write one specific defense — a behavior, a boundary, a structure that protects against it</li>
+              <li>Review and update this assessment quarterly — threats change as life changes</li>
+            </ul>
+            <p>The Threat Assessment is not about paranoia. It is about preparation. A man who has thought clearly about what could go wrong is not more anxious than the man who hasn't. He is more capable.</p>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-number">Tool 20</span>
+            <h4>The Non-Negotiable Five</h4>
+            <p>From your Blueprint and your Integration work, identify the five non-negotiable daily behaviors that are the core structure of the rebuilt man's life. These are the behaviors that, if you maintain them consistently, make the rest of the structure stable. If you abandon them, the structure begins to weaken.</p>
+            <ul>
+              <li>Write the five behaviors specifically — not "exercise" but what kind, when, for how long</li>
+              <li>Write why each one is non-negotiable — what does it protect or build in you?</li>
+              <li>Write what you do when life makes the behavior temporarily impossible — the recovery protocol, not just the behavior itself</li>
+              <li>Track these behaviors for 90 days — not to shame yourself on the days you miss them, but to see patterns in when and why you miss them</li>
+            </ul>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-number">Tool 21</span>
+            <h4>The Accountability Structure</h4>
+            <p>The Defend phase requires at least one external relationship built specifically for accountability. Not a therapist, though therapy has value. Not a casual friend. A man — specifically a man, ideally one who has done work on himself — who knows the full story of your rebuild, who you check in with at minimum twice a month, and who has explicit permission to ask you hard questions and expect honest answers.</p>
+            <ul>
+              <li>Identify the person — or begin the deliberate search for him if he doesn't yet exist in your life</li>
+              <li>Have the direct conversation: "I'm doing this work and I need someone to hold me to it. Are you willing to be that person?"</li>
+              <li>Set a recurring check-in — the same time, the same format, non-negotiable</li>
+              <li>In each check-in: share one win, one regression, one thing you're defending against, one thing you need</li>
+              <li>Be willing to do the same for him — accountability is relational, not transactional</li>
+            </ul>
+            <p>This relationship is not weakness. This relationship is one of the most important structures in the rebuilt life. Find it. Build it. Protect it.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="field-note">
+        <span class="field-note-label">Field Note from Uhia</span>
+        <p>Two years after my rebuild, I had a period of six weeks where I quietly dropped every non-negotiable in my daily architecture. Not dramatically. I just got busy, then I stayed busy, then the busyness became a reason, and the reasons became the new normal. My accountability partner noticed before I did. He didn't attack me. He just asked: "What happened to the man you were six months ago? Because I'm not seeing him right now." That question landed hard. Not because it was cruel — because it was true. Six weeks of drift, caught by one honest question from one man who cared enough to say it. Find your man. Be that man for someone else. The rebuild is too important to defend alone.</p>
+        <span class="field-note-sig">— Uhia Willis</span>
+      </div>
+
+      <div class="mistakes-block">
+        <h4>Common Mistakes in the Defend Phase</h4>
+        <ul>
+          <li>Treating the Defend as optional — the rebuild without the Defend is a structure without maintenance, and it will degrade</li>
+          <li>Believing that the work is done because life has improved — improvement is the beginning of the Defend, not the end of it</li>
+          <li>Defending alone — no man defends his most important territory without allies</li>
+          <li>Treating the accountability relationship as a performance rather than a real, honest engagement</li>
+          <li>Failing to update the Threat Assessment as life changes — the threats of year one are not the threats of year three</li>
+          <li>Keeping the Defend entirely private and never reaching back to the man who is where you were — the Defend is not complete until it is generative</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CLOSING -->
+    <div class="closing-chapter" id="closing">
+      <span class="label">Closing</span>
+      <h2>You Didn't Come This Far to Stay Broken</h2>
+
+      <div class="closing-chapter">
+        <p>I need to talk to you directly for a moment. Not as a method. Not as a framework. As a man who has been in the dark and found his way to the other side of it, talking to a man who is somewhere on that same road.</p>
+
+        <p>You picked this up because something in your life collapsed. Maybe recently. Maybe years ago and you've been surviving since, waiting for the right time to actually do the work. Maybe you've tried other approaches — therapy, self-help books, motivation, distraction, new relationships to fill the space — and none of it touched the root. You suspected that the root was somewhere deeper, somewhere most approaches don't reach, and you were right. The root is identity. And identity is what this work is about.</p>
+
+        <p>You've read seven chapters. If you actually did the work — the Reckon, the Extract, the Blueprint, the Undertake, the Integration, the Launch, the Defense — you are not the same man who opened this manual. Something has shifted. Maybe dramatically. Maybe quietly. But the shift is real. I need you to trust it, even when the old familiar voices try to tell you it isn't.</p>
+
+        <p>I want to tell you what I've seen, having walked this work with men who have been through what you've been through. I've seen men rebuild after divorce — not just rebuild a life, but become the kind of father and the kind of man they never were in the marriage. I've seen men come back from financial ruin with a clarity about money, work, and value that they never had when they were successful. I've seen men who lost themselves in addiction, in performance, in roles they didn't choose — find their actual selves in the wreckage of those roles and step into the world as men who are genuinely, functionally, quietly free. <em>That freedom is available to you.</em> Not in spite of what happened. Because of what you chose to do with it.</p>
+
+        <p>The collapse is not the end of your story. It never was. It was the end of a chapter — a chapter that had run its course, that had extracted what it had to extract, that had cost what it had to cost. The next chapter is already open. The rebuilt man is already standing in it, waiting for the rest of you to arrive. Show up. Do the work. Keep doing it. Trust the framework on the days you don't trust yourself. Come back to the Reckon when the story starts to drift. Come back to the Blueprint when you lose direction. Come back to the Defend when the structure starts to soften.</p>
+
+        <p>And when you've built something real — when you are standing in a life that is genuinely yours, built on honest foundations, defended by real practice — reach back. Find the man who is where you were. Don't preach at him. Don't tell him what to do. Just let him know that the dark has an end. That there is a way through. That the work is hard and the work is real and the work will change his life if he is willing to do it.</p>
+
+        <p>That is the final dimension of the rebuild. That is what makes it permanent. A man who has rebuilt for himself has done something valuable. A man who reaches back and pulls the next man toward the light has done something that lasts beyond him.</p>
+
+        <p>You didn't come this far to stay broken. You came this far to rebuild — and then to show someone else that rebuilding is possible. Go do both.</p>
+
+        <div class="closing-sig">
+          <p>"The dark is not the end. It is the beginning of the work. And the work is the beginning of everything."</p>
+          <span>— Uhia Willis, Founder of The R.E.B.U.I.L.D. Method</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- END CONTENT -->
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <span class="cta-label">Continue the Work</span>
+    <h2>Ready to Go Deeper with Uhia Directly?</h2>
+    <p>The Blueprint is the full framework. If you want to work through it with guidance — with Uhia in your corner — explore the coaching and community options at uhiawillis.com.</p>
+    <div>
+      <a href="/index.html" class="btn-primary">Work with Uhia Directly</a>
+      <a href="/products/challenge-content.html" class="btn-secondary">← Back to the Challenge</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Uhia Willis / UKW Consulting. All rights reserved. &nbsp;|&nbsp; <a href="/index.html">uhiawillis.com</a></p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The 7-Day R.E.B.U.I.L.D. Challenge — Uhia Willis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black: #050505;
+      --b2: #0A0A0A;
+      --b3: #111111;
+      --b4: #1A1A1A;
+      --gold: #E8500A;
+      --gold2: #F06828;
+      --cream: #FFFFFF;
+      --muted: #9A9A9A;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+      --mono: 'DM Mono', monospace;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--black);
+      color: var(--cream);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--b2);
+      border-bottom: 1px solid var(--b4);
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 22px;
+    }
+
+    .logo-bars span {
+      display: block;
+      width: 5px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    .logo-bars span:nth-child(1) { height: 10px; }
+    .logo-bars span:nth-child(2) { height: 16px; }
+    .logo-bars span:nth-child(3) { height: 22px; }
+
+    .nav-name {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+
+    .nav-back {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--gold); }
+
+    /* HERO */
+    .hero {
+      padding: 100px 40px 80px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .label {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(40px, 6vw, 68px);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 580px;
+      margin: 0 auto 32px;
+    }
+
+    .price-tag {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 8px 20px;
+      border-radius: 2px;
+      margin-bottom: 48px;
+    }
+
+    .divider-line {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 0 auto 72px;
+    }
+
+    /* INTRO */
+    .intro {
+      max-width: 700px;
+      margin: 0 auto 80px;
+      padding: 0 40px;
+    }
+
+    .intro p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #D0D0D0;
+      margin-bottom: 20px;
+    }
+
+    .intro p:last-child { margin-bottom: 0; }
+
+    /* DAY INDEX */
+    .day-index {
+      max-width: 700px;
+      margin: 0 auto 80px;
+      padding: 0 40px;
+    }
+
+    .day-index-inner {
+      background: var(--b3);
+      border: 1px solid var(--b4);
+      padding: 40px;
+      border-radius: 4px;
+    }
+
+    .day-index-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .day-index ul {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .day-index ul li a {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+      color: var(--cream);
+      transition: color 0.2s;
+    }
+
+    .day-index ul li a:hover { color: var(--gold); }
+
+    .day-index ul li a .idx-num {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      min-width: 48px;
+    }
+
+    .day-index ul li a .idx-title {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    /* DAY SECTIONS */
+    .days-container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .day {
+      margin-bottom: 100px;
+      padding-bottom: 100px;
+      border-bottom: 1px solid var(--b4);
+      scroll-margin-top: 80px;
+    }
+
+    .day:last-of-type {
+      border-bottom: none;
+    }
+
+    .day-meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .day-num {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .day-phase {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(232, 80, 10, 0.1);
+      padding: 4px 12px;
+      border-radius: 2px;
+      border: 1px solid rgba(232, 80, 10, 0.3);
+    }
+
+    .day h2 {
+      font-family: var(--serif);
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+    }
+
+    .day-tagline {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-style: italic;
+      color: var(--gold);
+      margin-bottom: 36px;
+      display: block;
+    }
+
+    .day-context {
+      font-size: 17px;
+      line-height: 1.85;
+      color: #C8C8C8;
+      margin-bottom: 48px;
+    }
+
+    .day-context p { margin-bottom: 18px; }
+    .day-context p:last-child { margin-bottom: 0; }
+
+    /* MISSION BLOCK */
+    .mission-block {
+      background: var(--b3);
+      border: 1px solid var(--b4);
+      border-top: 3px solid var(--gold);
+      padding: 36px 40px;
+      margin-bottom: 40px;
+      border-radius: 0 0 4px 4px;
+    }
+
+    .block-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .mission-block h3 {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .mission-block p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #C8C8C8;
+      margin-bottom: 16px;
+    }
+
+    .mission-block p:last-child { margin-bottom: 0; }
+
+    .mission-block ul {
+      list-style: none;
+      margin-top: 16px;
+    }
+
+    .mission-block ul li {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #C8C8C8;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--b4);
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .mission-block ul li:last-child { border-bottom: none; }
+
+    .mission-block ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    /* REFLECTION BLOCK */
+    .reflection-block {
+      background: var(--b2);
+      border: 1px solid var(--b4);
+      border-left: 3px solid var(--muted);
+      padding: 36px 40px;
+      margin-bottom: 40px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .reflection-block h3 {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .reflection-block ol {
+      list-style: none;
+      counter-reset: reflection-counter;
+    }
+
+    .reflection-block ol li {
+      counter-increment: reflection-counter;
+      font-size: 16px;
+      line-height: 1.75;
+      color: #C0C0C0;
+      padding: 14px 0 14px 40px;
+      border-bottom: 1px solid var(--b4);
+      position: relative;
+    }
+
+    .reflection-block ol li:last-child { border-bottom: none; }
+
+    .reflection-block ol li::before {
+      content: counter(reflection-counter, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      top: 14px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    /* CLOSING NOTE */
+    .closing-note {
+      background: rgba(232, 80, 10, 0.06);
+      border: 1px solid rgba(232, 80, 10, 0.2);
+      padding: 28px 32px;
+      border-radius: 4px;
+    }
+
+    .closing-note-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .closing-note p {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--cream);
+    }
+
+    .closing-note .signature {
+      margin-top: 16px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      font-style: normal;
+      display: block;
+    }
+
+    /* CTA */
+    .cta-section {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 80px 40px;
+      text-align: center;
+      border-top: 1px solid var(--b4);
+    }
+
+    .cta-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .cta-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .cta-section p {
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 540px;
+      margin: 0 auto 40px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--cream);
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 18px 44px;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--gold2); }
+
+    .btn-secondary {
+      display: inline-block;
+      background: transparent;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 14px 32px;
+      border: 1px solid var(--b4);
+      border-radius: 2px;
+      margin-left: 16px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .btn-secondary:hover {
+      color: var(--cream);
+      border-color: var(--muted);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--b4);
+      padding: 40px;
+      text-align: center;
+    }
+
+    footer p {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      .hero { padding: 60px 20px 48px; }
+      .intro { padding: 0 20px; }
+      .day-index { padding: 0 20px; }
+      .day-index-inner { padding: 28px 20px; }
+      .days-container { padding: 0 20px; }
+      .mission-block { padding: 28px 20px; }
+      .reflection-block { padding: 28px 20px; }
+      .cta-section { padding: 60px 20px; }
+      .btn-secondary { margin-left: 0; margin-top: 12px; display: block; }
+      footer { padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/index.html" class="nav-logo">
+      <div class="logo-bars">
+        <span></span><span></span><span></span>
+      </div>
+      <span class="nav-name">Uhia Willis</span>
+    </a>
+    <a href="/index.html" class="nav-back">← Back to Site</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <span class="label">$47 — The R.E.B.U.I.L.D. Method</span>
+    <h1>The 7-Day <em>R.E.B.U.I.L.D.</em> Challenge</h1>
+    <p class="hero-sub">Seven days. Seven phases. One mission per day. This is not a motivational program. This is a structured walk through the wreckage and out the other side.</p>
+    <div class="price-tag">7 Days · 1 Mission Per Day · Real Work</div>
+    <div class="divider-line"></div>
+  </section>
+
+  <!-- INTRO -->
+  <div class="intro">
+    <p>Here is what I know about the man reading this: you've been waiting. Waiting for the right time, the right sign, the right version of yourself to show up before you start doing the work. I understand that. I lived that. And I can tell you plainly — the right time doesn't come. The man who can do the work is the man you become by doing it.</p>
+    <p>This challenge is not easy. It is not designed to be easy. Each day asks something real of you. But each mission is specific. Each reflection is honest. And at the end of seven days, something will have shifted — not because of what I gave you, but because of what you chose to face.</p>
+    <p>One day at a time. One phase at a time. Let's go.</p>
+  </div>
+
+  <!-- DAY INDEX -->
+  <div class="day-index">
+    <div class="day-index-inner">
+      <span class="day-index-label">The 7 Days at a Glance</span>
+      <ul>
+        <li><a href="#day-1"><span class="idx-num">Day 01</span><span class="idx-title">R — Reckon</span></a></li>
+        <li><a href="#day-2"><span class="idx-num">Day 02</span><span class="idx-title">E — Extract</span></a></li>
+        <li><a href="#day-3"><span class="idx-num">Day 03</span><span class="idx-title">B — Blueprint</span></a></li>
+        <li><a href="#day-4"><span class="idx-num">Day 04</span><span class="idx-title">U — Undertake</span></a></li>
+        <li><a href="#day-5"><span class="idx-num">Day 05</span><span class="idx-title">I — Integrate</span></a></li>
+        <li><a href="#day-6"><span class="idx-num">Day 06</span><span class="idx-title">L — Launch</span></a></li>
+        <li><a href="#day-7"><span class="idx-num">Day 07</span><span class="idx-title">D — Defend</span></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DAYS -->
+  <div class="days-container">
+
+    <!-- DAY 1 -->
+    <div class="day" id="day-1">
+      <div class="day-meta">
+        <span class="day-num">Day 01</span>
+        <span class="day-phase">R — Reckon</span>
+      </div>
+      <h2>Today You Stop Lying to Yourself About What Happened</h2>
+      <span class="day-tagline">"The truth is not the enemy. The story you've been telling instead of the truth — that's the enemy."</span>
+
+      <div class="day-context">
+        <p>Today is the hardest day. Not because the mission is the most demanding — it isn't. It's the hardest day because it asks the one thing you've been most carefully avoiding: an honest account of what actually happened to you.</p>
+        <p>You've told the story. Maybe dozens of times. To friends, to family, maybe in your own head while lying awake at 3 a.m. But there's a version you've been telling, and then there's what actually happened. Those two things are not the same for most men in collapse. The version you tell protects someone — maybe you, maybe someone you loved, maybe your own sense of control over the situation. The version you tell has been edited for an audience, even when that audience is only you.</p>
+        <p>Today you stop editing. You don't share this with anyone. This is between you and the page. You're not writing a story for sympathy. You're not constructing a case. You are simply telling the truth about what happened, what you did, what was done to you, what you lost, and what you chose that you wish you hadn't.</p>
+        <p>There will be resistance. Your mind will want to rationalize, justify, and redirect. That resistance is the sign that you're getting close to something real. When the resistance shows up, lean toward it, not away. The reckoning is not punishment. It is the foundation everything else gets built on. You cannot build on a lie. This is where we clear the ground.</p>
+      </div>
+
+      <div class="mission-block">
+        <span class="block-label">Day 01 Mission</span>
+        <h3>The Honest Account</h3>
+        <p>Find a private space. A journal, a notebook, a document no one will see. Set a timer for 60 minutes. Write the true account of what happened — the collapse, the event, the period that broke you open. Use the following prompts to keep you moving if you get stuck. Do not stop writing until the timer goes off.</p>
+        <ul>
+          <li>What actually happened? Not the cleaned-up version — the real one.</li>
+          <li>What were you pretending wasn't true before it fell apart?</li>
+          <li>What decisions did you make that contributed to what happened?</li>
+          <li>What was done to you that you had no control over?</li>
+          <li>What did you lose that you haven't let yourself grieve properly?</li>
+          <li>What are you still not saying, even to yourself?</li>
+        </ul>
+        <p style="margin-top: 20px;">When the timer ends, read what you wrote once. Do not edit it. Do not share it. Just sit with it for five minutes. What you just did — that account — is the bedrock. Everything else gets built on this.</p>
+      </div>
+
+      <div class="reflection-block">
+        <span class="block-label">End of Day 01 — Reflection</span>
+        <h3>Three Questions for Tonight</h3>
+        <ol>
+          <li>What was the hardest part of the honest account to write, and why do you think that particular part carries so much weight?</li>
+          <li>Is there something you still couldn't bring yourself to write down? What would happen if you did?</li>
+          <li>What does it feel like in your body now that you've put some of this on paper — lighter, heavier, numb, or something else? What does that feeling tell you?</li>
+        </ol>
+      </div>
+
+      <div class="closing-note">
+        <span class="closing-note-label">From Uhia</span>
+        <p>"The night I finally wrote the honest account — not the version I'd been telling, but the actual truth — I cried for the first time in three years. That wasn't weakness. That was the moment I stopped holding a broken structure together with my bare hands. The reckoning hurts. It is also the first breath of free air you've taken in a long time. You did something tonight that takes more courage than most men will ever find. Sit with that."</p>
+        <span class="signature">— Uhia Willis</span>
+      </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="day" id="day-2">
+      <div class="day-meta">
+        <span class="day-num">Day 02</span>
+        <span class="day-phase">E — Extract</span>
+      </div>
+      <h2>Today You Become the Archaeologist of Your Own Wreckage</h2>
+      <span class="day-tagline">"The rubble is not evidence of your failure. It is raw material."</span>
+
+      <div class="day-context">
+        <p>Yesterday you told the truth. That took everything. Today you go back into it — but with a different set of eyes. Today you are not a victim of what happened. You are a student of it. An archaeologist doesn't cry over broken pottery. He picks it up carefully, examines it, and asks what it reveals. That's your posture today.</p>
+        <p>The Extract phase is where men often stumble. It requires a shift in perspective that doesn't come naturally when you're still carrying pain. The shift is this: something real happened to you, and inside that real, terrible, costly thing — there are lessons. Not the kind of lessons you perform for Instagram. Not the "grateful for the struggle" clichés. Real, specific, hard-won knowledge about yourself, about the world, about what you will and will not do again.</p>
+        <p>You are not mining for silver linings. You are pulling out the actual intelligence embedded in the experience. What did this reveal about what you were building your identity on? What did it expose about relationships you should have questioned sooner? What did it force you to discover about your own resilience — or your own patterns — that you would never have seen if the collapse hadn't happened?</p>
+        <p>The lesson is not always comfortable. Sometimes the extraction reveals that you were wrong about something you were certain of. That kind of lesson is the most valuable kind — and the hardest to hold. Hold it anyway. A man who can learn from his own collapse is a man the next version of him is already grateful for.</p>
+      </div>
+
+      <div class="mission-block">
+        <span class="block-label">Day 02 Mission</span>
+        <h3>The Extraction</h3>
+        <p>Go back to yesterday's honest account. Read it. Then open a new page and complete this extraction exercise. Give yourself 45 minutes.</p>
+        <ul>
+          <li>List three things this experience revealed about who you actually are — not who you thought you were.</li>
+          <li>List two patterns — ways of behaving, choosing, or relating — that this collapse exposed as unsustainable.</li>
+          <li>List one belief you held about yourself or the world that this experience disproved. Write the new, truer version of that belief.</li>
+          <li>Write down one thing you now know — because of what you went through — that you could not have known any other way.</li>
+          <li>Write one sentence: "Because of what happened, I will never again ____." Make it specific. Make it yours.</li>
+        </ul>
+        <p style="margin-top: 20px;">These are not consolation prizes. These are the raw materials of the rebuilt man. Keep them. You will use them tomorrow.</p>
+      </div>
+
+      <div class="reflection-block">
+        <span class="block-label">End of Day 02 — Reflection</span>
+        <h3>Three Questions for Tonight</h3>
+        <ol>
+          <li>Which of the extractions was the hardest to write, and what does that difficulty reveal about where your deepest resistance still lives?</li>
+          <li>Is there a pattern you identified today that you've seen before — in a previous relationship, a previous job, a previous version of yourself? What does its reappearance tell you?</li>
+          <li>If you could give the man you were two years ago one sentence — one piece of honest knowledge drawn from everything you've just extracted — what would it be?</li>
+        </ol>
+      </div>
+
+      <div class="closing-note">
+        <span class="closing-note-label">From Uhia</span>
+        <p>"I used to think the worst thing about my collapse was what I lost. The house. The role. The version of my life I had planned on. Then I did the extraction work and I found something I wasn't expecting: I learned exactly what I had been avoiding, and exactly what I was capable of, in the same excavation. The rubble taught me more about myself than the building ever did. That's not a cliché. It's what I actually found. The same thing is waiting for you in yours."</p>
+        <span class="signature">— Uhia Willis</span>
+      </div>
+    </div>
+
+    <!-- DAY 3 -->
+    <div class="day" id="day-3">
+      <div class="day-meta">
+        <span class="day-num">Day 03</span>
+        <span class="day-phase">B — Blueprint</span>
+      </div>
+      <h2>Today You Draw the First Line of the New Structure</h2>
+      <span class="day-tagline">"You are not rebuilding what you had. You are designing what you actually want to stand in."</span>
+
+      <div class="day-context">
+        <p>Two days of going backward. Today you turn around and face forward. The Blueprint is not about goals. Goals are what you do. The Blueprint is about who you are becoming — the architecture of the rebuilt man. What he stands for. What he will not compromise. What he actually wants his life to feel like from the inside.</p>
+        <p>This is where most men either go too small or go too abstract. Too small: "I want to be more disciplined." Too abstract: "I want to be free." Neither of those is a blueprint. A blueprint is specific. It has lines. It has dimensions. It says: this wall goes here, this room is for this, this is what the foundation is made of.</p>
+        <p>You may feel resistance today of a different kind than the first two days. Yesterday and the day before, the resistance was about facing pain. Today's resistance is about deserving something better. A lot of men who've been through collapse have internalized — quietly, invisibly — a belief that they no longer have the right to want something. That they're in repair mode and should be grateful for any version of a life that works, not a life they actually love.</p>
+        <p>I reject that. And today, I need you to reject it too. You did not survive what you survived so you could settle. You survived it so you could build better. The Blueprint is permission — from you, to you — to design a life intentionally. To decide who you are on the other side of this. To stop letting collapse define your ceiling.</p>
+      </div>
+
+      <div class="mission-block">
+        <span class="block-label">Day 03 Mission</span>
+        <h3>The Blueprint Draft</h3>
+        <p>This is a two-part mission. Give yourself 60 to 90 minutes total.</p>
+        <p><strong style="color: var(--cream);">Part One — The Core Identity Statement (30 minutes):</strong> Write a description of the man you are becoming. Not the man you were. Not the man others expect you to be. The man who has done this work, holds these lessons, and walks in the world with intention. Write in present tense. "I am a man who..." Write at least a full page. Cover: how you carry yourself, how you treat people, what you stand for, what you refuse to do, what matters most to you, and how you want to feel on an ordinary Tuesday morning.</p>
+        <ul>
+          <li>What three values are non-negotiable in the rebuilt version of your life?</li>
+          <li>What relationships belong in the new structure — and what kind of presence will you be in them?</li>
+          <li>What work — paid or otherwise — will you do that feels like yours, not a performance?</li>
+          <li>What does your physical and mental space look like in the rebuilt life?</li>
+          <li>What does this man say no to, without apology, without explanation?</li>
+        </ul>
+        <p><strong style="color: var(--cream);">Part Two — The One-Year Picture (30 minutes):</strong> Write a specific picture of what your life looks like twelve months from today, if you do this work fully. Make it concrete. Not "I'll be happy." What does a specific day look like? Where are you waking up? What are you doing? Who is around you? What does it feel like to be you, in that day?</p>
+      </div>
+
+      <div class="reflection-block">
+        <span class="block-label">End of Day 03 — Reflection</span>
+        <h3>Three Questions for Tonight</h3>
+        <ol>
+          <li>What surprised you in the Blueprint — what emerged in the writing that you didn't expect to want or to value?</li>
+          <li>Where did you hold back? Where did you edit yourself down because part of you didn't believe you were allowed to want that? What would you write if you believed you were allowed?</li>
+          <li>What is the single most important line in your Core Identity Statement — the one sentence that, if you lived it fully, would make everything else fall into place?</li>
+        </ol>
+      </div>
+
+      <div class="closing-note">
+        <span class="closing-note-label">From Uhia</span>
+        <p>"When I wrote my first Blueprint, I wrote the life I actually wanted and then immediately crossed half of it out because I thought I didn't deserve it yet. That was the collapse talking — not the truth. I had to learn to let the rebuild be bigger than the collapse was. I had to let myself want more than survival. So do you. Don't cross anything out. Leave it all on the page. You can refine it. Don't diminish it."</p>
+        <span class="signature">— Uhia Willis</span>
+      </div>
+    </div>
+
+    <!-- DAY 4 -->
+    <div class="day" id="day-4">
+      <div class="day-meta">
+        <span class="day-num">Day 04</span>
+        <span class="day-phase">U — Undertake</span>
+      </div>
+      <h2>Today You Take the Action You've Been Afraid to Take</h2>
+      <span class="day-tagline">"The rebuild does not begin when you feel ready. It begins when you move."</span>
+
+      <div class="day-context">
+        <p>Three days of inner work. Today you step into the world and do something. This is the day men either accelerate or stall out entirely. The Undertake phase is where theory meets ground. It's where the Blueprint stops being words on a page and starts being a life you're actually living.</p>
+        <p>You know what the action is. I know you know. It's the thing that surfaced when you were writing your Blueprint and you felt a flicker — and then felt the fear. It might be a conversation you've been avoiding. A phone call you've been putting off for three months. An application you've been too afraid to submit. A room you've been afraid to clean out because cleaning it out means it's really over. A doctor's appointment you've been dodging because you're afraid of what they'll say. A person you need to apologize to. A commitment you need to end.</p>
+        <p>The Undertake is not about big dramatic change. It is about one specific, real, concrete action that breaks the inertia. Inertia is the enemy of the rebuilt man. Inertia says: tomorrow. Inertia says: when I feel better. Inertia sounds like reason, but it is fear wearing the clothes of reason. You have been listening to it long enough.</p>
+        <p>You do not have to feel brave to take this action. Bravery is not the absence of fear. It is moving while the fear is still present. The action you take today will not solve everything. It will do something more important: it will prove to you that you are capable of movement. That proof — small and personal and witnessed only by you — is the beginning of momentum. And momentum changes everything.</p>
+      </div>
+
+      <div class="mission-block">
+        <span class="block-label">Day 04 Mission</span>
+        <h3>The One Real Action</h3>
+        <p>Before you do anything else today, identify the one action you've been avoiding that belongs to your rebuild. Write it down. One sentence. Specific. Not "work on my finances." The specific thing — "call the bank and set up the payment plan I've been putting off." Not "fix things with my son." The specific thing — "text him and ask if we can meet this week."</p>
+        <ul>
+          <li>Write the action down in one clear, specific sentence.</li>
+          <li>Write the reason you've been avoiding it — be honest, not harsh.</li>
+          <li>Write what it will cost you to keep avoiding it for another thirty days.</li>
+          <li>Set a time — today, within the next six hours — when you will take this action.</li>
+          <li>Take the action. Do not wait until you're ready. Take it.</li>
+        </ul>
+        <p style="margin-top: 20px;">After you've taken it: sit still for five minutes. Don't immediately fill the space with noise or next steps. Just notice what it feels like to have moved. That feeling — whatever it is — is real information about who you are when you stop waiting and start walking.</p>
+      </div>
+
+      <div class="reflection-block">
+        <span class="block-label">End of Day 04 — Reflection</span>
+        <h3>Three Questions for Tonight</h3>
+        <ol>
+          <li>What happened when you took the action — not what the external outcome was, but what happened inside you in the moment you did it?</li>
+          <li>What was the fear telling you would happen if you took this step? Was it right? What does that tell you about the other fears you've been listening to?</li>
+          <li>What is the next action — not tomorrow's, not next week's — but the one that follows naturally from what you did today? Write it down so it exists outside your head.</li>
+        </ol>
+      </div>
+
+      <div class="closing-note">
+        <span class="closing-note-label">From Uhia</span>
+        <p>"My first Undertake was a phone call I had been avoiding for seven months. Seven months. When I finally made it, the conversation lasted eleven minutes and it wasn't nearly as bad as the seven months of dread I had built around it. That's the cruelty of avoidance — it always costs more than the action would have. You took the action. Whatever happened, you are not the same man who started today. That matters more than the outcome."</p>
+        <span class="signature">— Uhia Willis</span>
+      </div>
+    </div>
+
+    <!-- DAY 5 -->
+    <div class="day" id="day-5">
+      <div class="day-meta">
+        <span class="day-num">Day 05</span>
+        <span class="day-phase">I — Integrate</span>
+      </div>
+      <h2>Today You Show Up Differently — and Let People See It</h2>
+      <span class="day-tagline">"Identity is not just what you believe about yourself. It's how you move through the world."</span>
+
+      <div class="day-context">
+        <p>The rebuilt man is not a private project. A man can do tremendous internal work and then walk into his relationships, his community, and his daily life exactly as he always has — and the work calcifies in the private space, never making contact with his actual life. Integration is where the internal becomes external. Where the work becomes visible. Not as performance. As presence.</p>
+        <p>Today you will feel vulnerable in a way that is different from the previous days. The first four days were between you and the page. Today you take what's been growing inside into the rooms where people can see you. That is a different kind of exposure. Men who've been through collapse often develop a pattern of keeping their rebuild private — they work in isolation, change inside, and then wonder why their relationships feel unchanged and why the world keeps treating them like the man they used to be. The world treats you the way you show up. If you show up as the collapsed man, that's the relationship it has with you.</p>
+        <p>Integration is not announcing yourself. It's not posting about your journey or performing your growth. It is simply being in your daily life as the man you're becoming — more present, more honest, less reactive, more grounded — and allowing that presence to be seen by the people in front of you. It is a conversation where you listen differently. A meeting where you speak from a different place. A dinner where you're actually there. Small things. Real things. They add up to a different man in the world's eyes, and more importantly, in your own.</p>
+      </div>
+
+      <div class="mission-block">
+        <span class="block-label">Day 05 Mission</span>
+        <h3>Show Up as the Rebuilt Man</h3>
+        <p>Today's mission has three parts, each building on the last. Do all three.</p>
+        <ul>
+          <li><strong style="color: var(--cream);">Part One — One Honest Conversation:</strong> Identify one person in your life — a friend, a family member, a colleague — and have a conversation with them that is different from how you usually talk. Not a confession. Not a breakdown. Just a conversation where you are fully present, where you say something you actually mean, and where you listen without preparing your next response while they're still talking. Let yourself be seen as a man who is paying attention and who is real.</li>
+          <li><strong style="color: var(--cream);">Part Two — One Daily Behavior Change:</strong> Identify one behavior in your daily routine that belongs to the old version of you — something you do on autopilot that the rebuilt man wouldn't do. Skip it today. Replace it with something that belongs to the Blueprint. Even something small. The pattern of choosing matters more than the size of the choice.</li>
+          <li><strong style="color: var(--cream);">Part Three — Write the Integration Plan:</strong> Using your Blueprint as the guide, write down five specific daily behaviors that the rebuilt man does. Not aspirational — specific. What time does he wake up? How does he start his morning? What does he not look at before 8 a.m.? How does he handle conflict? What does he do when he's stressed instead of what he used to do? These become your integration targets for the next 30 days.</li>
+        </ul>
+      </div>
+
+      <div class="reflection-block">
+        <span class="block-label">End of Day 05 — Reflection</span>
+        <h3>Three Questions for Tonight</h3>
+        <ol>
+          <li>In the honest conversation, what happened that was different from your usual pattern? Did the other person respond differently? Did you feel different? What does that difference tell you?</li>
+          <li>Which of your five integration targets feels most foreign to who you currently are — and which feels most natural? What does the gap between the two tell you about where your work is concentrated?</li>
+          <li>Who in your life will be most affected — positively or challengingly — by the man you're becoming? Are you prepared for both the welcome and the friction that change creates in your relationships?</li>
+        </ol>
+      </div>
+
+      <div class="closing-note">
+        <span class="closing-note-label">From Uhia</span>
+        <p>"The first time I showed up differently — not dramatically, just honestly, just present in a way I hadn't been — somebody noticed. They didn't say much. But I could see them recalibrating. That moment told me that the work I was doing in private was real enough to change what people felt when they were in the room with me. Integration is where the rebuild stops being personal and starts being relational. You are not just rebuilding for yourself. You are rebuilding for everyone who is trying to know you."</p>
+        <span class="signature">— Uhia Willis</span>
+      </div>
+    </div>
+
+    <!-- DAY 6 -->
+    <div class="day" id="day-6">
+      <div class="day-meta">
+        <span class="day-num">Day 06</span>
+        <span class="day-phase">L — Launch</span>
+      </div>
+      <h2>Today You Step into the World as the Man You're Becoming</h2>
+      <span class="day-tagline">"The launch is not a moment. It's a declaration made through consistent action."</span>
+
+      <div class="day-context">
+        <p>The Launch is not a graduation ceremony. There's no applause. No one hands you a certificate and says "you've done the work, congratulations." The Launch is a decision — a private, internal commitment that the next chapter begins today. Not when you feel ready. Not when everything is settled. Today.</p>
+        <p>You've reckoned. You've extracted. You've designed a blueprint for who you're becoming and you've taken real action in the world. Yesterday you practiced integration. Today you formalize the commitment. You say — to yourself, clearly, with no hedging — that the man you were before the collapse is not coming back, and you are done waiting for him to. The man moving forward is the rebuilt man. He is under construction, yes. He doesn't have everything figured out, yes. But he is the one in charge now. And he moves.</p>
+        <p>The Launch phase asks something of you that requires a kind of courage that is different from action-courage. It requires identity courage — the courage to claim a new version of yourself before you have full evidence that it's real. The evidence comes from living it. But the claiming has to come first. Men who wait for the evidence before they claim the identity stay in the space between the old self and the new one indefinitely. That space is limbo. It is its own kind of collapse.</p>
+        <p>Today you step out of limbo. Today you plant your flag in the new territory. Not because everything is perfect. Not because the rebuild is complete. But because you are a man who does not wait for permission to begin.</p>
+      </div>
+
+      <div class="mission-block">
+        <span class="block-label">Day 06 Mission</span>
+        <h3>The Declaration and the First Public Step</h3>
+        <p>Two parts today. Both matter. Do not skip either.</p>
+        <ul>
+          <li><strong style="color: var(--cream);">Part One — The Personal Declaration:</strong> Write your Launch statement. One page. This is not a goal list and it is not a vision board caption. It is a direct address from you to you. Start with: "From this day forward, I am a man who..." and write without stopping for 20 minutes. Cover who you are, what you stand for, what you refuse, what you are building, who you are building it for, and what you commit to doing even when it is hard. Sign it. Date it. Keep it.</li>
+          <li><strong style="color: var(--cream);">Part Two — One External Step:</strong> The Launch needs one external action that represents the new chapter. This could be: telling one person who matters to you that you are doing the work and you are different than you were. Beginning the application, the enrollment, the business registration, the conversation you've been preparing for. Doing something in your physical space that signals a new start — not a cliché, something genuinely meaningful to you. The action should feel like a threshold crossing, even if it looks small from the outside.</li>
+        </ul>
+        <p style="margin-top: 20px;">Spend the rest of today operating as if the launch has already happened. Because it has.</p>
+      </div>
+
+      <div class="reflection-block">
+        <span class="block-label">End of Day 06 — Reflection</span>
+        <h3>Three Questions for Tonight</h3>
+        <ol>
+          <li>What feels different tonight compared to when you woke up six days ago — in your body, in your thinking, in the way you're relating to your own story?</li>
+          <li>What is the biggest obstacle between the man you declared yourself to be today and the man you are actually living as? What is the gap, and what is the honest path across it?</li>
+          <li>Who needs to see this new version of you most — not for your sake, but for theirs? What would it mean to them to see you rebuilt, grounded, and moving forward?</li>
+        </ol>
+      </div>
+
+      <div class="closing-note">
+        <span class="closing-note-label">From Uhia</span>
+        <p>"I wrote my first Launch declaration in a parking garage at 11 p.m. because that was the only quiet place I had. I wrote it in the dark, in my car, on a legal pad I found on the passenger seat. It wasn't ceremonial. It wasn't beautiful. But when I signed my name at the bottom, something settled. I had committed — to myself, on paper, in the dark — that I was no longer the man defined by what happened to him. I was the man deciding what happened next. That is available to you tonight. Take it."</p>
+        <span class="signature">— Uhia Willis</span>
+      </div>
+    </div>
+
+    <!-- DAY 7 -->
+    <div class="day" id="day-7">
+      <div class="day-meta">
+        <span class="day-num">Day 07</span>
+        <span class="day-phase">D — Defend</span>
+      </div>
+      <h2>Today You Build the Wall That Protects Everything You've Rebuilt</h2>
+      <span class="day-tagline">"A man who does not defend what he's built will lose it to the same forces that took everything before."</span>
+
+      <div class="day-context">
+        <p>You made it to day seven. That matters. Not everyone does. The men who quit between day three and day five — the men who got close enough to feel something real and then retreated — they'll try the work again someday. You didn't retreat. That is already evidence of who you're becoming.</p>
+        <p>Now comes the work that determines whether everything you've built this week survives contact with your ordinary life. Because your ordinary life is full of forces that will push you back toward who you were. Old habits, old relationships, old environments, old thought patterns — these are not passive. They are active. They pull. And a man who has no defense against them will find himself, six weeks from now, back in the same patterns, wondering why the momentum died.</p>
+        <p>The Defend phase is not about being paranoid or closed off. It is about being intentional. You know what disrupted your peace before. You know what relationships drain you without filling you. You know what habits are exits — ways you used to run from yourself. You know what thoughts are lies you've been telling yourself for years. The Defend phase is where you put structures in place to protect against all of it.</p>
+        <p>This is also where accountability enters. A man defending what he's built cannot do it entirely alone. The rebuild is personal. The defense requires community. One real person — a friend, a mentor, a man who has walked this road — who knows what you've built and will hold you to it. That relationship is not a weakness. It is armor.</p>
+        <p>The wall you build today is not a wall that keeps life out. It is a wall that keeps the rebuild in — that protects your peace, your purpose, and your people from the forces that would dismantle what you've worked this hard to construct.</p>
+      </div>
+
+      <div class="mission-block">
+        <span class="block-label">Day 07 Mission</span>
+        <h3>Build the Defense</h3>
+        <p>Today's mission is a full audit and defense plan. Give yourself 90 minutes.</p>
+        <ul>
+          <li><strong style="color: var(--cream);">The Threat Assessment:</strong> Name the three biggest threats to the rebuilt man — internal and external. These might be: a specific relationship that pulls you back, a habit that is an exit from yourself, a thought pattern that resurfaces under stress, an environment that degrades your clarity, a financial pattern that undermines your stability. Name them plainly. A threat you can name is a threat you can defend against.</li>
+          <li><strong style="color: var(--cream);">The Non-Negotiables:</strong> From your Blueprint, identify five non-negotiable daily behaviors that the rebuilt man does — without exception, without negotiation. These are the foundation. Write them down as commitments, not as goals. Commitments are what you do. Goals are what you want. The rebuilt man commits.</li>
+          <li><strong style="color: var(--cream);">The Accountability Partner:</strong> Identify one person — one — who you trust to hold you accountable to the rebuilt version of yourself. Not someone who will coddle you. Someone who will ask hard questions and tell you the truth. Contact them today. Tell them what you've built this week. Ask if they'll check in with you weekly for the next thirty days. If you don't have this person, finding them is your most urgent next action.</li>
+          <li><strong style="color: var(--cream);">The 30-Day Commitment:</strong> Write out your commitment for the next 30 days. Not a goal list. A behavioral commitment — what you will do, daily, to honor the work of this week. It does not have to be elaborate. It has to be honest and it has to be yours.</li>
+          <li><strong style="color: var(--cream);">The Review Ritual:</strong> Set a recurring time — weekly — when you sit alone with your Launch declaration and your Blueprint and ask: am I living this? Be honest. No grace for dishonesty. Every no is data, not shame. Correct course and keep moving.</li>
+        </ul>
+      </div>
+
+      <div class="reflection-block">
+        <span class="block-label">End of Day 07 — Reflection</span>
+        <h3>Three Questions for Tonight</h3>
+        <ol>
+          <li>What did this week show you about yourself that you couldn't have known before you did the work? Not what you learned about your past — what you discovered about who you actually are right now?</li>
+          <li>Seven days ago, before Day One, what would you have told yourself about whether you were capable of doing this work? Was that voice right? What does that tell you about the other things that voice has been saying?</li>
+          <li>In thirty days from tonight, if you have honored every commitment you made this week — what is different? Be specific. That specific picture is what you're defending. Make sure you can see it clearly enough to fight for it.</li>
+        </ol>
+      </div>
+
+      <div class="closing-note">
+        <span class="closing-note-label">From Uhia</span>
+        <p>"Seven days is not the end. It is the proof that beginning is possible. The R.E.B.U.I.L.D. work continues — it deepens, it extends, it becomes the orientation of your whole life. But tonight you should know this: you did something real. Most men never start. You started and you finished. The wall you built this week — around your peace, your purpose, your identity — is yours. No collapse takes it unless you abandon it yourself. Don't abandon it. It cost too much to build, and the man on the other side of it is too important. I am proud to know you did this work."</p>
+        <span class="signature">— Uhia Willis</span>
+      </div>
+    </div>
+
+  </div>
+  <!-- END DAYS -->
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <span class="cta-label">What Comes Next</span>
+    <h2>Go Deeper with the Full Blueprint</h2>
+    <p>The 7-Day Challenge opened the door. The R.E.B.U.I.L.D. Blueprint is the complete field manual — full chapters on every phase, 21 tools and exercises, and Uhia's complete framework for the man who is ready to go all the way through the rebuild. $197.</p>
+    <div>
+      <a href="/products/blueprint-content.html" class="btn-primary">Get the Full Blueprint — $197</a>
+      <a href="/index.html" class="btn-secondary">Back to Site</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Uhia Willis / UKW Consulting. All rights reserved. &nbsp;|&nbsp; <a href="/index.html">uhiawillis.com</a></p>
+  </footer>
+
+</body>
+</html>

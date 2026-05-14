@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7 Signs Your Identity Has Collapsed — The R.E.B.U.I.L.D. Method</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black: #050505;
+      --b2: #0A0A0A;
+      --b3: #111111;
+      --b4: #1A1A1A;
+      --gold: #E8500A;
+      --gold2: #F06828;
+      --cream: #FFFFFF;
+      --muted: #9A9A9A;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+      --mono: 'DM Mono', monospace;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--black);
+      color: var(--cream);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--b2);
+      border-bottom: 1px solid var(--b4);
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 22px;
+    }
+
+    .logo-bars span {
+      display: block;
+      width: 5px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    .logo-bars span:nth-child(1) { height: 10px; }
+    .logo-bars span:nth-child(2) { height: 16px; }
+    .logo-bars span:nth-child(3) { height: 22px; }
+
+    .nav-name {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+
+    .nav-back {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--gold); }
+
+    /* HERO */
+    .hero {
+      padding: 100px 40px 80px;
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .label {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(38px, 6vw, 64px);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto 48px;
+    }
+
+    .divider-line {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 0 auto 64px;
+    }
+
+    /* INTRO NOTE */
+    .intro-note {
+      max-width: 680px;
+      margin: 0 auto 80px;
+      padding: 0 40px;
+    }
+
+    .intro-note p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #D0D0D0;
+      margin-bottom: 20px;
+    }
+
+    .intro-note p:last-child { margin-bottom: 0; }
+
+    /* SIGNS */
+    .signs-container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .sign {
+      margin-bottom: 72px;
+      padding-bottom: 72px;
+      border-bottom: 1px solid var(--b4);
+    }
+
+    .sign:last-of-type {
+      border-bottom: none;
+    }
+
+    .sign-number {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .sign h2 {
+      font-family: var(--serif);
+      font-size: clamp(26px, 3.5vw, 38px);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 28px;
+      letter-spacing: -0.01em;
+    }
+
+    .sign-feel {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #D8D8D8;
+      margin-bottom: 28px;
+      font-style: italic;
+      border-left: 2px solid var(--gold);
+      padding-left: 20px;
+    }
+
+    .sign-explain {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #C0C0C0;
+      margin-bottom: 32px;
+    }
+
+    .sign-explain p {
+      margin-bottom: 16px;
+    }
+
+    .sign-explain p:last-child { margin-bottom: 0; }
+
+    .first-step {
+      background: var(--b3);
+      border: 1px solid var(--b4);
+      border-left: 3px solid var(--gold);
+      padding: 24px 28px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .first-step-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .first-step p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--cream);
+    }
+
+    /* BRIDGE */
+    .bridge {
+      max-width: 760px;
+      margin: 80px auto 0;
+      padding: 72px 40px;
+      background: var(--b3);
+      border-top: 1px solid var(--b4);
+      border-bottom: 1px solid var(--b4);
+    }
+
+    .bridge-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 32px;
+      display: block;
+    }
+
+    .bridge h2 {
+      font-family: var(--serif);
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 32px;
+      letter-spacing: -0.01em;
+    }
+
+    .bridge p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #D0D0D0;
+      margin-bottom: 20px;
+    }
+
+    .bridge p:last-of-type { margin-bottom: 0; }
+
+    .bridge-signature {
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--b4);
+    }
+
+    .bridge-signature p {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-style: italic;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+
+    .bridge-signature span {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    /* CTA */
+    .cta-section {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    .cta-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .cta-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .cta-section p {
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 520px;
+      margin: 0 auto 40px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--cream);
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 18px 44px;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--gold2); }
+
+    .btn-secondary {
+      display: inline-block;
+      background: transparent;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 14px 32px;
+      border: 1px solid var(--b4);
+      border-radius: 2px;
+      margin-left: 16px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .btn-secondary:hover {
+      color: var(--cream);
+      border-color: var(--muted);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--b4);
+      padding: 40px;
+      text-align: center;
+    }
+
+    footer p {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      .hero { padding: 60px 20px 48px; }
+      .intro-note { padding: 0 20px; }
+      .signs-container { padding: 0 20px; }
+      .bridge { padding: 48px 20px; }
+      .cta-section { padding: 60px 20px; }
+      .btn-secondary { margin-left: 0; margin-top: 12px; display: block; }
+      footer { padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/index.html" class="nav-logo">
+      <div class="logo-bars">
+        <span></span><span></span><span></span>
+      </div>
+      <span class="nav-name">Uhia Willis</span>
+    </a>
+    <a href="/index.html" class="nav-back">← Back to Site</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <span class="label">Free Guide — The R.E.B.U.I.L.D. Method</span>
+    <h1>7 Signs Your Identity Has <em>Collapsed</em></h1>
+    <p class="hero-sub">This isn't a quiz. This isn't a listicle. This is a mirror. If you recognize yourself in these pages, that's where we start.</p>
+    <div class="divider-line"></div>
+  </section>
+
+  <!-- INTRO NOTE -->
+  <div class="intro-note">
+    <p>I didn't know my identity had collapsed until I was standing in a grocery store parking lot, engine running, and I couldn't remember why I drove there. I wasn't lost. I knew where I was. I just didn't know who was sitting in that car.</p>
+    <p>Identity collapse is quiet. It doesn't announce itself. It doesn't look like a breakdown on the outside. You keep going to work. You answer the phone. You smile when you're supposed to smile. But inside, something has come loose. The man you were — or thought you were — is gone. And you don't have a name for what's left.</p>
+    <p>What follows are seven signs. Not symptoms of weakness. Not character flaws. Signs that you've been through something real, and your identity took the hit. Read carefully. Be honest with yourself. This is where the work begins.</p>
+  </div>
+
+  <!-- SIGNS -->
+  <div class="signs-container">
+
+    <!-- SIGN 1 -->
+    <div class="sign">
+      <span class="sign-number">Sign 01</span>
+      <h2>You Don't Recognize Yourself in the Mirror Anymore</h2>
+      <div class="sign-feel">
+        <p>You catch your reflection and something feels off. Not the weight gain. Not the age. Something behind the eyes. You look at yourself and feel nothing — or worse, you feel like you're looking at a stranger who borrowed your face and forgot to give it back.</p>
+      </div>
+      <div class="sign-explain">
+        <p>This is one of the first signs identity collapse has set in, and most men dismiss it. They chalk it up to being tired. To stress. They look away and move on.</p>
+        <p>What's actually happening is that the self-concept you spent years building — through your role, your relationship, your work, your sense of purpose — has cracked. And when the scaffolding falls, what you see in the mirror doesn't match any internal image you have of yourself anymore. There's no match to make. The man who built that image is gone.</p>
+        <p>This isn't vanity. It's not about how you look. It's about the fact that identity gives your face meaning. When identity goes, so does the recognition. You become a face without a story. And that is disorienting at a level most men aren't equipped to name.</p>
+      </div>
+      <div class="first-step">
+        <span class="first-step-label">First Step</span>
+        <p>Don't look away. Next time you're in front of a mirror, stop for 30 seconds and actually look. Don't fix anything. Don't judge anything. Just look. Say your own name — out loud — and notice what happens in your body. That discomfort is information. Write down what comes up. That's where the Reckon work starts.</p>
+      </div>
+    </div>
+
+    <!-- SIGN 2 -->
+    <div class="sign">
+      <span class="sign-number">Sign 02</span>
+      <h2>You've Lost the Ability to Feel Proud of Anything</h2>
+      <div class="sign-feel">
+        <p>You accomplish something — something that six months ago would have felt like a win — and you feel nothing. Flat. You're doing the right things. You're checking the boxes. But the reward signal is gone. The internal applause never comes. People congratulate you and you don't know what to do with it.</p>
+      </div>
+      <div class="sign-explain">
+        <p>Pride isn't ego. Pride is a signal that what you just did aligns with who you are. It's the confirmation that the man doing the action and the man inside the body are the same person. When identity collapses, that alignment breaks. You do things — even good things — but they don't register as yours. They feel performed. Foreign. Like you borrowed someone else's to-do list.</p>
+        <p>This is why men in collapse often increase their output even as they feel less and less. They think the feeling will come back if they just do more, achieve more, prove more. It doesn't. You can't earn pride back through production. Pride is a function of identity, not activity. Until you rebuild the man doing the work, the work will feel empty — no matter how much of it you do.</p>
+        <p>There is also grief here. The things that once brought you deep satisfaction — being a father, leading a team, building something with your hands — may have been stripped from you or disrupted so thoroughly that the old sources of pride no longer exist in the same form. That loss is real. You're not broken for not feeling pride. You're grieving what was.</p>
+      </div>
+      <div class="first-step">
+        <span class="first-step-label">First Step</span>
+        <p>Think back — before the collapse, before whatever happened — and name one moment in your life when you felt genuinely proud. Not approved of. Not praised. Proud. Write down that moment in full detail. What you were doing. What it meant. Who you were then. You're not chasing that past version. You're identifying the core of what pride felt like in your body, so you can orient toward it again in the rebuild.</p>
+      </div>
+    </div>
+
+    <!-- SIGN 3 -->
+    <div class="sign">
+      <span class="sign-number">Sign 03</span>
+      <h2>You Avoid Silence — You Fill Every Moment with Noise</h2>
+      <div class="sign-feel">
+        <p>The podcast goes on the moment you wake up. Music in the car. TV on in the background even when you're not watching. Your phone is always in your hand. Any moment where it might get quiet — where it might just be you and your thoughts — you fill it. Fast. You don't even notice you're doing it anymore.</p>
+      </div>
+      <div class="sign-explain">
+        <p>Silence is threatening to a man in identity collapse because silence is where the truth lives. And the truth — when you're in the middle of it — feels like it will swallow you whole. So you run. Not away from a place. Away from the inside of your own mind.</p>
+        <p>This isn't weakness. It's self-protection. The nervous system does what it has to do. But noise is a delay tactic, not a solution. Every hour you spend filling the silence is an hour you spend not reckoning. And the longer you avoid the reckoning, the heavier the thing you're avoiding gets. It doesn't shrink while you're ignoring it. It grows.</p>
+        <p>There is also something else happening in the silence that men in collapse fear more than they admit: they are afraid of who they will meet in there. They have done things, or had things done to them, that they have not looked at directly. The silence is where they would have to face those things. The noise is the door they keep shut.</p>
+        <p>At some point, that door has to open. The only question is whether you open it on your own terms — slowly, with intention — or whether it blows open on its own at the worst possible moment.</p>
+      </div>
+      <div class="first-step">
+        <span class="first-step-label">First Step</span>
+        <p>Give yourself ten minutes of intentional silence today. No phone. No music. No podcast. Sit somewhere alone — your car, a room, outside — and do nothing. Don't meditate. Don't pray if that feels like pressure. Just sit. Notice what thoughts immediately surface. Write them down after. Those are the things your noise has been covering. That's where you need to go.</p>
+      </div>
+    </div>
+
+    <!-- SIGN 4 -->
+    <div class="sign">
+      <span class="sign-number">Sign 04</span>
+      <h2>You Can't Tell the Difference Between Who You Were and Who You're Supposed to Be</h2>
+      <div class="sign-feel">
+        <p>Someone asks you what you want. Not what you need to do, not what's expected of you — what you actually want. And you go blank. Not because you're indecisive. Because you genuinely don't know. You're not sure if the answer you'd give is yours, or if it belongs to who you were ten years ago, or who someone else thinks you should be by now.</p>
+      </div>
+      <div class="sign-explain">
+        <p>Men are trained, from very early on, to build identity from the outside in. You become what you're told to be, what you're rewarded for being, what your role demands. Father. Provider. Strong one. Hard worker. Good son. These roles aren't bad. But when the roles get stripped — by divorce, job loss, failure, illness — most men discover they don't have a self underneath the roles. They have a performance that ran out of a script.</p>
+        <p>This is the confusion you're living in. You were who you were supposed to be for so long that you and the role fused. When the role ended, so did the identity. Now you're searching for yourself in the rubble and coming up empty because you're looking for the old you. The old you was attached to structures that no longer exist.</p>
+        <p>Who you are supposed to become is not a return to who you were. It is something built new. Something that holds what you've learned, what you've survived, what you actually believe — not what you inherited. That rebuild requires you to first separate the real from the performed. It is slow work. But it is the only work that actually matters.</p>
+      </div>
+      <div class="first-step">
+        <span class="first-step-label">First Step</span>
+        <p>Write down three beliefs you hold about yourself that came from somewhere else — a parent, a culture, a relationship, a religion, a job. Then ask: do I actually believe this? Or did I absorb it? You don't have to discard those beliefs. You just have to own them consciously, or release them honestly. Knowing the difference between inherited identity and chosen identity is the beginning of the Blueprint.</p>
+      </div>
+    </div>
+
+    <!-- SIGN 5 -->
+    <div class="sign">
+      <span class="sign-number">Sign 05</span>
+      <h2>You're Performing Your Life Instead of Living It</h2>
+      <div class="sign-feel">
+        <p>You go through the day and it feels like you're watching yourself from a few feet away. You say the right things. You show up. You play the part. But there's this gap — this strange disconnect — between what you're doing and what you're feeling. Like you're an actor who knows all his lines but has no idea what the play is actually about.</p>
+      </div>
+      <div class="sign-explain">
+        <p>This is called dissociation when it's clinical. But in men who've been through collapse, it's more often a survival response that never got turned off. You learned, somewhere in the process of getting through the hard thing, to separate yourself from the experience of your own life. You went on autopilot because autopilot was the only way to function.</p>
+        <p>The problem is that autopilot doesn't know when the emergency is over. It keeps running. You keep performing. You keep going through the motions of a life you're not actually inhabiting. And the longer that goes on, the more disconnected you become from any real sense of what you feel, what you want, what you stand for.</p>
+        <p>Performance feels like stability. It looks fine to everyone else. Nobody knows you're not home. That's part of what makes it dangerous — it can last for years. A man can perform his entire second act of life if he never has the courage to come back into his own body and ask: is this actually me, or is this the character I built to survive?</p>
+        <p>Living your life means being present enough to feel it. The good and the painful. When you're performing, you're protected from both. You have to choose to come back in. That choice is terrifying. It is also the only way back.</p>
+      </div>
+      <div class="first-step">
+        <span class="first-step-label">First Step</span>
+        <p>Today, pick one interaction — a conversation, a meal, a walk — and try to be fully in it. No planning the next thing while it's happening. No observing yourself from outside. No managing how you come across. Just be there. Notice what that feels like. If it feels uncomfortable, that discomfort is signal — you've been gone longer than you realized, and your body is noting the difference between presence and performance.</p>
+      </div>
+    </div>
+
+    <!-- SIGN 6 -->
+    <div class="sign">
+      <span class="sign-number">Sign 06</span>
+      <h2>The Things That Used to Drive You Feel Hollow</h2>
+      <div class="sign-feel">
+        <p>There was a time when something lit you up. A project. A craft. A pursuit. The gym. Building something. Music. God. You remember when it mattered. You go back to it now and it's like visiting a house you used to live in — you recognize the walls, but it doesn't feel like home anymore. The fire is gone and you don't know where it went.</p>
+      </div>
+      <div class="sign-explain">
+        <p>Drive is not just about motivation. Drive is identity in motion. When you know who you are, you know what matters to you, and that knowledge creates forward momentum. When identity collapses, the drive doesn't just stall — it loses its source. You're trying to run an engine that has no fuel line connected to it anymore.</p>
+        <p>This sign is one of the most demoralizing because men often define themselves by what drives them. "I'm a builder." "I'm a competitor." "I'm a provider." When those drives go hollow, men don't just feel unmotivated — they feel like they've lost themselves. Because in a real sense, they have. The self that made those things meaningful no longer exists in its prior form.</p>
+        <p>The mistake is trying to force the old drives back. You can't restart an engine by willing it. You have to do the upstream work — rebuild who you are, clarify what you actually believe, identify what matters to the man you're becoming — and the drive comes back organically from that. It may look different than it used to. It will probably be deeper. But it has to be rooted in the rebuilt man, not the collapsed one.</p>
+      </div>
+      <div class="first-step">
+        <span class="first-step-label">First Step</span>
+        <p>Don't try to force the old drives. Instead, ask a different question: in the last six months, what is the one thing — even briefly, even small — that gave you a flicker of something that felt like aliveness? Not excitement. Not ambition. Just a small moment of being interested, engaged, or moved. Write it down. That flicker is not nothing. That is where you look for the new foundation.</p>
+      </div>
+    </div>
+
+    <!-- SIGN 7 -->
+    <div class="sign">
+      <span class="sign-number">Sign 07</span>
+      <h2>You're Exhausted by Existing, Not by Doing</h2>
+      <div class="sign-feel">
+        <p>You wake up tired. Not because you didn't sleep. Because you did sleep — eight hours — and you still woke up tired. The tiredness isn't in your muscles. It's deeper. It's a weight in the chest. A low-grade heaviness that is just there, all day, every day. You are worn out by simply being. The idea of one more day like this — one more day of getting through — feels like a sentence.</p>
+      </div>
+      <div class="sign-explain">
+        <p>This is not laziness. This is not depression in the simple clinical sense — though depression can accompany it. This is the exhaustion of carrying an identity crisis without any map, without any language for what you're going through, and without anyone in your life who will say it plainly: you are not broken. You are dismantled. Those are different things.</p>
+        <p>When a man's identity is intact, existing is effortless. The engine runs. Being you doesn't cost anything. But when identity has collapsed and you have no framework for the rebuild, every single day is a performance of a self that no longer exists. That performance costs enormous energy. You are paying, every hour, to pretend to be someone coherent. That is why you are exhausted. You are holding a structure together from the inside with no walls left.</p>
+        <p>This kind of exhaustion gets worse when you try to push through it with more effort. It doesn't respond to discipline. It doesn't respond to hustle. It responds to one thing: the truth. When a man finally stops performing the old self, stops pretending nothing happened, and starts the actual work of reckoning and rebuilding — the weight begins to lift. Not all at once. But it lifts. Because carrying truth, even painful truth, costs less than carrying a lie.</p>
+        <p>If you recognized yourself in this sign, I need you to hear this clearly: what you are feeling is not a sign that you are failing. It is a sign that you have been surviving under an extraordinary load. The question is not how to push harder. The question is how to put down what you no longer need to carry.</p>
+      </div>
+      <div class="first-step">
+        <span class="first-step-label">First Step</span>
+        <p>Tonight, before you go to sleep, write down three things you are carrying that are not yours to carry. These can be expectations, guilt, a role you've outgrown, a version of yourself that is no longer true. Write them down and then write one sentence below each: "I don't have to carry this anymore." You are not releasing responsibility. You are releasing the performance. There is a difference. Notice how your body responds when you write it.</p>
+      </div>
+    </div>
+
+  </div>
+  <!-- END SIGNS -->
+
+  <!-- BRIDGE -->
+  <div class="bridge">
+    <span class="bridge-label">Where We Go From Here</span>
+    <h2>This Isn't a Diagnosis. It's a Starting Point.</h2>
+    <p>What you just read isn't a list of things wrong with you. It's a map of where you are. And if you recognized yourself in any of it — if you nodded, if something landed, if you felt seen for the first time in a long time — then you need to know this:</p>
+    <p>I lived every single one of those signs. All seven. Not as an observer. Not as a researcher. As a man who lost the thread of himself and had to find his way back in the dark. I know what it costs to keep pretending. I know what it feels like when the person looking back from the mirror feels like a stranger. I know the exhaustion. I know the hollow. I know the noise you fill the silence with so you don't have to hear what's underneath it.</p>
+    <p>And I found the way out. Not a shortcut. Not a hack. A method. A structured path through the collapse and into something built to last. It's called R.E.B.U.I.L.D. — seven phases that take a man from the wreckage through the reckoning and into a rebuilt life. It's not about going back. It's about going forward as a man who has actually done the work.</p>
+    <p>You don't have to figure this out alone. You don't have to keep performing. You don't have to stay lost.</p>
+    <div class="bridge-signature">
+      <p>"The first step is the hardest one — and you've already taken it by reading this far."</p>
+      <span>— Uhia Willis, Founder of The R.E.B.U.I.L.D. Method</span>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <span class="cta-label">Your Next Step</span>
+    <h2>Ready to Start the Rebuild?</h2>
+    <p>The 7-Day R.E.B.U.I.L.D. Challenge takes you through each phase — one day, one mission, one reflection. Real work. Real change. $47.</p>
+    <div>
+      <a href="/challenge.html" class="btn-primary">Start the 7-Day Challenge — $47</a>
+      <a href="/index.html" class="btn-secondary">Back to Site</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Uhia Willis / UKW Consulting. All rights reserved. &nbsp;|&nbsp; <a href="/index.html">uhiawillis.com</a></p>
+  </footer>
+
+</body>
+</html>
