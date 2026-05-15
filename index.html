@@ -1562,8 +1562,30 @@
       <div class="lead-form-card">
         <div id="form-wrapper">
           <h3>Request Your Free Review</h3>
-          <p class="sub">Uhia calls back within 1 business hour.</p>
-          <form id="lead-form" novalidate>
+          <p class="sub">Uhia calls back within 1 business hour. Free, no-obligation.</p>
+
+          <!-- ─── GHL Lead Form (creates contact in CRM, triggers Medicare/Life nurture) ─── -->
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/form/6aeSjIVXiOVDYEUVekUX"
+            style="width:100%;min-height:720px;border:none;border-radius:8px;background:transparent;display:block;"
+            id="inline-6aeSjIVXiOVDYEUVekUX"
+            data-layout='{"id":"INLINE"}'
+            data-trigger-type="alwaysShow"
+            data-activation-type="alwaysActivated"
+            data-deactivation-type="neverDeactivate"
+            data-form-name="WAG Lead Form"
+            data-form-id="6aeSjIVXiOVDYEUVekUX"
+            title="Request Your Free Review — Willis Advocacy Group"
+            loading="lazy">
+          </iframe>
+          <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+
+          <p class="form-disclaimer" style="margin-top:1rem;">
+            Willis Advocacy Group is not affiliated with or endorsed by Medicare, Medicaid, or any U.S. government agency. We do not offer every plan available in your area. Contact Medicare.gov or 1-800-MEDICARE (1-800-633-4227) for information on all options. This is a solicitation for insurance. By submitting this form you agree to our <a href="/privacy-policy.html" style="color:var(--teal);">Privacy Policy</a> and <a href="/terms-of-service.html" style="color:var(--teal);">Terms of Service</a>.
+          </p>
+
+          <!-- ─── Hidden legacy custom form (kept for reference; not displayed) ─── -->
+          <form id="lead-form" novalidate style="display:none;">
             <input type="hidden" name="source" value="Website Lead Form">
             <input type="hidden" name="page" value="https://www.willisadvocacygroup.com">
             <!-- TrustedForm hidden field — populated by TrustedForm JS snippet -->
@@ -1624,7 +1646,7 @@
             <p class="form-disclaimer">Willis Advocacy Group is not affiliated with or endorsed by Medicare, Medicaid, or any U.S. government agency. We do not offer every plan available in your area. Contact Medicare.gov or 1-800-MEDICARE (1-800-633-4227) for information on all options. This is a solicitation for insurance.</p>
           </form>
         </div>
-        <div class="form-success" id="form-success">
+        <div class="form-success" id="form-success" style="display:none;">
           <div class="check-icon">✓</div>
           <h3 id="success-message">Thank you!</h3>
           <p>Uhia will call you within 1 business hour. In the meantime, feel free to reach him directly at <strong>(774) 446-0701</strong>.</p>
