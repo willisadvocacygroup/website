@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — Willis Advocacy Group</title>
+  <meta name="description" content="Terms of Service for Willis Advocacy Group — independent Medicare and life insurance brokerage services.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-03QLEMVLW4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-03QLEMVLW4');
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="/images/logos/logo-favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:  #0C1B2E;
+      --teal:  #0D7377;
+      --teal2: #14A085;
+      --gold:  #C8972A;
+      --cream: #FAF7F2;
+      --white: #FFFFFF;
+    }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--cream);
+      color: var(--navy);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Nav */
+    nav {
+      background: var(--navy);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-back {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--white); }
+
+    /* Hero */
+    .page-hero {
+      background: var(--navy);
+      padding: 3rem 2rem 4rem;
+      text-align: center;
+    }
+    .page-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .page-hero h1 span { color: var(--gold); }
+    .page-hero p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.55);
+      margin-top: 0.75rem;
+    }
+
+    /* Layout */
+    .content-wrap {
+      display: flex;
+      gap: 2rem;
+      max-width: 1100px;
+      margin: -2rem auto 3rem;
+      padding: 0 1.5rem;
+      align-items: flex-start;
+    }
+
+    /* TOC sidebar */
+    .toc {
+      flex: 0 0 240px;
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 20px rgba(12,27,46,0.08);
+      position: sticky;
+      top: 1.5rem;
+    }
+    .toc h3 {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+    .toc ol {
+      list-style: none;
+      counter-reset: toc-counter;
+      padding: 0;
+    }
+    .toc ol li {
+      counter-increment: toc-counter;
+      margin-bottom: 0.5rem;
+    }
+    .toc ol li a {
+      font-size: 0.8rem;
+      color: var(--navy);
+      text-decoration: none;
+      line-height: 1.4;
+      display: block;
+      transition: color 0.2s;
+    }
+    .toc ol li a:hover { color: var(--teal); }
+    .toc ol li a::before {
+      content: counter(toc-counter) ". ";
+      color: var(--teal);
+      font-weight: 800;
+    }
+
+    /* Main content */
+    .legal-content {
+      flex: 1;
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 20px rgba(12,27,46,0.08);
+    }
+    .effective-date {
+      display: inline-block;
+      background: rgba(13,115,119,0.1);
+      color: var(--teal);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+    .intro {
+      font-size: 0.95rem;
+      color: #4a6070;
+      line-height: 1.75;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #e8edf2;
+    }
+    .legal-section {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid #e8edf2;
+      scroll-margin-top: 1.5rem;
+    }
+    .legal-section:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .section-num {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      background: var(--teal);
+      color: var(--white);
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .legal-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--navy);
+    }
+    .legal-section p {
+      font-size: 0.9rem;
+      color: #3d5166;
+      line-height: 1.8;
+      margin-bottom: 0.75rem;
+    }
+    .legal-section p:last-child { margin-bottom: 0; }
+    .legal-section ul, .legal-section ol {
+      margin: 0.75rem 0 0.75rem 1.25rem;
+    }
+    .legal-section li {
+      font-size: 0.9rem;
+      color: #3d5166;
+      line-height: 1.7;
+      margin-bottom: 0.4rem;
+    }
+    .highlight-box {
+      background: rgba(13,115,119,0.07);
+      border-left: 4px solid var(--teal);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      font-size: 0.875rem;
+      color: #2a4050;
+      line-height: 1.7;
+    }
+    .warning-box {
+      background: rgba(200,151,42,0.08);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      font-size: 0.875rem;
+      color: #2a4050;
+      line-height: 1.7;
+    }
+    strong { color: var(--navy); }
+
+    /* Contact block */
+    .contact-block {
+      background: var(--cream);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      line-height: 1.9;
+      color: #3d5166;
+    }
+    .contact-block a { color: var(--teal); text-decoration: none; }
+    .contact-block a:hover { text-decoration: underline; }
+
+    /* Footer */
+    .site-footer {
+      background: var(--navy);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin-top: auto;
+    }
+    .site-footer p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.8rem;
+      line-height: 1.6;
+    }
+    .footer-links {
+      margin-top: 0.75rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .content-wrap { flex-direction: column; margin-top: -1rem; }
+      .toc { flex: none; width: 100%; position: static; }
+      .legal-content { padding: 1.75rem 1.25rem; }
+      nav { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">Willis <span>Advocacy</span> Group</a>
+    <a href="/" class="nav-back">← Back to Home</a>
+  </nav>
+
+  <div class="page-hero">
+    <h1>Terms of <span>Service</span></h1>
+    <p>Please read these terms carefully before using our website or services.</p>
+  </div>
+
+  <div class="content-wrap">
+
+    <!-- Table of Contents -->
+    <aside class="toc">
+      <h3>Contents</h3>
+      <ol>
+        <li><a href="#acceptance">Acceptance of Terms</a></li>
+        <li><a href="#who-we-are">Who We Are</a></li>
+        <li><a href="#nature-of-services">Nature of Services</a></li>
+        <li><a href="#not-advice">Not Legal, Medical, or Financial Advice</a></li>
+        <li><a href="#no-government">No Government Affiliation</a></li>
+        <li><a href="#eligibility">Eligibility</a></li>
+        <li><a href="#lead-forms">Lead Forms & TCPA Consent</a></li>
+        <li><a href="#ai-voice">AI Voice Agent (Aria)</a></li>
+        <li><a href="#intellectual-property">Intellectual Property</a></li>
+        <li><a href="#disclaimers">Disclaimers</a></li>
+        <li><a href="#limitation">Limitation of Liability</a></li>
+        <li><a href="#indemnification">Indemnification</a></li>
+        <li><a href="#governing-law">Governing Law</a></li>
+        <li><a href="#changes">Changes to Terms</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ol>
+    </aside>
+
+    <!-- Legal Content -->
+    <main class="legal-content">
+      <span class="effective-date">Effective Date: May 15, 2026</span>
+
+      <p class="intro">
+        These Terms of Service ("Terms") govern your use of the Willis Advocacy Group website located at <strong>willisadvocacygroup.com</strong> and any related services provided by UKW Consulting Inc. d/b/a Willis Advocacy Group ("Willis Advocacy Group," "we," "us," or "our"). By accessing this website, submitting a contact form, or speaking with our representatives — including our AI voice assistant — you agree to be bound by these Terms. If you do not agree, please do not use our website or services.
+      </p>
+
+      <!-- Section 1 -->
+      <div class="legal-section" id="acceptance">
+        <div class="section-header">
+          <div class="section-num">1</div>
+          <h2>Acceptance of Terms</h2>
+        </div>
+        <p>By using this website or contacting Willis Advocacy Group through any channel — including phone, web form, text message, or email — you acknowledge that you have read, understood, and agree to these Terms, including our <a href="/privacy-policy.html" style="color:var(--teal);">Privacy Policy</a>, which is incorporated herein by reference.</p>
+        <p>These Terms apply to all visitors, users, and others who access or use our website or services. Your continued use of our website following the posting of any changes to these Terms constitutes acceptance of those changes.</p>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="legal-section" id="who-we-are">
+        <div class="section-header">
+          <div class="section-num">2</div>
+          <h2>Who We Are</h2>
+        </div>
+        <p><strong>Willis Advocacy Group</strong> is a trade name of <strong>UKW Consulting Inc.</strong>, a Massachusetts corporation. We operate as an independent insurance brokerage. Our principal broker, Uhia Willis, is a licensed independent insurance agent authorized to sell Medicare Advantage, Medicare Supplement, Medicare Part D, and life insurance products in the following states:</p>
+        <ul>
+          <li>Massachusetts (MA)</li>
+          <li>Connecticut (CT)</li>
+          <li>New Jersey (NJ)</li>
+          <li>New York (NY)</li>
+          <li>Florida (FL)</li>
+          <li>Texas (TX)</li>
+          <li>North Carolina (NC)</li>
+          <li>Georgia (GA)</li>
+        </ul>
+        <p>Licensing is subject to change. If you are located in a state not listed above, we will inform you and, where possible, refer you to a licensed professional in your state.</p>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="legal-section" id="nature-of-services">
+        <div class="section-header">
+          <div class="section-num">3</div>
+          <h2>Nature of Services</h2>
+        </div>
+        <p>Willis Advocacy Group provides <strong>independent insurance brokerage services</strong>. This means we work with multiple insurance carriers to identify and present insurance plan options that may be suitable for your individual situation. Specifically, we assist with:</p>
+        <ul>
+          <li>Medicare Advantage (Part C) plan comparisons and enrollment</li>
+          <li>Medicare Supplement (Medigap) plan comparisons and enrollment</li>
+          <li>Medicare Part D Prescription Drug Plan comparisons and enrollment</li>
+          <li>Life insurance (term, whole, final expense, guaranteed issue) placement</li>
+          <li>Review of existing coverage and assessment of alternative options</li>
+        </ul>
+        <p>All consultations are <strong>free of charge</strong> to you. We are compensated by insurance carriers if and when you enroll in a plan through our brokerage. This compensation does not increase your premium and does not influence our obligation to recommend the plan that best fits your needs.</p>
+        <div class="highlight-box">
+          Our compensation model requires us, as licensed brokers, to recommend the plan that is in your best interest — not the plan that pays the highest commission. This is a legal and ethical obligation we take seriously.
+        </div>
+      </div>
+
+      <!-- Section 4 -->
+      <div class="legal-section" id="not-advice">
+        <div class="section-header">
+          <div class="section-num">4</div>
+          <h2>Not Legal, Medical, or Financial Advice</h2>
+        </div>
+        <p>The information provided on this website and during consultations is for <strong>general informational and educational purposes only</strong>. It does not constitute and should not be relied upon as:</p>
+        <ul>
+          <li><strong>Legal advice</strong> — We are not attorneys. Nothing on this site is legal counsel.</li>
+          <li><strong>Medical advice</strong> — We are not healthcare providers. Plan descriptions do not constitute medical recommendations.</li>
+          <li><strong>Financial planning advice</strong> — We are not financial advisors, investment advisors, or accountants.</li>
+        </ul>
+        <p>Insurance plan benefits, networks, premiums, and availability change annually and vary by county. Always verify current plan details directly with the insurance carrier before making any enrollment decision. Enrollment in any insurance plan is your decision, made voluntarily.</p>
+      </div>
+
+      <!-- Section 5 -->
+      <div class="legal-section" id="no-government">
+        <div class="section-header">
+          <div class="section-num">5</div>
+          <h2>No Government Affiliation</h2>
+        </div>
+        <div class="warning-box">
+          <strong>Willis Advocacy Group is NOT affiliated with, endorsed by, or connected to Medicare, Medicaid, the Centers for Medicare &amp; Medicaid Services (CMS), the Social Security Administration, or any other federal, state, or local government agency.</strong>
+        </div>
+        <p>We are a private, independent insurance brokerage. Any use of the terms "Medicare," "Medicaid," or related terminology on this website is solely for the purpose of accurately describing the types of insurance products we are licensed to discuss and sell.</p>
+        <p>If you need official Medicare information, please visit <strong>medicare.gov</strong> or call <strong>1-800-MEDICARE (1-800-633-4227)</strong>.</p>
+      </div>
+
+      <!-- Section 6 -->
+      <div class="legal-section" id="eligibility">
+        <div class="section-header">
+          <div class="section-num">6</div>
+          <h2>Eligibility</h2>
+        </div>
+        <p>Our services are intended for adults aged 18 and older. Our Medicare services are specifically designed for individuals who are Medicare-eligible (typically age 65+, or younger individuals with qualifying disabilities). By contacting us, you represent that you are at least 18 years of age.</p>
+        <p>Availability of specific insurance products depends on your state of residence, county, health status, and other factors. We do not guarantee availability of any specific plan, carrier, or benefit in your area.</p>
+      </div>
+
+      <!-- Section 7 -->
+      <div class="legal-section" id="lead-forms">
+        <div class="section-header">
+          <div class="section-num">7</div>
+          <h2>Lead Forms &amp; TCPA Consent</h2>
+        </div>
+        <p>When you submit a contact form, consultation request, or lead form on this website, you are providing your express written consent as described below.</p>
+        <p><strong>By submitting a form on this website, you agree that:</strong></p>
+        <ul>
+          <li>The information you provide is accurate and belongs to you.</li>
+          <li>You authorize Willis Advocacy Group and its representatives to contact you at the phone number and email address you provide.</li>
+          <li>You consent to receive calls, text messages (including SMS and MMS), and emails from Willis Advocacy Group — including calls and texts made using automated technology or an artificial or pre-recorded voice — for the purpose of responding to your inquiry and providing insurance-related services.</li>
+          <li>This consent is not a condition of purchasing any product or service.</li>
+          <li>Standard message and data rates may apply to text messages.</li>
+          <li>You may opt out of text messages at any time by replying STOP. You may opt out of calls by requesting removal during any call.</li>
+        </ul>
+        <div class="highlight-box">
+          <strong>TCPA Notice:</strong> Your consent to receive automated calls and texts is given pursuant to the Telephone Consumer Protection Act (TCPA). This consent is voluntary and is not required to receive our services. To reach us without providing consent, call us directly at <strong>(774) 446-0701</strong> or email <strong>info@willisadvocacygroup.com</strong>.
+        </div>
+      </div>
+
+      <!-- Section 8 -->
+      <div class="legal-section" id="ai-voice">
+        <div class="section-header">
+          <div class="section-num">8</div>
+          <h2>AI Voice Agent (Aria)</h2>
+        </div>
+        <p>Willis Advocacy Group uses an AI-powered voice assistant named <strong>Aria</strong> to answer incoming calls during after-hours periods or when Uhia Willis is unavailable. Aria is powered by Synthflow AI technology.</p>
+        <p><strong>By calling Willis Advocacy Group and interacting with Aria, you acknowledge:</strong></p>
+        <ul>
+          <li>You are speaking with an AI virtual assistant, not a licensed insurance agent.</li>
+          <li>Aria cannot enroll you in any insurance plan, quote specific premiums, or make plan recommendations.</li>
+          <li>Aria's purpose is to collect your basic contact information and schedule a callback with Uhia Willis.</li>
+          <li>Your call may be recorded for quality assurance and compliance purposes. By continuing the call, you consent to this recording.</li>
+          <li>Information collected by Aria is transmitted to Willis Advocacy Group and handled in accordance with our <a href="/privacy-policy.html" style="color:var(--teal);">Privacy Policy</a>.</li>
+        </ul>
+        <p>Aria does not have access to your insurance records, government databases, health records, or financial accounts. All specific plan discussions occur with Uhia Willis personally.</p>
+      </div>
+
+      <!-- Section 9 -->
+      <div class="legal-section" id="intellectual-property">
+        <div class="section-header">
+          <div class="section-num">9</div>
+          <h2>Intellectual Property</h2>
+        </div>
+        <p>All content on this website — including text, graphics, logos, images, audio clips, and software — is the property of Willis Advocacy Group / UKW Consulting Inc. or its content suppliers and is protected by applicable intellectual property laws.</p>
+        <p>You may not reproduce, distribute, modify, publicly display, or create derivative works from any content on this website without our express prior written consent. Limited, personal, non-commercial use for informational purposes is permitted.</p>
+        <p>The "People Over Profits" tagline and Willis Advocacy Group brand identity are proprietary to UKW Consulting Inc.</p>
+      </div>
+
+      <!-- Section 10 -->
+      <div class="legal-section" id="disclaimers">
+        <div class="section-header">
+          <div class="section-num">10</div>
+          <h2>Disclaimers</h2>
+        </div>
+        <p>This website and its contents are provided on an <strong>"as is" and "as available"</strong> basis without warranties of any kind, express or implied, including but not limited to:</p>
+        <ul>
+          <li>Warranties of merchantability or fitness for a particular purpose</li>
+          <li>Accuracy, completeness, or timeliness of information</li>
+          <li>Uninterrupted or error-free operation of the website</li>
+          <li>Availability or suitability of any specific insurance plan or product</li>
+        </ul>
+        <p>Insurance plan information, including premiums, benefits, networks, and availability, changes frequently. We make reasonable efforts to keep information current but do not guarantee accuracy at any given time. Always confirm plan details with the carrier before enrolling.</p>
+        <p>We are not responsible for the content, privacy practices, or accuracy of any third-party websites linked from our site.</p>
+      </div>
+
+      <!-- Section 11 -->
+      <div class="legal-section" id="limitation">
+        <div class="section-header">
+          <div class="section-num">11</div>
+          <h2>Limitation of Liability</h2>
+        </div>
+        <p>To the maximum extent permitted by applicable law, Willis Advocacy Group and UKW Consulting Inc., its officers, directors, employees, agents, and affiliates shall not be liable for any:</p>
+        <ul>
+          <li>Indirect, incidental, special, consequential, or punitive damages</li>
+          <li>Loss of profits, revenue, data, goodwill, or business opportunities</li>
+          <li>Damages arising from your reliance on information provided on this website</li>
+          <li>Damages resulting from any insurance enrollment decision you make</li>
+          <li>Errors or omissions in plan information or benefit descriptions</li>
+          <li>Interruptions in website availability</li>
+        </ul>
+        <p>In no event shall our aggregate liability to you for any claims arising out of or related to these Terms or your use of our services exceed the amount, if any, actually paid by you to Willis Advocacy Group in the six months preceding the claim.</p>
+        <p>Some jurisdictions do not allow certain limitations of liability. In such jurisdictions, our liability is limited to the fullest extent permitted by law.</p>
+      </div>
+
+      <!-- Section 12 -->
+      <div class="legal-section" id="indemnification">
+        <div class="section-header">
+          <div class="section-num">12</div>
+          <h2>Indemnification</h2>
+        </div>
+        <p>You agree to indemnify, defend, and hold harmless Willis Advocacy Group, UKW Consulting Inc., and their respective officers, directors, employees, agents, and successors from and against any claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising from or relating to:</p>
+        <ul>
+          <li>Your use of this website or our services</li>
+          <li>Your violation of these Terms</li>
+          <li>Your submission of false or inaccurate information</li>
+          <li>Your violation of any applicable law or regulation</li>
+          <li>Any dispute between you and a third-party insurance carrier</li>
+        </ul>
+      </div>
+
+      <!-- Section 13 -->
+      <div class="legal-section" id="governing-law">
+        <div class="section-header">
+          <div class="section-num">13</div>
+          <h2>Governing Law &amp; Dispute Resolution</h2>
+        </div>
+        <p>These Terms shall be governed by and construed in accordance with the laws of the <strong>Commonwealth of Massachusetts</strong>, without regard to its conflict of law provisions.</p>
+        <p><strong>Informal Resolution:</strong> Before initiating any formal dispute, you agree to contact us at <a href="mailto:info@willisadvocacygroup.com" style="color:var(--teal);">info@willisadvocacygroup.com</a> and make a good faith effort to resolve the matter informally within 30 days.</p>
+        <p><strong>Venue:</strong> Any legal proceeding arising out of or related to these Terms that is not resolved informally shall be brought exclusively in the state or federal courts located in Worcester County, Massachusetts. You consent to personal jurisdiction in those courts.</p>
+        <p><strong>Waiver of Class Actions:</strong> To the extent permitted by law, any dispute shall be resolved on an individual basis and not as part of a class action, class arbitration, or representative proceeding.</p>
+      </div>
+
+      <!-- Section 14 -->
+      <div class="legal-section" id="changes">
+        <div class="section-header">
+          <div class="section-num">14</div>
+          <h2>Changes to These Terms</h2>
+        </div>
+        <p>We reserve the right to modify these Terms at any time. When we make changes, we will update the "Effective Date" at the top of this page. We may also notify you by email or by a notice on our website homepage.</p>
+        <p>Your continued use of our website or services after the effective date of any changes constitutes your acceptance of the revised Terms. We encourage you to review these Terms periodically.</p>
+      </div>
+
+      <!-- Section 15 -->
+      <div class="legal-section" id="contact">
+        <div class="section-header">
+          <div class="section-num">15</div>
+          <h2>Contact Us</h2>
+        </div>
+        <p>If you have questions about these Terms of Service, please contact us:</p>
+        <div class="contact-block">
+          <strong>Willis Advocacy Group</strong><br>
+          UKW Consulting Inc.<br>
+          Webster, Massachusetts<br>
+          <br>
+          📞 <a href="tel:+17744460701">(774) 446-0701</a><br>
+          ✉️ <a href="mailto:info@willisadvocacygroup.com">info@willisadvocacygroup.com</a><br>
+          🌐 <a href="https://willisadvocacygroup.com">willisadvocacygroup.com</a><br>
+          <br>
+          Business Hours: Monday–Friday, 9am–6pm ET | Saturday, 10am–3pm ET
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Willis Advocacy Group | UKW Consulting Inc. — "People Over Profits."</p>
+    <p style="margin-top:0.4rem;">Not affiliated with Medicare or any government agency. Licensed in MA, CT, NJ, NY, FL, TX, NC, GA.</p>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="/terms-of-service.html">Terms of Service</a>
+      <a href="tel:+17744460701">(774) 446-0701</a>
+    </div>
+  </footer>
+
+</body>
+</html>
