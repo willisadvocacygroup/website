@@ -888,6 +888,175 @@
       font-size: 0.8rem;
     }
 
+    /* ─── Skip Link — WCAG ─── */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      background: var(--teal);
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
+      border-radius: 0 0 6px 6px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      z-index: 9999;
+      text-decoration: none;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* ─── Blog Preview ─── */
+    .blog-preview { background: var(--cream); }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .blog-card {
+      background: var(--white);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(12,27,46,0.12); }
+    .blog-card-body { padding: 1.75rem; flex: 1; display: flex; flex-direction: column; }
+    .blog-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--teal);
+      background: rgba(13,115,119,0.08);
+      border: 1px solid rgba(13,115,119,0.2);
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 0.85rem;
+    }
+    .blog-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+      line-height: 1.35;
+    }
+    .blog-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.65; flex: 1; }
+    .blog-card-footer {
+      padding: 1rem 1.75rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .blog-read-more {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--teal);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .blog-read-more:hover { color: var(--teal2); }
+    .blog-read-time { font-size: 0.75rem; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
+
+    /* ─── Google Reviews ─── */
+    .reviews-summary {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .reviews-score {
+      text-align: center;
+      min-width: 90px;
+    }
+    .reviews-score .big-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: var(--navy);
+      line-height: 1;
+      font-weight: 700;
+    }
+    .reviews-score .star-row { color: #F4B400; font-size: 1rem; margin: 0.35rem 0; }
+    .reviews-score .rev-count { font-size: 0.75rem; color: var(--muted); }
+    .reviews-divider { width: 1px; height: 60px; background: var(--border); }
+    .reviews-cta-block { flex: 1; }
+    .reviews-cta-block p { font-size: 0.95rem; color: var(--muted); margin-bottom: 0.75rem; }
+    .google-review-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #fff;
+      border: 1.5px solid #dadce0;
+      border-radius: 6px;
+      padding: 0.65rem 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #3c4043;
+      text-decoration: none;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .google-review-btn:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.12); border-color: #bdc1c6; color: #3c4043; }
+    .google-g {
+      font-size: 1rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #4285F4, #34A853, #FBBC05, #EA4335);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ─── Live Chat Button ─── */
+    .chat-btn {
+      position: fixed;
+      bottom: 5.5rem;
+      right: 1.5rem;
+      z-index: 200;
+    }
+    .chat-btn a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: 1.4rem;
+      box-shadow: 0 6px 20px rgba(12,27,46,0.35);
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .chat-btn a:hover { background: var(--teal); color: var(--white); transform: scale(1.08); }
+    .chat-tooltip {
+      position: absolute;
+      right: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .chat-btn:hover .chat-tooltip { opacity: 1; }
+
     /* ─── Sticky Phone CTA ─── */
     .sticky-cta {
       position: fixed;
@@ -996,6 +1165,9 @@
 </head>
 <body>
 
+<!-- Skip Navigation — WCAG 2.1 AA -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <!-- ─── Top Bar ─── -->
 <div class="topbar">
   <div class="container">
@@ -1021,7 +1193,9 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#process">How It Works</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
         <li><a href="#faq">FAQ</a></li>
+        <li><a href="/blog/">Blog</a></li>
         <li><a href="#contact">Contact</a></li>
         <li class="nav-cta"><a href="#review" class="btn-primary">Free Review</a></li>
       </ul>
@@ -1033,7 +1207,7 @@
 </nav>
 
 <!-- ─── Hero ─── -->
-<section class="hero" id="home">
+<section class="hero" id="home" role="main" id="main-content">
   <div class="container">
     <div class="hero-grid">
       <div>
@@ -1226,31 +1400,114 @@
   </div>
 </section>
 
-<!-- ─── Testimonials ─── -->
-<section class="section testimonials" id="testimonials">
+<!-- ─── Testimonials / Google Reviews ─── -->
+<section class="section testimonials" id="testimonials" aria-label="Client reviews and testimonials">
   <div class="container">
     <div class="section-label">Client Stories</div>
     <div class="gold-bar"></div>
     <h2 class="section-title">People Over Profits — In Practice.</h2>
+
+    <!-- Google Reviews Summary Bar -->
+    <div class="reviews-summary">
+      <div class="reviews-score">
+        <div class="big-num">5.0</div>
+        <div class="star-row" aria-label="5 out of 5 stars">★★★★★</div>
+        <div class="rev-count">Google Reviews</div>
+      </div>
+      <div class="reviews-divider" aria-hidden="true"></div>
+      <div class="reviews-cta-block">
+        <p>Every client experience matters. If Uhia helped you, leaving a Google review helps the next person find us — and builds trust in your community.</p>
+        <a href="https://g.page/r/willisadvocacygroup/review" target="_blank" rel="noopener noreferrer" class="google-review-btn" aria-label="Leave a Google Review for Willis Advocacy Group">
+          <span class="google-g" aria-hidden="true">G</span> Leave a Google Review
+        </a>
+      </div>
+    </div>
+
     <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <p class="testimonial-text">Uhia found me a $0 plan I had no idea existed. I was paying $140 a month and qualified for a Dual Special Needs Plan. He saved me over $1,600 a year — first year alone.</p>
-        <div class="testimonial-author">Margaret T.</div>
+      <div class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <p class="testimonial-text" itemprop="reviewBody">Uhia found me a $0 plan I had no idea existed. I was paying $140 a month and qualified for a Dual Special Needs Plan. He saved me over $1,600 a year — first year alone.</p>
+        <div class="testimonial-author" itemprop="author">Margaret T.</div>
         <div class="testimonial-detail">Medicare Client — Springfield, MA</div>
       </div>
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <p class="testimonial-text">I have Type 2 diabetes and had been declined by three brokers. Uhia called me back within an hour and found me a guaranteed issue life insurance policy. My family finally has protection.</p>
-        <div class="testimonial-author">James R.</div>
+      <div class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <p class="testimonial-text" itemprop="reviewBody">I have Type 2 diabetes and had been declined by three brokers. Uhia called me back within an hour and found me a guaranteed issue life insurance policy. My family finally has protection.</p>
+        <div class="testimonial-author" itemprop="author">James R.</div>
         <div class="testimonial-detail">Life Insurance Client — Hartford, CT</div>
       </div>
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <p class="testimonial-text">He told me honestly that my current Medicare plan was actually good for my situation — and didn't try to switch me just to earn a commission. That's integrity. I'll never use another broker.</p>
-        <div class="testimonial-author">Dolores M.</div>
+      <div class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <p class="testimonial-text" itemprop="reviewBody">He told me honestly that my current Medicare plan was actually good for my situation — and didn't try to switch me just to earn a commission. That's integrity. I'll never use another broker.</p>
+        <div class="testimonial-author" itemprop="author">Dolores M.</div>
         <div class="testimonial-detail">Medicare Client — Bronx, NY</div>
       </div>
+      <div class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <p class="testimonial-text" itemprop="reviewBody">I have HIV and thought life insurance was just never going to happen for me. Uhia didn't flinch. He called me back same day and found me a policy. I have peace of mind I didn't think was possible.</p>
+        <div class="testimonial-author" itemprop="author">Marcus W.</div>
+        <div class="testimonial-detail">Life Insurance Client — Newark, NJ</div>
+      </div>
+      <div class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <p class="testimonial-text" itemprop="reviewBody">My mother was on the wrong Medicare plan for three years — overpaying and missing benefits she qualified for. After one call with Uhia, she was enrolled in a D-SNP plan. Free dental. Free rides to the doctor. Changed her life.</p>
+        <div class="testimonial-author" itemprop="author">Renee A.</div>
+        <div class="testimonial-detail">Medicare Client — Charlotte, NC</div>
+      </div>
+      <div class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <p class="testimonial-text" itemprop="reviewBody">Uhia is the kind of broker that's hard to find. Honest, fast, no pressure. He picked up every call and explained everything clearly. I refer anyone I know who's turning 65 directly to him.</p>
+        <div class="testimonial-author" itemprop="author">Patricia L.</div>
+        <div class="testimonial-detail">Medicare Client — Miami, FL</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Blog Preview ─── -->
+<section class="section blog-preview" id="blog" aria-label="Insurance education articles">
+  <div class="container">
+    <div class="section-label">Insurance Education</div>
+    <div class="gold-bar"></div>
+    <h2 class="section-title">Know Your Options Before You Enroll.</h2>
+    <p class="section-sub">Straight answers about Medicare and life insurance — no sales pitch, no fluff.</p>
+    <div class="blog-grid">
+      <article class="blog-card">
+        <div class="blog-card-body">
+          <span class="blog-tag">Medicare</span>
+          <h3>Medicare Advantage vs. Medicare Supplement: Which Is Right for You?</h3>
+          <p>Two very different approaches to Medicare coverage. One offers extra benefits and lower premiums. The other offers freedom and predictability. Here's how to decide which fits your life.</p>
+        </div>
+        <div class="blog-card-footer">
+          <a href="/blog/medicare-advantage-vs-medicare-supplement.html" class="blog-read-more" aria-label="Read article: Medicare Advantage vs Medicare Supplement">Read Article →</a>
+          <span class="blog-read-time">6 min read</span>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-card-body">
+          <span class="blog-tag">Life Insurance</span>
+          <h3>Life Insurance with Preexisting Conditions: What Nobody Tells You</h3>
+          <p>Declined before? Most people with serious health conditions don't know about guaranteed issue policies. This is what brokers who specialize in complex cases know — and most others won't say.</p>
+        </div>
+        <div class="blog-card-footer">
+          <a href="/blog/life-insurance-preexisting-conditions.html" class="blog-read-more" aria-label="Read article: Life insurance with preexisting conditions">Read Article →</a>
+          <span class="blog-read-time">7 min read</span>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-card-body">
+          <span class="blog-tag">Medicare</span>
+          <h3>What Is a D-SNP Plan and Do You Qualify?</h3>
+          <p>If you have both Medicare and Medicaid, there may be a $0 plan with free dental, vision, transportation, and OTC benefits waiting for you. Most people who qualify have never been told these plans exist.</p>
+        </div>
+        <div class="blog-card-footer">
+          <a href="/blog/what-is-a-dsnp-plan.html" class="blog-read-more" aria-label="Read article: What is a D-SNP plan">Read Article →</a>
+          <span class="blog-read-time">5 min read</span>
+        </div>
+      </article>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;">
+      <a href="/blog/" class="btn-outline" aria-label="View all insurance education articles">View All Articles</a>
     </div>
   </div>
 </section>
@@ -1318,7 +1575,7 @@
             </div>
             <div id="form-error" class="form-error"></div>
             <button type="submit" class="form-submit" id="form-submit">Get My Free Review →</button>
-            <p class="form-disclaimer">By submitting this form, you agree to be contacted by Willis Advocacy Group (UKW Consulting Inc.) regarding insurance products. Willis Advocacy Group is not affiliated with or endorsed by Medicare, Medicaid, or any U.S. government agency. We do not offer every plan available in your area. Contact Medicare.gov or 1-800-MEDICARE for information on all options.</p>
+            <p class="form-disclaimer">By submitting this form, you expressly consent to be contacted by Willis Advocacy Group (UKW Consulting Inc.) at the phone number and email provided, including via phone calls, pre-recorded messages, and text messages (SMS/MMS), regarding Medicare and life insurance products. Consent is not required to purchase. Message &amp; data rates may apply. Reply STOP to opt out. Willis Advocacy Group is not affiliated with or endorsed by Medicare, Medicaid, or any U.S. government agency. We do not offer every plan available in your area. Contact Medicare.gov or 1-800-MEDICARE (1-800-633-4227) for information on all options. This is a solicitation for insurance.</p>
           </form>
         </div>
         <div class="form-success" id="form-success">
@@ -1361,8 +1618,44 @@
         <div class="faq-a"><p>There are several Medicare enrollment and change windows. The Annual Enrollment Period (AEP) runs October 15 – December 7 each year. The Medicare Advantage Open Enrollment Period runs January 1 – March 31. Special Enrollment Periods are available for qualifying life events. Some plans — particularly D-SNPs for dual-eligible beneficiaries — allow monthly enrollment. Uhia will confirm what window applies to your situation.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Do you only serve Massachusetts? <span class="arrow">+</span></button>
+        <button class="faq-q" aria-expanded="false">Do you only serve Massachusetts? <span class="arrow" aria-hidden="true">+</span></button>
         <div class="faq-a"><p>No — Uhia is licensed to sell insurance in Massachusetts, Connecticut, New Jersey, New York, Florida, Texas, and North Carolina. All consultations are conducted by phone, so location within those states doesn't matter.</p></div>
+      </div>
+
+      <!-- Medicare-Specific FAQs -->
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What is the difference between Medicare Advantage and Original Medicare? <span class="arrow" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Original Medicare (Parts A and B) is the federal government program covering hospital and medical services. Medicare Advantage (Part C) is an alternative offered by private insurance companies that must cover everything Original Medicare does — and often adds benefits like dental, vision, hearing, and transportation. Medicare Advantage plans typically have networks of doctors, while Original Medicare lets you see any doctor who accepts Medicare. The right choice depends on your doctors, prescriptions, health needs, and budget. Uhia will walk through both options for your specific situation at no charge.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What is a Medigap (Medicare Supplement) plan? <span class="arrow" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Medigap, also called Medicare Supplement insurance, is a policy sold by private insurance companies to fill the gaps in Original Medicare — covering things like copayments, coinsurance, and deductibles. Medigap plans are standardized by letter (Plan G, Plan N, etc.) and allow you to see any doctor who accepts Medicare in the country with no network restrictions. They charge a monthly premium but provide very predictable out-of-pocket costs. Medigap is often the best choice for people who travel frequently, see specialists regularly, or want financial certainty. Willis Advocacy Group (UKW Consulting Inc.) is not affiliated with or endorsed by Medicare or any government agency.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What is the Medicare Annual Enrollment Period (AEP)? <span class="arrow" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>The Annual Enrollment Period (AEP) runs from October 15 through December 7 every year. During this time, you can switch Medicare Advantage plans, switch from Medicare Advantage back to Original Medicare, join or drop a Part D drug plan, or change Part D plans. Changes made during AEP take effect January 1 of the following year. Missing AEP doesn't always mean you're locked in — Special Enrollment Periods exist for qualifying events, and D-SNP plans for dual-eligible beneficiaries often allow monthly enrollment. Call (774) 446-0701 to find out what window applies to you.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">When I turn 65, how do I sign up for Medicare? <span class="arrow" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>You become eligible for Medicare at 65. You have a 7-month Initial Enrollment Period: the 3 months before your birthday month, your birthday month itself, and 3 months after. If you're already collecting Social Security, you may be enrolled automatically. Signing up late can result in permanent premium penalties. This is one of the most important insurance decisions you'll make — and Uhia's consultation is free. He'll walk you through Original Medicare, Advantage, Supplement, and Part D options before you enroll so you make the right choice from day one. Willis Advocacy Group (UKW Consulting Inc.) is not affiliated with or endorsed by Medicare or any government agency. Contact Medicare.gov or 1-800-MEDICARE for government enrollment assistance.</p></div>
+      </div>
+
+      <!-- Life Insurance-Specific FAQs -->
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What is guaranteed issue life insurance? <span class="arrow" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Guaranteed issue life insurance is a type of whole life policy that cannot deny coverage based on your health. There is no medical exam and no health questions. If you meet the basic age and residency requirements, you are approved — period. The trade-off is a graded benefit period, typically 2–3 years, during which the death benefit is limited (usually premiums plus interest are returned if death occurs in this window). After that period, the full benefit pays out. For many people with serious health conditions who've been declined elsewhere, guaranteed issue is the only path to coverage. Uhia will tell you honestly whether guaranteed issue is your best option or if a standard policy may be available to you.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Can I get life insurance if I have diabetes? <span class="arrow" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Yes — in many cases. Diabetes, including Type 1 and Type 2, is one of the most common conditions Uhia works with. Whether you can get a standard policy or need a guaranteed issue or simplified issue product depends on how well-controlled your diabetes is, your A1C levels, whether you have complications, and other factors. Many clients with well-controlled Type 2 diabetes qualify for standard underwriting at competitive rates. Those with more complex situations often have guaranteed issue options available. The only way to know for certain is to have your situation reviewed — which is free.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What is final expense life insurance? <span class="arrow" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Final expense insurance, also called burial insurance, is a whole life policy designed to cover end-of-life costs — funeral expenses, outstanding medical bills, and other final debts. Policies typically range from $5,000 to $25,000 in death benefit and are designed to be affordable on a fixed income. Premiums are locked in for life and the policy cannot be cancelled as long as premiums are paid. Many final expense policies are either guaranteed issue or simplified issue (a few health questions but no exam), making them accessible to people with health conditions. Coverage often starts under $30–$50 per month.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What if I've already been declined for life insurance? <span class="arrow" aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>A decline from one carrier or broker is not the end of the story. Different insurance companies underwrite risk differently — a condition that disqualifies you at one company may be acceptable at another. Uhia specializes in exactly these situations. He works with multiple carriers and knows which ones are more likely to approve complex health histories. Even if standard coverage isn't available, guaranteed issue options exist that cannot decline you. If you've been told no before, call (774) 446-0701 or submit the form — that's exactly where Uhia's expertise begins.</p></div>
       </div>
     </div>
   </div>
@@ -1429,10 +1722,13 @@
   </div>
 </section>
 
-<!-- ─── Compliance Bar ─── -->
-<div class="compliance-bar">
+<!-- ─── Compliance Bar — CMS Required Disclaimers ─── -->
+<div class="compliance-bar" role="contentinfo" aria-label="Legal and compliance information">
   <div class="container">
-    <p>Willis Advocacy Group (UKW Consulting Inc.) is an independent licensed insurance broker not affiliated with, endorsed by, or representing Medicare, Medicaid, or any U.S. government agency. We do not offer every plan available in your area. Any information we provide is limited to the plans we do offer in your area. Please contact Medicare.gov or call 1-800-MEDICARE (1-800-633-4227), TTY 1-877-486-2048, 24 hours a day, 7 days a week for information on all options. Willis Advocacy Group (UKW Consulting Inc.) is licensed to sell Medicare Advantage and Medicare Supplement insurance products in MA, CT, NJ, NY, FL, TX, NC, and GA. This is not a government website. UKW Consulting Inc. is an S-Corp registered in Massachusetts. Licensed: MA, CT, NJ, NY, FL, TX, NC, GA.</p>
+    <p><strong>Medicare Disclaimer:</strong> Willis Advocacy Group (UKW Consulting Inc.) is an independent licensed insurance broker. We are not connected with or endorsed by the U.S. government or the federal Medicare program. We do not offer every plan available in your area. Any information we provide is limited to the plans we do offer in your area. Please contact Medicare.gov or call 1-800-MEDICARE (1-800-633-4227), TTY users call 1-877-486-2048, 24 hours a day, 7 days a week for a complete list of all available Medicare options. This is not a government website and is a solicitation for insurance. Plans are insured or covered by a Medicare Advantage organization with a Medicare contract and/or a Medicare-approved Part D sponsor. Enrollment in the plan depends on the plan's contract renewal with Medicare.</p>
+    <p style="margin-top:0.75rem;"><strong>Life Insurance:</strong> Life insurance products are offered through multiple insurance carriers. Not all products are available in all states. Product availability and features may vary by state. Guaranteed issue life insurance policies contain a graded death benefit and may not be appropriate for all situations.</p>
+    <p style="margin-top:0.75rem;"><strong>TCPA Notice:</strong> By submitting any form on this website or calling (774) 446-0701, you consent to be contacted by Willis Advocacy Group (UKW Consulting Inc.) via phone calls, text messages (including automated messages), and email regarding insurance products and services. Consent is not a condition of purchase. Message and data rates may apply. Reply STOP to opt out of text messages. Language assistance services are available free of charge — call (774) 446-0701.</p>
+    <p style="margin-top:0.75rem;">Willis Advocacy Group is a DBA of UKW Consulting Inc., an S-Corp registered in Massachusetts. Licensed to sell Medicare and life insurance products in MA, CT, NJ, NY, FL, TX, NC, and GA. &copy; 2026 UKW Consulting Inc. All rights reserved.</p>
   </div>
 </div>
 
@@ -1475,8 +1771,89 @@
 
 <!-- ─── Sticky CTA ─── -->
 <div class="sticky-cta">
-  <a href="tel:7744460701">📞 Call Now — Free</a>
+  <a href="tel:7744460701" aria-label="Call Willis Advocacy Group — Free">📞 Call Now — Free</a>
 </div>
+
+<!-- ─── Live Chat / SMS Button ─── -->
+<div class="chat-btn" role="complementary" aria-label="Send us a text message">
+  <div class="chat-tooltip">Text Us</div>
+  <a href="sms:7744460701?&body=Hi%20Uhia%2C%20I%20have%20a%20question%20about%20my%20insurance%20options." aria-label="Send a text message to Willis Advocacy Group">💬</a>
+</div>
+
+<!-- FAQ Schema.org — Google Rich Results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does it cost anything to work with Willis Advocacy Group?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Our services are completely free to you. As an independent broker, we are compensated by the insurance carriers when you enroll in a plan. This never affects the plans we recommend — we're required by law to recommend the best option for you, not the one with the highest commission."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Am I really eligible for a $0 premium Medicare plan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many people are. If you receive both Medicare and Medicaid benefits, you may qualify for a Dual Special Needs Plan (D-SNP), which often has $0 monthly premium, $0 copays for primary care, and additional benefits like dental, vision, transportation, and OTC allowances. The only way to know for certain is to review your specific situation — which is exactly what our free consultation does. Willis Advocacy Group (UKW Consulting Inc.) is not affiliated with or endorsed by Medicare or any government agency."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I have a serious health condition. Can I still get life insurance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Often yes. Uhia specializes in finding life insurance for clients with preexisting conditions — including diabetes, heart disease, HIV, COPD, cancer history, and more. There are guaranteed issue life insurance policies that do not require a medical exam and cannot decline you based on health. We'll walk you through exactly what's available for your specific situation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a D-SNP plan and do I qualify?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Dual Special Needs Plan (D-SNP) is a type of Medicare Advantage plan designed specifically for people who have both Medicare and Medicaid. These plans often feature $0 monthly premium, $0 primary care copays, free dental and vision coverage, free transportation to medical appointments, and over-the-counter allowances. Most people who qualify have never been told these plans exist. Call (774) 446-0701 for a free review."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between Medicare Advantage and Original Medicare?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Original Medicare (Parts A and B) is the federal government program covering hospital and medical services. Medicare Advantage (Part C) is offered by private insurance companies and must cover everything Original Medicare does — often adding dental, vision, hearing, and transportation benefits. Medicare Advantage plans typically have provider networks, while Original Medicare lets you see any doctor who accepts Medicare. Willis Advocacy Group (UKW Consulting Inc.) is not affiliated with or endorsed by Medicare or any government agency."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is guaranteed issue life insurance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Guaranteed issue life insurance is a whole life policy that cannot deny coverage based on health. There is no medical exam and no health questions. If you meet basic age and residency requirements, you are approved. The trade-off is a graded benefit period of typically 2–3 years. After that period, the full benefit pays out. This is often the path to coverage for people with serious health conditions who have been declined elsewhere."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get life insurance if I have diabetes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — in many cases. Diabetes, including Type 1 and Type 2, is one of the most common conditions Uhia works with. Whether you qualify for standard coverage or need a guaranteed issue policy depends on how well-controlled your diabetes is, your A1C levels, and other factors. The only way to know is a free review — call (774) 446-0701."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I've already been declined for life insurance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A decline from one carrier is not the end of the story. Different companies underwrite risk differently, and Uhia knows which carriers are more likely to approve complex health histories. Even if standard coverage is not available, guaranteed issue options cannot decline you based on health. Call (774) 446-0701 — that's exactly where Uhia's expertise begins."
+      }
+    }
+  ]
+}
+</script>
+<!-- End FAQ Schema -->
 
 <!-- TrustedForm -->
 <script type="text/javascript">
@@ -1567,6 +1944,17 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf
       errorBox.style.display = 'block';
       console.error('Form error:', err);
     }
+  });
+
+  // FAQ aria-expanded toggle
+  document.querySelectorAll('.faq-q').forEach(function(btn) {
+    btn.setAttribute('aria-expanded', 'false');
+  });
+  document.querySelectorAll('.faq-item').forEach(function(item) {
+    item.querySelector('.faq-q').addEventListener('click', function() {
+      var expanded = item.classList.contains('open');
+      this.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    });
   });
 
   // Format phone input

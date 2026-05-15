@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insurance Education Blog — Willis Advocacy Group</title>
+  <meta name="description" content="Straight answers about Medicare and life insurance — no sales pitch. Learn about Medicare Advantage, D-SNP plans, life insurance with preexisting conditions, and more.">
+  <link rel="canonical" href="https://www.willisadvocacygroup.com/blog/">
+  <meta property="og:title" content="Insurance Education Blog — Willis Advocacy Group">
+  <meta property="og:description" content="Straight answers about Medicare and life insurance — no sales pitch, no fluff.">
+  <meta property="og:url" content="https://www.willisadvocacygroup.com/blog/">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="/images/logos/logo-favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0C1B2E; --teal: #0D7377; --teal2: #14A085;
+      --gold: #C8972A; --gold2: #F0C060; --cream: #FAF7F2;
+      --white: #FFFFFF; --text: #1a2e42; --muted: #5a7080;
+      --border: rgba(12,27,46,0.1); --shadow: 0 4px 24px rgba(12,27,46,0.08);
+    }
+    body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(--text); line-height: 1.65; }
+    a { color: var(--teal); text-decoration: none; }
+    a:hover { color: var(--teal2); }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    nav { background: var(--navy); border-bottom: 2px solid var(--gold); padding: 0; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav-brand { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--cream); font-weight: 700; }
+    .nav-brand span { color: var(--gold); }
+    .nav-back { font-size: 0.875rem; color: rgba(255,255,255,0.65); font-weight: 600; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold); }
+    .blog-hero { background: linear-gradient(135deg, var(--navy) 0%, #1a3a5c 100%); color: var(--white); padding: 4rem 0 3rem; }
+    .blog-label { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .blog-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 1rem; }
+    .blog-hero p { color: rgba(255,255,255,0.75); font-size: 1.05rem; max-width: 560px; }
+    .blog-section { padding: 4rem 0; }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.75rem; margin-top: 2.5rem; }
+    .blog-card { background: var(--white); border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
+    .blog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(12,27,46,0.12); }
+    .blog-card-header { background: linear-gradient(135deg, var(--navy) 0%, #1a3a5c 100%); padding: 1.5rem; }
+    .blog-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold2); background: rgba(200,151,42,0.15); border: 1px solid rgba(200,151,42,0.3); padding: 0.25rem 0.6rem; border-radius: 4px; display: inline-block; margin-bottom: 0.85rem; }
+    .blog-card-header h2 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--white); line-height: 1.35; }
+    .blog-card-body { padding: 1.5rem; flex: 1; }
+    .blog-card-body p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 1rem; }
+    .blog-meta { display: flex; gap: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--muted); margin-bottom: 1rem; }
+    .blog-card-footer { padding: 1rem 1.5rem; border-top: 1px solid var(--border); }
+    .read-more { font-weight: 700; color: var(--teal); font-size: 0.875rem; display: inline-flex; align-items: center; gap: 0.35rem; }
+    .read-more:hover { color: var(--teal2); }
+    .cta-bar { background: var(--navy); color: var(--white); padding: 3rem 0; text-align: center; }
+    .cta-bar h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 0.75rem; }
+    .cta-bar p { color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+    .btn-cta { display: inline-block; padding: 0.9rem 2rem; background: var(--teal); color: var(--white); border-radius: 6px; font-weight: 800; transition: background 0.2s; }
+    .btn-cta:hover { background: var(--teal2); color: var(--white); }
+    .compliance { background: #f0ede8; border-top: 1px solid var(--border); padding: 1.5rem 0; }
+    .compliance p { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--muted); line-height: 1.7; }
+  </style>
+</head>
+<body>
+<nav aria-label="Site navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">Willis <span>Advocacy</span> Group</a>
+      <a href="/" class="nav-back">← Back to Main Site</a>
+    </div>
+  </div>
+</nav>
+
+<header class="blog-hero">
+  <div class="container">
+    <div class="blog-label">Insurance Education</div>
+    <h1>Know Your Options<br>Before You Enroll.</h1>
+    <p>Straight answers about Medicare and life insurance — written by a broker who works for you, not the carriers.</p>
+  </div>
+</header>
+
+<main class="blog-section">
+  <div class="container">
+    <div class="blog-grid">
+
+      <article class="blog-card">
+        <div class="blog-card-header">
+          <div class="blog-tag">Medicare</div>
+          <h2>Medicare Advantage vs. Medicare Supplement: Which Is Right for You?</h2>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-meta">
+            <span>6 min read</span>
+            <span>May 2026</span>
+          </div>
+          <p>Two very different approaches to Medicare coverage. One offers extra benefits and lower premiums. The other offers freedom and predictability. Here's how to decide which fits your life.</p>
+        </div>
+        <div class="blog-card-footer">
+          <a href="/blog/medicare-advantage-vs-medicare-supplement.html" class="read-more">Read Article →</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-card-header">
+          <div class="blog-tag">Life Insurance</div>
+          <h2>Life Insurance with Preexisting Conditions: What Nobody Tells You</h2>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-meta">
+            <span>7 min read</span>
+            <span>May 2026</span>
+          </div>
+          <p>Declined before? Most people with serious health conditions don't know about guaranteed issue policies. Here's what brokers who specialize in complex cases know — and most others won't say.</p>
+        </div>
+        <div class="blog-card-footer">
+          <a href="/blog/life-insurance-preexisting-conditions.html" class="read-more">Read Article →</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-card-header">
+          <div class="blog-tag">Medicare</div>
+          <h2>What Is a D-SNP Plan and Do You Qualify?</h2>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-meta">
+            <span>5 min read</span>
+            <span>May 2026</span>
+          </div>
+          <p>If you have both Medicare and Medicaid, there may be a $0 plan with free dental, vision, transportation, and OTC benefits waiting for you. Most people who qualify have never heard of these plans.</p>
+        </div>
+        <div class="blog-card-footer">
+          <a href="/blog/what-is-a-dsnp-plan.html" class="read-more">Read Article →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</main>
+
+<section class="cta-bar">
+  <div class="container">
+    <h2>Have Questions? Uhia Has Answers.</h2>
+    <p>Free consultation. No obligation. He'll call you back within 1 business hour.</p>
+    <a href="/#review" class="btn-cta">Get My Free Review</a>
+    &nbsp;&nbsp;
+    <a href="tel:7744460701" class="btn-cta" style="background:transparent;border:2px solid rgba(255,255,255,0.4);">📞 (774) 446-0701</a>
+  </div>
+</section>
+
+<div class="compliance">
+  <div class="container">
+    <p>Willis Advocacy Group (UKW Consulting Inc.) is not affiliated with or endorsed by Medicare, Medicaid, or any U.S. government agency. We do not offer every plan available in your area. Contact Medicare.gov or 1-800-MEDICARE (1-800-633-4227) for all available options. This is a solicitation for insurance. Licensed in MA, CT, NJ, NY, FL, TX, NC, GA.</p>
+  </div>
+</div>
+</body>
+</html>
