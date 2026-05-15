@@ -717,6 +717,38 @@
       line-height: 1.5;
       font-family: 'JetBrains Mono', monospace;
     }
+    /* TCPA consent checkboxes */
+    .consent-group {
+      margin: 1rem 0 0.5rem;
+      padding: 1rem;
+      background: rgba(13,115,119,0.04);
+      border: 1px solid rgba(13,115,119,0.15);
+      border-radius: 8px;
+    }
+    .consent-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      margin-bottom: 0.85rem;
+    }
+    .consent-row:last-child { margin-bottom: 0; }
+    .consent-row input[type="checkbox"] {
+      flex-shrink: 0;
+      margin-top: 0.25rem;
+      width: 18px;
+      height: 18px;
+      accent-color: var(--teal);
+      cursor: pointer;
+    }
+    .consent-row label {
+      font-size: 0.75rem;
+      line-height: 1.55;
+      color: var(--navy);
+      cursor: pointer;
+      font-weight: 400;
+    }
+    .consent-row label a { color: var(--teal); text-decoration: underline; }
+    .consent-row label strong { font-weight: 700; color: var(--navy); }
     .form-success {
       display: none;
       text-align: center;
@@ -1573,9 +1605,23 @@
                 <option value="unsure">Not sure — just want to talk to someone</option>
               </select>
             </div>
+            <div class="consent-group">
+              <div class="consent-row">
+                <input type="checkbox" id="consent-contact" name="consent-contact" required>
+                <label for="consent-contact">
+                  <strong>I agree to be contacted.</strong> By checking this box, I provide my express written consent to be contacted by <strong>Willis Advocacy Group (UKW Consulting Inc.)</strong> and its licensed agent Uhia Willis at the phone number and email address I provided, including by automated dialing systems, pre-recorded or artificial voice messages, and SMS/MMS text messages, for the purpose of marketing Medicare and life insurance products. Consent is not a condition of purchase. Message &amp; data rates may apply. Reply STOP to opt out.
+                </label>
+              </div>
+              <div class="consent-row">
+                <input type="checkbox" id="consent-terms" name="consent-terms" required>
+                <label for="consent-terms">
+                  <strong>I agree to the Privacy Policy and Terms.</strong> I have read and agree to the <a href="/privacy-policy.html" target="_blank">Privacy Policy</a> and <a href="/terms-of-service.html" target="_blank">Terms of Service</a>. I understand Willis Advocacy Group is <strong>not affiliated with or endorsed by Medicare, Medicaid, or any U.S. government agency</strong>, and that I am not required to enroll to receive a consultation.
+                </label>
+              </div>
+            </div>
             <div id="form-error" class="form-error"></div>
             <button type="submit" class="form-submit" id="form-submit">Get My Free Review →</button>
-            <p class="form-disclaimer">By submitting this form, you expressly consent to be contacted by Willis Advocacy Group (UKW Consulting Inc.) at the phone number and email provided, including via phone calls, pre-recorded messages, and text messages (SMS/MMS), regarding Medicare and life insurance products. Consent is not required to purchase. Message &amp; data rates may apply. Reply STOP to opt out. Willis Advocacy Group is not affiliated with or endorsed by Medicare, Medicaid, or any U.S. government agency. We do not offer every plan available in your area. Contact Medicare.gov or 1-800-MEDICARE (1-800-633-4227) for information on all options. This is a solicitation for insurance.</p>
+            <p class="form-disclaimer">Willis Advocacy Group is not affiliated with or endorsed by Medicare, Medicaid, or any U.S. government agency. We do not offer every plan available in your area. Contact Medicare.gov or 1-800-MEDICARE (1-800-633-4227) for information on all options. This is a solicitation for insurance.</p>
           </form>
         </div>
         <div class="form-success" id="form-success">
@@ -1906,6 +1952,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf
     var errorBox = document.getElementById('form-error');
     errorBox.style.display = 'none';
 
+    var consentContact = document.getElementById('consent-contact').checked;
+    var consentTerms   = document.getElementById('consent-terms').checked;
+
     var data = {
       firstName: form.firstName.value.trim(),
       email: form.email.value.trim(),
@@ -1915,11 +1964,22 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf
       source: form.source.value,
       page: window.location.href,
       xxTrustedFormCertUrl: document.getElementById('xxTrustedFormCertUrl').value || '',
+      consent_contact: consentContact,
+      consent_terms:   consentTerms,
+      consent_timestamp: new Date().toISOString(),
+      consent_ip_user_agent: navigator.userAgent
     };
 
     // Basic client-side validation
     if (!data.firstName || !data.email || !data.phone || !data.state || !data.interest) {
       errorBox.textContent = 'Please fill in all required fields.';
+      errorBox.style.display = 'block';
+      return;
+    }
+
+    // TCPA consent validation — both boxes required
+    if (!consentContact || !consentTerms) {
+      errorBox.textContent = 'Please check both consent boxes to continue. Your consent is required for us to contact you.';
       errorBox.style.display = 'block';
       return;
     }
