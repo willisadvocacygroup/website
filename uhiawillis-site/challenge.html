@@ -1,316 +1,176 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>7-Day Rebuild Challenge — Uhia Willis | $47</title>
-  <meta name="description" content="Seven days. One R.E.B.U.I.L.D. phase per day. Daily lessons by email. The fastest way to move from reading about rebuilding to actually doing it. $47.">
-  <link rel="canonical" href="https://uhiawillis.com/challenge">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --black: #050505; --b2: #0A0A0A; --b3: #111111; --b4: #1A1A1A;
-      --gold: #E8500A; --gold2: #F06828; --gold-mark: #C8972A;
-      --cream: #FFFFFF; --muted: #9A9A9A; --dim: rgba(154,154,154,.4);
-      --serif: 'Cormorant Garamond', Georgia, serif;
-      --sans:  'DM Sans', system-ui, sans-serif;
-      --mono:  'DM Mono', 'Courier New', monospace;
-      --pad: clamp(72px, 9vw, 120px); --max: 1060px; --g: clamp(24px, 5vw, 72px);
-    }
-    html { scroll-behavior: smooth; }
-    body { background: var(--black); color: var(--cream); font-family: var(--sans); font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; }
-    img  { display: block; max-width: 100%; }
-    a    { color: inherit; text-decoration: none; }
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--g); }
-    .label { font-family: var(--mono); font-size: .66rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); }
-
-    /* NAV */
-    nav { padding: 22px var(--g); display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(232,80,10,.08); }
-    .nav-logo { font-family: var(--serif); font-size: 1rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; }
-    .nav-logo em { font-style: normal; color: var(--gold); }
-    .nav-back { font-family: var(--mono); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
-    .nav-back:hover { color: var(--gold); }
-    .nav-links { display: flex; gap: 28px; list-style: none; }
-    .nav-links a { font-family: var(--mono); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
-    @media (max-width: 700px) { .nav-links { display: none; } }
-
-    /* HERO */
-    #hero { padding: var(--pad) 0; text-align: center; border-bottom: 1px solid rgba(232,80,10,.08); }
-    .hero-tag { display: block; margin-bottom: 20px; }
-    .hero-h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(40px, 7vw, 88px); line-height: 1.0; letter-spacing: -.03em; margin-bottom: 24px; }
-    .hero-h1 em { font-style: italic; color: var(--gold); }
-    .hero-sub { font-size: 1.08rem; color: var(--muted); max-width: 560px; margin: 0 auto 44px; line-height: 1.72; }
-    .price-display { margin-bottom: 36px; }
-    .price-num { font-family: var(--serif); font-size: clamp(48px, 7vw, 80px); font-weight: 300; color: var(--gold); line-height: 1; }
-    .price-note { font-family: var(--mono); font-size: .64rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
-    .btn-gold { display: inline-block; font-family: var(--mono); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; padding: 18px 40px; background: var(--gold); color: var(--black); font-weight: 500; transition: background .22s; }
-    .btn-gold:hover { background: var(--gold2); }
-    .hero-fine { font-family: var(--mono); font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); margin-top: 16px; }
-
-    /* WHO IT'S FOR */
-    #who { padding: var(--pad) 0; background: var(--b2); }
-    .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-    .who-h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(30px, 4vw, 52px); letter-spacing: -.02em; line-height: 1.1; margin: 18px 0 28px; }
-    .who-h2 em { font-style: italic; color: var(--gold); }
-    .who-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
-    .who-list li { padding: 16px 0; border-bottom: 1px solid rgba(232,80,10,.1); font-size: .96rem; color: var(--muted); line-height: 1.6; display: flex; gap: 16px; align-items: baseline; }
-    .who-list li:first-child { border-top: 1px solid rgba(232,80,10,.1); }
-    .who-list li::before { content: '—'; color: var(--gold); flex-shrink: 0; font-family: var(--serif); }
-    .who-body p { font-size: .98rem; color: var(--muted); margin-bottom: 18px; line-height: 1.78; }
-    .who-body p:last-child { margin-bottom: 0; }
-    .who-body strong { color: var(--cream); font-weight: 400; }
-
-    /* WHAT YOU GET */
-    #what { padding: var(--pad) 0; }
-    .what-h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(30px, 4vw, 52px); letter-spacing: -.02em; margin: 18px 0 48px; }
-    .days { display: flex; flex-direction: column; gap: 0; }
-    .day { display: grid; grid-template-columns: 80px 1fr; gap: 32px; padding: 32px 0; border-bottom: 1px solid rgba(232,80,10,.1); align-items: start; }
-    .day:first-child { border-top: 1px solid rgba(232,80,10,.1); }
-    .day-num { font-family: var(--mono); font-size: .6rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); padding-top: 4px; }
-    .day-phase { font-family: var(--serif); font-weight: 400; font-size: clamp(17px, 2vw, 24px); letter-spacing: -.01em; margin-bottom: 8px; line-height: 1.2; }
-    .day-desc { font-size: .9rem; color: var(--muted); line-height: 1.7; }
-    .day-desc strong { color: var(--cream); font-weight: 400; }
-
-    /* HOW IT WORKS */
-    #how { padding: var(--pad) 0; background: var(--b2); }
-    .how-h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(30px, 4vw, 52px); letter-spacing: -.02em; margin: 18px 0 48px; }
-    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-    .step { background: var(--b3); padding: 36px 30px; }
-    .step-n { font-family: var(--serif); font-size: 2.8rem; font-weight: 300; color: rgba(232,80,10,.25); line-height: 1; margin-bottom: 16px; }
-    .step-title { font-family: var(--serif); font-weight: 400; font-size: 1.2rem; margin-bottom: 10px; }
-    .step-desc { font-size: .88rem; color: var(--muted); line-height: 1.68; }
-
-    /* ABOUT */
-    #about { padding: var(--pad) 0; }
-    .about-inner { display: grid; grid-template-columns: 200px 1fr; gap: 56px; align-items: start; }
-    .about-img img { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: top center; filter: grayscale(15%) contrast(1.06); }
-    .about-h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(24px, 3vw, 40px); letter-spacing: -.02em; line-height: 1.1; margin: 16px 0 22px; }
-    .about-h2 em { font-style: italic; color: var(--gold); }
-    .about-body p { font-size: .96rem; color: var(--muted); margin-bottom: 16px; line-height: 1.78; }
-    .about-body p:last-child { margin-bottom: 0; }
-    .about-body strong { color: var(--cream); font-weight: 400; }
-
-    /* CTA BOTTOM */
-    #cta { padding: var(--pad) 0; background: var(--b2); text-align: center; }
-    .cta-h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(28px, 4.5vw, 60px); letter-spacing: -.025em; line-height: 1.05; margin-bottom: 20px; }
-    .cta-h2 em { font-style: italic; color: var(--gold); }
-    .cta-sub { font-size: 1rem; color: var(--muted); max-width: 480px; margin: 0 auto 36px; line-height: 1.68; }
-    .cta-price { font-family: var(--serif); font-size: clamp(36px, 5vw, 64px); font-weight: 300; color: var(--gold); margin-bottom: 28px; line-height: 1; }
-    .cta-fine { font-family: var(--mono); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); margin-top: 16px; }
-    .cta-upsell { margin-top: 20px; font-size: .88rem; color: var(--muted); }
-    .cta-upsell a { color: var(--gold); }
-
-    /* FOOTER */
-    footer { padding: 44px var(--g); border-top: 1px solid rgba(232,80,10,.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; max-width: 100%; }
-    .ft-copy { font-family: var(--mono); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
-    .ft-link { font-family: var(--mono); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
-
-    @media (max-width: 800px) {
-      .who-grid { grid-template-columns: 1fr; gap: 40px; }
-      .steps { grid-template-columns: 1fr; }
-      .about-inner { grid-template-columns: 1fr; gap: 32px; }
-      .about-img { max-width: 160px; }
-    }
-    @media (max-width: 540px) {
-      .day { grid-template-columns: 60px 1fr; gap: 20px; }
-    }
-  </style>
-  <!-- MailerLite Universal -->
-  <script>(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);
-  })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-  ml('account', '2346940');
-  </script>
-  <!-- End MailerLite Universal -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 7-Day R.E.B.U.I.L.D. Challenge — $47</title>
+<meta name="description" content="Seven days. Seven phases. One framework. For the man on the floor and the man rebuilding at every altitude. By Uhia Willis.">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QDC79JE3K2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-QDC79JE3K2');</script>
+<!-- Meta Pixel placeholder: replace PIXEL_ID with your Meta Pixel ID when available -->
+<!-- <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','PIXEL_ID');fbq('track','PageView');</script> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#080808;--bg2:#0e0e0e;--gold:#C8972A;--gold2:#d8a836;--cream:#F0EBE0;--cream-dim:rgba(240,235,224,.72);--cream-faint:rgba(240,235,224,.45);--rule:rgba(240,235,224,.15);--gold-faint:rgba(200,151,42,.18)}
+  html,body{background:var(--bg);color:var(--cream)}
+  body{font-family:'DM Sans',system-ui,sans-serif;font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  .wrap{max-width:920px;margin:0 auto;padding:3rem 1.75rem 5rem}
+  .eyebrow{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1.6rem}
+  .eyebrow::before,.eyebrow::after{content:'';display:inline-block;width:28px;height:1px;background:var(--gold);vertical-align:middle;margin:0 .9rem}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(2.4rem,5.5vw,4rem);line-height:1.08;color:var(--cream);margin-bottom:1.5rem;letter-spacing:-.01em}
+  h1 em{font-style:italic;color:var(--gold);font-weight:500}
+  h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(1.8rem,3.5vw,2.4rem);line-height:1.2;color:var(--cream);margin:3rem 0 1.2rem;letter-spacing:-.005em}
+  h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.4rem;color:var(--cream);margin:2rem 0 .9rem}
+  p{margin-bottom:1.15rem;color:var(--cream-dim)}
+  p strong{color:var(--cream);font-weight:500}
+  em{color:var(--cream);font-style:italic}
+  ul{margin:1.2rem 0 1.8rem;padding-left:0;list-style:none}
+  ul li{position:relative;padding:.45rem 0 .45rem 1.8rem;color:var(--cream-dim);line-height:1.65}
+  ul li::before{content:'';position:absolute;left:0;top:1.05rem;width:14px;height:1px;background:var(--gold)}
+  .hero{padding:3.5rem 0 2.5rem;border-bottom:1px solid var(--rule);margin-bottom:2.5rem;text-align:center}
+  .hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.35rem;color:var(--cream-dim);margin:1rem 0 2rem;max-width:660px;margin-left:auto;margin-right:auto}
+  .pullquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.4rem;line-height:1.45;color:var(--cream);border-left:2px solid var(--gold);padding:.4rem 0 .4rem 1.4rem;margin:2rem 0}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin:2rem 0}
+  .card{background:var(--bg2);border:1px solid var(--rule);border-left:3px solid var(--gold);padding:1.6rem 1.4rem;border-radius:2px}
+  .card .day{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+  .card h4{font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--cream);font-weight:600;margin-bottom:.5rem}
+  .card p{font-size:.92rem;line-height:1.55;color:var(--cream-dim);margin:0}
+  .price{text-align:center;margin:3rem 0 2rem;padding:2.5rem 1rem;background:var(--bg2);border:1px solid var(--gold-faint);border-radius:2px}
+  .price .label{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+  .price .amount{font-family:'Cormorant Garamond',serif;font-size:4.5rem;color:var(--cream);font-weight:600;line-height:1;letter-spacing:-.02em}
+  .price .amount sup{font-size:1.8rem;color:var(--gold);vertical-align:top;margin-right:.3rem}
+  .price .meta{font-family:'DM Mono',monospace;font-size:.72rem;color:var(--cream-faint);letter-spacing:.1em;margin-top:.5rem}
+  .cta{display:inline-block;font-family:'DM Sans',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.04em;color:var(--bg);background:var(--gold);padding:1.1rem 2.6rem;border-radius:2px;text-decoration:none;text-transform:uppercase;transition:background .15s ease;margin-top:1.6rem;border:0;cursor:pointer}
+  .cta:hover{background:var(--gold2)}
+  .cta-secondary{display:inline-block;font-family:'DM Mono',monospace;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-dim);text-decoration:none;border-bottom:1px solid var(--gold-faint);padding-bottom:3px;margin-top:1.2rem}
+  .cta-secondary:hover{color:var(--gold);border-color:var(--gold)}
+  .guarantee{background:rgba(200,151,42,.05);border:1px solid var(--gold-faint);padding:1.8rem;margin:2.5rem 0;border-radius:2px;text-align:center}
+  .guarantee strong{color:var(--gold)}
+  .who-for{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0}
+  .who-for>div{background:var(--bg2);border:1px solid var(--rule);padding:1.6rem 1.4rem;border-radius:2px}
+  .who-for h4{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;font-weight:500}
+  .who-for ul{margin:0}
+  .who-for li{font-size:.92rem;padding:.3rem 0 .3rem 1.4rem}
+  .who-for li::before{top:.95rem}
+  .about{background:var(--bg2);border:1px solid var(--rule);padding:2rem;margin:3rem 0;border-radius:2px}
+  .about h3{margin-top:0}
+  hr.div{border:0;border-top:1px solid var(--rule);margin:3rem 0}
+  .legal{font-family:'DM Mono',monospace;font-size:.65rem;color:var(--cream-faint);letter-spacing:.06em;line-height:1.8;margin-top:4rem;text-align:center}
+  @media (max-width:580px){.wrap{padding:2rem 1.2rem}.who-for{grid-template-columns:1fr}.price .amount{font-size:3.5rem}}
+</style>
 </head>
 <body>
+<div class="wrap">
 
-<!-- NAV -->
-<nav>
-  <a href="/" class="nav-logo">Uhia <em>Willis</em></a>
-  <ul class="nav-links">
-    <li><a href="free-guide.html">Free Guide</a></li>
-    <li><a href="challenge.html" class="active">7-Day Challenge</a></li>
-    <li><a href="blueprint.html">Rebuild Blueprint</a></li>
-    <li><a href="cohort.html">Cohort</a></li>
-  </ul>
-  <a href="/" class="nav-back">← Back to site</a>
-</nav>
+  <section class="hero">
+    <div class="eyebrow">A 7-Day Email Challenge</div>
+    <h1>Seven Days. Seven Phases.<br><em>One Framework.</em></h1>
+    <p class="sub">Built from the floor by a man who walked it. Designed for the man who's ready to stop pretending it's a season and start treating it like construction.</p>
+    <a href="#enroll" class="cta">Start the Challenge — $47</a>
+    <div><a href="#what" class="cta-secondary">See what's inside</a></div>
+  </section>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="wrap">
-    <span class="label hero-tag">The R.E.B.U.I.L.D. Method &nbsp;·&nbsp; 7-Day Challenge</span>
-    <h1 class="hero-h1">Seven days.<br><em>One phase per day.</em><br>Start rebuilding now.</h1>
-    <p class="hero-sub">
-      Daily lessons delivered by email. One R.E.B.U.I.L.D. phase per day. Fully automated — work it on your schedule. The fastest way to move from reading about rebuilding to actually doing it.
-    </p>
-    <div class="price-display">
-      <div class="price-num">$47</div>
-      <div class="price-note">One-time · Instant access · No subscription · USD</div>
+  <section id="what">
+    <h2>What This Challenge Is</h2>
+    <p>For 7 days, one phase a day lands in your inbox.</p>
+    <p>Each day is a piece of <strong>The R.E.B.U.I.L.D. Method</strong> — the system I built in the wreckage of my own collapse. Each day asks you to do one thing. Each day moves you one phase further from where you've been stuck.</p>
+    <p>This isn't motivation. This isn't journaling-as-therapy. This is engineering.</p>
+
+    <div class="grid">
+      <div class="card"><div class="day">Day 1</div><h4>R — Recognize the Collapse</h4><p>Name what happened, without flinching. You can't rebuild what you won't name.</p></div>
+      <div class="card"><div class="day">Day 2</div><h4>E — Evaluate What Remains</h4><p>Construction thinking. Take inventory of what survived. That's the material you build with.</p></div>
+      <div class="card"><div class="day">Day 3</div><h4>B — Believe</h4><p>Belief built on evidence, not affirmations. You've already survived more than you remember.</p></div>
+      <div class="card"><div class="day">Day 4</div><h4>U — Upgrade Your Identity</h4><p>Dismantle what made you reachable. Install what holds.</p></div>
+      <div class="card"><div class="day">Day 5</div><h4>I — Ignite Your Purpose</h4><p>Purpose is forged in the fire, not discovered after. Find the fight you were built for.</p></div>
+      <div class="card"><div class="day">Day 6</div><h4>L — Lead Yourself First</h4><p>You cannot lead a family, a team, a movement until you can lead yourself out of a Tuesday morning.</p></div>
+      <div class="card"><div class="day">Day 7</div><h4>D — Design Your Legacy</h4><p>What you build now is permanent. Forward. Heavy.</p></div>
     </div>
-    <!-- REPLACE href with your Stripe Payment Link once created at stripe.com -->
-    <a href="https://buy.stripe.com/cNi9ALbxlcCS81zbChcQU01" class="btn-gold">Start the Challenge — $47</a>
-    <p class="hero-fine">Secure checkout · Instant email delivery · 100% private</p>
-  </div>
-</section>
+  </section>
 
-<!-- WHO IT'S FOR -->
-<section id="who">
-  <div class="wrap">
-    <div class="who-grid">
+  <hr class="div">
+
+  <section>
+    <h2>Who This Is For</h2>
+    <p>I built this for one specific man — and then I watched the framework hold for every other man who came through the same door.</p>
+
+    <div class="who-for">
       <div>
-        <span class="label">This is for you if</span>
-        <h2 class="who-h2">You know you need to<br><em>do something.</em></h2>
-        <ul class="who-list">
-          <li>You've been through a collapse — divorce, career failure, reputation destruction, faith crisis, isolation — and you're still in it</li>
-          <li>You've read the books, listened to the podcasts, but nothing has moved you from understanding to action</li>
-          <li>You need structure more than motivation — a sequence, not just inspiration</li>
-          <li>You have limited time but you're willing to put in one hour a day for seven days</li>
-          <li>You want to start now, not wait for a cohort schedule or a discovery call</li>
+        <h4>You're in if you're —</h4>
+        <ul>
+          <li>A man rebuilding after divorce, betrayal, or a marriage that ended in pieces you didn't choose</li>
+          <li>A man whose name got attached to a story that isn't yours</li>
+          <li>A man coming out of addiction, incarceration, or a season you never planned to be in</li>
+          <li>A man whose body, business, or health broke down before you were ready</li>
+          <li>An executive whose title evaporated and took an identity with it</li>
+          <li>A leader whose organization went through a scandal that cost you yours</li>
+          <li>A founder, pastor, officer, father — anyone whose <em>before</em> doesn't exist anymore</li>
         </ul>
       </div>
-      <div class="who-body">
-        <span class="label" style="display:block;margin-bottom:18px;">This is not for you if</span>
-        <p>You're looking for a quick fix. The R.E.B.U.I.L.D. Method is not a 7-day transformation. <strong>It is a 7-day introduction to a lifelong practice.</strong> The challenge gets you into the framework — doing the actual phase work, not just reading about it.</p>
-        <p>You're also not the right fit if you're not willing to be honest. Each day's work requires you to sit with something real. The men who get the most from this challenge are the ones who stop managing their narrative and start telling the truth to themselves.</p>
-        <p><strong>If that's where you are — this is built for you.</strong></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHAT YOU GET -->
-<section id="what">
-  <div class="wrap">
-    <span class="label">The Challenge</span>
-    <h2 class="what-h2">What happens each day</h2>
-
-    <div class="days">
-      <div class="day">
-        <div class="day-num">Day 1</div>
-        <div>
-          <h3 class="day-phase">R — Recognize the Collapse</h3>
-          <p class="day-desc">The first and hardest day. <strong>Your only job: name what happened without minimizing it.</strong> You'll receive a structured writing exercise that walks you through an honest account of the collapse — including the parts you've been avoiding. You'll end Day 1 with the clearest picture you've had of what actually occurred.</p>
-        </div>
-      </div>
-      <div class="day">
-        <div class="day-num">Day 2</div>
-        <div>
-          <h3 class="day-phase">E — Evaluate What Remains</h3>
-          <p class="day-desc">Shift from victim accounting to architect inventory. <strong>You're going to discover you have more to build with than you think.</strong> Day 2's exercise walks you through a values audit, a character inventory, and a "survived" list — the specific evidence of what the collapse could not take from you.</p>
-        </div>
-      </div>
-      <div class="day">
-        <div class="day-num">Day 3</div>
-        <div>
-          <h3 class="day-phase">B — Believe</h3>
-          <p class="day-desc">Not motivational belief. Evidence-based belief. <strong>By the end of Day 3, you will have built a written case — five specific pieces of evidence — that what's ahead of you is possible.</strong> The man who has survived what you've survived has already proven something. Day 3 makes that proof explicit.</p>
-        </div>
-      </div>
-      <div class="day">
-        <div class="day-num">Day 4</div>
-        <div>
-          <h3 class="day-phase">U — Upgrade Your Identity</h3>
-          <p class="day-desc">The reconstruction work begins. <strong>You'll identify the specific beliefs and behaviors that made you vulnerable to the collapse — and write the upgraded replacements.</strong> Day 4 produces a written "Old Identity → New Identity" document that you'll reference for months.</p>
-        </div>
-      </div>
-      <div class="day">
-        <div class="day-num">Day 5</div>
-        <div>
-          <h3 class="day-phase">I — Ignite Your Purpose</h3>
-          <p class="day-desc">The collapse revealed something about what you're here to do. <strong>Day 5 excavates it.</strong> Through a series of directed questions about what makes you angry, what you'd fight for, and what problem in the world feels personal to you, you'll draft a purpose statement — one sentence — by end of day.</p>
-        </div>
-      </div>
-      <div class="day">
-        <div class="day-num">Day 6</div>
-        <div>
-          <h3 class="day-phase">L — Lead Yourself First</h3>
-          <p class="day-desc">Leadership begins in private. <strong>Day 6 builds your daily protocol</strong> — the non-negotiable disciplines of the man you're becoming. Not a 47-step morning routine. Three to five specific commitments that, maintained consistently, build the evidence that you lead yourself before you lead anyone else.</p>
-        </div>
-      </div>
-      <div class="day">
-        <div class="day-num">Day 7</div>
-        <div>
-          <h3 class="day-phase">D — Design Your Legacy</h3>
-          <p class="day-desc">The final day turns everything inward outward. <strong>Your rebuild is not just for you.</strong> Day 7 produces a written legacy vision — who you're serving, what you're building, and how the pain you survived becomes the credential that makes you the most trusted guide in the room. You'll end Day 7 with a direction, not just a destination.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section id="how">
-  <div class="wrap">
-    <span class="label">How It Works</span>
-    <h2 class="how-h2">Simple. Automated. Yours.</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-n">01</div>
-        <h3 class="step-title">You register</h3>
-        <p class="step-desc">One payment. $47. You're in. No account to create, no platform to learn, no onboarding call. Your first lesson arrives in your inbox within minutes.</p>
-      </div>
-      <div class="step">
-        <div class="step-n">02</div>
-        <h3 class="step-title">One email per day</h3>
-        <p class="step-desc">Every morning for seven days, your day's lesson arrives. Teaching, context, and a concrete exercise. Each lesson takes 45–60 minutes to work through properly. Work it when your schedule allows.</p>
-      </div>
-      <div class="step">
-        <div class="step-n">03</div>
-        <h3 class="step-title">You do the work</h3>
-        <p class="step-desc">No live calls. No accountability partner required. Just you, the framework, and a journal. The men who get the most from this challenge are the ones who treat each day's exercise as a commitment, not a suggestion.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="wrap">
-    <div class="about-inner">
-      <div class="about-img">
-        <img src="images/uhia-headshot.jpg" alt="Uhia Willis">
-      </div>
       <div>
-        <span class="label">Built by Uhia Willis</span>
-        <h2 class="about-h2">I used this framework to<br><em>rebuild my own life.</em></h2>
-        <div class="about-body">
-          <p>The R.E.B.U.I.L.D. Method didn't come from a research project or a certification course. It came from necessity — from living through the kind of collapse that strips away everything you thought defined you and forces you to find out what, if anything, remains.</p>
-          <p><strong>I didn't find a program that could hold the weight of what I went through.</strong> So I built one. Seven phases, sequenced in the order they actually work, with exit criteria at each phase so you know when you've done the work rather than just gone through the motions.</p>
-          <p>The 7-Day Challenge compresses the framework into one week of daily action. It is not the full program — the full program is the Rebuild Blueprint and the Cohort. But it is real work. It will move you.</p>
-        </div>
+        <h4>You're not in if —</h4>
+        <ul>
+          <li>You want hype, motivation, or a sticker on a Starbucks cup</li>
+          <li>You want a course that lets you stay where you are</li>
+          <li>You're looking for someone to tell you it wasn't your fault and leave it at that</li>
+          <li>You want to skip the work and get to the legacy phase</li>
+          <li>You're not ready to be honest with yourself for 20 minutes a day</li>
+        </ul>
       </div>
     </div>
+  </section>
+
+  <hr class="div">
+
+  <section>
+    <h2>What You Get</h2>
+    <ul>
+      <li>7 emails — one phase a day, written in my voice, no fluff</li>
+      <li>One action per day — small, specific, doable in 20 minutes</li>
+      <li>Direct reply access — I read every email personally. No assistant.</li>
+      <li>The full R.E.B.U.I.L.D. framework as your roadmap, not just a single technique</li>
+      <li>An invitation to the next step (Blueprint / Cohort) when you finish — only if you want it</li>
+    </ul>
+    <p class="pullquote">This is the on-ramp to the rebuild. After 7 days you will not be the same man who started.</p>
+  </section>
+
+  <div class="price" id="enroll">
+    <div class="label">Enrollment</div>
+    <div class="amount"><sup>$</sup>47</div>
+    <div class="meta">One-time. Lifetime access. No upsells in the middle.</div>
+    <a href="#" class="cta" data-checkout="challenge">Start the Challenge</a>
   </div>
-</section>
 
-<!-- BOTTOM CTA -->
-<section id="cta">
-  <div class="wrap">
-    <h2 class="cta-h2">Seven days from now,<br>you'll know <em>where you stand.</em></h2>
-    <p class="cta-sub">Not where you'll end up — where you stand. The framework, the first exercises, the beginning of a rebuild that actually holds. That's what $47 buys.</p>
-    <div class="cta-price">$47</div>
-    <!-- REPLACE href with Stripe Payment Link once created at stripe.com → Products → Payment Links -->
-    <a href="https://buy.stripe.com/cNi9ALbxlcCS81zbChcQU01" class="btn-gold">Start the Challenge — $47</a>
-    <p class="cta-fine">One-time · Instant delivery · No subscription · 100% private</p>
-    <p class="cta-upsell">Want the complete system instead? <a href="https://buy.stripe.com/9B6eV5fNB32i1DbdKpcQU00">The Rebuild Blueprint — $197 →</a></p>
+  <div class="guarantee">
+    <p><strong>30-Day No-Questions-Asked Guarantee</strong></p>
+    <p style="margin:0">If the framework doesn't hold for you, reply with the word "refund." Done. No call. No survey. No friction. The only real risk is going back to the version of your life you had before you read this page.</p>
   </div>
-</section>
 
-<!-- FOOTER -->
-<footer>
-  <span class="ft-copy">© 2026 Uhia Willis / UKW Consulting Inc.</span>
-  <a href="/" class="ft-link">← uhiawillis.com</a>
-</footer>
+  <section class="about">
+    <h3>Who Built This</h3>
+    <p>I'm Uhia Willis. I'm not a coach because I read books. I'm a coach because I was on the floor.</p>
+    <p>I've sat in rooms where my future was being decided by people who didn't know me. I've watched a marriage end in pieces I didn't choose. I've watched my name dragged through a calculated, organized, vicious smear campaign. I've watched the brothers I trusted go quiet. I've gone through the anxiety, the depression, the 3 a.m. isolation, the agony of betrayal.</p>
+    <p>Parts of it are still in motion. I'm not done fighting.</p>
+    <p>But I built this framework <em>in the wreckage</em> — phase by phase, the way I had to walk it myself. The R.E.B.U.I.L.D. Method exists because nothing in the market did what I needed. So I built it.</p>
+    <p>Now I hand it to you.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold);font-size:1.2rem;margin-top:1.5rem;margin-bottom:0;">"You don't need a perfect past to build a powerful future."</p>
+  </section>
 
+  <section style="text-align:center;margin-top:3rem">
+    <h2>Start.</h2>
+    <p>The next 7 days will not be defined by what happened to you. They'll be defined by what you do with what you now know.</p>
+    <a href="#" class="cta" data-checkout="challenge">Enroll — $47</a>
+  </section>
+
+  <div class="legal">
+    © 2026 UKW Consulting Inc. All rights reserved.<br>
+    "Lead Yourself First"™ and "Design Your Legacy"™ are claimed marks of UKW Consulting Inc.<br>
+    The R.E.B.U.I.L.D. Method is for personal development and educational purposes. It is not a substitute for medical, mental health, legal, or financial advice.
+  </div>
+
+</div>
 </body>
 </html>
-

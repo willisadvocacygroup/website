@@ -1,425 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Uhia Willis — Speaker One-Sheet</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
-
-  <style>
-    /* ─── RESET ─────────────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    /* ─── PAGE / PRINT SETUP ─────────────────────────────────────── */
-    @page {
-      size: letter;
-      margin: 0.75in;
-    }
-
-    html {
-      font-size: 10pt;
-      background: #e5e5e5;
-    }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 400;
-      color: #050505;
-      background: #ffffff;
-      max-width: 760px;
-      margin: 2rem auto;
-      padding: 0.75in;
-      box-shadow: 0 4px 40px rgba(0,0,0,0.18);
-      line-height: 1.55;
-    }
-
-    /* ─── TYPOGRAPHY SCALE ───────────────────────────────────────── */
-    h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 600;
-      font-size: 44pt;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      line-height: 1;
-      color: #050505;
-    }
-
-    h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 600;
-      font-size: 13pt;
-      letter-spacing: 0.04em;
-      color: #050505;
-      margin-bottom: 0.25rem;
-    }
-
-    h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 600;
-      font-size: 11.5pt;
-      color: #050505;
-      margin-bottom: 0.2rem;
-    }
-
-    p {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 9.2pt;
-      line-height: 1.65;
-      color: #1a1a1a;
-    }
-
-    /* ─── ACCENT / UTILITY ───────────────────────────────────────── */
-    .accent { color: #E8500A; }
-
-    .label {
-      font-family: 'DM Mono', monospace;
-      font-size: 6.8pt;
-      font-weight: 500;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #E8500A;
-    }
-
-    .divider {
-      width: 100%;
-      height: 1.5px;
-      background: #E8500A;
-      margin: 0.55rem 0;
-    }
-
-    .divider--light {
-      height: 1px;
-      background: #d0cdc8;
-      margin: 0.6rem 0;
-    }
-
-    /* ─── PRINT BUTTON ───────────────────────────────────────────── */
-    .no-print {
-      position: fixed;
-      top: 1rem;
-      right: 1.5rem;
-      z-index: 999;
-    }
-
-    .no-print button {
-      font-family: 'DM Mono', monospace;
-      font-size: 7.5pt;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      background: #E8500A;
-      color: #fff;
-      border: none;
-      padding: 0.55rem 1.1rem;
-      cursor: pointer;
-      border-radius: 2px;
-      box-shadow: 0 2px 10px rgba(232,80,10,0.35);
-      transition: background 0.2s;
-    }
-
-    .no-print button:hover { background: #c84008; }
-
-    /* ─── SECTION SPACING ────────────────────────────────────────── */
-    section { margin-bottom: 1.1rem; }
-
-    /* ─── TOP BAR ────────────────────────────────────────────────── */
-    .top-bar {
-      text-align: center;
-      padding-bottom: 0.6rem;
-      margin-bottom: 0.85rem;
-    }
-
-    .top-bar .framework-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 7.2pt;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: #555;
-      margin-top: 0.35rem;
-      margin-bottom: 0.55rem;
-    }
-
-    /* ─── PHOTO + BIO ────────────────────────────────────────────── */
-    .bio-block {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 1.25rem;
-      align-items: start;
-      margin-bottom: 1rem;
-    }
-
-    .headshot-wrap {
-      width: 180px;
-      height: 220px;
-      overflow: hidden;
-      border: 1px solid #d0cdc8;
-      flex-shrink: 0;
-    }
-
-    .headshot-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-    }
-
-    .headshot-placeholder {
-      width: 100%;
-      height: 100%;
-      background: #f0ede8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'DM Mono', monospace;
-      font-size: 7pt;
-      color: #999;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .bio-content { padding-top: 0.1rem; }
-
-    .tagline {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 13pt;
-      font-weight: 400;
-      color: #050505;
-      line-height: 1.35;
-      margin-bottom: 0.6rem;
-      padding-bottom: 0.55rem;
-      border-bottom: 1px solid #d0cdc8;
-    }
-
-    .bio-content p + p { margin-top: 0.5rem; }
-
-    /* ─── TALKS ──────────────────────────────────────────────────── */
-    .talks-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.75rem;
-    }
-
-    .talk-card {
-      border: 1px solid #d0cdc8;
-      border-top: 2.5px solid #E8500A;
-      padding: 0.65rem 0.7rem 0.7rem;
-    }
-
-    .talk-card h3 {
-      font-size: 10pt;
-      line-height: 1.3;
-      margin-bottom: 0.4rem;
-    }
-
-    .talk-card p {
-      font-size: 8.2pt;
-      color: #3a3a3a;
-      line-height: 1.6;
-    }
-
-    /* ─── AUDIENCE FIT ───────────────────────────────────────────── */
-    .audience-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem 0.7rem;
-      margin-top: 0.4rem;
-    }
-
-    .audience-pill {
-      font-family: 'DM Mono', monospace;
-      font-size: 6.8pt;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #050505;
-      border: 1px solid #c0bdb8;
-      padding: 0.22rem 0.55rem;
-      white-space: nowrap;
-    }
-
-    /* ─── EXPECT BLOCK ───────────────────────────────────────────── */
-    .expect-block {
-      background: #f7f5f2;
-      border-left: 3px solid #E8500A;
-      padding: 0.65rem 0.85rem;
-      margin-top: 0.35rem;
-    }
-
-    .expect-block p {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 11pt;
-      line-height: 1.5;
-      color: #1a1a1a;
-    }
-
-    /* ─── BOOKING BAR ────────────────────────────────────────────── */
-    .booking-bar {
-      margin-top: 0.9rem;
-      padding-top: 0.65rem;
-      border-top: 1.5px solid #E8500A;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap: 0.5rem;
-      align-items: start;
-    }
-
-    .booking-item .label { display: block; margin-bottom: 0.15rem; }
-
-    .booking-item .value {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 8.5pt;
-      color: #050505;
-      font-weight: 500;
-      line-height: 1.4;
-    }
-
-    .booking-item a {
-      color: #050505;
-      text-decoration: none;
-    }
-
-    /* ─── FOOTER ─────────────────────────────────────────────────── */
-    .doc-footer {
-      margin-top: 0.75rem;
-      padding-top: 0.45rem;
-      border-top: 1px solid #d0cdc8;
-      text-align: center;
-    }
-
-    .doc-footer p {
-      font-family: 'DM Mono', monospace;
-      font-size: 6.4pt;
-      letter-spacing: 0.1em;
-      color: #888;
-    }
-
-    /* ─── PRINT STYLES ───────────────────────────────────────────── */
-    @media print {
-      .no-print { display: none !important; }
-
-      html { background: #fff; font-size: 10pt; }
-
-      body {
-        margin: 0;
-        padding: 0;
-        max-width: 100%;
-        box-shadow: none;
-        background: #fff;
-      }
-
-      .talk-card { break-inside: avoid; }
-      .bio-block  { break-inside: avoid; }
-      section     { break-inside: avoid; }
-      .booking-bar { break-inside: avoid; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uhia Willis — Speaker One-Sheet</title>
+<meta name="description" content="Keynote speaker. Founder of The R.E.B.U.I.L.D. Method. Built for the man — and the leader — rebuilding from collapse.">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QDC79JE3K2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-QDC79JE3K2');</script>
+<!-- Meta Pixel placeholder: replace PIXEL_ID with your Meta Pixel ID when available -->
+<!-- <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','PIXEL_ID');fbq('track','PageView');</script> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#080808;--bg2:#0e0e0e;--gold:#C8972A;--cream:#F0EBE0;--cream-dim:rgba(240,235,224,.78);--cream-faint:rgba(240,235,224,.55);--rule:rgba(240,235,224,.18);--gold-faint:rgba(200,151,42,.25)}
+  html,body{background:var(--bg);color:var(--cream)}
+  body{font-family:'DM Sans',system-ui,sans-serif;font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  @page{size:letter;margin:.5in}
+  .sheet{max-width:8.5in;margin:0 auto;padding:.4in;min-height:11in;background:var(--bg);position:relative}
+  .header{display:grid;grid-template-columns:1fr auto;gap:1.2rem;align-items:end;padding-bottom:1rem;border-bottom:1px solid var(--gold-faint);margin-bottom:1.2rem}
+  .header h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:2.6rem;line-height:1;color:var(--cream);margin-bottom:.4rem;letter-spacing:-.01em}
+  .header .tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--gold)}
+  .header .right{text-align:right;font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.14em;color:var(--cream-faint);line-height:1.9;text-transform:uppercase}
+  .header .right a{color:var(--cream);text-decoration:none}
+  .grid{display:grid;grid-template-columns:1.4fr 1fr;gap:1.4rem;margin-bottom:1.2rem}
+  .section{margin-bottom:1.1rem}
+  .label{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem;font-weight:500}
+  h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.2rem;color:var(--cream);margin-bottom:.4rem;line-height:1.2}
+  p{font-size:.88rem;color:var(--cream-dim);margin-bottom:.5rem;line-height:1.55}
+  ul{padding-left:0;list-style:none;margin:0}
+  ul li{position:relative;padding:.18rem 0 .18rem 1.1rem;font-size:.84rem;color:var(--cream-dim);line-height:1.5}
+  ul li::before{content:'';position:absolute;left:0;top:.7rem;width:8px;height:1px;background:var(--gold)}
+  .pullquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--cream);border-left:2px solid var(--gold);padding-left:.8rem;margin:.4rem 0}
+  .topic-card{background:var(--bg2);border:1px solid var(--rule);border-left:2px solid var(--gold);padding:.7rem .8rem;margin-bottom:.5rem;border-radius:1px}
+  .topic-card h3{font-family:'Cormorant Garamond',serif;font-size:.98rem;color:var(--cream);font-weight:600;margin-bottom:.18rem;line-height:1.2}
+  .topic-card p{font-size:.78rem;margin:0;color:var(--cream-faint);line-height:1.45}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-top:.5rem}
+  .stat{background:var(--bg2);border:1px solid var(--rule);padding:.6rem .4rem;text-align:center;border-radius:1px}
+  .stat .num{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold);font-weight:600;line-height:1}
+  .stat .lbl{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-faint);margin-top:.2rem}
+  .footer{position:absolute;bottom:.4in;left:.4in;right:.4in;border-top:1px solid var(--gold-faint);padding-top:.6rem;display:grid;grid-template-columns:1fr auto;align-items:center}
+  .footer .brand{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--cream)}
+  .footer .brand em{color:var(--gold);font-style:italic}
+  .footer .meta{font-family:'DM Mono',monospace;font-size:.62rem;color:var(--cream-faint);letter-spacing:.12em;text-align:right;line-height:1.7}
+  @media print{body{background:#fff;color:#000}.sheet{min-height:auto;page-break-inside:avoid}}
+</style>
 </head>
 <body>
+<div class="sheet">
 
-  <!-- PRINT BUTTON (screen only) -->
-  <div class="no-print">
-    <button onclick="window.print()">&#x2399;&nbsp; Print / Save PDF</button>
-  </div>
+  <header class="header">
+    <div>
+      <h1>Uhia Willis</h1>
+      <div class="tagline">Keynote Speaker · Founder, The R.E.B.U.I.L.D. Method™</div>
+    </div>
+    <div class="right">
+      <a href="https://uhiawillis.com">uhiawillis.com</a><br>
+      uhia@uhiawillis.com<br>
+      (774) 446-0701<br>
+      Webster, MA
+    </div>
+  </header>
 
-  <!-- ─── TOP BAR ─────────────────────────────────────────────────── -->
-  <section class="top-bar">
-    <h1>Uhia Willis</h1>
-    <p class="framework-label">The R.E.B.U.I.L.D. Method</p>
-    <div class="divider"></div>
+  <section class="section">
+    <p class="pullquote">"You don't need a perfect past to build a powerful future."</p>
   </section>
 
-  <!-- ─── PHOTO + BIO ──────────────────────────────────────────────── -->
-  <section class="bio-block">
-    <div class="headshot-wrap">
-      <img src="images/uhia-headshot.jpg" alt="Uhia Willis" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-      <div class="headshot-placeholder" style="display:none;">Photo</div>
-    </div>
-
-    <div class="bio-content">
-      <p class="tagline">"You don't need a perfect past to build a powerful future."</p>
-
-      <p>Uhia Willis is a speaker, author, and founder of The R.E.B.U.I.L.D. Method — a 7-phase framework for men rebuilding identity, purpose, and leadership after life collapse. He built the framework from necessity, after living through the kind of collapse that strips away everything you thought defined you. The R.E.B.U.I.L.D. Method is the system he needed and couldn't find. He built it so other men don't have to figure it out alone.</p>
-
-      <p>He speaks to men's audiences, faith communities, leadership groups, and anyone who believes that the worst chapter of a man's life can become the foundation for his most purposeful one.</p>
-    </div>
-  </section>
-
-  <!-- ─── SIGNATURE TALKS ──────────────────────────────────────────── -->
-  <section>
-    <span class="label">Signature Talks</span>
-    <div class="divider--light"></div>
-
-    <div class="talks-grid">
-
-      <div class="talk-card">
-        <h3>You Don't Bounce Back —<br>You Build Forward</h3>
-        <p>The story of identity collapse and why recovery thinking fails men. The R.E.B.U.I.L.D. framework for those ready to build forward.</p>
+  <div class="grid">
+    <div>
+      <div class="section">
+        <div class="label">Who Uhia Is</div>
+        <p>Uhia Willis is the founder of The R.E.B.U.I.L.D. Method™ — a 7-phase framework for men and leaders rebuilding after collapse. Forged from his own lived experience of marriage loss, attacks on his name, faith-leader abandonment, and the silent betrayal of his closest network, R.E.B.U.I.L.D. is the system he built in the wreckage of his own life.</p>
+        <p>Uhia speaks to two audiences with one message: the man on the floor, and the leader at altitude. The frameworks are the same. The construction sequence is the same. The discipline is the same.</p>
+        <p>He is a licensed broker, speaker, coach, and the architect of a movement that meets men where collapse has put them — and walks them, phase by phase, to where they were always supposed to be.</p>
       </div>
 
-      <div class="talk-card">
-        <h3>Lead Yourself First<span class="accent">™</span></h3>
-        <p>Before a man can lead a team, a family, or a community, he has to lead himself. The daily discipline of a man rebuilding under pressure.</p>
+      <div class="section">
+        <div class="label">The R.E.B.U.I.L.D. Method™</div>
+        <p style="margin-bottom:.3rem;font-size:.82rem"><strong>R</strong>ecognize the Collapse · <strong>E</strong>valuate What Remains · <strong>B</strong>elieve · <strong>U</strong>pgrade Your Identity · <strong>I</strong>gnite Your Purpose · <strong>L</strong>ead Yourself First™ · <strong>D</strong>esign Your Legacy™</p>
       </div>
 
-      <div class="talk-card">
-        <h3>The Man on the Other Side of Collapse</h3>
-        <p>A keynote about transformation without toxic positivity. Raw, honest, and built for men who are tired of being told it gets better without being told how.</p>
+      <div class="section">
+        <div class="label">Signature Topics</div>
+        <div class="topic-card">
+          <h3>You Don't Need a Perfect Past to Build a Powerful Future</h3>
+          <p>The R.E.B.U.I.L.D. keynote. The seven phases. Built for general audiences in collapse, recovery, or transformation.</p>
+        </div>
+        <div class="topic-card">
+          <h3>Lead Yourself First™: Self-Leadership Before Organizational Leadership</h3>
+          <p>For executives, founders, and leadership teams. Why every leadership failure is a downstream effect of unled self.</p>
+        </div>
+        <div class="topic-card">
+          <h3>Design Your Legacy™: Construction Thinking After Collapse</h3>
+          <p>For high performers post-derailment, post-burnout, or post-public crisis. The 20-year frame as the antidote to short-cycle survival.</p>
+        </div>
+        <div class="topic-card">
+          <h3>The Brotherhood That Doesn't Flinch</h3>
+          <p>For men's groups, veteran organizations, reentry programs, faith communities. The architecture of real masculine community.</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section">
+        <div class="label">Audience Fit</div>
+        <ul>
+          <li>Leadership / executive conferences</li>
+          <li>Men's events, retreats, and conferences</li>
+          <li>HR & people-officer summits</li>
+          <li>Faith-community leadership gatherings (interfaith)</li>
+          <li>Veteran service organizations</li>
+          <li>Reentry & post-incarceration programs</li>
+          <li>Universities — leadership & life-transition programs</li>
+          <li>EAP / corporate wellness rooms</li>
+          <li>Podcasts & long-form interviews</li>
+        </ul>
       </div>
 
-    </div>
-  </section>
+      <div class="section">
+        <div class="label">Formats Available</div>
+        <ul>
+          <li>Keynote (45–60 min)</li>
+          <li>Half-day workshop (3 hours)</li>
+          <li>Full-day intensive (6 hours)</li>
+          <li>Fireside / panel</li>
+          <li>Podcast / interview</li>
+          <li>Multi-session leadership series (custom)</li>
+        </ul>
+      </div>
 
-  <!-- ─── AUDIENCE FIT ──────────────────────────────────────────────── -->
-  <section>
-    <span class="label">Audience Fit</span>
-    <div class="divider--light"></div>
-    <div class="audience-list">
-      <span class="audience-pill">Men's Retreats</span>
-      <span class="audience-pill">Faith-Based Conferences</span>
-      <span class="audience-pill">Leadership Summits</span>
-      <span class="audience-pill">Corporate Resilience Programs</span>
-      <span class="audience-pill">Veterans' Organizations</span>
-      <span class="audience-pill">University Commencement</span>
-      <span class="audience-pill">Addiction Recovery Communities</span>
-    </div>
-  </section>
+      <div class="section">
+        <div class="label">Why Audiences Respond</div>
+        <p>Uhia doesn't speak from theory. He speaks from a season most men never want to live through — and the framework he built to come out the other side. His delivery is direct, masculine, faith-rooted (interfaith), and refuses to leave the room in pain. Hope is the destination of every talk.</p>
+      </div>
 
-  <!-- ─── WHAT TO EXPECT ────────────────────────────────────────────── -->
-  <section>
-    <span class="label">What to Expect</span>
-    <div class="divider--light"></div>
-    <div class="expect-block">
-      <p>"Uhia doesn't deliver inspiration and leave. He delivers a framework and a next step. Audiences walk out with the first phase of a personal rebuild already in motion."</p>
-    </div>
-  </section>
+      <div class="section">
+        <div class="label">Credentials</div>
+        <ul>
+          <li>Founder, The R.E.B.U.I.L.D. Method™</li>
+          <li>Founder, Willis Advocacy Group / UKW Consulting Inc.</li>
+          <li>Licensed Insurance Broker (MA, CT, NJ, NY, FL, TX, NC)</li>
+          <li>Author of the R.E.B.U.I.L.D. Blueprint course curriculum</li>
+        </ul>
+      </div>
 
-  <!-- ─── BOOKING BAR ───────────────────────────────────────────────── -->
-  <div class="booking-bar">
-    <div class="booking-item">
-      <span class="label">Phone</span>
-      <span class="value">(774) 446-0701</span>
-    </div>
-    <div class="booking-item">
-      <span class="label">Email</span>
-      <span class="value"><a href="mailto:info@willisadvocacygroup.com">info@willisadvocacygroup.com</a></span>
-    </div>
-    <div class="booking-item">
-      <span class="label">Website</span>
-      <span class="value"><a href="https://uhiawillis.com">uhiawillis.com</a></span>
-    </div>
-    <div class="booking-item">
-      <span class="label">Booking</span>
-      <span class="value">For availability, topics, and rates, contact directly.</span>
+      <div class="section">
+        <div class="label">Booking</div>
+        <p style="font-size:.82rem">For booking, fees, and availability:<br><strong>uhia@uhiawillis.com</strong><br><strong>(774) 446-0701</strong></p>
+      </div>
     </div>
   </div>
 
-  <!-- ─── FOOTER ────────────────────────────────────────────────────── -->
-  <div class="doc-footer">
-    <p>© 2026 UKW Consulting Inc.&nbsp;&nbsp;·&nbsp;&nbsp;Licensed Speaker&nbsp;&nbsp;·&nbsp;&nbsp;The R.E.B.U.I.L.D. Method™</p>
-  </div>
+  <footer class="footer">
+    <div class="brand">The R.E.B.U.I.L.D. Method™ — <em>Built from the floor.</em></div>
+    <div class="meta">© 2026 UKW Consulting Inc.<br>All rights reserved</div>
+  </footer>
 
+</div>
 </body>
 </html>
