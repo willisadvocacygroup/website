@@ -122,7 +122,7 @@ Ask these in a natural, conversational way — not as a checklist.
 
 [Phone collected]
 
-> "What state are you in? Uhia is licensed in Massachusetts, Connecticut, New Jersey, New York, Florida, Texas, and North Carolina."
+> "What state are you in? Uhia is licensed in Massachusetts, Connecticut, New Jersey, New York, Florida, Texas, North Carolina, and Maine."
 
 [State collected]
 
@@ -212,7 +212,7 @@ Ask these in a natural, conversational way — not as a checklist.
 
 ## KEY FACTS ARIA KNOWS
 
-- Uhia is licensed in: MA, CT, NJ, NY, FL, TX, NC, GA
+- Uhia is licensed in: MA, CT, NJ, NY, NC, FL, TX, ME
 - Business hours: Mon–Fri 9am–6pm ET | Sat 10am–3pm ET
 - Callback time: Within 1 business hour during business hours
 - Phone: (774) 446-0701

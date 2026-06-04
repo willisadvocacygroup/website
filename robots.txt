@@ -3,4 +3,5 @@ Allow: /
 Disallow: /admin/
 Disallow: /api/
 Disallow: /leads.log
+Disallow: /dashboard.html
 Sitemap: https://www.willisadvocacygroup.com/sitemap.xml

@@ -109,13 +109,13 @@ Awareness without action is just pain with better vocabulary.
 The 7 Signs Challenge showed you where the cracks are. The **R.E.B.U.I.L.D. Method Blueprint** is the framework for filling them — systematically, phase by phase, without burning everything down in the process.
 
 The Blueprint walks you through all 7 phases:
-→ **R** — Reset your foundation
-→ **E** — Excavate what's holding you back
-→ **B** — Build your new identity
-→ **U** — Unlearn the patterns that protect the old you
-→ **I** — Integrate your lessons into your daily life
-→ **L** — Launch from a new baseline
-→ **D** — Declare your rebuilt self
+→ **R** — Recognize the Collapse
+→ **E** — Evaluate What Remains
+→ **B** — Believe
+→ **U** — Upgrade Your Identity
+→ **I** — Ignite Your Purpose
+→ **L** — Lead Yourself First
+→ **D** — Design Your Legacy
 
 You've seen the 7 signs. Now you have a choice.
 

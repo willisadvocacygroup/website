@@ -10,3 +10,9 @@ ghl-config/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Ops dashboard — not for public host (exposes admin view). Serve locally / behind auth.
+dashboard.html
+
+# Personal-brand site — separate from Willis Advocacy Group; must not deploy to this domain.
+uhiawillis-site/

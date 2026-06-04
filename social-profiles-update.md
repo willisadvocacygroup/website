@@ -15,12 +15,12 @@
 
 **Short Description (max ~255 chars):**
 ```
-Licensed Medicare & Life Insurance Broker — Webster, MA. Free reviews. Coverage for preexisting conditions. Serving MA, CT, NJ, NY, FL, TX, NC. People Over Profits.
+Licensed Medicare & Life Insurance Broker — Webster, MA. Free reviews. Coverage for preexisting conditions. Serving MA, CT, NJ, NY, NC, FL, TX, ME. People Over Profits.
 ```
 
 **About / Bio (longer field):**
 ```
-Uhia Willis is an independent licensed Medicare and life insurance broker based in Webster, MA — serving clients in Massachusetts, Connecticut, New Jersey, New York, Florida, Texas, and North Carolina.
+Uhia Willis is an independent licensed Medicare and life insurance broker based in Webster, MA — serving clients in Massachusetts, Connecticut, New Jersey, New York, Florida, Texas, North Carolina, and Maine.
 
 Willis Advocacy Group specializes in:
 → Free Medicare plan reviews (Medicare Advantage, Supplement, Part D)
@@ -50,7 +50,7 @@ Willis Advocacy Group (UKW Consulting Inc.) is not affiliated with or endorsed b
 
 ### Headline (max 220 chars):
 ```
-Licensed Medicare & Life Insurance Broker | Willis Advocacy Group | People Over Profits | Free Reviews | Preexisting Conditions Specialist | MA, CT, NJ, NY, FL, TX, NC
+Licensed Medicare & Life Insurance Broker | Willis Advocacy Group | People Over Profits | Free Reviews | Preexisting Conditions Specialist | MA, CT, NJ, NY, NC, FL, TX, ME
 ```
 
 ### About / Summary section:
@@ -66,7 +66,7 @@ Willis Advocacy Group specializes in:
 
 If you've been told no by other brokers, that's usually where my work begins.
 
-I'm licensed in Massachusetts, Connecticut, New Jersey, New York, Florida, Texas, and North Carolina. I do free, no-pressure reviews. I look at every plan available in your state. And I tell you the truth — even when the truth is "your current plan is already your best option."
+I'm licensed in Massachusetts, Connecticut, New Jersey, New York, Florida, Texas, North Carolina, and Maine. I do free, no-pressure reviews. I look at every plan available in your state. And I tell you the truth — even when the truth is "your current plan is already your best option."
 
 That's what People Over Profits means in practice.
 
