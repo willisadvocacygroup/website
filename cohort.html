@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+============================================================
+  uhiawillis.com/cohort  ·  Cohort sales page (full)
+  NOTE: a /cohort page exists live (cohort-landing.html). This is
+  a full sales page + FAQ (your files flagged this as still-to-write).
+  Deploy: BACK UP the existing cohort-landing.html first, then
+  decide whether this replaces it or deploys as cohort.html.
+  SWAP BEFORE LIVE:
+    [COHORT_APP] → Tally cohort-application URL (defaults to mailto)
+    proof slots <!--PROOF--> → real testimonials
+  Voice + legal-restraint applied. Pricing intentionally gated.
+============================================================
+-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The R.E.B.U.I.L.D. Cohort — Apply | Uhia Willis</title>
+<meta name="description" content="6–8 men. 8 weeks. $1,997. Live, on camera, once a year — next cohort Aug 2. The Blueprint is the curriculum; the Cohort is the brotherhood. Application-based — Uhia reads every one.">
+<meta property="og:title" content="The R.E.B.U.I.L.D. Cohort — Apply">
+<meta property="og:description" content="A small room of men in motion, together. 6–8 men · 8 weeks · $1,997 · next cohort Aug 2. Application-based.">
+<meta property="og:image" content="https://uhiawillis.com/og-image.jpg">
+<meta property="og:url" content="https://uhiawillis.com/cohort">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,600&family=DM+Sans:wght@400;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9L2T6YDH1J"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9L2T6YDH1J');</script>
+<style>
+:root{--bg:#080808;--bg-alt:#0a0808;--bg-warm:#0e0a06;--bg-card:#141014;--gold:#C8972A;--gold-hover:#d9a635;--gold-soft:rgba(200,151,42,0.08);--cream:#F0EBE0;--cream-soft:#d8d0c0;--line:rgba(200,151,42,0.18);--shadow-gold:0 4px 20px rgba(200,151,42,0.18);--serif:"Cormorant Garamond",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif;--mono:"DM Mono","Courier New",monospace;}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font-family:var(--sans);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:0 28px}
+a{color:inherit;text-decoration:none}
+.eyebrow{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--gold);flex:0 0 28px}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(48px,8vw,90px);line-height:1.0;letter-spacing:-0.01em}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5vw,52px);line-height:1.05;margin-bottom:10px}
+h3{font-family:var(--serif);font-weight:600;font-size:24px;line-height:1.2}
+.lede{font-size:20px;line-height:1.55;color:var(--cream-soft)}
+.btn{display:inline-block;background:var(--gold);color:#080808;font-weight:600;font-size:16px;padding:15px 30px;border-radius:6px;transition:.2s;box-shadow:var(--shadow-gold)}
+.btn:hover{background:var(--gold-hover);transform:translateY(-1px)}
+.btn-ghost{display:inline-block;border:1px solid var(--line);color:var(--cream);font-weight:600;font-size:16px;padding:14px 28px;border-radius:6px;transition:.2s}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+nav{position:sticky;top:0;z-index:50;background:rgba(8,8,8,0.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1080px}
+nav .brand{font-family:var(--serif);font-size:22px;font-weight:600}
+nav .links{display:flex;gap:26px;font-size:14px;font-family:var(--mono);letter-spacing:0.04em}
+nav .links a{color:var(--cream-soft)}nav .links a:hover{color:var(--gold)}
+@media(max-width:640px){nav .links{display:none}}
+section{padding:80px 0;border-bottom:1px solid var(--line)}
+.hero{padding:100px 0 86px;background:radial-gradient(1100px 460px at 70% -10%,rgba(200,151,42,0.10),transparent 70%)}
+.hero h1{margin:6px 0 22px}
+.hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(22px,3vw,30px);max-width:740px;margin-bottom:20px}
+.hero p.lede{max-width:680px;margin-bottom:32px}
+.cta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.note{font-family:var(--mono);font-size:12px;letter-spacing:0.06em;color:var(--cream-soft);margin-top:16px}
+.sec-label{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:30px}
+.specs div{background:var(--bg);padding:24px 22px}
+.specs .k{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.specs .v{font-family:var(--serif);font-size:26px;color:var(--cream)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+@media(max-width:720px){.two{grid-template-columns:1fr}}
+.card{background:var(--bg-card);border:1px solid var(--line);border-radius:10px;padding:26px 28px}
+.card h3{margin-bottom:8px}.card p{font-size:15.5px;color:var(--cream-soft);line-height:1.6}
+.steps{counter-reset:s;margin-top:30px;display:flex;flex-direction:column;gap:14px}
+.steps .st{display:flex;gap:18px;align-items:flex-start;background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:20px 22px}
+.steps .st::before{counter-increment:s;content:counter(s);font-family:var(--mono);color:var(--gold);font-size:18px;flex:0 0 auto;border:1px solid var(--line);border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center}
+.steps h3{font-size:21px;margin-bottom:3px}.steps p{font-size:14.5px;color:var(--cream-soft);line-height:1.55}
+.faq{margin-top:24px}
+.faq details{border-bottom:1px solid var(--line);padding:18px 0}
+.faq summary{font-family:var(--serif);font-size:22px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--gold);font-family:var(--mono)}
+.faq details[open] summary::after{content:"–"}
+.faq p{font-size:15.5px;color:var(--cream-soft);line-height:1.6;margin-top:12px;max-width:80ch}
+.quote{font-family:var(--serif);font-style:italic;font-size:clamp(24px,3.4vw,34px);line-height:1.35;max-width:840px}
+.quote-attr{font-family:var(--mono);font-size:12px;letter-spacing:0.08em;color:var(--cream-soft);margin-top:16px}
+.final{background:linear-gradient(180deg,var(--bg-warm),var(--bg));text-align:center}
+.final h2{margin-bottom:14px}.final p{max-width:620px;margin:0 auto 30px;color:var(--cream-soft)}
+footer{padding:46px 0;font-family:var(--mono);font-size:12px;letter-spacing:0.06em;color:var(--cream-soft)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;max-width:1080px}
+footer .g{color:var(--gold)}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="/">Uhia Willis</a>
+  <div class="links">
+    <a href="/about">Story</a>
+    <a href="/speaking">Speaking</a>
+    <a href="/coaching">Coaching</a>
+    <a href="/free">Free Guide →</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <p class="eyebrow">The Cohort · The R.E.B.U.I.L.D. Method™</p>
+  <h1>Once a year,<br>I close the door.</h1>
+  <p class="sub">6–8 men. 8 weeks. Live, on camera, in the same room — rebuilding together.</p>
+  <p class="lede">The Blueprint is the curriculum. The Cohort is the brotherhood. This is the room where the work stops being something you read and starts being something you do, with men who've carried what you're carrying and a guide who's been on the floor before you.</p>
+  <div class="cta-row">
+    <a class="btn" href="#apply">Apply for the next cohort</a>
+    <a class="btn-ghost" href="#how">How it works ↓</a>
+  </div>
+  <p class="note">Application-based · I read every one personally.</p>
+</div></header>
+
+<section><div class="wrap">
+  <p class="sec-label">Why a room, not a course</p>
+  <h2>You were abandoned once.<br>Not here.</h2>
+  <p class="lede" style="max-width:780px;margin-top:16px">When it all came apart, the phones went quiet. The men you ran with stopped calling. That isolation is its own kind of collapse — and you don't engineer your way out of it alone. A man rebuilds faster, and rebuilds stronger, in a room of men doing the same work at the same time, where nobody flinches at the truth and nobody lets you quit on yourself.</p>
+  <div class="specs">
+    <div><div class="k">Size</div><div class="v">6–8 men</div></div>
+    <div><div class="k">Length</div><div class="v">8 weeks</div></div>
+    <div><div class="k">Investment</div><div class="v">$1,997</div></div>
+    <div><div class="k">Format</div><div class="v">On camera</div></div>
+    <div><div class="k">Next cohort</div><div class="v">Aug 2</div></div>
+  </div>
+</div></section>
+
+<section style="background:var(--bg-alt)"><div class="wrap">
+  <p class="sec-label">What you get</p>
+  <h2>The curriculum, with the room around it.</h2>
+  <div class="two">
+    <div class="card"><h3>The seven phases, walked live</h3><p>We move through R.E.B.U.I.L.D. together, in sequence — not as theory, as a build. Across eight weeks, real work between sessions and a room that holds you to it.</p></div>
+    <div class="card"><h3>Uhia in the room</h3><p>This is not a recording. I'm there, on camera, every week — coaching the men in front of me through exactly where they are.</p></div>
+    <div class="card"><h3>A vetted brotherhood</h3><p>Everyone in the room applied and was accepted. No tourists. Men in motion, serious about the rebuild, who become the brothers who pick up the phone.</p></div>
+    <div class="card"><h3>A standard you carry out</h3><p>The men who finish move differently. They lead themselves first. They design a legacy. They become the man the next man on the floor needs.</p></div>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <p class="sec-label">How it works</p>
+  <h2>How you get in.</h2>
+  <div class="steps">
+    <div class="st"><div><h3>Apply</h3><p>A short application — where you are, what you're rebuilding from, what you want built eight weeks and twelve months out. Honest, not polished.</p></div></div>
+    <div class="st"><div><h3>I read it myself</h3><p>Every application crosses my desk. The room only works if every man in it belongs there, so I'm careful about who comes in.</p></div></div>
+    <div class="st"><div><h3>We talk</h3><p>If it looks like a fit, we get on a call. I'll tell you straight whether the cohort is right for you right now — and if it isn't, I'll point you somewhere better.</p></div></div>
+    <div class="st"><div><h3>You take your seat</h3><p>You're in. Eight weeks, the room, the work, and the brothers who'll still be there when it's over.</p></div></div>
+  </div>
+</div></section>
+
+<section style="background:var(--bg-warm)"><div class="wrap">
+  <!--PROOF — when a past cohort man will speak to it, paste his words here.-->
+  <p class="quote">"The framework was never built to end with the man who walks it. It was built to start with him and continue through him."</p>
+  <p class="quote-attr">— Uhia Willis</p>
+</div></section>
+
+<section><div class="wrap">
+  <p class="sec-label">Questions</p>
+  <h2>Straight answers.</h2>
+  <div class="faq">
+    <details><summary>Is this the same as the Blueprint?</summary><p>No. The Blueprint is the full self-paced curriculum — the system, on your own time. The Cohort is the live room: the same seven phases, walked together over eight weeks, with me in the room and a brotherhood around you. Most men do the Blueprint first; it's the strongest foundation to walk in with.</p></details>
+    <details><summary>What does it cost?</summary><p>The investment is $1,997 for the eight-week cohort. It's still application-based — this isn't a checkout-button decision, and I read every application myself before we ever talk about a seat.</p></details>
+    <details><summary>Do I have to be on camera?</summary><p>Yes. The room works because men show up as themselves, face to face. That's the point — and it's part of what makes it different from anything you can hide behind.</p></details>
+    <details><summary>I'm still in the worst of it. Is it too early?</summary><p>Not necessarily. Some men come in still on the floor; some come up for air first. Tell me where you are in the application and we'll figure out the right timing together.</p></details>
+    <details><summary>What if it's not a fit?</summary><p>Then I'll tell you, and I'll point you toward what is — the Blueprint, the Challenge, or simply the free guide. No pressure, no hard sell. The wrong room helps no one.</p></details>
+  </div>
+</div></section>
+
+<section id="apply" class="final"><div class="wrap">
+  <p class="eyebrow" style="justify-content:center">Apply</p>
+  <h2>Tell me where you are.</h2>
+  <p>6–8 men · 8 weeks · $1,997 · next cohort Aug 2. We meet weekly. Tell me the real version of what you're rebuilding from — I read every one of these myself.</p>
+  <!-- Wired to MailerLite hosted application form → captures to Cohort #1 Applicants group (double opt-in off; receipt automation staged). -->
+  <a class="btn" href="https://preview.mailerlite.io/forms/2346940/189819421342041150/share">Apply for the Cohort →</a>
+  <p class="note" style="margin-top:22px">Not there yet? <a href="/coaching" style="color:var(--gold)">See all the paths →</a></p>
+</div></section>
+
+<footer><div class="wrap">
+  <span class="g">uhiawillis.com</span>
+  <span>uhia@uhiawillis.com</span>
+  <span>The R.E.B.U.I.L.D. Method™ — You don't need a perfect past to build a powerful future.</span>
+</div></footer>
+
+</body>
+</html>
